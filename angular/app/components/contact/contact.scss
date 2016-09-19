@@ -1,0 +1,36 @@
+
+/* Contact
+ ---------------------------------------------------------------------- */
+#contact {
+}
+/* Google Maps */
+#contact-map {
+  background-color: #ddd;
+  height: 500px;
+  position: relative;
+  width: 100%;
+  filter: grayscale(100%); /* Current draft standard */
+  -webkit-filter: grayscale(100%); /* New WebKit */
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%); /* Not yet supported in Gecko, Opera or IE */
+  filter: gray; /* IE */
+  -webkit-filter: grayscale(1); /* Old WebKit */
+  border-bottom: 1px solid #ddd;
+}
+#contact-map:before, #contact-map:after {
+  -webkit-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
+  content: '';
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+/* Contact form */
+.contact-form textarea { min-height: 300px; }
+.contact-form #ajax-message { margin-top: 20px; }
+

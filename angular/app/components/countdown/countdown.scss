@@ -1,0 +1,77 @@
+
+/* Event Countdown
+ ---------------------------------------------------------------------- */
+
+.event-countdown {
+  padding: 80px 0;
+  background: #1c1c1d url(../img/map.png) center 140px no-repeat;
+}
+.countdown {
+  text-align: center;
+  position: relative;
+}
+.countdown:before {
+  content: "";
+  display: block;
+  height: 80px;
+  width: 1px;
+  background: #444;
+  top: -60px;
+  left: 50%;
+  position: absolute;
+}
+
+.countdown .days, .countdown .hours, .countdown .minutes, .countdown .seconds {
+  position: relative;
+  display: inline-block;
+  font-size: 170px;
+  line-height: normal;
+  font-weight: bold;
+}
+.countdown .days {
+  color: #444;
+}
+.countdown .hours {
+  color: #666;
+}
+.countdown .minutes{
+  color: #444;
+}
+.countdown .seconds {
+  color: #ff7700;
+}
+
+.countdown .days:before, .countdown .hours:before, .countdown .minutes:before, .countdown .seconds:before {
+  content: "";
+  display: block;
+  height: 60px;
+  width: 1px;
+  background: #444;
+  left: 50%;
+  bottom: 40px;
+  position: absolute;
+}
+.countdown .days:after, .countdown .hours:after, .countdown .minutes:after, .countdown .seconds:after {
+  content: attr(data-label);
+  font-size: 24px;
+  position: relative;
+  text-transform: uppercase;
+  display: block;
+  font-weight: bold;
+  color: #444;
+  padding-top:50px;
+  text-align: center;
+}
+
+h6.upcoming-event {
+  font-size: 24px;
+  color: #444;
+  text-transform: uppercase;
+  position: relative;
+  margin-bottom: 0;
+  line-height: normal;
+}
+.page-container .event-countdown {
+  margin-top: -80px;
+  margin-bottom: 80px;
+}

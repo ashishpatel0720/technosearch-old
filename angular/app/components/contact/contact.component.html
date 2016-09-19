@@ -1,0 +1,53 @@
+
+<!-- ############################# contact ############################# -->
+<section id="contact" class="section">
+
+    <!-- ############ GMap ############ -->
+    <div id="contact-map" class="gmap clearfix" data-address="Level 13, 2 Elizabeth St, Melbourne Victoria 3000 Australia" data-zoom="16" data-zoom_control="true" data-scrollwheel="false"></div>
+    <!-- /gmap -->
+
+    <!-- ############ section container ############ -->
+    <div class="section-container container clearfix">
+
+        <hr class="divider">
+        <div class="row clearfix">
+            <h2 class="heading-m text-center">Send me a message</h2>
+            <span class="sub-heading text-center">Please fill in your contact details</span>
+        </div>
+
+        <!-- contact form -->
+        <form action="http://themes.rascals.eu/spectra_html/plugins/contact-form.php" method="post" class="form contact-form">
+            <div class="row clearfix">
+                <div class="col-1-3">
+                    <label for="contact-name"><strong>Name</strong> (required)</label>
+                    <input type="text" name="name" value="" id="contact-name" required>
+                </div>
+                <div class="col-1-3">
+                    <label for="contact-email"><strong>Email</strong> (required)</label>
+                    <input type="email" name="email" value="" id="contact-email" required>
+                </div>
+                <div class="col-1-3 last">
+                    <label for="contact-subject"><strong>Subject</strong></label>
+                    <input type="text" name="subject" value="" id="contact-subject">
+                </div>
+            </div>
+            <div class="row clearfix">
+                <div class="col-1-1">
+                    <label for="contact-message"><strong>Your Message</strong> (required)</label>
+                    <textarea name="message" id="contact-message" cols="88" rows="6" required></textarea>
+                </div>
+            </div>
+            <div class="hidden">
+                <label for="contact-spam-check">Do not fill out this field this is spam check.</label>
+                <input name="anty_spam" type="text" value="" id="contact-spam-check" />
+            </div>
+            <input type="submit" value="Submit Message" class="large">
+            <div class="clear"></div>
+        </form>
+        <!-- /contact form -->
+
+    </div>
+    <!-- /section container -->
+
+</section>
+<!-- /contact -->

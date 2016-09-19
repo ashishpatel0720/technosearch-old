@@ -1,0 +1,226 @@
+
+/* Events - Tour - Gigs
+ ---------------------------------------------------------------------- */
+#events {
+}
+
+/* Events list
+ -------------------------------- */
+#events-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+#events-list li {
+  width: 100%;
+  padding: 0;
+  margin: 1px 0 0 0;
+  width: 100%;
+  height: 250px;
+  padding-top: 60px;
+  padding-bottom: 50px;
+  background-color: #242526;
+  background-position: center center;
+  background-size: cover;
+}
+
+#events-list li:nth-child(odd) {
+  background-color: #1f2021;
+}
+
+#events-list li:hover {
+  position: relative;
+  margin-top: -30px;
+  width: 100%;
+  height: 350px;
+  z-index: 999;
+  -moz-box-shadow: 0px 0px 40px 0px #000;
+  -webkit-box-shadow: 0px 0px 40px 0px #000;
+  -o-box-shadow: 0px 0px 40px 0px #000;
+  box-shadow: 0px 0px 40px 0px #000;
+  filter:progid:DXImageTransform.Microsoft.Shadow(color=#000000, Direction=NaN, Strength=40);
+}
+
+/* Inner section */
+#events-list .inner {
+  padding: 0 40px;
+}
+
+/* Date */
+#events-list .event-date {
+  font-size: 36px;
+  color: #ff7700;
+  display: block;
+  position: relative;
+  font-weight: bold;
+}
+
+/* Title */
+#events-list h2, #events-list h2 a {
+  color: #fff;
+  font-size: 65px;
+  margin-bottom: 0;
+}
+#events-list h2, #events-list h2 a:hover { color: #ff7700; }
+
+/* Location */
+#events-list .event-location {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+
+/* More events heading
+ -------------------------------- */
+.more-events {
+  background-color: #1c1c1d;
+  padding: 60px 40px;
+}
+.more-events h6 {
+  color: #444;
+  margin-bottom: 0;
+}
+
+
+/* Events Masonry
+ -------------------------------- */
+.masonry-events {
+  margin-top: 1px;
+}
+.masonry-events .event-brick {
+  margin-bottom: 1px;
+  margin-left:-1px !important;
+  width:20%;
+  min-height: 330px;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;
+  padding: 40px;
+  background-color: #242526;
+  background-position: center center;
+  background-size: cover;
+}
+.masonry-events .event-brick:nth-child(odd) {
+  background-color: #1f2021;
+}
+.masonry-events .event-brick.active {
+  position: relative;
+  z-index: 999;
+  -moz-box-shadow: 0px 0px 40px 0px #000;
+  -webkit-box-shadow: 0px 0px 40px 0px #000;
+  -o-box-shadow: 0px 0px 40px 0px #000;
+  box-shadow: 0px 0px 40px 0px #000;
+  filter:progid:DXImageTransform.Microsoft.Shadow(color=#000000, Direction=NaN, Strength=40);
+}
+
+/* Date */
+.masonry-events .event-date {
+  font-size: 36px;
+  color: #ff7700;
+  display: block;
+  position: relative;
+  font-weight: bold;
+}
+
+
+/* Title */
+.masonry-events .event-title {
+  color: #eee;
+  display: block;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.masonry-events .event-brick:hover .event-title { color: #ff7700; }
+
+/* Location */
+.event-brick .event-location {
+  display: block;
+  color: #999;
+}
+
+
+/* Events animation
+ -------------------------------- */
+#events-list li, .masonry-events .event-brick.active {
+  -webkit-transition: all 300ms cubic-bezier(0.680, 0.120, 0.060, 0.835);
+  -moz-transition: all 300ms cubic-bezier(0.680, 0.120, 0.060, 0.835);
+  -ms-transition: all 300ms cubic-bezier(0.680, 0.120, 0.060, 0.835);
+  -o-transition: all 300ms cubic-bezier(0.680, 0.120, 0.060, 0.835);
+  transition: all 300ms cubic-bezier(0.680, 0.120, 0.060, 0.835);
+
+  -webkit-transition-timing-function: cubic-bezier(0.680, 0.120, 0.060, 0.835);
+  -moz-transition-timing-function: cubic-bezier(0.680, 0.120, 0.060, 0.835);
+  -ms-transition-timing-function: cubic-bezier(0.680, 0.120, 0.060, 0.835);
+  -o-transition-timing-function: cubic-bezier(0.680, 0.120, 0.060, 0.835);
+  transition-timing-function: cubic-bezier(0.680, 0.120, 0.060, 0.835);
+}
+
+
+/* Events Table
+ -------------------------------- */
+table th,
+table td{
+  text-align: left;
+}
+table.layout {
+  width: 100%;
+  border-collapse: collapse;
+}
+table.display {
+  margin-bottom: 40px;
+}
+table.display th,
+table.display td {
+  padding: 1em 1em;
+  vertical-align: top;
+  border: 1px solid #333;
+}
+table td.table-date { font-weight: bold; }
+
+table.display th { font-size: 16px; background: #3f4142 }
+table.display td { background: #383a3b; }
+table.responsive-table{
+}
+
+/* Date */
+table .table-date {
+  color: #bbb;
+  font-size: 16px;
+}
+
+/* Name */
+table .table-name {
+  color: #bbb;
+}
+
+/* Location */
+table .event-location {
+
+}
+table .event-location:before {
+  content: '::';
+  display: inline-block;
+  padding: 0 10px;
+  color: #777;
+}
+
+/* Tickets */
+table .buy-tickets {
+  padding: 8px 12px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #999;
+  background: #2e2f31;
+}
+table .buy-tickets:hover {
+  background: #ff7700;
+  color: #fff;
+}
+table .buy-tickets.sold, table .buy-tickets.sold:hover {
+  opacity: .5;
+  color: #999;
+  background: #2e2f31;
+  filter:alpha(opacity=50);
+}

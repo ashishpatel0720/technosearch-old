@@ -1,0 +1,91 @@
+/* Portfolio/Releases
+ ---------------------------------------------------------------------- */
+#portfolio {
+}
+/* Header */
+#portfolio-header {}
+
+
+/* Filter
+  --------------------------------*/
+.filter {
+  margin-top: 20px;
+  padding: 0 40px;
+  position: relative;
+  width: 100%;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+.filter ul {
+  list-style: none;
+  border-bottom: solid 1px #444;
+}
+.filter ul li {
+  margin: 0;
+  padding: 0;
+  float: left;
+}
+
+.filter li a {
+  color: #999;
+  font-weight: bold;
+  font-size: 14px;
+  display: block;
+  padding: 12px 14px 20px;
+  position: relative;
+  text-align: center;
+  border-bottom: 6px solid transparent;
+  cursor: pointer;
+}
+.filter li a:hover, .filter li a.active {
+  color: #ddd;
+  border-color: #ddd;
+}
+
+/* Label */
+.filter .filter-label .label {
+  color: #666;
+  display: inline-block;
+  padding: 14px 14px 20px 0;
+  line-height: normal;
+  font-weight: bold;
+}
+
+.filter .filter-label .label:after {
+  display: inline-block;
+  content: "\2192";
+  margin-left: 10px;
+}
+
+
+/* Grid
+ -------------------------------- */
+.items {}
+
+.fullwidth.items { margin: 40px 40px 40px 0; }
+.item {
+  display: block;
+  color: #222;
+  float: left;
+  overflow: hidden;
+  position: relative;
+}
+.item img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+}
+.fullwidth .item { width: 20%; }
+.fullwidth .item { margin: 0px -1px 0px 0px; }
+.container .item { width: 25%; }
+.fullwidth .item .project-thumb {
+  margin: 0px 0px 40px 40px;
+  -webkit-box-shadow: 0 4px 4px 0 rgba(0,0,0,.7);
+  -moz-box-shadow: 0 4px 4px 0 rgba(0,0,0,.7);
+  -ms-box-shadow: 0 4px 4px 0 rgba(0,0,0,.7);
+  -o-box-shadow: 0 4px 4px 0 rgba(0,0,0,.7);
+  box-shadow: 0 4px 4px 0 rgba(0,0,0,.7);
+}
+

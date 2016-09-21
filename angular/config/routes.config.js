@@ -36,5 +36,81 @@ export function RoutesConfig($stateProvider, $urlRouterProvider) {
                     templateUrl: getView('events')
                 }
             }
-        });
+        })
+		.state('app.competitions', {
+            url: '/competitions',
+            views: {
+                'main@': {
+                    templateUrl: getView('competitions')
+                }
+            }
+        })
+		.state('app.workshops', {
+            url: '/workshops',
+            views: {
+                'main@': {
+                    templateUrl: getView('workshops')
+                }
+            }
+        })
+		.state('app.guestlectures', {
+            url: '/guestlectures',
+            views: {
+                'main@': {
+                    templateUrl: getView('guestlectures')
+                }
+            }
+        })
+		.state('app.pronites', {
+            url: '/pronites',
+            views: {
+                'main@': {
+                    templateUrl: getView('pronites')
+                }
+            }
+        })
+		.state('app.account', {
+            url: '/account',
+            views: {
+                'main@': {
+                    templateUrl: getView('account')
+                }
+            }
+        })
+		.state('app.gallery', {
+            url: '/gallery',
+            views: {
+                'main@': {
+                    templateUrl: getView('gallery')
+                }
+            }
+        })
+		.state('app.team', {
+            url: '/team',
+            views: {
+                'main@': {
+                    templateUrl: getView('team')
+                }
+            }
+        })
+		.state('app.sponsors', {
+            url: '/sponsors',
+            views: {
+                'main@': {
+                    templateUrl: getView('sponsors')
+                }
+            }
+        })
+		.state('app.contact', {
+            url: '/contact',
+            views: {
+                'main@': {
+                    templateUrl: getView('contact')
+                }
+            }
+        })
+
+
+
+
 }

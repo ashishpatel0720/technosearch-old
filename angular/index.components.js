@@ -1,3 +1,4 @@
+import {JsIncludeComponent} from './app/components/js-include/js-include.component';
 import {TeamComponent} from './app/components/team/team.component';
 import {GalleryComponent} from './app/components/gallery/gallery.component';
 import {MapComponent} from './app/components/map/map.component';
@@ -14,6 +15,7 @@ import {CountdownComponent} from './app/components/countdown/countdown.component
 import {NavbarComponent} from './app/components/navbar/navbar.component';
 
 angular.module('app.components')
+	.component('jsInclude', JsIncludeComponent)
 	.component('team', TeamComponent)
 	.component('gallery', GalleryComponent)
 	.component('map', MapComponent)

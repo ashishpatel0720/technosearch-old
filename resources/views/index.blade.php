@@ -84,7 +84,7 @@
     <!-- fullwidth player -->
     <script src="js/jquery-ui.js" type="text/javascript"></script>
     <!-- custom scripts -->
-    <script src="js/custom.js"></script>
+    {{--<script src="js/custom.js"></script>--}}
 
 </body>
 </html>

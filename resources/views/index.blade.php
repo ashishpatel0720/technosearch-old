@@ -5,6 +5,7 @@
 <!--[if gt IE 8]>   <html class="no-js" lang="en-US" ng-app="app" ng-strict-di><![endif]-->
 <html ng-app="app" ng-strict-di>
 <head>
+    {{--<base href="/">--}}
     <title>TechnoSearch - MANIT Bhopal</title>
     <meta charset="utf-8">
     <!--[if IE]>
@@ -72,10 +73,8 @@
     <script src="js/jquery.scrollTo.min.js"></script>
     <script src="js/jquery.parallax-1.1.3.js"></script>
     <script src="js/jquery.isotope.min.js"></script>
-    <script src="js/jquery.nav.js"></script>
     <script src="js/jquery.jail.js"></script>
     <script src="js/jquery.flexslider-min.js"></script>
-    <script src="js/nprogress.js"></script>
     <script src="js/jquery.countdown.js"></script>
     <!-- fancybox -->
     <script src="js/jquery.fancybox-1.3.4.pack.js"></script>

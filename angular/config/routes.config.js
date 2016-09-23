@@ -15,6 +15,7 @@ export function RoutesConfig($stateProvider, $urlRouterProvider) {
 
 	$stateProvider
 		.state('app', {
+            cache: false,
 			abstract: true,
             data: {},
 			views: {
@@ -22,6 +23,7 @@ export function RoutesConfig($stateProvider, $urlRouterProvider) {
 			}
 		})
 		.state('app.home', {
+            cache: false,
 			url: '/',
 			views: {
 				'main@': {
@@ -30,6 +32,7 @@ export function RoutesConfig($stateProvider, $urlRouterProvider) {
 			}
 		})
 		.state('app.events', {
+            cache: false,
             url: '/events',
             views: {
                 'main@': {
@@ -38,6 +41,7 @@ export function RoutesConfig($stateProvider, $urlRouterProvider) {
             }
         })
 		.state('app.competitions', {
+            cache:false,
             url: '/competitions',
             views: {
                 'main@': {
@@ -78,6 +82,7 @@ export function RoutesConfig($stateProvider, $urlRouterProvider) {
             }
         })
 		.state('app.gallery', {
+		    cache: false,
             url: '/gallery',
             views: {
                 'main@': {
@@ -111,6 +116,6 @@ export function RoutesConfig($stateProvider, $urlRouterProvider) {
         })
 
 
-
+    // $locationProvider.html5Mode(true);
 
 }

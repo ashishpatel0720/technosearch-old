@@ -22,7 +22,8 @@ jQuery(document).ready(function($) {
 	 ---------------------------------------------------------------------- */
 	var settings = {
 		// Navigation height 
-		nav_height: $('.nav-container').css('height').replace('px', ''),
+		// nav_height: $('.nav-container').css('height').replace('px', ''),
+		nav_height: $('.nav-container').css('height'),
 
 		// Animations on mobile devices
 		animations : false,

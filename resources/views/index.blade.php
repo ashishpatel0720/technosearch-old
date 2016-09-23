@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
     <!-- ############################# Javascripts ############################# -->
     <!-- jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js" type="text/javascript"></script>
+    <script src="js/jquery.min.js" type="text/javascript"></script>
     <!-- Add HTML5 support for older IE browsers -->
     <!--[if lt IE 9]>
     <script src="js/html5.min.js"></script>

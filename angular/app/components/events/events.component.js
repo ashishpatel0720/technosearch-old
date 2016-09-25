@@ -88,41 +88,6 @@ class EventsController{
             }
 
 
-            function scripts(container) {
-
-                /* Masonry boxes and events
-                 ------------------------- */
-
-                // Boxes
-                $('.masonry', container).isotope({
-                    itemSelector: '.brick',
-                    masonry: {
-                        columnWidth: $('.masonry', container).width() / 4
-                    },
-                    resizable: false,
-                    containerStyle: {position: 'relative', overflow: 'visible'}
-                });
-
-                // Events
-                $('.masonry-events', container).isotope({
-                    containerStyle: {position: 'relative', overflow: 'visible'}
-                });
-
-                onWindowResize(function () {
-
-                    $('.masonry', container).isotope({
-                        masonry: {
-                            columnWidth: $('.masonry', container).width() / 4
-                        }
-                    });
-                    $('.masonry, .masonry-events', container).isotope('layout');
-                });
-            }
-            scripts('html');
-
-
-
-
             (function () {
 
                 if (!$.fn.isotope) return;

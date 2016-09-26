@@ -49,7 +49,9 @@
     <![endif]-->
 
 
+    <div ui-view="header"></div>
     <div ui-view="main"></div>
+    <div ui-view="footer"></div>
 
 
     <script>

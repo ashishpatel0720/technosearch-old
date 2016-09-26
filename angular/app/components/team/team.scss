@@ -1,14 +1,19 @@
 $prefix: at;
 $totalColumns: 16;
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
 
 // Custom Prefix
 .#{$prefix} {
 
   // Section
   &-section {
+    margin-top: 120px;
     &__title {
       margin: 0 0 70px;
-      color: #000;
+      color: #fff;
       font-family: 'Roboto', sans-serif;
       font-size: 3.5rem;
       font-weight: 300;

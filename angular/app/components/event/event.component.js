@@ -1,18 +1,15 @@
 class EventController{
-    constructor(){
+    constructor($http){
         'ngInject';
-
-        this.name = 'Hariom';
-        console.log(this.name)
+        this.http = $http;
+        this.user = {};
 
     }
 
     $onInit(){
-
-    }
-
-    login(){
-        console.log('cdsc')
+        this.http.get('https://api.github.com/users/harryy2510/repos').then((resp)=>{
+            this.user = resp.data;
+        })
     }
 }
 

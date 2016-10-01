@@ -1,5 +1,8 @@
 <div>
-    {{vm.name}}
-    <button ng-click="vm.login()"></button>
+    <div ng-repeat="user in vm.user" style="margin: 20px;">
+        <div>{{user.id}}</div>
+        <div>{{user.name}}</div>
+        <div>{{user.full_name}}</div>
+    </div>
 </div>
 

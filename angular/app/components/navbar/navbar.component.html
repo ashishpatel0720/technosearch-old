@@ -1,4 +1,5 @@
 <!-- ############################# navigation section ############################# -->
+<div id="top" style="position: absolute"></div>
 <section id="main-nav-wrapper">
     <!-- main navigation -->
     <div id="main-nav">
@@ -13,7 +14,7 @@
         <div class="nav-container">
 
             <!-- ############ logo ############ -->
-            <a href="#intro" id="logo" class="smooth-scroll">
+            <a ui-sref="app.home" id="logo" class="smooth-scroll">
                 <img src="placeholders/logo.png" alt="Logo">
             </a>
             <!-- /logo -->
@@ -21,8 +22,9 @@
             <!-- ############ icon navigation ############ -->
             <nav id="icon-nav">
                 <ul>
-                    <li><a href="#intro" id="nav-up" class="smooth-scroll"><span class="icon-arrow-up-2"></span></a></li>
-                    <li><a href="#" id="nav-search"><span class="icon-search"></span></a></li>
+                    <!-- todo show the up arrow button only on the home page -->
+                    <li><a href="#top" id="nav-up" class="smooth-scroll"><span class="icon-arrow-up-2"></span></a></li>
+                    <li><a ui-sref="app.search" id="nav-search"><span class="icon-search"></span></a></li>
                 </ul>
             </nav>
             <!-- /icon navigation -->
@@ -34,34 +36,34 @@
                         <a ui-sref="app.events">Events</a>
                         <ul>
                             <li>
-                                <a href="grid.html" class="page-by-ajax" data-ajax-options='{"target" :"#custom-page"}'>Competitions</a>
+                                <a ui-sref="app.competitions">Competitions</a>
                             </li>
                             <li>
-                                <a href="masonry.html" class="page-by-ajax" data-ajax-options='{"target" :"#custom-page"}'>Workshops</a>
+                                <a ui-sref="app.workshops">Workshops</a>
                             </li>
                             <li>
-                                <a href="gallery.html" class="page-by-ajax" data-ajax-options='{"target" :"#custom-page"}'>Guest Lectures</a>
+                                <a ui-sref="app.guestlectures">Guest Lectures</a>
                             </li>
                             <li>
-                                <a href="elements.html" class="page-by-ajax" data-ajax-options='{"target" :"#custom-page"}'>Pro-Nites</a>
+                                <a ui-sref="app.pronites">Pro-Nites</a>
                             </li>
 
                         </ul>
                     </li>
                     <li>
-                        <a href="#portfolio">Account</a>
+                        <a ui-sref="app.account">Account</a>
                     </li>
                     <li>
-                        <a href="#gallery">Gallery</a>
+                        <a ui-sref="app.gallery">Gallery</a>
                     </li>
                     <li>
-                        <a href="#bio">Team</a>
+                        <a ui-sref="app.team">Team</a>
                     </li>
                     <li>
-                        <a href="#bio">Sponsors</a>
+                        <a ui-sref="app.sponsors">Sponsors</a>
                     </li>
                     <li>
-                        <a href="#contact">Contact</a>
+                        <a ui-sref="app.contact">Contact</a>
                     </li>
                 </ul>
             </nav>

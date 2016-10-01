@@ -1,3 +1,7 @@
+import {TeamComponent} from './app/components/team/team.component';
+import {GalleryComponent} from './app/components/gallery/gallery.component';
+import {MapComponent} from './app/components/map/map.component';
+import {EventTableComponent} from './app/components/event-table/event-table.component';
 import {SponsorsComponent} from './app/components/sponsors/sponsors.component';
 import {WelcomeComponent} from './app/components/welcome/welcome.component';
 import {FooterComponent} from './app/components/footer/footer.component';
@@ -10,6 +14,10 @@ import {CountdownComponent} from './app/components/countdown/countdown.component
 import {NavbarComponent} from './app/components/navbar/navbar.component';
 
 angular.module('app.components')
+	.component('team', TeamComponent)
+	.component('gallery', GalleryComponent)
+	.component('map', MapComponent)
+	.component('eventTable', EventTableComponent)
 	.component('sponsors', SponsorsComponent)
 	.component('welcome', WelcomeComponent)
 	.component('footer', FooterComponent)

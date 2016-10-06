@@ -1,11 +1,16 @@
 class TeamController{
-    constructor(){
+    constructor(API){
         'ngInject';
-
-        //
+        this.API = API;
+        this.items = {};
     }
 
+
     $onInit(){
+        this.API.one('team').get().then((response) => {
+            this.items = response.data;
+        });
+
     }
 }
 

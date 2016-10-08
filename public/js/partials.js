@@ -661,51 +661,31 @@ try {
 }
 module.run(['$templateCache', function($templateCache) {
   $templateCache.put('./views/app/components/gallery/gallery.component.html',
-    '<!-- ############################# gallery section ############################# -->\n' +
     '<section id="gallery">\n' +
     '\n' +
-    '    <!-- ############ ajax content (This content will be loaded by ajax) ############ -->\n' +
     '    <div id="ajax-content" class="page-container">\n' +
     '\n' +
-    '        <!-- ############ container ############ -->\n' +
     '        <div class="container clearfix">\n' +
     '\n' +
-    '            <!-- ############ content header ############ -->\n' +
     '            <header class="content-header">\n' +
     '                <h1 class="content-title">Gallery</h1>\n' +
     '                <span class="sub-heading">Previous Techno Pictures</span>\n' +
     '                <hr class="content-line">\n' +
     '            </header>\n' +
-    '            <!-- /content header -->\n' +
-    '\n' +
-    '            <!-- row -->\n' +
     '            <div class="row clearfix">\n' +
     '\n' +
-    '                <!-- ############ masonry ############ -->\n' +
     '                <div class="masonry clearfix">\n' +
     '                    <!-- brick -->\n' +
     '                    <div class="brick width-1-2 height-1-2">\n' +
     '                        <a href="placeholders/gallery-01-544x544.jpg" class="thumb imagebox" data-group="amsterdam-2013-10-12" title="Gallery image title">\n' +
-    '                            <!-- title and opacity mask -->\n' +
+    '\n' +
     '                            <div class="inner">\n' +
     '                                <h6>Amsterdam Festival <span>23 Photos</span></h6>\n' +
     '                            </div>\n' +
-    '                            <!-- image -->\n' +
     '                            <img src="placeholders/gallery-01-544x544.jpg" alt="Gallery image title">\n' +
-    '                            <!-- badge -->\n' +
-    '                            <span class="badge new">NEW</span>\n' +
+    '                            <!--<span class="badge new">NEW</span>-->\n' +
     '                        </a>\n' +
-    '                        <!-- Gallery photos -->\n' +
-    '                        <a href="placeholders/gallery-01-544x544.jpg" class="hidden imagebox" title="Gallery image title" data-group="amsterdam-2013-10-12"></a>\n' +
-    '                        <a href="placeholders/gallery-02-544x544.jpg" class="hidden imagebox" title="Gallery image title" data-group="amsterdam-2013-10-12"></a>\n' +
-    '                        <a href="placeholders/gallery-03-544x544.jpg" class="hidden imagebox" title="Gallery image title" data-group="amsterdam-2013-10-12"></a>\n' +
-    '                        <a href="placeholders/gallery-01-272x272.jpg" class="hidden imagebox" title="Gallery image title" data-group="amsterdam-2013-10-12"></a>\n' +
-    '                        <a href="placeholders/gallery-02-272x272.jpg" class="hidden imagebox" title="Gallery image title" data-group="amsterdam-2013-10-12"></a>\n' +
-    '                        <a href="placeholders/gallery-03-272x272.jpg" class="hidden imagebox" title="Gallery image title" data-group="amsterdam-2013-10-12"></a>\n' +
-    '                        <a href="placeholders/gallery-04-272x272.jpg" class="hidden imagebox" title="Gallery image title" data-group="amsterdam-2013-10-12"></a>\n' +
     '                    </div>\n' +
-    '                    <!-- /brick -->\n' +
-    '                    <!-- brick -->\n' +
     '                    <div class="brick width-1-2 height-1-2">\n' +
     '                        <a href="placeholders/gallery-02-544x544.jpg" class="thumb imagebox" data-group="bacardi-2013-10-12" title="Gallery image title">\n' +
     '                            <!-- title and opacity mask -->\n' +
@@ -718,14 +698,7 @@ module.run(['$templateCache', function($templateCache) {
     '                            <span class="badge new">NEW</span>\n' +
     '                        </a>\n' +
     '                        <!-- Gallery photos -->\n' +
-    '                        <a href="placeholders/gallery-02-544x544.jpg" class="hidden imagebox" title="Gallery image title" data-group="bacardi-2013-10-12"></a>\n' +
-    '                        <a href="placeholders/gallery-01-544x544.jpg" class="hidden imagebox" title="Gallery image title" data-group="bacardi-2013-10-12"></a>\n' +
-    '                        <a href="placeholders/gallery-02-272x272.jpg" class="hidden imagebox" title="Gallery image title" data-group="bacardi-2013-10-12"></a>\n' +
-    '                        <a href="placeholders/gallery-03-272x272.jpg" class="hidden imagebox" title="Gallery image title" data-group="bacardi-2013-10-12"></a>\n' +
-    '                        <a href="placeholders/gallery-04-272x272.jpg" class="hidden imagebox" title="Gallery image title" data-group="bacardi-2013-10-12"></a>\n' +
-    '                        <a href="placeholders/gallery-03-544x544.jpg" class="hidden imagebox" title="Gallery image title" data-group="bacardi-2013-10-12"></a>\n' +
-    '                        <a href="placeholders/gallery-01-272x272.jpg" class="hidden imagebox" title="Gallery image title" data-group="bacardi-2013-10-12"></a>\n' +
-    '                    </div>\n' +
+    '                      </div>\n' +
     '                    <!-- /brick -->\n' +
     '                    <!-- brick -->\n' +
     '                    <div class="brick width-1-2 height-1-2">\n' +
@@ -740,14 +713,7 @@ module.run(['$templateCache', function($templateCache) {
     '                            <span class="badge new">NEW</span>\n' +
     '                        </a>\n' +
     '                        <!-- Gallery photos -->\n' +
-    '                        <a href="placeholders/gallery-01-544x544.jpg" class="hidden imagebox" title="Gallery image title" data-group="sepang-2013-10-12"></a>\n' +
-    '                        <a href="placeholders/gallery-02-544x544.jpg" class="hidden imagebox" title="Gallery image title" data-group="sepang-2013-10-12"></a>\n' +
-    '                        <a href="placeholders/gallery-03-544x544.jpg" class="hidden imagebox" title="Gallery image title" data-group="sepang-2013-10-12"></a>\n' +
-    '                        <a href="placeholders/gallery-01-272x272.jpg" class="hidden imagebox" title="Gallery image title" data-group="sepang-2013-10-12"></a>\n' +
-    '                        <a href="placeholders/gallery-02-272x272.jpg" class="hidden imagebox" title="Gallery image title" data-group="sepang-2013-10-12"></a>\n' +
-    '                        <a href="placeholders/gallery-03-272x272.jpg" class="hidden imagebox" title="Gallery image title" data-group="sepang-2013-10-12"></a>\n' +
-    '                        <a href="placeholders/gallery-04-272x272.jpg" class="hidden imagebox" title="Gallery image title" data-group="sepang-2013-10-12"></a>\n' +
-    '                    </div>\n' +
+    '                      </div>\n' +
     '                    <!-- /brick -->\n' +
     '                    <!-- brick -->\n' +
     '                    <div class="brick width-1-4 height-1-4">\n' +
@@ -759,15 +725,7 @@ module.run(['$templateCache', function($templateCache) {
     '                            <!-- image -->\n' +
     '                            <img src="placeholders/gallery-01-272x272.jpg" alt="Gallery image title">\n' +
     '                        </a>\n' +
-    '                        <!-- Gallery photos -->\n' +
-    '                        <a href="placeholders/gallery-02-272x272.jpg" class="hidden imagebox" title="Gallery image title" data-group="gal01"></a>\n' +
-    '                        <a href="placeholders/gallery-01-544x544.jpg" class="hidden imagebox" title="Gallery image title" data-group="gal01"></a>\n' +
-    '                        <a href="placeholders/gallery-02-544x544.jpg" class="hidden imagebox" title="Gallery image title" data-group="gal01"></a>\n' +
-    '                        <a href="placeholders/gallery-03-544x544.jpg" class="hidden imagebox" title="Gallery image title" data-group="gal01"></a>\n' +
-    '                        <a href="placeholders/gallery-01-272x272.jpg" class="hidden imagebox" title="Gallery image title" data-group="gal01"></a>\n' +
-    '                        <a href="placeholders/gallery-03-272x272.jpg" class="hidden imagebox" title="Gallery image title" data-group="gal01"></a>\n' +
-    '                        <a href="placeholders/gallery-04-272x272.jpg" class="hidden imagebox" title="Gallery image title" data-group="gal01"></a>\n' +
-    '                    </div>\n' +
+    '                      </div>\n' +
     '                    <!-- /brick -->\n' +
     '                    <!-- brick -->\n' +
     '                    <div class="brick width-1-4 height-1-4">\n' +
@@ -779,15 +737,7 @@ module.run(['$templateCache', function($templateCache) {
     '                            <!-- image -->\n' +
     '                            <img src="placeholders/gallery-02-272x272.jpg" alt="Gallery image title">\n' +
     '                        </a>\n' +
-    '                        <!-- Gallery photos -->\n' +
-    '                        <a href="placeholders/gallery-02-272x272.jpg" class="hidden imagebox" title="Gallery image title" data-group="gal02"></a>\n' +
-    '                        <a href="placeholders/gallery-01-544x544.jpg" class="hidden imagebox" title="Gallery image title" data-group="gal02"></a>\n' +
-    '                        <a href="placeholders/gallery-02-544x544.jpg" class="hidden imagebox" title="Gallery image title" data-group="gal02"></a>\n' +
-    '                        <a href="placeholders/gallery-03-544x544.jpg" class="hidden imagebox" title="Gallery image title" data-group="gal02"></a>\n' +
-    '                        <a href="placeholders/gallery-01-272x272.jpg" class="hidden imagebox" title="Gallery image title" data-group="gal02"></a>\n' +
-    '                        <a href="placeholders/gallery-03-272x272.jpg" class="hidden imagebox" title="Gallery image title" data-group="gal02"></a>\n' +
-    '                        <a href="placeholders/gallery-04-272x272.jpg" class="hidden imagebox" title="Gallery image title" data-group="gal02"></a>\n' +
-    '                    </div>\n' +
+    '                        </div>\n' +
     '                    <!-- /brick -->\n' +
     '                    <!-- brick -->\n' +
     '                    <div class="brick width-1-4 height-1-4">\n' +
@@ -799,15 +749,7 @@ module.run(['$templateCache', function($templateCache) {
     '                            <!-- image -->\n' +
     '                            <img src="placeholders/gallery-03-272x272.jpg" alt="Gallery image title">\n' +
     '                        </a>\n' +
-    '                        <!-- Gallery photos -->\n' +
-    '                        <a href="placeholders/gallery-02-272x272.jpg" class="hidden imagebox" title="Gallery image title" data-group="gal03"></a>\n' +
-    '                        <a href="placeholders/gallery-01-544x544.jpg" class="hidden imagebox" title="Gallery image title" data-group="gal03"></a>\n' +
-    '                        <a href="placeholders/gallery-02-544x544.jpg" class="hidden imagebox" title="Gallery image title" data-group="gal03"></a>\n' +
-    '                        <a href="placeholders/gallery-03-544x544.jpg" class="hidden imagebox" title="Gallery image title" data-group="gal03"></a>\n' +
-    '                        <a href="placeholders/gallery-01-272x272.jpg" class="hidden imagebox" title="Gallery image title" data-group="gal03"></a>\n' +
-    '                        <a href="placeholders/gallery-03-272x272.jpg" class="hidden imagebox" title="Gallery image title" data-group="gal03"></a>\n' +
-    '                        <a href="placeholders/gallery-04-272x272.jpg" class="hidden imagebox" title="Gallery image title" data-group="gal03"></a>\n' +
-    '                    </div>\n' +
+    '                      </div>\n' +
     '                    <!-- /brick -->\n' +
     '                    <!-- brick -->\n' +
     '                    <div class="brick width-1-4 height-1-4">\n' +
@@ -819,14 +761,6 @@ module.run(['$templateCache', function($templateCache) {
     '                            <!-- image -->\n' +
     '                            <img src="placeholders/gallery-04-272x272.jpg" alt="Gallery image title">\n' +
     '                        </a>\n' +
-    '                        <!-- Gallery photos -->\n' +
-    '                        <a href="placeholders/gallery-02-272x272.jpg" class="hidden imagebox" title="Gallery image title" data-group="gal04"></a>\n' +
-    '                        <a href="placeholders/gallery-01-544x544.jpg" class="hidden imagebox" title="Gallery image title" data-group="gal04"></a>\n' +
-    '                        <a href="placeholders/gallery-02-544x544.jpg" class="hidden imagebox" title="Gallery image title" data-group="gal04"></a>\n' +
-    '                        <a href="placeholders/gallery-03-544x544.jpg" class="hidden imagebox" title="Gallery image title" data-group="gal04"></a>\n' +
-    '                        <a href="placeholders/gallery-01-272x272.jpg" class="hidden imagebox" title="Gallery image title" data-group="gal04"></a>\n' +
-    '                        <a href="placeholders/gallery-03-272x272.jpg" class="hidden imagebox" title="Gallery image title" data-group="gal04"></a>\n' +
-    '                        <a href="placeholders/gallery-04-272x272.jpg" class="hidden imagebox" title="Gallery image title" data-group="gal04"></a>\n' +
     '                    </div>\n' +
     '                    <!-- /brick -->\n' +
     '                    <!-- brick -->\n' +
@@ -839,15 +773,7 @@ module.run(['$templateCache', function($templateCache) {
     '                            <!-- image -->\n' +
     '                            <img src="placeholders/gallery-03-272x272.jpg" alt="Gallery image title">\n' +
     '                        </a>\n' +
-    '                        <!-- Gallery photos -->\n' +
-    '                        <a href="placeholders/gallery-02-272x272.jpg" class="hidden imagebox" title="Gallery image title" data-group="gal05"></a>\n' +
-    '                        <a href="placeholders/gallery-01-544x544.jpg" class="hidden imagebox" title="Gallery image title" data-group="gal05"></a>\n' +
-    '                        <a href="placeholders/gallery-02-544x544.jpg" class="hidden imagebox" title="Gallery image title" data-group="gal05"></a>\n' +
-    '                        <a href="placeholders/gallery-03-544x544.jpg" class="hidden imagebox" title="Gallery image title" data-group="gal05"></a>\n' +
-    '                        <a href="placeholders/gallery-01-272x272.jpg" class="hidden imagebox" title="Gallery image title" data-group="gal05"></a>\n' +
-    '                        <a href="placeholders/gallery-03-272x272.jpg" class="hidden imagebox" title="Gallery image title" data-group="gal05"></a>\n' +
-    '                        <a href="placeholders/gallery-04-272x272.jpg" class="hidden imagebox" title="Gallery image title" data-group="gal05"></a>\n' +
-    '                    </div>\n' +
+    '                     </div>\n' +
     '                    <!-- /brick -->\n' +
     '                    <!-- brick -->\n' +
     '                    <div class="brick width-1-4 height-1-4">\n' +
@@ -860,14 +786,7 @@ module.run(['$templateCache', function($templateCache) {
     '                            <img src="placeholders/gallery-04-272x272.jpg" alt="Gallery image title">\n' +
     '                        </a>\n' +
     '                        <!-- Gallery photos -->\n' +
-    '                        <a href="placeholders/gallery-02-272x272.jpg" class="hidden imagebox" title="Gallery image title" data-group="gal06"></a>\n' +
-    '                        <a href="placeholders/gallery-01-544x544.jpg" class="hidden imagebox" title="Gallery image title" data-group="gal06"></a>\n' +
-    '                        <a href="placeholders/gallery-02-544x544.jpg" class="hidden imagebox" title="Gallery image title" data-group="gal06"></a>\n' +
-    '                        <a href="placeholders/gallery-03-544x544.jpg" class="hidden imagebox" title="Gallery image title" data-group="gal06"></a>\n' +
-    '                        <a href="placeholders/gallery-01-272x272.jpg" class="hidden imagebox" title="Gallery image title" data-group="gal06"></a>\n' +
-    '                        <a href="placeholders/gallery-03-272x272.jpg" class="hidden imagebox" title="Gallery image title" data-group="gal06"></a>\n' +
-    '                        <a href="placeholders/gallery-04-272x272.jpg" class="hidden imagebox" title="Gallery image title" data-group="gal06"></a>\n' +
-    '                    </div>\n' +
+    '                     </div>\n' +
     '                    <!-- /brick -->\n' +
     '                    <!-- brick -->\n' +
     '                    <div class="brick width-1-4 height-1-4">\n' +
@@ -879,15 +798,7 @@ module.run(['$templateCache', function($templateCache) {
     '                            <!-- image -->\n' +
     '                            <img src="placeholders/gallery-01-272x272.jpg" alt="Gallery image title">\n' +
     '                        </a>\n' +
-    '                        <!-- Gallery photos -->\n' +
-    '                        <a href="placeholders/gallery-02-272x272.jpg" class="hidden imagebox" title="Gallery image title" data-group="gal07"></a>\n' +
-    '                        <a href="placeholders/gallery-01-544x544.jpg" class="hidden imagebox" title="Gallery image title" data-group="gal07"></a>\n' +
-    '                        <a href="placeholders/gallery-02-544x544.jpg" class="hidden imagebox" title="Gallery image title" data-group="gal07"></a>\n' +
-    '                        <a href="placeholders/gallery-03-544x544.jpg" class="hidden imagebox" title="Gallery image title" data-group="gal07"></a>\n' +
-    '                        <a href="placeholders/gallery-01-272x272.jpg" class="hidden imagebox" title="Gallery image title" data-group="gal07"></a>\n' +
-    '                        <a href="placeholders/gallery-03-272x272.jpg" class="hidden imagebox" title="Gallery image title" data-group="gal07"></a>\n' +
-    '                        <a href="placeholders/gallery-04-272x272.jpg" class="hidden imagebox" title="Gallery image title" data-group="gal07"></a>\n' +
-    '                    </div>\n' +
+    '                     </div>\n' +
     '                    <!-- /brick -->\n' +
     '                    <!-- brick -->\n' +
     '                    <div class="brick width-1-4 height-1-4">\n' +
@@ -899,15 +810,7 @@ module.run(['$templateCache', function($templateCache) {
     '                            <!-- image -->\n' +
     '                            <img src="placeholders/gallery-02-272x272.jpg" alt="Gallery image title">\n' +
     '                        </a>\n' +
-    '                        <!-- Gallery photos -->\n' +
-    '                        <a href="placeholders/gallery-02-272x272.jpg" class="hidden imagebox" title="Gallery image title" data-group="gal08"></a>\n' +
-    '                        <a href="placeholders/gallery-01-544x544.jpg" class="hidden imagebox" title="Gallery image title" data-group="gal08"></a>\n' +
-    '                        <a href="placeholders/gallery-02-544x544.jpg" class="hidden imagebox" title="Gallery image title" data-group="gal08"></a>\n' +
-    '                        <a href="placeholders/gallery-03-544x544.jpg" class="hidden imagebox" title="Gallery image title" data-group="gal08"></a>\n' +
-    '                        <a href="placeholders/gallery-01-272x272.jpg" class="hidden imagebox" title="Gallery image title" data-group="gal08"></a>\n' +
-    '                        <a href="placeholders/gallery-03-272x272.jpg" class="hidden imagebox" title="Gallery image title" data-group="gal08"></a>\n' +
-    '                        <a href="placeholders/gallery-04-272x272.jpg" class="hidden imagebox" title="Gallery image title" data-group="gal08"></a>\n' +
-    '                    </div>\n' +
+    '                     </div>\n' +
     '                    <!-- /brick -->\n' +
     '                </div>\n' +
     '                <!-- /masonry -->\n' +

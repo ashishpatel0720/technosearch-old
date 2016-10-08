@@ -558,7 +558,12 @@
 
 	    _createClass(GalleryController, [{
 	        key: '$onInit',
-	        value: function $onInit() {}
+	        value: function $onInit() {
+	            $('.masonry').magnificPopup({
+	                delegate: 'a', // child items selector, by clicking on it popup will open
+	                type: 'image'
+	            });
+	        }
 	    }]);
 
 	    return GalleryController;

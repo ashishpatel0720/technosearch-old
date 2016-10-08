@@ -1,10 +1,12 @@
 class EventController{
-    constructor(){
+    constructor($http){
         'ngInject';
+
 
     }
 
     $onInit(){
+
 
     }
 

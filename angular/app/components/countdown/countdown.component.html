@@ -10,11 +10,13 @@
         </header>
         <!-- /content header -->
         <!-- countdown -->
-        <div class="countdown" data-event-date="2016/10/21 20:20:00">
-            <div class="days" data-label="Days">..</div>
-            <div class="hours" data-label="Hours">..</div>
-            <div class="minutes" data-label="Minutes">..</div>
-            <div class="seconds" data-label="Seconds">..</div>
+        <div class="countdown" >
+            <timer countdown="vm.countTime" interval="1000">
+                <div class="days" data-label="Days">{{ddays}}</div>
+                <div class="hours" data-label="Hours">{{hhours}}</div>
+                <div class="minutes" data-label="Minutes">{{mminutes}}</div>
+                <div class="seconds" data-label="Seconds">{{sseconds}}</div>
+            </timer>
         </div>
         <!-- /countdown -->
     </div>

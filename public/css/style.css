@@ -278,6 +278,7 @@ img.alignright { margin-bottom: 30px; margin-left: 20px; }
 		width: 100%;
 		top: 0px;
 	    z-index: 1000;
+		transition: all ease 0.5s;
 	}
 	#main-nav.hide {
 		visibility: hidden;
@@ -286,6 +287,7 @@ img.alignright { margin-bottom: 30px; margin-left: 20px; }
 		width: 100%;
 		top: -65px;
 		border: none;
+		transition: all ease 0.5s;
 		
 	}
 	#main-nav.sticky {
@@ -296,6 +298,7 @@ img.alignright { margin-bottom: 30px; margin-left: 20px; }
 		overflow: visible;
 		height: auto;
 		border-bottom: 1px solid #2a2a2a;
+		transition: all ease 0.5s;
 		
 	}
 	#main-nav-wrapper {
@@ -1584,7 +1587,7 @@ ul.stats {
 		}
 			#ticker li {
 				margin: 0;
-				padding: 0 0 20px 0;
+				padding: 20px 0;
 				height: 98px;
 				color: #fff;
 				line-height: normal;

@@ -1,13 +1,13 @@
 <!-- ############################# navigation section ############################# -->
-<div id="top" style="position: absolute"></div>
+
 <section id="main-nav-wrapper">
     <!-- main navigation -->
     <div id="main-nav">
 
         <!-- ############ search ############ -->
-        <div id="search-wrap" style="display:none">
-            <input type="text" placeholder="Search and hit enter..." name="s" id="search" />
-        </div>
+        <!--<div id="search-wrap" style="display:none">-->
+            <!--<input type="text" placeholder="Search and hit enter..." name="s" id="search" />-->
+        <!--</div>-->
         <!-- /search -->
 
         <!-- navigation container -->
@@ -23,8 +23,8 @@
             <nav id="icon-nav">
                 <ul>
                     <!-- todo show the up arrow button only on the home page -->
-                    <li><a href="#top" id="nav-up" class="smooth-scroll"><span class="icon-arrow-up-2"></span></a></li>
-                    <li><a ui-sref="app.search" id="nav-search"><span class="icon-search"></span></a></li>
+                    <li><a href="#" scroll-to="top" id="nav-up" class="smooth-scroll"><span class="icon-arrow-up-2"></span></a></li>
+                    <!--<li><a ui-sref="app.search" id="nav-search"><span class="icon-search"></span></a></li>-->
                 </ul>
             </nav>
             <!-- /icon navigation -->
@@ -32,7 +32,7 @@
             <!-- ############ navigation ############ -->
             <nav id="nav" class="one-page-nav">
                 <ul>
-                    <li>
+                    <li ui-sref-active="current">
                         <a ui-sref="app.events">Events</a>
                         <ul>
                             <li>
@@ -50,19 +50,19 @@
 
                         </ul>
                     </li>
-                    <li>
+                    <li ui-sref-active="current">
                         <a ui-sref="app.account">Account</a>
                     </li>
-                    <li>
+                    <li ui-sref-active="current">
                         <a ui-sref="app.gallery">Gallery</a>
                     </li>
-                    <li>
+                    <li ui-sref-active="current">
                         <a ui-sref="app.team">Team</a>
                     </li>
-                    <li>
+                    <li ui-sref-active="current">
                         <a ui-sref="app.sponsors">Sponsors</a>
                     </li>
-                    <li>
+                    <li ui-sref-active="current">
                         <a ui-sref="app.contact">Contact</a>
                     </li>
                 </ul>
@@ -71,8 +71,42 @@
 
             <!-- responsive navigation -->
             <div id="dl-menu" class="dl-menuwrapper one-page-nav">
-                <button class="dl-trigger">Open Menu</button>
-                <!-- RESPONSIVE NAVIGATION HERE -->
+                <button class="dl-trigger" ng-click="vm.openmenu = ! vm.openmenu">Open Menu</button>
+                <ul class="dl-menu" ng-class="{'dl-menuopen' : vm.openmenu}">
+                    <li ui-sref-active="current">
+                        <a ui-sref="app.events">Events</a>
+                        <ul style="margin-left: 30px;">
+                            <li>
+                                <a ui-sref="app.competitions">Competitions</a>
+                            </li>
+                            <li>
+                                <a ui-sref="app.workshops">Workshops</a>
+                            </li>
+                            <li>
+                                <a ui-sref="app.guestlectures">Guest Lectures</a>
+                            </li>
+                            <li>
+                                <a ui-sref="app.pronites">Pro-Nites</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li ui-sref-active="current">
+                        <a ui-sref="app.account">Account</a>
+                    </li>
+                    <li ui-sref-active="current">
+                        <a ui-sref="app.gallery">Gallery</a>
+                    </li>
+                    <li ui-sref-active="current">
+                        <a ui-sref="app.team">Team</a>
+                    </li>
+                    <li ui-sref-active="current">
+                        <a ui-sref="app.sponsors">Sponsors</a>
+                    </li>
+                    <li ui-sref-active="current">
+                        <a ui-sref="app.contact">Contact</a>
+                    </li>
+                </ul>
             </div>
             <!-- /responsive navigation -->
         </div>

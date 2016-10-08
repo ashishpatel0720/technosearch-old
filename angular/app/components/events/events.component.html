@@ -1,47 +1,27 @@
-<!-- ############################# portfolio ############################# -->
 <section id="portfolio" class="section">
-
-    <!-- ############ Paralax Intro ############ -->
     <div id="portfolio-header" class="section-header parallax clearfix" style="background-image: url(placeholders/release-header-1920x1000.jpg)" data-interia="0.1">
-        <div class="overlay"></div> <!-- overlay layer -->
-        <!-- /container -->
+        <div class="overlay"></div>
         <div class="container clearfix">
             <h6 class="section-sub-heading">MORE THAN 30+ EVENTS</h6>
             <h2 class="section-heading">AMAZING EVENTS</h2>
         </div>
-        <!-- /container -->
     </div>
-    <!-- /parallax intro -->
-
-    <!-- ############ project container loaded via ajax ############ -->
-    <!--<div id="project" class="ajax-holder"></div>-->
-    <!-- /project container -->
-
-    <!-- ############ portfolio filter ############ -->
     <div id="portfolio-main-filter" class="filter">
         <ul class="filter-list item-filter active-filter clearfix">
             <li class="filter-label"><span class="label">Events</span></li>
-            <li><a data-categories="*">All</a></li>
-            <li><a data-categories="robitics">Robotics</a></li>
-            <li><a data-categories="coding">Coding</a></li>
-            <li><a data-categories="coding">Departmental</a></li>
-            <li><a data-categories="aerodrome">Aerodrome</a></li>
-            <li><a data-categories="literary">Literary</a></li>
-            <li><a data-categories="strategical">Strategical</a></li>
-            <li><a data-categories="fun">Social</a></li>
-            <li><a data-categories="more">Fun</a></li>
-            <li><a data-categories="more">PhotoBooths</a></li>
+            <li><a data-filter="*">All</a></li>
+            <li><a data-filter=".robitics">Robotics</a></li>
+            <li><a data-filter=".coding">Coding</a></li>
+            <li><a data-filter=".departmental">Departmental</a></li>
+            <li><a data-filter=".aerodrome">Aerodrome</a></li>
+            <li><a data-filter=".literary">Literary</a></li>
+            <li><a data-filter=".strategical">Strategical</a></li>
+            <li><a data-filter=".fun">Social</a></li>
 
         </ul>
     </div>
-    <!-- /portfolio filter -->
-
-    <!-- ############ portfolio grid ############ -->
-    <div id="portfolio-items" class="fullwidth items clearfix">
-        <!-- item -->
-
-        <!--                CODING EVENTS -->
-        <div class="item" data-categories="coding">
+    <div id="portfolio-items" class="fullwidth items clearfix grid">
+        <div class="item coding" data-filter="coding">
             <a href="project01.html" class="thumb project-thumb project-by-ajax tip" >
                 <!-- title and opacity mask -->
                 <div class="inner">
@@ -61,9 +41,7 @@
                 <!-- /tooltip -->
             </a>
         </div>
-        <!-- /item -->
-        <!-- item -->
-        <div class="item" data-categories="new drum-and-bass">
+        <div class="item fun" data-filter="fun">
             <a href="project02.html" class="thumb project-thumb project-by-ajax tip">
                 <!-- title and opacity mask -->
                 <div class="inner">
@@ -82,9 +60,7 @@
                 <!-- /tooltip -->
             </a>
         </div>
-        <!-- /item -->
-        <!-- item -->
-        <div class="item" data-categories="drum-and-bass uk-funky">
+        <div class="item" data-filter="fun">
             <a href="project03.html" class="thumb project-thumb project-by-ajax tip" >
                 <!-- title and opacity mask -->
                 <div class="inner">
@@ -101,9 +77,7 @@
                 <!-- /tooltip -->
             </a>
         </div>
-        <!-- /item -->
-        <!-- item -->
-        <div class="item" data-categories="drum-and-bass glitch">
+        <div class="item" data-filter="literary">
             <a href="project04.html" class="thumb project-thumb project-by-ajax tip">
                 <!-- title and opacity mask -->
                 <div class="inner">
@@ -120,9 +94,7 @@
                 <!-- /tooltip -->
             </a>
         </div>
-        <!-- /item -->
-        <!-- item -->
-        <div class="item" data-categories="breakbeat dubstep">
+        <div class="item" data-filter="literary">
             <a href="project05.html" class="thumb project-thumb project-by-ajax tip">
                 <!-- title and opacity mask -->
                 <div class="inner">
@@ -139,9 +111,7 @@
                 <!-- /tooltip -->
             </a>
         </div>
-        <!-- /item -->
-        <!-- item -->
-        <div class="item" data-categories="breakbeat dubstep">
+        <div class="item" data-filter="departmental">
             <a href="https://soundcloud.com/ukfmusic/ukf-music-podcast-2-physical-in-the-mix" class="thumb project-thumb tip fap-single-track">
                 <!-- title and opacity mask -->
                 <div class="inner">
@@ -160,9 +130,7 @@
                 <!-- /tooltip -->
             </a>
         </div>
-        <!-- /item -->
-        <!-- item -->
-        <div class="item" data-categories="uk-funky glitch">
+        <div class="item" data-filter="departmental">
             <a href="https://soundcloud.com/chinch-jack/sets/jungle-sets" class="thumb project-thumb tip fap-single-track">
                 <!-- title and opacity mask -->
                 <div class="inner">
@@ -179,9 +147,7 @@
                 <!-- /tooltip -->
             </a>
         </div>
-        <!-- /item -->
-        <!-- item -->
-        <div class="item" data-categories="breakbeat dubstep glitch">
+        <div class="item" data-filter="aerodrome">
             <a href="https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Fplaylists%2F2999711&amp;color=ff7700&amp;auto_play=false&amp;show_artwork=true" class="thumb project-thumb mediabox tip" data-width="auto" data-height="450">
                 <!-- title and opacity mask -->
                 <div class="inner">
@@ -198,9 +164,7 @@
                 <!-- /tooltip -->
             </a>
         </div>
-        <!-- /item -->
-        <!-- item -->
-        <div class="item" data-categories="drum-and-bass uk-funky">
+        <div class="item" data-filter="strategical aerodrome">
             <a href="placeholders/cover01-big.jpg" class="thumb project-thumb tip imagebox" title="Album Cover">
                 <div class="inner">
                     <h6>Things Can Only Get Better <span>(Open image in lightbox)</span></h6>
@@ -217,9 +181,7 @@
                 <!-- /tooltip -->
             </a>
         </div>
-        <!-- /item -->
-        <!-- item -->
-        <div class="item" data-categories="breakbeat uk-funky">
+        <div class="item" data-filter="strategical">
             <a href="http://player.vimeo.com/video/47224685?byline=0&amp;portrait=0&amp;color=ff9933" class="thumb project-thumb tip mediabox" data-width="auto" data-height="auto">
                 <div class="inner">
                     <h6>Numbers / Limelight <span>(Open video in lightbox)</span></h6>
@@ -234,9 +196,6 @@
                 <!-- /tooltip -->
             </a>
         </div>
-        <!-- /item -->
     </div>
-    <!-- /portfolio grid -->
 
 </section>
-<!-- /portfolio -->

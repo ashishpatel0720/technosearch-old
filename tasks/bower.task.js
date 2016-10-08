@@ -34,6 +34,7 @@ Elixir.extend('bower', function(jsOutputFile, jsOutputFolder, cssOutputFile, css
 		this.emit('end');
 	};
 
+
 	new Task('bower-js', function() {
 		return gulp.src(mainBowerFiles())
 			.on('error', onError)

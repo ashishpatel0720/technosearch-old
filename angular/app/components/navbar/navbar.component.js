@@ -4,6 +4,7 @@ class NavbarController{
         this.window = $window;
         this.scope = $scope;
         this.openmenu = false;
+        this.submenu = false;
     }
 
     $onInit(){

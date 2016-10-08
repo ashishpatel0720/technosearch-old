@@ -32,9 +32,9 @@
             <!-- ############ navigation ############ -->
             <nav id="nav" class="one-page-nav">
                 <ul>
-                    <li ui-sref-active="current">
+                    <li ui-sref-active="current" ng-class="{ active: vm.submenu }" ng-mouseenter="vm.submenu = true"  ng-mouseleave="vm.submenu = false">
                         <a ui-sref="app.events">Events</a>
-                        <ul>
+                        <ul ng-class="{ 'hide' : !vm.submenu }">
                             <li>
                                 <a ui-sref="app.competitions">Competitions</a>
                             </li>
@@ -71,7 +71,7 @@
 
             <!-- responsive navigation -->
             <div id="dl-menu" class="dl-menuwrapper one-page-nav">
-                <button class="dl-trigger" ng-click="vm.openmenu = ! vm.openmenu">Open Menu</button>
+                <button class="dl-trigger" ng-click="vm.openmenu = !vm.openmenu">Open Menu</button>
                 <ul class="dl-menu" ng-class="{'dl-menuopen' : vm.openmenu}">
                     <li ui-sref-active="current">
                         <a ui-sref="app.events">Events</a>

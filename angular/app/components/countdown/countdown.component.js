@@ -1,40 +1,10 @@
 class CountdownController{
     constructor(){
         'ngInject';
-
-        //
+        this.countTime = 1476988200 - Math.round(+new Date()/1000);
     }
 
     $onInit(){
-        /* Countdown
-         ------------------------- */
-        if ($.fn.countdown) {
-
-            $('.countdown').each(function(e) {
-                var date = $(this).data('event-date');
-
-                $(this).countdown(date, function(event) {
-                    var $this = $(this);
-
-                    switch(event.type) {
-                        case "seconds":
-                        case "minutes":
-                        case "hours":
-                        case "days":
-                        case "weeks":
-                        case "daysLeft":
-                            $this.find('.' + event.type).html(event.value);
-                            break;
-
-                        case "finished":
-
-                            break;
-                    }
-                });
-            });
-        }
-
-
     }
 }
 

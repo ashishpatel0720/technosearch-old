@@ -47,7 +47,7 @@ elixir(function(mix) {
         .sass(['./angular/**/*.scss', '!./angular/critical.scss'], 'public/css')
         .sass('./angular/critical.scss', 'public/css/critical.css')
         .styles(styles, './public/css/final.css')
-        .version(assets)
+        // .version(assets)
         .swPrecache();
 
         //enable front-end tests by uncommenting the below line

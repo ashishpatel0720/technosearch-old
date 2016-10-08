@@ -1,13 +1,13 @@
 <!-- ############################# navigation section ############################# -->
-<div id="top" style="position: absolute"></div>
+
 <section id="main-nav-wrapper">
     <!-- main navigation -->
     <div id="main-nav">
 
         <!-- ############ search ############ -->
-        <div id="search-wrap" style="display:none">
-            <input type="text" placeholder="Search and hit enter..." name="s" id="search" />
-        </div>
+        <!--<div id="search-wrap" style="display:none">-->
+            <!--<input type="text" placeholder="Search and hit enter..." name="s" id="search" />-->
+        <!--</div>-->
         <!-- /search -->
 
         <!-- navigation container -->
@@ -23,8 +23,8 @@
             <nav id="icon-nav">
                 <ul>
                     <!-- todo show the up arrow button only on the home page -->
-                    <li><a href="#top" id="nav-up" class="smooth-scroll"><span class="icon-arrow-up-2"></span></a></li>
-                    <li><a ui-sref="app.search" id="nav-search"><span class="icon-search"></span></a></li>
+                    <li><a href="#" scroll-to="top" id="nav-up" class="smooth-scroll"><span class="icon-arrow-up-2"></span></a></li>
+                    <!--<li><a ui-sref="app.search" id="nav-search"><span class="icon-search"></span></a></li>-->
                 </ul>
             </nav>
             <!-- /icon navigation -->
@@ -72,7 +72,57 @@
             <!-- responsive navigation -->
             <div id="dl-menu" class="dl-menuwrapper one-page-nav">
                 <button class="dl-trigger">Open Menu</button>
-                <!-- RESPONSIVE NAVIGATION HERE -->
+                <ul class="dl-menu" style="max-height: 438px;">
+                    <li>
+                        <a href="#">Features</a>
+                        <ul class="dl-submenu" style="max-height: 438px;"><li class="dl-back"><a href="#">back</a></li>
+                            <li>
+                                <a href="grid.html" class="page-by-ajax" data-ajax-options="{&quot;target&quot; :&quot;#custom-page&quot;}">Grid</a>
+                            </li>
+                            <li>
+                                <a href="masonry.html" class="page-by-ajax" data-ajax-options="{&quot;target&quot; :&quot;#custom-page&quot;}">Masonry Boxes</a>
+                            </li>
+                            <li>
+                                <a href="gallery.html" class="page-by-ajax" data-ajax-options="{&quot;target&quot; :&quot;#custom-page&quot;}">Gallery</a>
+                            </li>
+                            <li>
+                                <a href="elements.html" class="page-by-ajax" data-ajax-options="{&quot;target&quot; :&quot;#custom-page&quot;}">Elements</a>
+                            </li>
+                            <li>
+                                <a href="videos.html" class="page-by-ajax" data-ajax-options="{&quot;target&quot; :&quot;#custom-page&quot;}">Videos</a>
+                            </li>
+                            <li>
+                                <a href="#newsletter">Newsletter</a>
+                            </li>
+                            <li>
+                                <a href="#">Sub Menu</a>
+                                <ul class="dl-submenu" style="max-height: 438px;"><li class="dl-back"><a href="#">back</a></li>
+                                    <li>
+                                        <a href="#">Level 2.1</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Level 2.2</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Level 2.3</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="current">
+                        <a href="#portfolio">Releases</a>
+                    </li>
+                    <li class="">
+                        <a href="#events">Events</a>
+                    </li>
+                    <li>
+                        <a href="#bio">Bio</a>
+                    </li>
+                    <li class="">
+                        <a href="#contact">Contact</a>
+                    </li>
+                </ul>
             </div>
             <!-- /responsive navigation -->
         </div>

@@ -5,168 +5,6 @@ try {
   module = angular.module('app.partials', []);
 }
 module.run(['$templateCache', function($templateCache) {
-  $templateCache.put('./views/app/pages/account/account.page.html',
-    '');
-}]);
-})();
-
-(function(module) {
-try {
-  module = angular.module('app.partials');
-} catch (e) {
-  module = angular.module('app.partials', []);
-}
-module.run(['$templateCache', function($templateCache) {
-  $templateCache.put('./views/app/pages/contact/contact.page.html',
-    '\n' +
-    '<navbar></navbar>\n' +
-    '<!-- ############ section container ############ -->\n' +
-    '<div class="section-container container clearfix">\n' +
-    '\n' +
-    '    <!-- ############ content header ############ -->\n' +
-    '    <header class="content-header">\n' +
-    '        <h1 class="content-title">Get in Touch</h1>\n' +
-    '        <span class="sub-heading">Do not hesitate to booking me!</span>\n' +
-    '        <hr class="content-line">\n' +
-    '    </header>\n' +
-    '    <!-- /content header -->\n' +
-    '\n' +
-    '    <div class="row clearfix">\n' +
-    '        <p>Cras venenatis justo mi, non posuere enim aliquet malesuada. Nullam orci sem, adipiscing id rutrum et, blandit quis lorem. Phasellus lacus orci, cursus vitae mi eget, sagittis congue elit. Donec ac tincidunt tortor. Duis vel neque eleifend odio hendrerit consequat sed vel massa. Praesent tempor libero quis tincidunt fringilla. Aliquam congue, neque et aliquam eleifend, lacus diam aliquet urna, in sollicitudin neque nisl facilisis urna.</p>\n' +
-    '        <br>\n' +
-    '        <!-- column icon -->\n' +
-    '        <div class="col-1-4 column-icon">\n' +
-    '            <span class="icon-home icon"></span>\n' +
-    '            <span class="txt"><strong>Level 13, 2 Elizabeth St, Melbourne Victoria </strong><br>3000 Australia</span>\n' +
-    '        </div>\n' +
-    '        <!-- /column icon -->\n' +
-    '        <!-- column icon -->\n' +
-    '        <div class="col-1-4 column-icon">\n' +
-    '            <span class="icon-phone icon"></span>\n' +
-    '            <span class="txt"><strong>(123) 563-9899-234</strong><br>(123) 123-9899-234 (FAX)</span>\n' +
-    '        </div>\n' +
-    '        <!-- /column icon -->\n' +
-    '        <!-- column icon -->\n' +
-    '        <div class="col-1-4 column-icon">\n' +
-    '            <span class="icon-pencil-2 icon"></span>\n' +
-    '            <span class="txt"><strong><a href="mailto:djspectra@djspectra.com">djspectra@djspectra.com</a></strong><br><a href="mailto:booking@djspectra.com">booking@djspectra.com</a> </span>\n' +
-    '        </div>\n' +
-    '        <!-- /column icon -->\n' +
-    '        <!-- column icon -->\n' +
-    '        <div class="col-1-4 last column-icon">\n' +
-    '            <span class="icon-share icon"></span>\n' +
-    '            <span class="txt"><strong><a href="http://facebook.com/">facebook</a></strong><br><a href="http://twitter.com/">twitter</a><br><a href="http://soundcloud.com/">soundcloud</a></span>\n' +
-    '        </div>\n' +
-    '        <!-- /column icon -->\n' +
-    '    </div>\n' +
-    '</div>\n' +
-    '\n' +
-    '<contact></contact>\n' +
-    '<!--<footer></footer>-->');
-}]);
-})();
-
-(function(module) {
-try {
-  module = angular.module('app.partials');
-} catch (e) {
-  module = angular.module('app.partials', []);
-}
-module.run(['$templateCache', function($templateCache) {
-  $templateCache.put('./views/app/pages/events/events.page.html',
-    '<navbar></navbar>\n' +
-    '<event></event>\n' +
-    '<event-table></event-table>\n' +
-    '<social></social>\n' +
-    '');
-}]);
-})();
-
-(function(module) {
-try {
-  module = angular.module('app.partials');
-} catch (e) {
-  module = angular.module('app.partials', []);
-}
-module.run(['$templateCache', function($templateCache) {
-  $templateCache.put('./views/app/pages/footer/footer.page.html',
-    '<footer></footer>');
-}]);
-})();
-
-(function(module) {
-try {
-  module = angular.module('app.partials');
-} catch (e) {
-  module = angular.module('app.partials', []);
-}
-module.run(['$templateCache', function($templateCache) {
-  $templateCache.put('./views/app/pages/gallery/gallery.page.html',
-    '    <navbar></navbar>\n' +
-    '    <gallery></gallery>\n' +
-    '    <social></social>\n' +
-    '    <!--<footer></footer>-->\n' +
-    '');
-}]);
-})();
-
-(function(module) {
-try {
-  module = angular.module('app.partials');
-} catch (e) {
-  module = angular.module('app.partials', []);
-}
-module.run(['$templateCache', function($templateCache) {
-  $templateCache.put('./views/app/pages/header/header.page.html',
-    '');
-}]);
-})();
-
-(function(module) {
-try {
-  module = angular.module('app.partials');
-} catch (e) {
-  module = angular.module('app.partials', []);
-}
-module.run(['$templateCache', function($templateCache) {
-  $templateCache.put('./views/app/pages/home/home.page.html',
-    '<welcome></welcome>\n' +
-    '<navbar></navbar>\n' +
-    '<countdown></countdown>\n' +
-    '<events></events>\n' +
-    '<event-list></event-list>\n' +
-    '<map></map>\n' +
-    '<contact></contact>\n' +
-    '<social></social>\n' +
-    '<sponsors></sponsors>\n' +
-    '<!--<footer></footer>-->\n' +
-    '');
-}]);
-})();
-
-(function(module) {
-try {
-  module = angular.module('app.partials');
-} catch (e) {
-  module = angular.module('app.partials', []);
-}
-module.run(['$templateCache', function($templateCache) {
-  $templateCache.put('./views/app/pages/team/team.page.html',
-    '    <navbar></navbar>\n' +
-    '    <team></team>\n' +
-    '    <!--<footer></footer>-->\n' +
-    '\n' +
-    '');
-}]);
-})();
-
-(function(module) {
-try {
-  module = angular.module('app.partials');
-} catch (e) {
-  module = angular.module('app.partials', []);
-}
-module.run(['$templateCache', function($templateCache) {
   $templateCache.put('./views/app/components/contact/contact.component.html',
     '\n' +
     '<!-- ############################# contact ############################# -->\n' +
@@ -1144,9 +982,9 @@ module.run(['$templateCache', function($templateCache) {
     '            <!-- ############ navigation ############ -->\n' +
     '            <nav id="nav" class="one-page-nav">\n' +
     '                <ul>\n' +
-    '                    <li ui-sref-active="current">\n' +
+    '                    <li ui-sref-active="current" ng-class="{ active: vm.submenu }" ng-mouseenter="vm.submenu = true"  ng-mouseleave="vm.submenu = false">\n' +
     '                        <a ui-sref="app.events">Events</a>\n' +
-    '                        <ul>\n' +
+    '                        <ul ng-class="{ \'hide\' : !vm.submenu }">\n' +
     '                            <li>\n' +
     '                                <a ui-sref="app.competitions">Competitions</a>\n' +
     '                            </li>\n' +
@@ -1183,11 +1021,11 @@ module.run(['$templateCache', function($templateCache) {
     '\n' +
     '            <!-- responsive navigation -->\n' +
     '            <div id="dl-menu" class="dl-menuwrapper one-page-nav">\n' +
-    '                <button class="dl-trigger" ng-click="vm.openmenu = ! vm.openmenu">Open Menu</button>\n' +
+    '                <button class="dl-trigger" ng-click="vm.openmenu = !vm.openmenu">Open Menu</button>\n' +
     '                <ul class="dl-menu" ng-class="{\'dl-menuopen\' : vm.openmenu}">\n' +
     '                    <li ui-sref-active="current">\n' +
     '                        <a ui-sref="app.events">Events</a>\n' +
-    '                        <ul>\n' +
+    '                        <ul style="margin-left: 30px;">\n' +
     '                            <li>\n' +
     '                                <a ui-sref="app.competitions">Competitions</a>\n' +
     '                            </li>\n' +
@@ -1499,6 +1337,168 @@ module.run(['$templateCache', function($templateCache) {
     '    <!-- /container -->\n' +
     '</section>\n' +
     '<!--/intro-->\n' +
+    '');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('app.partials');
+} catch (e) {
+  module = angular.module('app.partials', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('./views/app/pages/account/account.page.html',
+    '');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('app.partials');
+} catch (e) {
+  module = angular.module('app.partials', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('./views/app/pages/contact/contact.page.html',
+    '\n' +
+    '<navbar></navbar>\n' +
+    '<!-- ############ section container ############ -->\n' +
+    '<div class="section-container container clearfix">\n' +
+    '\n' +
+    '    <!-- ############ content header ############ -->\n' +
+    '    <header class="content-header">\n' +
+    '        <h1 class="content-title">Get in Touch</h1>\n' +
+    '        <span class="sub-heading">Do not hesitate to booking me!</span>\n' +
+    '        <hr class="content-line">\n' +
+    '    </header>\n' +
+    '    <!-- /content header -->\n' +
+    '\n' +
+    '    <div class="row clearfix">\n' +
+    '        <p>Cras venenatis justo mi, non posuere enim aliquet malesuada. Nullam orci sem, adipiscing id rutrum et, blandit quis lorem. Phasellus lacus orci, cursus vitae mi eget, sagittis congue elit. Donec ac tincidunt tortor. Duis vel neque eleifend odio hendrerit consequat sed vel massa. Praesent tempor libero quis tincidunt fringilla. Aliquam congue, neque et aliquam eleifend, lacus diam aliquet urna, in sollicitudin neque nisl facilisis urna.</p>\n' +
+    '        <br>\n' +
+    '        <!-- column icon -->\n' +
+    '        <div class="col-1-4 column-icon">\n' +
+    '            <span class="icon-home icon"></span>\n' +
+    '            <span class="txt"><strong>Level 13, 2 Elizabeth St, Melbourne Victoria </strong><br>3000 Australia</span>\n' +
+    '        </div>\n' +
+    '        <!-- /column icon -->\n' +
+    '        <!-- column icon -->\n' +
+    '        <div class="col-1-4 column-icon">\n' +
+    '            <span class="icon-phone icon"></span>\n' +
+    '            <span class="txt"><strong>(123) 563-9899-234</strong><br>(123) 123-9899-234 (FAX)</span>\n' +
+    '        </div>\n' +
+    '        <!-- /column icon -->\n' +
+    '        <!-- column icon -->\n' +
+    '        <div class="col-1-4 column-icon">\n' +
+    '            <span class="icon-pencil-2 icon"></span>\n' +
+    '            <span class="txt"><strong><a href="mailto:djspectra@djspectra.com">djspectra@djspectra.com</a></strong><br><a href="mailto:booking@djspectra.com">booking@djspectra.com</a> </span>\n' +
+    '        </div>\n' +
+    '        <!-- /column icon -->\n' +
+    '        <!-- column icon -->\n' +
+    '        <div class="col-1-4 last column-icon">\n' +
+    '            <span class="icon-share icon"></span>\n' +
+    '            <span class="txt"><strong><a href="http://facebook.com/">facebook</a></strong><br><a href="http://twitter.com/">twitter</a><br><a href="http://soundcloud.com/">soundcloud</a></span>\n' +
+    '        </div>\n' +
+    '        <!-- /column icon -->\n' +
+    '    </div>\n' +
+    '</div>\n' +
+    '\n' +
+    '<contact></contact>\n' +
+    '<!--<footer></footer>-->');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('app.partials');
+} catch (e) {
+  module = angular.module('app.partials', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('./views/app/pages/events/events.page.html',
+    '<navbar></navbar>\n' +
+    '<event></event>\n' +
+    '<event-table></event-table>\n' +
+    '<social></social>\n' +
+    '');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('app.partials');
+} catch (e) {
+  module = angular.module('app.partials', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('./views/app/pages/footer/footer.page.html',
+    '<footer></footer>');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('app.partials');
+} catch (e) {
+  module = angular.module('app.partials', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('./views/app/pages/gallery/gallery.page.html',
+    '    <navbar></navbar>\n' +
+    '    <gallery></gallery>\n' +
+    '    <social></social>\n' +
+    '    <!--<footer></footer>-->\n' +
+    '');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('app.partials');
+} catch (e) {
+  module = angular.module('app.partials', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('./views/app/pages/header/header.page.html',
+    '');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('app.partials');
+} catch (e) {
+  module = angular.module('app.partials', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('./views/app/pages/home/home.page.html',
+    '<welcome></welcome>\n' +
+    '<navbar></navbar>\n' +
+    '<countdown></countdown>\n' +
+    '<events></events>\n' +
+    '<event-list></event-list>\n' +
+    '<map></map>\n' +
+    '<contact></contact>\n' +
+    '<social></social>\n' +
+    '<sponsors></sponsors>\n' +
+    '<!--<footer></footer>-->\n' +
+    '');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('app.partials');
+} catch (e) {
+  module = angular.module('app.partials', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('./views/app/pages/team/team.page.html',
+    '    <navbar></navbar>\n' +
+    '    <team></team>\n' +
+    '    <!--<footer></footer>-->\n' +
+    '\n' +
     '');
 }]);
 })();

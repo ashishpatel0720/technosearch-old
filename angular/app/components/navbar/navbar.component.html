@@ -32,7 +32,7 @@
             <!-- ############ navigation ############ -->
             <nav id="nav" class="one-page-nav">
                 <ul>
-                    <li>
+                    <li ui-sref-active="current">
                         <a ui-sref="app.events">Events</a>
                         <ul>
                             <li>
@@ -50,19 +50,19 @@
 
                         </ul>
                     </li>
-                    <li>
+                    <li ui-sref-active="current">
                         <a ui-sref="app.account">Account</a>
                     </li>
-                    <li>
+                    <li ui-sref-active="current">
                         <a ui-sref="app.gallery">Gallery</a>
                     </li>
-                    <li>
+                    <li ui-sref-active="current">
                         <a ui-sref="app.team">Team</a>
                     </li>
-                    <li>
+                    <li ui-sref-active="current">
                         <a ui-sref="app.sponsors">Sponsors</a>
                     </li>
-                    <li>
+                    <li ui-sref-active="current">
                         <a ui-sref="app.contact">Contact</a>
                     </li>
                 </ul>
@@ -71,56 +71,40 @@
 
             <!-- responsive navigation -->
             <div id="dl-menu" class="dl-menuwrapper one-page-nav">
-                <button class="dl-trigger">Open Menu</button>
-                <ul class="dl-menu" style="max-height: 438px;">
-                    <li>
-                        <a href="#">Features</a>
-                        <ul class="dl-submenu" style="max-height: 438px;"><li class="dl-back"><a href="#">back</a></li>
+                <button class="dl-trigger" ng-click="vm.openmenu = ! vm.openmenu">Open Menu</button>
+                <ul class="dl-menu" ng-class="{'dl-menuopen' : vm.openmenu}">
+                    <li ui-sref-active="current">
+                        <a ui-sref="app.events">Events</a>
+                        <ul>
                             <li>
-                                <a href="grid.html" class="page-by-ajax" data-ajax-options="{&quot;target&quot; :&quot;#custom-page&quot;}">Grid</a>
+                                <a ui-sref="app.competitions">Competitions</a>
                             </li>
                             <li>
-                                <a href="masonry.html" class="page-by-ajax" data-ajax-options="{&quot;target&quot; :&quot;#custom-page&quot;}">Masonry Boxes</a>
+                                <a ui-sref="app.workshops">Workshops</a>
                             </li>
                             <li>
-                                <a href="gallery.html" class="page-by-ajax" data-ajax-options="{&quot;target&quot; :&quot;#custom-page&quot;}">Gallery</a>
+                                <a ui-sref="app.guestlectures">Guest Lectures</a>
                             </li>
                             <li>
-                                <a href="elements.html" class="page-by-ajax" data-ajax-options="{&quot;target&quot; :&quot;#custom-page&quot;}">Elements</a>
+                                <a ui-sref="app.pronites">Pro-Nites</a>
                             </li>
-                            <li>
-                                <a href="videos.html" class="page-by-ajax" data-ajax-options="{&quot;target&quot; :&quot;#custom-page&quot;}">Videos</a>
-                            </li>
-                            <li>
-                                <a href="#newsletter">Newsletter</a>
-                            </li>
-                            <li>
-                                <a href="#">Sub Menu</a>
-                                <ul class="dl-submenu" style="max-height: 438px;"><li class="dl-back"><a href="#">back</a></li>
-                                    <li>
-                                        <a href="#">Level 2.1</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Level 2.2</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Level 2.3</a>
-                                    </li>
-                                </ul>
-                            </li>
+
                         </ul>
                     </li>
-                    <li class="current">
-                        <a href="#portfolio">Releases</a>
+                    <li ui-sref-active="current">
+                        <a ui-sref="app.account">Account</a>
                     </li>
-                    <li class="">
-                        <a href="#events">Events</a>
+                    <li ui-sref-active="current">
+                        <a ui-sref="app.gallery">Gallery</a>
                     </li>
-                    <li>
-                        <a href="#bio">Bio</a>
+                    <li ui-sref-active="current">
+                        <a ui-sref="app.team">Team</a>
                     </li>
-                    <li class="">
-                        <a href="#contact">Contact</a>
+                    <li ui-sref-active="current">
+                        <a ui-sref="app.sponsors">Sponsors</a>
+                    </li>
+                    <li ui-sref-active="current">
+                        <a ui-sref="app.contact">Contact</a>
                     </li>
                 </ul>
             </div>

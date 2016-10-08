@@ -1133,6 +1133,7 @@
 
 	        this.window = $window;
 	        this.scope = $scope;
+	        this.openmenu = false;
 	    }
 
 	    _createClass(NavbarController, [{

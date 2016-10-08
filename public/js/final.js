@@ -75208,6 +75208,168 @@ try {
   module = angular.module('app.partials', []);
 }
 module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('./views/app/pages/account/account.page.html',
+    '');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('app.partials');
+} catch (e) {
+  module = angular.module('app.partials', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('./views/app/pages/contact/contact.page.html',
+    '\n' +
+    '<navbar></navbar>\n' +
+    '<!-- ############ section container ############ -->\n' +
+    '<div class="section-container container clearfix">\n' +
+    '\n' +
+    '    <!-- ############ content header ############ -->\n' +
+    '    <header class="content-header">\n' +
+    '        <h1 class="content-title">Get in Touch</h1>\n' +
+    '        <span class="sub-heading">Do not hesitate to booking me!</span>\n' +
+    '        <hr class="content-line">\n' +
+    '    </header>\n' +
+    '    <!-- /content header -->\n' +
+    '\n' +
+    '    <div class="row clearfix">\n' +
+    '        <p>Cras venenatis justo mi, non posuere enim aliquet malesuada. Nullam orci sem, adipiscing id rutrum et, blandit quis lorem. Phasellus lacus orci, cursus vitae mi eget, sagittis congue elit. Donec ac tincidunt tortor. Duis vel neque eleifend odio hendrerit consequat sed vel massa. Praesent tempor libero quis tincidunt fringilla. Aliquam congue, neque et aliquam eleifend, lacus diam aliquet urna, in sollicitudin neque nisl facilisis urna.</p>\n' +
+    '        <br>\n' +
+    '        <!-- column icon -->\n' +
+    '        <div class="col-1-4 column-icon">\n' +
+    '            <span class="icon-home icon"></span>\n' +
+    '            <span class="txt"><strong>Level 13, 2 Elizabeth St, Melbourne Victoria </strong><br>3000 Australia</span>\n' +
+    '        </div>\n' +
+    '        <!-- /column icon -->\n' +
+    '        <!-- column icon -->\n' +
+    '        <div class="col-1-4 column-icon">\n' +
+    '            <span class="icon-phone icon"></span>\n' +
+    '            <span class="txt"><strong>(123) 563-9899-234</strong><br>(123) 123-9899-234 (FAX)</span>\n' +
+    '        </div>\n' +
+    '        <!-- /column icon -->\n' +
+    '        <!-- column icon -->\n' +
+    '        <div class="col-1-4 column-icon">\n' +
+    '            <span class="icon-pencil-2 icon"></span>\n' +
+    '            <span class="txt"><strong><a href="mailto:djspectra@djspectra.com">djspectra@djspectra.com</a></strong><br><a href="mailto:booking@djspectra.com">booking@djspectra.com</a> </span>\n' +
+    '        </div>\n' +
+    '        <!-- /column icon -->\n' +
+    '        <!-- column icon -->\n' +
+    '        <div class="col-1-4 last column-icon">\n' +
+    '            <span class="icon-share icon"></span>\n' +
+    '            <span class="txt"><strong><a href="http://facebook.com/">facebook</a></strong><br><a href="http://twitter.com/">twitter</a><br><a href="http://soundcloud.com/">soundcloud</a></span>\n' +
+    '        </div>\n' +
+    '        <!-- /column icon -->\n' +
+    '    </div>\n' +
+    '</div>\n' +
+    '\n' +
+    '<contact></contact>\n' +
+    '<!--<footer></footer>-->');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('app.partials');
+} catch (e) {
+  module = angular.module('app.partials', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('./views/app/pages/events/events.page.html',
+    '<navbar></navbar>\n' +
+    '<event></event>\n' +
+    '<event-table></event-table>\n' +
+    '<social></social>\n' +
+    '');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('app.partials');
+} catch (e) {
+  module = angular.module('app.partials', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('./views/app/pages/footer/footer.page.html',
+    '<footer></footer>');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('app.partials');
+} catch (e) {
+  module = angular.module('app.partials', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('./views/app/pages/gallery/gallery.page.html',
+    '    <navbar></navbar>\n' +
+    '    <gallery></gallery>\n' +
+    '    <social></social>\n' +
+    '    <!--<footer></footer>-->\n' +
+    '');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('app.partials');
+} catch (e) {
+  module = angular.module('app.partials', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('./views/app/pages/header/header.page.html',
+    '');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('app.partials');
+} catch (e) {
+  module = angular.module('app.partials', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('./views/app/pages/home/home.page.html',
+    '<welcome></welcome>\n' +
+    '<navbar></navbar>\n' +
+    '<countdown></countdown>\n' +
+    '<events></events>\n' +
+    '<event-list></event-list>\n' +
+    '<map></map>\n' +
+    '<contact></contact>\n' +
+    '<social></social>\n' +
+    '<sponsors></sponsors>\n' +
+    '<!--<footer></footer>-->\n' +
+    '');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('app.partials');
+} catch (e) {
+  module = angular.module('app.partials', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('./views/app/pages/team/team.page.html',
+    '    <navbar></navbar>\n' +
+    '    <team></team>\n' +
+    '    <!--<footer></footer>-->\n' +
+    '\n' +
+    '');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('app.partials');
+} catch (e) {
+  module = angular.module('app.partials', []);
+}
+module.run(['$templateCache', function($templateCache) {
   $templateCache.put('./views/app/components/contact/contact.component.html',
     '\n' +
     '<!-- ############################# contact ############################# -->\n' +
@@ -75631,6 +75793,218 @@ try {
   module = angular.module('app.partials', []);
 }
 module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('./views/app/components/events/events.component.html',
+    '<section id="portfolio" class="section">\n' +
+    '    <div id="portfolio-header" class="section-header parallax clearfix" style="background-image: url(placeholders/release-header-1920x1000.jpg)" data-interia="0.1">\n' +
+    '        <div class="overlay"></div>\n' +
+    '        <div class="container clearfix">\n' +
+    '            <h6 class="section-sub-heading">MORE THAN 30+ EVENTS</h6>\n' +
+    '            <h2 class="section-heading">AMAZING EVENTS</h2>\n' +
+    '        </div>\n' +
+    '    </div>\n' +
+    '    <div id="portfolio-main-filter" class="filter">\n' +
+    '        <ul class="filter-list item-filter active-filter clearfix">\n' +
+    '            <li class="filter-label"><span class="label">Events</span></li>\n' +
+    '            <li><a data-filter="*">All</a></li>\n' +
+    '            <li><a data-filter=".robitics">Robotics</a></li>\n' +
+    '            <li><a data-filter=".coding">Coding</a></li>\n' +
+    '            <li><a data-filter=".departmental">Departmental</a></li>\n' +
+    '            <li><a data-filter=".aerodrome">Aerodrome</a></li>\n' +
+    '            <li><a data-filter=".literary">Literary</a></li>\n' +
+    '            <li><a data-filter=".strategical">Strategical</a></li>\n' +
+    '            <li><a data-filter=".fun">Social</a></li>\n' +
+    '\n' +
+    '        </ul>\n' +
+    '    </div>\n' +
+    '    <div id="portfolio-items" class="fullwidth items clearfix grid">\n' +
+    '        <div class="item coding" data-filter="coding">\n' +
+    '            <a href="project01.html" class="thumb project-thumb project-by-ajax tip" >\n' +
+    '                <!-- title and opacity mask -->\n' +
+    '                <div class="inner">\n' +
+    '                    <h6>Awesome Bass <span>(Big image intro)</span></h6>\n' +
+    '                </div>\n' +
+    '                <!-- /title and opacity mask -->\n' +
+    '                <!-- image -->\n' +
+    '                <img class="lazy" src="placeholders/placeholder.png" data-src="placeholders/release01-360x360.jpg" alt="Release image" >\n' +
+    '                <!-- badge -->\n' +
+    '                <span class="badge new">NEW</span>\n' +
+    '                <!-- tooltip -->\n' +
+    '                <div class="tip-content animate hidden">\n' +
+    '                    <span class="tip-title">Awesome Bass</span>\n' +
+    '                    <span class="tip-genre">NEW / Glitch Hop</span>\n' +
+    '                    <span class="tip-date">2013-04-05</span>\n' +
+    '                </div>\n' +
+    '                <!-- /tooltip -->\n' +
+    '            </a>\n' +
+    '        </div>\n' +
+    '        <div class="item fun" data-filter="fun">\n' +
+    '            <a href="project02.html" class="thumb project-thumb project-by-ajax tip">\n' +
+    '                <!-- title and opacity mask -->\n' +
+    '                <div class="inner">\n' +
+    '                    <h6>Tomorrow\'s Harvest <span>(Vimeo video)</span></h6>\n' +
+    '                </div>\n' +
+    '                <!-- /title and opacity mask -->\n' +
+    '                <img class="lazy" src="placeholders/placeholder.png" data-src="placeholders/release02-360x360.jpg" alt="Release image" >\n' +
+    '                <!-- badge -->\n' +
+    '                <span class="badge new">NEW</span>\n' +
+    '                <!-- tooltip -->\n' +
+    '                <div class="tip-content animate hidden">\n' +
+    '                    <span class="tip-title">Tomorrow\'s Harvest</span>\n' +
+    '                    <span class="tip-genre">NEW / Drum and Bass</span>\n' +
+    '                    <span class="tip-date">2013-01-23</span>\n' +
+    '                </div>\n' +
+    '                <!-- /tooltip -->\n' +
+    '            </a>\n' +
+    '        </div>\n' +
+    '        <div class="item" data-filter="fun">\n' +
+    '            <a href="project03.html" class="thumb project-thumb project-by-ajax tip" >\n' +
+    '                <!-- title and opacity mask -->\n' +
+    '                <div class="inner">\n' +
+    '                    <h6>Atmosphere <span>(Image slider+soundcloud)</span></h6>\n' +
+    '                </div>\n' +
+    '                <!-- /title and opacity mask -->\n' +
+    '                <img class="lazy" src="placeholders/placeholder.png" data-src="placeholders/release03-360x360.jpg" alt="Release image" >\n' +
+    '                <!-- tooltip -->\n' +
+    '                <div class="tip-content animate hidden">\n' +
+    '                    <span class="tip-title">Atmosphere</span>\n' +
+    '                    <span class="tip-genre">Drum and Bass / UK Funky</span>\n' +
+    '                    <span class="tip-date">2012-12-23</span>\n' +
+    '                </div>\n' +
+    '                <!-- /tooltip -->\n' +
+    '            </a>\n' +
+    '        </div>\n' +
+    '        <div class="item" data-filter="literary">\n' +
+    '            <a href="project04.html" class="thumb project-thumb project-by-ajax tip">\n' +
+    '                <!-- title and opacity mask -->\n' +
+    '                <div class="inner">\n' +
+    '                    <h6>Center of The Universe <span>(Full width image slider)</span></h6>\n' +
+    '                </div>\n' +
+    '                <!-- /title and opacity mask -->\n' +
+    '                <img class="lazy" src="placeholders/placeholder.png" data-src="placeholders/release04-360x360.jpg" alt="Release image" >\n' +
+    '                <!-- tooltip -->\n' +
+    '                <div class="tip-content animate hidden">\n' +
+    '                    <span class="tip-title">Center of The Universe</span>\n' +
+    '                    <span class="tip-genre">Drum and Bass / Glitch Hop</span>\n' +
+    '                    <span class="tip-date">2012-10-07</span>\n' +
+    '                </div>\n' +
+    '                <!-- /tooltip -->\n' +
+    '            </a>\n' +
+    '        </div>\n' +
+    '        <div class="item" data-filter="literary">\n' +
+    '            <a href="project05.html" class="thumb project-thumb project-by-ajax tip">\n' +
+    '                <!-- title and opacity mask -->\n' +
+    '                <div class="inner">\n' +
+    '                    <h6>Faster Than Light EP <span>(Masonry boxes)</span></h6>\n' +
+    '                </div>\n' +
+    '                <!-- /title and opacity mask -->\n' +
+    '                <img class="lazy" src="placeholders/placeholder.png" data-src="placeholders/release05-360x360.jpg" alt="Release image" >\n' +
+    '                <!-- tooltip -->\n' +
+    '                <div class="tip-content animate hidden">\n' +
+    '                    <span class="tip-title">Faster Than Light EP</span>\n' +
+    '                    <span class="tip-genre">Breakbeat / Dubstep</span>\n' +
+    '                    <span class="tip-date">2012-08-07</span>\n' +
+    '                </div>\n' +
+    '                <!-- /tooltip -->\n' +
+    '            </a>\n' +
+    '        </div>\n' +
+    '        <div class="item" data-filter="departmental">\n' +
+    '            <a href="https://soundcloud.com/ukfmusic/ukf-music-podcast-2-physical-in-the-mix" class="thumb project-thumb tip fap-single-track">\n' +
+    '                <!-- title and opacity mask -->\n' +
+    '                <div class="inner">\n' +
+    '                    <h6>Back To The Acid <span>(Play Soundcloud podcast)</span></h6>\n' +
+    '                </div>\n' +
+    '                <!-- /title and opacity mask -->\n' +
+    '                <img class="lazy" src="placeholders/placeholder.png" data-src="placeholders/release06-360x360.jpg" alt="Release image">\n' +
+    '                <!-- badge -->\n' +
+    '                <span class="badge free">FREE</span>\n' +
+    '                <!-- tooltip -->\n' +
+    '                <div class="tip-content animate hidden">\n' +
+    '                    <span class="tip-title">Back To The Acid</span>\n' +
+    '                    <span class="tip-genre">Breakbeat / Dubstep</span>\n' +
+    '                    <span class="tip-date">2012-07-22</span>\n' +
+    '                </div>\n' +
+    '                <!-- /tooltip -->\n' +
+    '            </a>\n' +
+    '        </div>\n' +
+    '        <div class="item" data-filter="departmental">\n' +
+    '            <a href="https://soundcloud.com/chinch-jack/sets/jungle-sets" class="thumb project-thumb tip fap-single-track">\n' +
+    '                <!-- title and opacity mask -->\n' +
+    '                <div class="inner">\n' +
+    '                    <h6>Skylarking - Remixes <span>(Play Soundcloud playlist)</span></h6>\n' +
+    '                </div>\n' +
+    '                <!-- /title and opacity mask -->\n' +
+    '                <img class="lazy" src="placeholders/placeholder.png" data-src="placeholders/release07-360x360.jpg" alt="Release image" >\n' +
+    '                <!-- tooltip -->\n' +
+    '                <div class="tip-content animate hidden">\n' +
+    '                    <span class="tip-title">Skylarking - Remixes</span>\n' +
+    '                    <span class="tip-genre">UK Funky / Glitch Hop</span>\n' +
+    '                    <span class="tip-date">2012-07-16</span>\n' +
+    '                </div>\n' +
+    '                <!-- /tooltip -->\n' +
+    '            </a>\n' +
+    '        </div>\n' +
+    '        <div class="item" data-filter="aerodrome">\n' +
+    '            <a href="https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Fplaylists%2F2999711&amp;color=ff7700&amp;auto_play=false&amp;show_artwork=true" class="thumb project-thumb mediabox tip" data-width="auto" data-height="450">\n' +
+    '                <!-- title and opacity mask -->\n' +
+    '                <div class="inner">\n' +
+    '                    <h6>Defiant Order <span>(Open Soundcloud in lightbox)</span></h6>\n' +
+    '                </div>\n' +
+    '                <!-- /title and opacity mask -->\n' +
+    '                <img class="lazy" src="placeholders/placeholder.png" data-src="placeholders/release08-360x360.jpg" alt="Release image">\n' +
+    '                <!-- tooltip -->\n' +
+    '                <div class="tip-content animate hidden">\n' +
+    '                    <span class="tip-title">Defiant Order</span>\n' +
+    '                    <span class="tip-genre">Breakbeat / Glitch Hop / Dubstep</span>\n' +
+    '                    <span class="tip-date">2012-05-07</span>\n' +
+    '                </div>\n' +
+    '                <!-- /tooltip -->\n' +
+    '            </a>\n' +
+    '        </div>\n' +
+    '        <div class="item" data-filter="strategical aerodrome">\n' +
+    '            <a href="placeholders/cover01-big.jpg" class="thumb project-thumb tip imagebox" title="Album Cover">\n' +
+    '                <div class="inner">\n' +
+    '                    <h6>Things Can Only Get Better <span>(Open image in lightbox)</span></h6>\n' +
+    '                </div>\n' +
+    '                <img class="lazy" src="placeholders/placeholder.png" data-src="placeholders/release09-360x360.jpg" alt="Release image">\n' +
+    '                <!-- badge -->\n' +
+    '                <span class="badge free">FREE</span>\n' +
+    '                <!-- tooltip -->\n' +
+    '                <div class="tip-content animate hidden">\n' +
+    '                    <span class="tip-title">Things Can Only Get Better</span>\n' +
+    '                    <span class="tip-genre">Drum and Bass / UK Funky</span>\n' +
+    '                    <span class="tip-date">2012-04-11</span>\n' +
+    '                </div>\n' +
+    '                <!-- /tooltip -->\n' +
+    '            </a>\n' +
+    '        </div>\n' +
+    '        <div class="item" data-filter="strategical">\n' +
+    '            <a href="http://player.vimeo.com/video/47224685?byline=0&amp;portrait=0&amp;color=ff9933" class="thumb project-thumb tip mediabox" data-width="auto" data-height="auto">\n' +
+    '                <div class="inner">\n' +
+    '                    <h6>Numbers / Limelight <span>(Open video in lightbox)</span></h6>\n' +
+    '                </div>\n' +
+    '                <img class="lazy" src="placeholders/placeholder.png" data-src="placeholders/release10-360x360.jpg" alt="Release image">\n' +
+    '                <!-- tooltip -->\n' +
+    '                <div class="tip-content animate hidden">\n' +
+    '                    <span class="tip-title">Numbers / Limelight</span>\n' +
+    '                    <span class="tip-genre">Breakbeat / UK Funky</span>\n' +
+    '                    <span class="tip-date">2012-03-11</span>\n' +
+    '                </div>\n' +
+    '                <!-- /tooltip -->\n' +
+    '            </a>\n' +
+    '        </div>\n' +
+    '    </div>\n' +
+    '\n' +
+    '</section>');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('app.partials');
+} catch (e) {
+  module = angular.module('app.partials', []);
+}
+module.run(['$templateCache', function($templateCache) {
   $templateCache.put('./views/app/components/footer/footer.component.html',
     '<div id="footer">\n' +
     '    <div class="container">\n' +
@@ -75924,218 +76298,6 @@ try {
   module = angular.module('app.partials', []);
 }
 module.run(['$templateCache', function($templateCache) {
-  $templateCache.put('./views/app/components/events/events.component.html',
-    '<section id="portfolio" class="section">\n' +
-    '    <div id="portfolio-header" class="section-header parallax clearfix" style="background-image: url(placeholders/release-header-1920x1000.jpg)" data-interia="0.1">\n' +
-    '        <div class="overlay"></div>\n' +
-    '        <div class="container clearfix">\n' +
-    '            <h6 class="section-sub-heading">MORE THAN 30+ EVENTS</h6>\n' +
-    '            <h2 class="section-heading">AMAZING EVENTS</h2>\n' +
-    '        </div>\n' +
-    '    </div>\n' +
-    '    <div id="portfolio-main-filter" class="filter">\n' +
-    '        <ul class="filter-list item-filter active-filter clearfix">\n' +
-    '            <li class="filter-label"><span class="label">Events</span></li>\n' +
-    '            <li><a data-filter="*">All</a></li>\n' +
-    '            <li><a data-filter=".robitics">Robotics</a></li>\n' +
-    '            <li><a data-filter=".coding">Coding</a></li>\n' +
-    '            <li><a data-filter=".departmental">Departmental</a></li>\n' +
-    '            <li><a data-filter=".aerodrome">Aerodrome</a></li>\n' +
-    '            <li><a data-filter=".literary">Literary</a></li>\n' +
-    '            <li><a data-filter=".strategical">Strategical</a></li>\n' +
-    '            <li><a data-filter=".fun">Social</a></li>\n' +
-    '\n' +
-    '        </ul>\n' +
-    '    </div>\n' +
-    '    <div id="portfolio-items" class="fullwidth items clearfix grid">\n' +
-    '        <div class="item coding" data-filter="coding">\n' +
-    '            <a href="project01.html" class="thumb project-thumb project-by-ajax tip" >\n' +
-    '                <!-- title and opacity mask -->\n' +
-    '                <div class="inner">\n' +
-    '                    <h6>Awesome Bass <span>(Big image intro)</span></h6>\n' +
-    '                </div>\n' +
-    '                <!-- /title and opacity mask -->\n' +
-    '                <!-- image -->\n' +
-    '                <img class="lazy" src="placeholders/placeholder.png" data-src="placeholders/release01-360x360.jpg" alt="Release image" >\n' +
-    '                <!-- badge -->\n' +
-    '                <span class="badge new">NEW</span>\n' +
-    '                <!-- tooltip -->\n' +
-    '                <div class="tip-content animate hidden">\n' +
-    '                    <span class="tip-title">Awesome Bass</span>\n' +
-    '                    <span class="tip-genre">NEW / Glitch Hop</span>\n' +
-    '                    <span class="tip-date">2013-04-05</span>\n' +
-    '                </div>\n' +
-    '                <!-- /tooltip -->\n' +
-    '            </a>\n' +
-    '        </div>\n' +
-    '        <div class="item fun" data-filter="fun">\n' +
-    '            <a href="project02.html" class="thumb project-thumb project-by-ajax tip">\n' +
-    '                <!-- title and opacity mask -->\n' +
-    '                <div class="inner">\n' +
-    '                    <h6>Tomorrow\'s Harvest <span>(Vimeo video)</span></h6>\n' +
-    '                </div>\n' +
-    '                <!-- /title and opacity mask -->\n' +
-    '                <img class="lazy" src="placeholders/placeholder.png" data-src="placeholders/release02-360x360.jpg" alt="Release image" >\n' +
-    '                <!-- badge -->\n' +
-    '                <span class="badge new">NEW</span>\n' +
-    '                <!-- tooltip -->\n' +
-    '                <div class="tip-content animate hidden">\n' +
-    '                    <span class="tip-title">Tomorrow\'s Harvest</span>\n' +
-    '                    <span class="tip-genre">NEW / Drum and Bass</span>\n' +
-    '                    <span class="tip-date">2013-01-23</span>\n' +
-    '                </div>\n' +
-    '                <!-- /tooltip -->\n' +
-    '            </a>\n' +
-    '        </div>\n' +
-    '        <div class="item" data-filter="fun">\n' +
-    '            <a href="project03.html" class="thumb project-thumb project-by-ajax tip" >\n' +
-    '                <!-- title and opacity mask -->\n' +
-    '                <div class="inner">\n' +
-    '                    <h6>Atmosphere <span>(Image slider+soundcloud)</span></h6>\n' +
-    '                </div>\n' +
-    '                <!-- /title and opacity mask -->\n' +
-    '                <img class="lazy" src="placeholders/placeholder.png" data-src="placeholders/release03-360x360.jpg" alt="Release image" >\n' +
-    '                <!-- tooltip -->\n' +
-    '                <div class="tip-content animate hidden">\n' +
-    '                    <span class="tip-title">Atmosphere</span>\n' +
-    '                    <span class="tip-genre">Drum and Bass / UK Funky</span>\n' +
-    '                    <span class="tip-date">2012-12-23</span>\n' +
-    '                </div>\n' +
-    '                <!-- /tooltip -->\n' +
-    '            </a>\n' +
-    '        </div>\n' +
-    '        <div class="item" data-filter="literary">\n' +
-    '            <a href="project04.html" class="thumb project-thumb project-by-ajax tip">\n' +
-    '                <!-- title and opacity mask -->\n' +
-    '                <div class="inner">\n' +
-    '                    <h6>Center of The Universe <span>(Full width image slider)</span></h6>\n' +
-    '                </div>\n' +
-    '                <!-- /title and opacity mask -->\n' +
-    '                <img class="lazy" src="placeholders/placeholder.png" data-src="placeholders/release04-360x360.jpg" alt="Release image" >\n' +
-    '                <!-- tooltip -->\n' +
-    '                <div class="tip-content animate hidden">\n' +
-    '                    <span class="tip-title">Center of The Universe</span>\n' +
-    '                    <span class="tip-genre">Drum and Bass / Glitch Hop</span>\n' +
-    '                    <span class="tip-date">2012-10-07</span>\n' +
-    '                </div>\n' +
-    '                <!-- /tooltip -->\n' +
-    '            </a>\n' +
-    '        </div>\n' +
-    '        <div class="item" data-filter="literary">\n' +
-    '            <a href="project05.html" class="thumb project-thumb project-by-ajax tip">\n' +
-    '                <!-- title and opacity mask -->\n' +
-    '                <div class="inner">\n' +
-    '                    <h6>Faster Than Light EP <span>(Masonry boxes)</span></h6>\n' +
-    '                </div>\n' +
-    '                <!-- /title and opacity mask -->\n' +
-    '                <img class="lazy" src="placeholders/placeholder.png" data-src="placeholders/release05-360x360.jpg" alt="Release image" >\n' +
-    '                <!-- tooltip -->\n' +
-    '                <div class="tip-content animate hidden">\n' +
-    '                    <span class="tip-title">Faster Than Light EP</span>\n' +
-    '                    <span class="tip-genre">Breakbeat / Dubstep</span>\n' +
-    '                    <span class="tip-date">2012-08-07</span>\n' +
-    '                </div>\n' +
-    '                <!-- /tooltip -->\n' +
-    '            </a>\n' +
-    '        </div>\n' +
-    '        <div class="item" data-filter="departmental">\n' +
-    '            <a href="https://soundcloud.com/ukfmusic/ukf-music-podcast-2-physical-in-the-mix" class="thumb project-thumb tip fap-single-track">\n' +
-    '                <!-- title and opacity mask -->\n' +
-    '                <div class="inner">\n' +
-    '                    <h6>Back To The Acid <span>(Play Soundcloud podcast)</span></h6>\n' +
-    '                </div>\n' +
-    '                <!-- /title and opacity mask -->\n' +
-    '                <img class="lazy" src="placeholders/placeholder.png" data-src="placeholders/release06-360x360.jpg" alt="Release image">\n' +
-    '                <!-- badge -->\n' +
-    '                <span class="badge free">FREE</span>\n' +
-    '                <!-- tooltip -->\n' +
-    '                <div class="tip-content animate hidden">\n' +
-    '                    <span class="tip-title">Back To The Acid</span>\n' +
-    '                    <span class="tip-genre">Breakbeat / Dubstep</span>\n' +
-    '                    <span class="tip-date">2012-07-22</span>\n' +
-    '                </div>\n' +
-    '                <!-- /tooltip -->\n' +
-    '            </a>\n' +
-    '        </div>\n' +
-    '        <div class="item" data-filter="departmental">\n' +
-    '            <a href="https://soundcloud.com/chinch-jack/sets/jungle-sets" class="thumb project-thumb tip fap-single-track">\n' +
-    '                <!-- title and opacity mask -->\n' +
-    '                <div class="inner">\n' +
-    '                    <h6>Skylarking - Remixes <span>(Play Soundcloud playlist)</span></h6>\n' +
-    '                </div>\n' +
-    '                <!-- /title and opacity mask -->\n' +
-    '                <img class="lazy" src="placeholders/placeholder.png" data-src="placeholders/release07-360x360.jpg" alt="Release image" >\n' +
-    '                <!-- tooltip -->\n' +
-    '                <div class="tip-content animate hidden">\n' +
-    '                    <span class="tip-title">Skylarking - Remixes</span>\n' +
-    '                    <span class="tip-genre">UK Funky / Glitch Hop</span>\n' +
-    '                    <span class="tip-date">2012-07-16</span>\n' +
-    '                </div>\n' +
-    '                <!-- /tooltip -->\n' +
-    '            </a>\n' +
-    '        </div>\n' +
-    '        <div class="item" data-filter="aerodrome">\n' +
-    '            <a href="https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Fplaylists%2F2999711&amp;color=ff7700&amp;auto_play=false&amp;show_artwork=true" class="thumb project-thumb mediabox tip" data-width="auto" data-height="450">\n' +
-    '                <!-- title and opacity mask -->\n' +
-    '                <div class="inner">\n' +
-    '                    <h6>Defiant Order <span>(Open Soundcloud in lightbox)</span></h6>\n' +
-    '                </div>\n' +
-    '                <!-- /title and opacity mask -->\n' +
-    '                <img class="lazy" src="placeholders/placeholder.png" data-src="placeholders/release08-360x360.jpg" alt="Release image">\n' +
-    '                <!-- tooltip -->\n' +
-    '                <div class="tip-content animate hidden">\n' +
-    '                    <span class="tip-title">Defiant Order</span>\n' +
-    '                    <span class="tip-genre">Breakbeat / Glitch Hop / Dubstep</span>\n' +
-    '                    <span class="tip-date">2012-05-07</span>\n' +
-    '                </div>\n' +
-    '                <!-- /tooltip -->\n' +
-    '            </a>\n' +
-    '        </div>\n' +
-    '        <div class="item" data-filter="strategical aerodrome">\n' +
-    '            <a href="placeholders/cover01-big.jpg" class="thumb project-thumb tip imagebox" title="Album Cover">\n' +
-    '                <div class="inner">\n' +
-    '                    <h6>Things Can Only Get Better <span>(Open image in lightbox)</span></h6>\n' +
-    '                </div>\n' +
-    '                <img class="lazy" src="placeholders/placeholder.png" data-src="placeholders/release09-360x360.jpg" alt="Release image">\n' +
-    '                <!-- badge -->\n' +
-    '                <span class="badge free">FREE</span>\n' +
-    '                <!-- tooltip -->\n' +
-    '                <div class="tip-content animate hidden">\n' +
-    '                    <span class="tip-title">Things Can Only Get Better</span>\n' +
-    '                    <span class="tip-genre">Drum and Bass / UK Funky</span>\n' +
-    '                    <span class="tip-date">2012-04-11</span>\n' +
-    '                </div>\n' +
-    '                <!-- /tooltip -->\n' +
-    '            </a>\n' +
-    '        </div>\n' +
-    '        <div class="item" data-filter="strategical">\n' +
-    '            <a href="http://player.vimeo.com/video/47224685?byline=0&amp;portrait=0&amp;color=ff9933" class="thumb project-thumb tip mediabox" data-width="auto" data-height="auto">\n' +
-    '                <div class="inner">\n' +
-    '                    <h6>Numbers / Limelight <span>(Open video in lightbox)</span></h6>\n' +
-    '                </div>\n' +
-    '                <img class="lazy" src="placeholders/placeholder.png" data-src="placeholders/release10-360x360.jpg" alt="Release image">\n' +
-    '                <!-- tooltip -->\n' +
-    '                <div class="tip-content animate hidden">\n' +
-    '                    <span class="tip-title">Numbers / Limelight</span>\n' +
-    '                    <span class="tip-genre">Breakbeat / UK Funky</span>\n' +
-    '                    <span class="tip-date">2012-03-11</span>\n' +
-    '                </div>\n' +
-    '                <!-- /tooltip -->\n' +
-    '            </a>\n' +
-    '        </div>\n' +
-    '    </div>\n' +
-    '\n' +
-    '</section>');
-}]);
-})();
-
-(function(module) {
-try {
-  module = angular.module('app.partials');
-} catch (e) {
-  module = angular.module('app.partials', []);
-}
-module.run(['$templateCache', function($templateCache) {
   $templateCache.put('./views/app/components/map/map.component.html',
     '<!-- ############ GMap ############ -->\n' +
     '<div id="contact-map" class="gmap clearfix" data-address="Level 13, 2 Elizabeth St, Melbourne Victoria 3000 Australia" data-zoom="16" data-zoom_control="true" data-scrollwheel="false"></div>\n' +
@@ -76185,7 +76347,7 @@ module.run(['$templateCache', function($templateCache) {
     '            <!-- ############ navigation ############ -->\n' +
     '            <nav id="nav" class="one-page-nav">\n' +
     '                <ul>\n' +
-    '                    <li>\n' +
+    '                    <li ui-sref-active="current">\n' +
     '                        <a ui-sref="app.events">Events</a>\n' +
     '                        <ul>\n' +
     '                            <li>\n' +
@@ -76203,19 +76365,19 @@ module.run(['$templateCache', function($templateCache) {
     '\n' +
     '                        </ul>\n' +
     '                    </li>\n' +
-    '                    <li>\n' +
+    '                    <li ui-sref-active="current">\n' +
     '                        <a ui-sref="app.account">Account</a>\n' +
     '                    </li>\n' +
-    '                    <li>\n' +
+    '                    <li ui-sref-active="current">\n' +
     '                        <a ui-sref="app.gallery">Gallery</a>\n' +
     '                    </li>\n' +
-    '                    <li>\n' +
+    '                    <li ui-sref-active="current">\n' +
     '                        <a ui-sref="app.team">Team</a>\n' +
     '                    </li>\n' +
-    '                    <li>\n' +
+    '                    <li ui-sref-active="current">\n' +
     '                        <a ui-sref="app.sponsors">Sponsors</a>\n' +
     '                    </li>\n' +
-    '                    <li>\n' +
+    '                    <li ui-sref-active="current">\n' +
     '                        <a ui-sref="app.contact">Contact</a>\n' +
     '                    </li>\n' +
     '                </ul>\n' +
@@ -76224,56 +76386,40 @@ module.run(['$templateCache', function($templateCache) {
     '\n' +
     '            <!-- responsive navigation -->\n' +
     '            <div id="dl-menu" class="dl-menuwrapper one-page-nav">\n' +
-    '                <button class="dl-trigger">Open Menu</button>\n' +
-    '                <ul class="dl-menu" style="max-height: 438px;">\n' +
-    '                    <li>\n' +
-    '                        <a href="#">Features</a>\n' +
-    '                        <ul class="dl-submenu" style="max-height: 438px;"><li class="dl-back"><a href="#">back</a></li>\n' +
+    '                <button class="dl-trigger" ng-click="vm.openmenu = ! vm.openmenu">Open Menu</button>\n' +
+    '                <ul class="dl-menu" ng-class="{\'dl-menuopen\' : vm.openmenu}">\n' +
+    '                    <li ui-sref-active="current">\n' +
+    '                        <a ui-sref="app.events">Events</a>\n' +
+    '                        <ul>\n' +
     '                            <li>\n' +
-    '                                <a href="grid.html" class="page-by-ajax" data-ajax-options="{&quot;target&quot; :&quot;#custom-page&quot;}">Grid</a>\n' +
+    '                                <a ui-sref="app.competitions">Competitions</a>\n' +
     '                            </li>\n' +
     '                            <li>\n' +
-    '                                <a href="masonry.html" class="page-by-ajax" data-ajax-options="{&quot;target&quot; :&quot;#custom-page&quot;}">Masonry Boxes</a>\n' +
+    '                                <a ui-sref="app.workshops">Workshops</a>\n' +
     '                            </li>\n' +
     '                            <li>\n' +
-    '                                <a href="gallery.html" class="page-by-ajax" data-ajax-options="{&quot;target&quot; :&quot;#custom-page&quot;}">Gallery</a>\n' +
+    '                                <a ui-sref="app.guestlectures">Guest Lectures</a>\n' +
     '                            </li>\n' +
     '                            <li>\n' +
-    '                                <a href="elements.html" class="page-by-ajax" data-ajax-options="{&quot;target&quot; :&quot;#custom-page&quot;}">Elements</a>\n' +
+    '                                <a ui-sref="app.pronites">Pro-Nites</a>\n' +
     '                            </li>\n' +
-    '                            <li>\n' +
-    '                                <a href="videos.html" class="page-by-ajax" data-ajax-options="{&quot;target&quot; :&quot;#custom-page&quot;}">Videos</a>\n' +
-    '                            </li>\n' +
-    '                            <li>\n' +
-    '                                <a href="#newsletter">Newsletter</a>\n' +
-    '                            </li>\n' +
-    '                            <li>\n' +
-    '                                <a href="#">Sub Menu</a>\n' +
-    '                                <ul class="dl-submenu" style="max-height: 438px;"><li class="dl-back"><a href="#">back</a></li>\n' +
-    '                                    <li>\n' +
-    '                                        <a href="#">Level 2.1</a>\n' +
-    '                                    </li>\n' +
-    '                                    <li>\n' +
-    '                                        <a href="#">Level 2.2</a>\n' +
-    '                                    </li>\n' +
-    '                                    <li>\n' +
-    '                                        <a href="#">Level 2.3</a>\n' +
-    '                                    </li>\n' +
-    '                                </ul>\n' +
-    '                            </li>\n' +
+    '\n' +
     '                        </ul>\n' +
     '                    </li>\n' +
-    '                    <li class="current">\n' +
-    '                        <a href="#portfolio">Releases</a>\n' +
+    '                    <li ui-sref-active="current">\n' +
+    '                        <a ui-sref="app.account">Account</a>\n' +
     '                    </li>\n' +
-    '                    <li class="">\n' +
-    '                        <a href="#events">Events</a>\n' +
+    '                    <li ui-sref-active="current">\n' +
+    '                        <a ui-sref="app.gallery">Gallery</a>\n' +
     '                    </li>\n' +
-    '                    <li>\n' +
-    '                        <a href="#bio">Bio</a>\n' +
+    '                    <li ui-sref-active="current">\n' +
+    '                        <a ui-sref="app.team">Team</a>\n' +
     '                    </li>\n' +
-    '                    <li class="">\n' +
-    '                        <a href="#contact">Contact</a>\n' +
+    '                    <li ui-sref-active="current">\n' +
+    '                        <a ui-sref="app.sponsors">Sponsors</a>\n' +
+    '                    </li>\n' +
+    '                    <li ui-sref-active="current">\n' +
+    '                        <a ui-sref="app.contact">Contact</a>\n' +
     '                    </li>\n' +
     '                </ul>\n' +
     '            </div>\n' +
@@ -76556,166 +76702,6 @@ module.run(['$templateCache', function($templateCache) {
     '    <!-- /container -->\n' +
     '</section>\n' +
     '<!--/intro-->\n' +
-    '');
-}]);
-})();
-
-(function(module) {
-try {
-  module = angular.module('app.partials');
-} catch (e) {
-  module = angular.module('app.partials', []);
-}
-module.run(['$templateCache', function($templateCache) {
-  $templateCache.put('./views/app/pages/account/account.page.html',
-    '');
-}]);
-})();
-
-(function(module) {
-try {
-  module = angular.module('app.partials');
-} catch (e) {
-  module = angular.module('app.partials', []);
-}
-module.run(['$templateCache', function($templateCache) {
-  $templateCache.put('./views/app/pages/contact/contact.page.html',
-    '<!--<navbar></navbar>-->\n' +
-    '<!-- ############ section container ############ -->\n' +
-    '<div class="section-container container clearfix">\n' +
-    '\n' +
-    '    <!-- ############ content header ############ -->\n' +
-    '    <header class="content-header">\n' +
-    '        <h1 class="content-title">Get in Touch</h1>\n' +
-    '        <span class="sub-heading">Do not hesitate to booking me!</span>\n' +
-    '        <hr class="content-line">\n' +
-    '    </header>\n' +
-    '    <!-- /content header -->\n' +
-    '\n' +
-    '    <div class="row clearfix">\n' +
-    '        <p>Cras venenatis justo mi, non posuere enim aliquet malesuada. Nullam orci sem, adipiscing id rutrum et, blandit quis lorem. Phasellus lacus orci, cursus vitae mi eget, sagittis congue elit. Donec ac tincidunt tortor. Duis vel neque eleifend odio hendrerit consequat sed vel massa. Praesent tempor libero quis tincidunt fringilla. Aliquam congue, neque et aliquam eleifend, lacus diam aliquet urna, in sollicitudin neque nisl facilisis urna.</p>\n' +
-    '        <br>\n' +
-    '        <!-- column icon -->\n' +
-    '        <div class="col-1-4 column-icon">\n' +
-    '            <span class="icon-home icon"></span>\n' +
-    '            <span class="txt"><strong>Level 13, 2 Elizabeth St, Melbourne Victoria </strong><br>3000 Australia</span>\n' +
-    '        </div>\n' +
-    '        <!-- /column icon -->\n' +
-    '        <!-- column icon -->\n' +
-    '        <div class="col-1-4 column-icon">\n' +
-    '            <span class="icon-phone icon"></span>\n' +
-    '            <span class="txt"><strong>(123) 563-9899-234</strong><br>(123) 123-9899-234 (FAX)</span>\n' +
-    '        </div>\n' +
-    '        <!-- /column icon -->\n' +
-    '        <!-- column icon -->\n' +
-    '        <div class="col-1-4 column-icon">\n' +
-    '            <span class="icon-pencil-2 icon"></span>\n' +
-    '            <span class="txt"><strong><a href="mailto:djspectra@djspectra.com">djspectra@djspectra.com</a></strong><br><a href="mailto:booking@djspectra.com">booking@djspectra.com</a> </span>\n' +
-    '        </div>\n' +
-    '        <!-- /column icon -->\n' +
-    '        <!-- column icon -->\n' +
-    '        <div class="col-1-4 last column-icon">\n' +
-    '            <span class="icon-share icon"></span>\n' +
-    '            <span class="txt"><strong><a href="http://facebook.com/">facebook</a></strong><br><a href="http://twitter.com/">twitter</a><br><a href="http://soundcloud.com/">soundcloud</a></span>\n' +
-    '        </div>\n' +
-    '        <!-- /column icon -->\n' +
-    '    </div>\n' +
-    '</div>\n' +
-    '\n' +
-    '<contact></contact>\n' +
-    '<!--<footer></footer>-->');
-}]);
-})();
-
-(function(module) {
-try {
-  module = angular.module('app.partials');
-} catch (e) {
-  module = angular.module('app.partials', []);
-}
-module.run(['$templateCache', function($templateCache) {
-  $templateCache.put('./views/app/pages/events/events.page.html',
-    '<event></event>\n' +
-    '<event-table></event-table>\n' +
-    '<social></social>\n' +
-    '');
-}]);
-})();
-
-(function(module) {
-try {
-  module = angular.module('app.partials');
-} catch (e) {
-  module = angular.module('app.partials', []);
-}
-module.run(['$templateCache', function($templateCache) {
-  $templateCache.put('./views/app/pages/footer/footer.page.html',
-    '<footer></footer>');
-}]);
-})();
-
-(function(module) {
-try {
-  module = angular.module('app.partials');
-} catch (e) {
-  module = angular.module('app.partials', []);
-}
-module.run(['$templateCache', function($templateCache) {
-  $templateCache.put('./views/app/pages/gallery/gallery.page.html',
-    '    <!--<navbar></navbar>-->\n' +
-    '    <gallery></gallery>\n' +
-    '    <social></social>\n' +
-    '    <!--<footer></footer>-->\n' +
-    '');
-}]);
-})();
-
-(function(module) {
-try {
-  module = angular.module('app.partials');
-} catch (e) {
-  module = angular.module('app.partials', []);
-}
-module.run(['$templateCache', function($templateCache) {
-  $templateCache.put('./views/app/pages/header/header.page.html',
-    '');
-}]);
-})();
-
-(function(module) {
-try {
-  module = angular.module('app.partials');
-} catch (e) {
-  module = angular.module('app.partials', []);
-}
-module.run(['$templateCache', function($templateCache) {
-  $templateCache.put('./views/app/pages/home/home.page.html',
-    '<welcome></welcome>\n' +
-    '<navbar></navbar>\n' +
-    '<countdown></countdown>\n' +
-    '<events></events>\n' +
-    '<event-list></event-list>\n' +
-    '<map></map>\n' +
-    '<contact></contact>\n' +
-    '<social></social>\n' +
-    '<sponsors></sponsors>\n' +
-    '<!--<footer></footer>-->\n' +
-    '');
-}]);
-})();
-
-(function(module) {
-try {
-  module = angular.module('app.partials');
-} catch (e) {
-  module = angular.module('app.partials', []);
-}
-module.run(['$templateCache', function($templateCache) {
-  $templateCache.put('./views/app/pages/team/team.page.html',
-    '    <!--<navbar></navbar>-->\n' +
-    '    <team></team>\n' +
-    '    <!--<footer></footer>-->\n' +
-    '\n' +
     '');
 }]);
 })();
@@ -77855,6 +77841,7 @@ module.run(['$templateCache', function($templateCache) {
 
 	        this.window = $window;
 	        this.scope = $scope;
+	        this.openmenu = false;
 	    }
 
 	    _createClass(NavbarController, [{

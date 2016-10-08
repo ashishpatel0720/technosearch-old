@@ -3,6 +3,7 @@ class NavbarController{
         'ngInject';
         this.window = $window;
         this.scope = $scope;
+        this.openmenu = false;
     }
 
     $onInit(){

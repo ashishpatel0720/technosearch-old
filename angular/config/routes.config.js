@@ -120,6 +120,14 @@ export function RoutesConfig($stateProvider, $urlRouterProvider) {
                 }
             }
         })
+        .state('app.event', {
+            url: '/event/:slug',
+            views: {
+                'main@': {
+                    templateUrl: getView('event')
+                }
+            }
+        })
 
 
     // $locationProvider.html5Mode(true);

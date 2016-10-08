@@ -1,15 +1,12 @@
 class EventController{
-    constructor($http){
+    constructor($state){
         'ngInject';
-
-
+        this.state = $state;
     }
 
     $onInit(){
-
-
+        console.log(this.state.params.slug);
     }
-
 }
 
 export const EventComponent = {

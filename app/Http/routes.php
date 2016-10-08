@@ -31,6 +31,8 @@ $api->group(['middleware' => ['api']], function ($api) {
         ]);
     });
 
+    $api->get('event/{slug}', 'EventController@getEvent');
+
     // Authentication Routes...
     $api->post('auth/login', 'Auth\AuthController@login');
     $api->post('auth/register', 'Auth\AuthController@register');

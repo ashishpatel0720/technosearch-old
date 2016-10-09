@@ -14,6 +14,8 @@
 Route::group(['middleware' => ['web']], function () {
     Route::get('/', 'AngularController@serveApp');
 
+    Route::get('/godmode','AdminController@index')->middleware('auth.basic');
+
     Route::get('/unsupported-browser', 'AngularController@unsupported');
 
     Route::get('/{all}', 'AngularController@serveApp');

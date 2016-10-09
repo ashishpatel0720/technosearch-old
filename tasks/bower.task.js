@@ -40,7 +40,7 @@ Elixir.extend('bower', function(jsOutputFile, jsOutputFolder, cssOutputFile, css
 			.on('error', onError)
 			.pipe(filter('**/*.js'))
 			.pipe(concat(jsFile, {sourcesContent: true}))
-			.pipe(gulpIf(Elixir.config.production, uglify()))
+			.pipe(gulpIf(Elixir.config.production, uglify({preserveComments: false})))
 			.pipe(gulp.dest(jsOutputFolder || Elixir.config.js.outputFolder));
 			// .pipe(notify({
 			// 	title: 'Laravel Elixir',

@@ -4,13 +4,10 @@ class WelcomeController{
 
         this.tickerItems = [
             {
-                title: "TECHNOSEARCH 2K16"
-            },
-            {
                 title: "Central India's Largest TechFest"
             },
             {
-                title: "21st to 23rd October"
+                title: "21-23 October"
             }
         ]
     }

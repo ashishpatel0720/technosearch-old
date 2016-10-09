@@ -3,18 +3,32 @@
     <!-- animated bg -->
     <div class="intro-bg"></div>
     <!-- container -->
-    <div class="container">
-        <img id="intro-logo" src="img/logo.png" alt="Logo">
-        <div id="ticker-wrap">
-            <ul ticker id="ticker" timing="3000">
-                <li style='font-size:0.5em' ng-repeat="item in vm.tickerItems" class="item-{{$index}}">
-                    {{item.title}}
-                </li>
-            </ul>
+    <div class="container" id="welcome">
+        <img id="manit-logo" class="alignleft" src="img/manit.png" alt="Logo">
+        <img id="intro-logo" class="alignright" src="img/logo.png" alt="Logo">
+
+        <div class="distribute">
+            <h1 class="content-title">Maulana Azad National Institute of Technology</h1>
+
+            <div class="technostyle"><img ng-src="img/tsfont.png" alt="TechnoSearch"></div>
+
+            <div id="ticker-wrap">
+                <ul ticker id="ticker" timing="3000">
+                    <li ng-repeat="item in vm.tickerItems" class="item-{{$index}}">
+                        {{item.title}}
+                    </li>
+                </ul>
+            </div>
+
+
+            <a id="scroll-arrows" class="smooth-scroll" href="#" scroll-to="upcoming-event"><img src="img/scroll-arrows.png" alt="scroll down"></a>
+
         </div>
-        <a id="intro-button" class="smooth-scroll" href="#" scroll-to="upcoming-event" ><span>ENTER</span></a>
-        <a id="scroll-arrows" class="smooth-scroll" href="#" scroll-to="upcoming-event"><img src="img/scroll-arrows.png" alt="scroll down"></a>
+
+
+
     </div>
     <!-- /container -->
+
 </section>
 <!--/intro-->

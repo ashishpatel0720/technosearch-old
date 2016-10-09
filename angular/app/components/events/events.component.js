@@ -1,25 +1,38 @@
 class EventsController{
-    constructor(){
+    constructor(API){
         'ngInject';
+        this.API = API;
+        this.items = {};
 
         //
     }
 
     $onInit(){
 
-        var iso = new Isotope( '.items', {
-            itemSelector: '.item',
-            layoutMode: 'fitRows'
-        });
-        angular.element(document).ready(function () {
-            iso.arrange({ filter: '*' });
+        this.API.one('events').get().then((response) => {
+            this.items = response.data;
+
+
+
+            setTimeout(function(){
+                var iso = new Isotope( '.items', {
+                    itemSelector: '.item',
+                    layoutMode: 'fitRows'
+                });
+                angular.element(document).ready(function () {
+                    iso.arrange({ filter: '*' });
+                });
+
+                var filtersElem = document.querySelector('.filter-list');
+                filtersElem.addEventListener( 'click', function( event ) {
+                    var filterValue = event.target.getAttribute('data-filter');
+                    iso.arrange({ filter: filterValue });
+                });
+            },1500);
         });
 
-        var filtersElem = document.querySelector('.filter-list');
-        filtersElem.addEventListener( 'click', function( event ) {
-            var filterValue = event.target.getAttribute('data-filter');
-            iso.arrange({ filter: filterValue });
-        });
+
+
 
         // var buttonGroups = document.querySelectorAll('.button-group');
         // for ( var i=0, len = buttonGroups.length; i < len; i++ ) {

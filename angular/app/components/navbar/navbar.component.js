@@ -21,7 +21,7 @@ class NavbarController{
                             upcom.style.marginTop = '0px';
                             el.classList.remove('sticky')
                         } else {
-                            upcom.style.marginTop = '90px';
+                            upcom.style.marginTop = '92px';
                             el.classList.add('sticky');
 
                         }

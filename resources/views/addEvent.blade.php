@@ -65,7 +65,14 @@
 <script>
     Zepto(function($){
         $('form').submit(function(){
-            $.post('/api/addevent');
+            $.ajax({
+                url: '/api/addevent',
+                data: $(this).serialize(),
+                type: 'POST',
+                success: function(data){
+                    console.log(data)
+                }
+            });
             return false;
         })
     })

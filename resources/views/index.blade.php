@@ -49,13 +49,11 @@
     {{--<![endif]-->--}}
 
     <div id="top" style="position: absolute"></div>
-    <div ui-view="header"></div>
     <div ui-view="main">
         <div style="width:100%;height:100vh;top:0;left:0;position:fixed;display:flex;align-items:center;justify-content:center;background:#000;">
             <img src="/img/loader.gif">
         </div>
     </div>
-    <div ui-view="footer"></div>
 
 
     <script>

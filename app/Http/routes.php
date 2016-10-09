@@ -22,16 +22,10 @@ Route::group(['middleware' => ['web']], function () {
 //public API routes
 $api->group(['middleware' => ['api']], function ($api) {
 
-    $api->get('team', function(){
-        return response()->success([
-            ['img_src'=>'x', 'member_name'=>'Hariom Sharma', 'member_title'=>'Web Developer', 'fb_link'=>'http://www.facebook.com'],
-            ['img_src'=>'x', 'member_name'=>'Manohar Lakkoju', 'member_title'=>'Web Developer', 'fb_link'=>'http://www.facebook.com'],
-            ['img_src'=>'x', 'member_name'=>'Kartik Akojwar', 'member_title'=>'Vice President', 'fb_link'=>'http://www.facebook.com'],
-            ['img_src'=>'x', 'member_name'=>'Akshay Gupta', 'member_title'=>'Sports Secretary', 'fb_link'=>'http://www.facebook.com']
-        ]);
-    });
+    $api->get('team', 'TeamController@getTeam');
 
     $api->get('event/{slug}', 'EventController@getEvent');
+    $api->get('events', 'EventController@getEvents');
 
     // Authentication Routes...
     $api->post('auth/login', 'Auth\AuthController@login');

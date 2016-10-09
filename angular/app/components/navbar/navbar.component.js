@@ -15,10 +15,19 @@ class NavbarController{
                 if(intro) {
                     var el = document.getElementById('main-nav');
                     var intro = document.getElementById('intro');
+                    var upcom = document.getElementById('upcoming-event');
                     if (intro.getBoundingClientRect().bottom < 0){
-                        el.getBoundingClientRect().top > 0 ? el.classList.remove('sticky') : el.classList.add('sticky');
+                        if(el.getBoundingClientRect().top > 0) {
+                            upcom.style.marginTop = '0px';
+                            el.classList.remove('sticky')
+                        } else {
+                            upcom.style.marginTop = '90px';
+                            el.classList.add('sticky');
+
+                        }
                     }
                     else{
+                        upcom.style.marginTop = '0px';
                         el.classList.remove('sticky')
                     }
                 }

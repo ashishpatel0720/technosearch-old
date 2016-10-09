@@ -1,4 +1,4 @@
-export function RoutesConfig($stateProvider, $urlRouterProvider) {
+export function RoutesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
 	'ngInject';
 
 	let getView = (viewName) => {
@@ -130,6 +130,6 @@ export function RoutesConfig($stateProvider, $urlRouterProvider) {
         })
 
 
-    // $locationProvider.html5Mode(true);
+    $locationProvider.html5Mode(true);
 
 }

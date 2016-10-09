@@ -12,9 +12,12 @@ class UpdateEventTable extends Migration
      */
     public function up()
     {
-        //
+
         Schema::table('event', function (Blueprint $table){
+            $table->string('slug')->unique()->change();
+
             $table->boolean('problem_statement')->after('slug');
+
         });
     }
 

@@ -27,6 +27,7 @@ class CreateEventTable extends Migration
             $table->string('faculty');
             $table->integer('count')->default(0);
             $table->timestamps();
+
         });
     }
 

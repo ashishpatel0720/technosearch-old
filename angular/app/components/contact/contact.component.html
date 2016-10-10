@@ -13,32 +13,39 @@
         </div>
 
         <!-- contact form -->
-        <form action="http://themes.rascals.eu/spectra_html/plugins/contact-form.php" method="post" class="form contact-form">
+        <form name="vm.contactForm" class="form contact-form" ng-submit="vm.submit()">
             <div class="row clearfix">
                 <div class="col-1-3">
                     <label for="contact-name"><strong>Name</strong> (required)</label>
-                    <input type="text" name="name" value="" id="contact-name" required>
+                    <input type="text" name="name" id="contact-name" required ng-model="vm.name">
                 </div>
                 <div class="col-1-3">
                     <label for="contact-email"><strong>Email</strong> (required)</label>
-                    <input type="email" name="email" value="" id="contact-email" required>
+                    <input type="email" name="email" id="contact-email" required ng-model="vm.email">
                 </div>
                 <div class="col-1-3 last">
-                    <label for="contact-subject"><strong>Subject</strong></label>
-                    <input type="text" name="subject" value="" id="contact-subject">
+                    <label for="contact-contact"><strong>Contact</strong> (required)</label>
+                    <input type="tel" name="contact" id="contact-contact" ng-model="vm.contact">
                 </div>
             </div>
             <div class="row clearfix">
                 <div class="col-1-1">
                     <label for="contact-message"><strong>Your Message</strong> (required)</label>
-                    <textarea name="message" id="contact-message" cols="88" rows="6" required></textarea>
+                    <textarea name="message" id="contact-message" cols="88" rows="6" required ng-model="vm.message"></textarea>
                 </div>
             </div>
-            <div class="hidden">
-                <label for="contact-spam-check">Do not fill out this field this is spam check.</label>
-                <input name="anty_spam" type="text" value="" id="contact-spam-check" />
+            <div class="row clearfix">
+                <div vc-recaptcha key="vm.captchakey" on-create="setWidgetId(widgetId)"></div>
             </div>
-            <input type="submit" value="Submit Message" class="large">
+            <div class="row clearfix">
+                <input type="submit" value="Submit Message" class="large" ng-disabled="vm.contactForm.$invalid">
+            </div>
+            <div class="row clearfix" ng-show="vm.success">
+                <div style="color: #ffffff;font-size: 18px;padding: 10px 0px;">
+                    Form submitted successfully!
+                </div>
+            </div>
+
             <div class="clear"></div>
         </form>
         <!-- /contact form -->

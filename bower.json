@@ -20,6 +20,7 @@
     "angular-ticker": "simple-angular-ticker#^1.0.4",
     "isotope": "^3.0.1",
     "magnific-popup": "^1.1.0",
-    "ngmap": "^1.17.6"
+    "ngmap": "^1.17.6",
+    "angular-recaptcha": "^3.0.4"
   }
 }

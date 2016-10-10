@@ -46,6 +46,10 @@
     })();
     </script>
 
+    <script
+            src="https://www.google.com/recaptcha/api.js?onload=vcRecaptchaApiLoaded&render=explicit"
+            async defer
+    ></script>
     <script src="js/final.js" async defer></script>
 
 </body>

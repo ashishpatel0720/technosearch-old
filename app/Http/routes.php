@@ -30,6 +30,7 @@ $api->group(['middleware' => ['api']], function ($api) {
     $api->get('events', 'EventController@getEvents');
 
     $api->post('addevent','EventController@addEvent');
+    $api->post('contact','MainController@saveMessage');
 
     // Authentication Routes...
     $api->post('auth/login', 'Auth\AuthController@login');

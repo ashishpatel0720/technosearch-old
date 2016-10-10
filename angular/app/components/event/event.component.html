@@ -5,29 +5,16 @@
     <div id="event-single" class="row clearfix">
         <!-- column -->
         <div class="col-1-2">
-            <h2>Event Details</h2>
-            <p>
-                Sed luctus neque ac sem aliquam imperdiet. In quis porttitor tortor. Pellentesque scelerisque quam et quam pretium imperdiet. Aenean scelerisque tincidunt dolor et consectetur.
-            </p>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu felis tellus, sit amet elementum est. Proin posuere turpis lectus, eget vulputate erat. Nunc eget metus in magna vulputate elementum sed ut leo. Mauris at mauris purus, ut laoreet eros.</p>
-            <p>
-                Sed luctus neque ac sem aliquam imperdiet. In quis porttitor tortor. Pellentesque scelerisque quam et quam pretium imperdiet. Aenean scelerisque tincidunt dolor et consectetur.
-            </p>
-            <blockquote>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu felis tellus, sit amet elementum est. Proin posuere turpis lectus, eget vulputate erat. Nunc eget metus in magna vulputate elementum sed ut leo. Mauris at mauris purus, ut laoreet eros.
-                </p>
-            </blockquote>
-            <!-- large button -->
-            <a class="btn large alignleft"><span class="button-icon icon-cart-3"></span> Buy Tickets</a>
+            <h2>{{vm.item.name}}</h2>
+            <p>{{vm.item.description}} </p>
+            <a class="btn large alignleft"><span class="button-icon icon-cart-3"></span>Download Problem Statement</a>
         </div>
         <!-- /column -->
         <!-- column -->
         <div class="col-1-2 last">
-            <h2>Promotion</h2>
+            <!--<h2>Promotion</h2>-->
             <!-- image poster -->
-            <img src="placeholders/event-poster-01-520x700.jpg" alt="event poster">
+            <img src="img/events/{{vm.item.slug}}.jpg" alt="TechnoSearch">
         </div>
         <!-- /column -->
     </div>

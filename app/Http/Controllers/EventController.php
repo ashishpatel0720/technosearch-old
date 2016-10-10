@@ -43,5 +43,7 @@ class EventController extends Controller
         $event->faculty = $data['faculty'];
 
         $event->save();
+
+        return response()->success(true);
     }
 }

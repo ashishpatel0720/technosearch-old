@@ -12,11 +12,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UserTableSeeder::class);
-//        $user = new User;
-//        $user->name = "admin";
-//        $user->email = "manoharvirat@gmail.com";
-//        $user->password = bcrypt("chutiyapa");
-//        $user->save();
+//         $this->call(UserTableSeeder::class);
+        $user = new User;
+        $user->name = "admin";
+        $user->email = "admin@technosearch.in";
+        $user->password = bcrypt("godmode111");
+        $user->save();
     }
 }

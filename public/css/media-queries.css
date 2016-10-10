@@ -553,7 +553,7 @@
 	#events-list li { 
 		height: auto;
 		padding: 0;
-		background-image: none !important;
+		/*background-image: none !important;*/
 	}
 	#events-list li:hover { 
 		height: auto;

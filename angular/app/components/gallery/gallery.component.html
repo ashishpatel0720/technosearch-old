@@ -9,145 +9,158 @@
                 <span class="sub-heading">Previous Techno Pictures</span>
                 <hr class="content-line">
             </header>
+
             <div class="row clearfix">
 
                 <div class="masonry clearfix">
                     <!-- brick -->
-                    <div class="brick width-1-2 height-1-2">
-                        <a href="placeholders/gallery-01-544x544.jpg" class="thumb imagebox" data-group="amsterdam-2013-10-12" title="Gallery image title">
+                    <!--<div class="brick width-1-2 height-1-2">-->
+                        <!--<a href="placeholders/gallery-01-544x544.jpg" class="thumb imagebox" data-group="amsterdam-2013-10-12" title="Gallery image title">-->
+
+                            <!--<div class="inner">-->
+                                <!--<h6>Amsterdam Festival <span>23 Photos</span></h6>-->
+                            <!--</div>-->
+                            <!--<img src="placeholders/gallery-01-544x544.jpg" alt="Gallery image title">-->
+                            <!--&lt;!&ndash;<span class="badge new">NEW</span>&ndash;&gt;-->
+                        <!--</a>-->
+                    <!--</div>-->
+
+                    <div class="brick width-1-4 height-1-4" ng-repeat="i in [1,2,3,4,5,6,7,8,9]" style="background-image: url(img/gallery/thumb_{{i}}.jpg)">
+                        <a href="img/gallery/{{i}}.jpg" class="thumb imagebox" title="Technosearch gallery">
 
                             <div class="inner">
-                                <h6>Amsterdam Festival <span>23 Photos</span></h6>
+                                <h6>Techno</h6>
                             </div>
-                            <img src="placeholders/gallery-01-544x544.jpg" alt="Gallery image title">
+                            <!--<img ng-src="img/gallery/thumb_{{i}}.jpg" alt="Technosearch gallery">-->
+                        </a>
+                    </div>
+
+                    <!---->
+                    <!--<div class="brick width-1-2 height-1-2">-->
+                        <!--<a href="placeholders/gallery-02-544x544.jpg" class="thumb imagebox" data-group="bacardi-2013-10-12" title="Gallery image title">-->
+                            <!--&lt;!&ndash; title and opacity mask &ndash;&gt;-->
+                            <!--<div class="inner">-->
+                                <!--<h6>Bacardi Original Bar <span>12 Photos</span></h6>-->
+                            <!--</div>-->
+                            <!--&lt;!&ndash; image &ndash;&gt;-->
+                            <!--<img src="placeholders/gallery-02-544x544.jpg" alt="Gallery image title">-->
+                            <!--&lt;!&ndash; badge &ndash;&gt;-->
                             <!--<span class="badge new">NEW</span>-->
-                        </a>
-                    </div>
-                    <div class="brick width-1-2 height-1-2">
-                        <a href="placeholders/gallery-02-544x544.jpg" class="thumb imagebox" data-group="bacardi-2013-10-12" title="Gallery image title">
-                            <!-- title and opacity mask -->
-                            <div class="inner">
-                                <h6>Bacardi Original Bar <span>12 Photos</span></h6>
-                            </div>
-                            <!-- image -->
-                            <img src="placeholders/gallery-02-544x544.jpg" alt="Gallery image title">
-                            <!-- badge -->
-                            <span class="badge new">NEW</span>
-                        </a>
-                        <!-- Gallery photos -->
-                      </div>
-                    <!-- /brick -->
-                    <!-- brick -->
-                    <div class="brick width-1-2 height-1-2">
-                        <a href="placeholders/gallery-03-544x544.jpg" class="thumb imagebox" data-group="sepang-2013-10-12" title="Gallery image title">
-                            <!-- title and opacity mask -->
-                            <div class="inner">
-                                <h6>Sepang International Circuit <span>08 Photos</span></h6>
-                            </div>
-                            <!-- image -->
-                            <img src="placeholders/gallery-03-544x544.jpg" alt="Gallery image title">
-                            <!-- badge -->
-                            <span class="badge new">NEW</span>
-                        </a>
-                        <!-- Gallery photos -->
-                      </div>
-                    <!-- /brick -->
-                    <!-- brick -->
-                    <div class="brick width-1-4 height-1-4">
-                        <a href="placeholders/gallery-01-272x272.jpg" class="thumb imagebox" data-group="gal01" title="Gallery image title">
-                            <!-- title and opacity mask -->
-                            <div class="inner">
-                                <h6>Gallery Title <span>08 Photos</span></h6>
-                            </div>
-                            <!-- image -->
-                            <img src="placeholders/gallery-01-272x272.jpg" alt="Gallery image title">
-                        </a>
-                      </div>
-                    <!-- /brick -->
-                    <!-- brick -->
-                    <div class="brick width-1-4 height-1-4">
-                        <a href="placeholders/gallery-02-272x272.jpg" class="thumb imagebox" data-group="gal02" title="Gallery image title">
-                            <!-- title and opacity mask -->
-                            <div class="inner">
-                                <h6>Gallery Title <span>08 Photos</span></h6>
-                            </div>
-                            <!-- image -->
-                            <img src="placeholders/gallery-02-272x272.jpg" alt="Gallery image title">
-                        </a>
-                        </div>
-                    <!-- /brick -->
-                    <!-- brick -->
-                    <div class="brick width-1-4 height-1-4">
-                        <a href="placeholders/gallery-03-272x272.jpg" class="thumb imagebox" data-group="gal03" title="Gallery image title">
-                            <!-- title and opacity mask -->
-                            <div class="inner">
-                                <h6>Gallery Title <span>08 Photos</span></h6>
-                            </div>
-                            <!-- image -->
-                            <img src="placeholders/gallery-03-272x272.jpg" alt="Gallery image title">
-                        </a>
-                      </div>
-                    <!-- /brick -->
-                    <!-- brick -->
-                    <div class="brick width-1-4 height-1-4">
-                        <a href="placeholders/gallery-04-272x272.jpg" class="thumb imagebox" data-group="gal04" title="Gallery image title">
-                            <!-- title and opacity mask -->
-                            <div class="inner">
-                                <h6>Gallery Title <span>08 Photos</span></h6>
-                            </div>
-                            <!-- image -->
-                            <img src="placeholders/gallery-04-272x272.jpg" alt="Gallery image title">
-                        </a>
-                    </div>
-                    <!-- /brick -->
-                    <!-- brick -->
-                    <div class="brick width-1-4 height-1-4">
-                        <a href="placeholders/gallery-03-272x272.jpg" class="thumb imagebox" data-group="gal05" title="Gallery image title">
-                            <!-- title and opacity mask -->
-                            <div class="inner">
-                                <h6>Gallery Title <span>08 Photos</span></h6>
-                            </div>
-                            <!-- image -->
-                            <img src="placeholders/gallery-03-272x272.jpg" alt="Gallery image title">
-                        </a>
-                     </div>
-                    <!-- /brick -->
-                    <!-- brick -->
-                    <div class="brick width-1-4 height-1-4">
-                        <a href="placeholders/gallery-04-272x272.jpg" class="thumb imagebox" data-group="gal06" title="Gallery image title">
-                            <!-- title and opacity mask -->
-                            <div class="inner">
-                                <h6>Gallery Title <span>08 Photos</span></h6>
-                            </div>
-                            <!-- image -->
-                            <img src="placeholders/gallery-04-272x272.jpg" alt="Gallery image title">
-                        </a>
-                        <!-- Gallery photos -->
-                     </div>
-                    <!-- /brick -->
-                    <!-- brick -->
-                    <div class="brick width-1-4 height-1-4">
-                        <a href="placeholders/gallery-01-272x272.jpg" class="thumb imagebox" data-group="gal07" title="Gallery image title">
-                            <!-- title and opacity mask -->
-                            <div class="inner">
-                                <h6>Gallery Title <span>08 Photos</span></h6>
-                            </div>
-                            <!-- image -->
-                            <img src="placeholders/gallery-01-272x272.jpg" alt="Gallery image title">
-                        </a>
-                     </div>
-                    <!-- /brick -->
-                    <!-- brick -->
-                    <div class="brick width-1-4 height-1-4">
-                        <a href="placeholders/gallery-02-272x272.jpg" class="thumb imagebox" data-group="gal08" title="Gallery image title">
-                            <!-- title and opacity mask -->
-                            <div class="inner">
-                                <h6>Gallery Title <span>08 Photos</span></h6>
-                            </div>
-                            <!-- image -->
-                            <img src="placeholders/gallery-02-272x272.jpg" alt="Gallery image title">
-                        </a>
-                     </div>
+                        <!--</a>-->
+                        <!--&lt;!&ndash; Gallery photos &ndash;&gt;-->
+                      <!--</div>-->
+                    <!--&lt;!&ndash; /brick &ndash;&gt;-->
+                    <!--&lt;!&ndash; brick &ndash;&gt;-->
+                    <!--<div class="brick width-1-2 height-1-2">-->
+                        <!--<a href="placeholders/gallery-03-544x544.jpg" class="thumb imagebox" data-group="sepang-2013-10-12" title="Gallery image title">-->
+                            <!--&lt;!&ndash; title and opacity mask &ndash;&gt;-->
+                            <!--<div class="inner">-->
+                                <!--<h6>Sepang International Circuit <span>08 Photos</span></h6>-->
+                            <!--</div>-->
+                            <!--&lt;!&ndash; image &ndash;&gt;-->
+                            <!--<img src="placeholders/gallery-03-544x544.jpg" alt="Gallery image title">-->
+                            <!--&lt;!&ndash; badge &ndash;&gt;-->
+                            <!--<span class="badge new">NEW</span>-->
+                        <!--</a>-->
+                        <!--&lt;!&ndash; Gallery photos &ndash;&gt;-->
+                      <!--</div>-->
+                    <!--&lt;!&ndash; /brick &ndash;&gt;-->
+                    <!--&lt;!&ndash; brick &ndash;&gt;-->
+                    <!--<div class="brick width-1-4 height-1-4">-->
+                        <!--<a href="placeholders/gallery-01-272x272.jpg" class="thumb imagebox" data-group="gal01" title="Gallery image title">-->
+                            <!--&lt;!&ndash; title and opacity mask &ndash;&gt;-->
+                            <!--<div class="inner">-->
+                                <!--<h6>Gallery Title <span>08 Photos</span></h6>-->
+                            <!--</div>-->
+                            <!--&lt;!&ndash; image &ndash;&gt;-->
+                            <!--<img src="placeholders/gallery-01-272x272.jpg" alt="Gallery image title">-->
+                        <!--</a>-->
+                      <!--</div>-->
+                    <!--&lt;!&ndash; /brick &ndash;&gt;-->
+                    <!--&lt;!&ndash; brick &ndash;&gt;-->
+                    <!--<div class="brick width-1-4 height-1-4">-->
+                        <!--<a href="placeholders/gallery-02-272x272.jpg" class="thumb imagebox" data-group="gal02" title="Gallery image title">-->
+                            <!--&lt;!&ndash; title and opacity mask &ndash;&gt;-->
+                            <!--<div class="inner">-->
+                                <!--<h6>Gallery Title <span>08 Photos</span></h6>-->
+                            <!--</div>-->
+                            <!--&lt;!&ndash; image &ndash;&gt;-->
+                            <!--<img src="placeholders/gallery-02-272x272.jpg" alt="Gallery image title">-->
+                        <!--</a>-->
+                        <!--</div>-->
+                    <!--&lt;!&ndash; /brick &ndash;&gt;-->
+                    <!--&lt;!&ndash; brick &ndash;&gt;-->
+                    <!--<div class="brick width-1-4 height-1-4">-->
+                        <!--<a href="placeholders/gallery-03-272x272.jpg" class="thumb imagebox" data-group="gal03" title="Gallery image title">-->
+                            <!--&lt;!&ndash; title and opacity mask &ndash;&gt;-->
+                            <!--<div class="inner">-->
+                                <!--<h6>Gallery Title <span>08 Photos</span></h6>-->
+                            <!--</div>-->
+                            <!--&lt;!&ndash; image &ndash;&gt;-->
+                            <!--<img src="placeholders/gallery-03-272x272.jpg" alt="Gallery image title">-->
+                        <!--</a>-->
+                      <!--</div>-->
+                    <!--&lt;!&ndash; /brick &ndash;&gt;-->
+                    <!--&lt;!&ndash; brick &ndash;&gt;-->
+                    <!--<div class="brick width-1-4 height-1-4">-->
+                        <!--<a href="placeholders/gallery-04-272x272.jpg" class="thumb imagebox" data-group="gal04" title="Gallery image title">-->
+                            <!--&lt;!&ndash; title and opacity mask &ndash;&gt;-->
+                            <!--<div class="inner">-->
+                                <!--<h6>Gallery Title <span>08 Photos</span></h6>-->
+                            <!--</div>-->
+                            <!--&lt;!&ndash; image &ndash;&gt;-->
+                            <!--<img src="placeholders/gallery-04-272x272.jpg" alt="Gallery image title">-->
+                        <!--</a>-->
+                    <!--</div>-->
+                    <!--&lt;!&ndash; /brick &ndash;&gt;-->
+                    <!--&lt;!&ndash; brick &ndash;&gt;-->
+                    <!--<div class="brick width-1-4 height-1-4">-->
+                        <!--<a href="placeholders/gallery-03-272x272.jpg" class="thumb imagebox" data-group="gal05" title="Gallery image title">-->
+                            <!--&lt;!&ndash; title and opacity mask &ndash;&gt;-->
+                            <!--<div class="inner">-->
+                                <!--<h6>Gallery Title <span>08 Photos</span></h6>-->
+                            <!--</div>-->
+                            <!--&lt;!&ndash; image &ndash;&gt;-->
+                            <!--<img src="placeholders/gallery-03-272x272.jpg" alt="Gallery image title">-->
+                        <!--</a>-->
+                     <!--</div>-->
+                    <!--&lt;!&ndash; /brick &ndash;&gt;-->
+                    <!--&lt;!&ndash; brick &ndash;&gt;-->
+                    <!--<div class="brick width-1-4 height-1-4">-->
+                        <!--<a href="placeholders/gallery-04-272x272.jpg" class="thumb imagebox" data-group="gal06" title="Gallery image title">-->
+                            <!--&lt;!&ndash; title and opacity mask &ndash;&gt;-->
+                            <!--<div class="inner">-->
+                                <!--<h6>Gallery Title <span>08 Photos</span></h6>-->
+                            <!--</div>-->
+                            <!--&lt;!&ndash; image &ndash;&gt;-->
+                            <!--<img src="placeholders/gallery-04-272x272.jpg" alt="Gallery image title">-->
+                        <!--</a>-->
+                        <!--&lt;!&ndash; Gallery photos &ndash;&gt;-->
+                     <!--</div>-->
+                    <!--&lt;!&ndash; /brick &ndash;&gt;-->
+                    <!--&lt;!&ndash; brick &ndash;&gt;-->
+                    <!--<div class="brick width-1-4 height-1-4">-->
+                        <!--<a href="placeholders/gallery-01-272x272.jpg" class="thumb imagebox" data-group="gal07" title="Gallery image title">-->
+                            <!--&lt;!&ndash; title and opacity mask &ndash;&gt;-->
+                            <!--<div class="inner">-->
+                                <!--<h6>Gallery Title <span>08 Photos</span></h6>-->
+                            <!--</div>-->
+                            <!--&lt;!&ndash; image &ndash;&gt;-->
+                            <!--<img src="placeholders/gallery-01-272x272.jpg" alt="Gallery image title">-->
+                        <!--</a>-->
+                     <!--</div>-->
+                    <!--&lt;!&ndash; /brick &ndash;&gt;-->
+                    <!--&lt;!&ndash; brick &ndash;&gt;-->
+                    <!--<div class="brick width-1-4 height-1-4">-->
+                        <!--<a href="placeholders/gallery-02-272x272.jpg" class="thumb imagebox" data-group="gal08" title="Gallery image title">-->
+                            <!--&lt;!&ndash; title and opacity mask &ndash;&gt;-->
+                            <!--<div class="inner">-->
+                                <!--<h6>Gallery Title <span>08 Photos</span></h6>-->
+                            <!--</div>-->
+                            <!--&lt;!&ndash; image &ndash;&gt;-->
+                            <!--<img src="placeholders/gallery-02-272x272.jpg" alt="Gallery image title">-->
+                        <!--</a>-->
+                     <!--</div>-->
                     <!-- /brick -->
                 </div>
                 <!-- /masonry -->

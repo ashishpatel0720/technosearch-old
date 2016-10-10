@@ -16,6 +16,1217 @@ o=t[n],pt.isArray(o)&&(i=o[1],o=t[n]=o[0]),n!==r&&(t[r]=o,delete t[n]),a=pt.cssH
 })}),t=null}).promise()},then:function(e,r,i){function o(e,n,r,i){return function(){var c=this,l=arguments,f=function(){var t,f;if(!(e<a)){if(t=r.apply(c,l),t===n.promise())throw new TypeError("Thenable self-resolution");f=t&&("object"==typeof t||"function"==typeof t)&&t.then,pt.isFunction(f)?i?f.call(t,o(a,n,s,i),o(a,n,u,i)):(a++,f.call(t,o(a,n,s,i),o(a,n,u,i),o(a,n,s,n.notifyWith))):(r!==s&&(c=void 0,l=[t]),(i||n.resolveWith)(c,l))}},h=i?f:function(){try{f()}catch(t){pt.Deferred.exceptionHook&&pt.Deferred.exceptionHook(t,h.stackTrace),e+1>=a&&(r!==u&&(c=void 0,l=[t]),n.rejectWith(c,l))}};e?h():(pt.Deferred.getStackHook&&(h.stackTrace=pt.Deferred.getStackHook()),t.setTimeout(h))}}var a=0;return pt.Deferred(function(t){n[0][3].add(o(0,t,pt.isFunction(i)?i:s,t.notifyWith)),n[1][3].add(o(0,t,pt.isFunction(e)?e:s)),n[2][3].add(o(0,t,pt.isFunction(r)?r:u))}).promise()},promise:function(t){return null!=t?pt.extend(t,i):i}},o={};return pt.each(n,function(t,e){var a=e[2],s=e[5];i[e[1]]=a.add,s&&a.add(function(){r=s},n[3-t][2].disable,n[0][2].lock),a.add(e[3].fire),o[e[0]]=function(){return o[e[0]+"With"](this===o?void 0:this,arguments),this},o[e[0]+"With"]=a.fireWith}),i.promise(o),e&&e.call(o,o),o},when:function(t){var e=arguments.length,n=e,r=Array(n),i=rt.call(arguments),o=pt.Deferred(),a=function(t){return function(n){r[t]=this,i[t]=arguments.length>1?rt.call(arguments):n,--e||o.resolveWith(r,i)}};if(e<=1&&(c(t,o.done(a(n)).resolve,o.reject),"pending"===o.state()||pt.isFunction(i[n]&&i[n].then)))return o.then();for(;n--;)c(i[n],a(n),o.reject);return o.promise()}});var At=/^(Eval|Internal|Range|Reference|Syntax|Type|URI)Error$/;pt.Deferred.exceptionHook=function(e,n){t.console&&t.console.warn&&e&&At.test(e.name)&&t.console.warn("jQuery.Deferred exception: "+e.message,e.stack,n)},pt.readyException=function(e){t.setTimeout(function(){throw e})};var Rt=pt.Deferred();pt.fn.ready=function(t){return Rt.then(t)["catch"](function(t){pt.readyException(t)}),this},pt.extend({isReady:!1,readyWait:1,holdReady:function(t){t?pt.readyWait++:pt.ready(!0)},ready:function(t){(t===!0?--pt.readyWait:pt.isReady)||(pt.isReady=!0,t!==!0&&--pt.readyWait>0||Rt.resolveWith(et,[pt]))}}),pt.ready.then=Rt.then,"complete"===et.readyState||"loading"!==et.readyState&&!et.documentElement.doScroll?t.setTimeout(pt.ready):(et.addEventListener("DOMContentLoaded",l),t.addEventListener("load",l));var Dt=function(t,e,n,r,i,o,a){var s=0,u=t.length,c=null==n;if("object"===pt.type(n)){i=!0;for(s in n)Dt(t,e,s,n[s],!0,o,a)}else if(void 0!==r&&(i=!0,pt.isFunction(r)||(a=!0),c&&(a?(e.call(t,r),e=null):(c=e,e=function(t,e,n){return c.call(pt(t),n)})),e))for(;s<u;s++)e(t[s],n,a?r:r.call(t[s],s,e(t[s],n)));return i?t:c?e.call(t):u?e(t[0],n):o},jt=function(t){return 1===t.nodeType||9===t.nodeType||!+t.nodeType};f.uid=1,f.prototype={cache:function(t){var e=t[this.expando];return e||(e={},jt(t)&&(t.nodeType?t[this.expando]=e:Object.defineProperty(t,this.expando,{value:e,configurable:!0}))),e},set:function(t,e,n){var r,i=this.cache(t);if("string"==typeof e)i[pt.camelCase(e)]=n;else for(r in e)i[pt.camelCase(r)]=e[r];return i},get:function(t,e){return void 0===e?this.cache(t):t[this.expando]&&t[this.expando][pt.camelCase(e)]},access:function(t,e,n){return void 0===e||e&&"string"==typeof e&&void 0===n?this.get(t,e):(this.set(t,e,n),void 0!==n?n:e)},remove:function(t,e){var n,r=t[this.expando];if(void 0!==r){if(void 0!==e){pt.isArray(e)?e=e.map(pt.camelCase):(e=pt.camelCase(e),e=e in r?[e]:e.match(Ot)||[]),n=e.length;for(;n--;)delete r[e[n]]}(void 0===e||pt.isEmptyObject(r))&&(t.nodeType?t[this.expando]=void 0:delete t[this.expando])}},hasData:function(t){var e=t[this.expando];return void 0!==e&&!pt.isEmptyObject(e)}};var Mt=new f,Pt=new f,Ft=/^(?:\{[\w\W]*\}|\[[\w\W]*\])$/,Nt=/[A-Z]/g;pt.extend({hasData:function(t){return Pt.hasData(t)||Mt.hasData(t)},data:function(t,e,n){return Pt.access(t,e,n)},removeData:function(t,e){Pt.remove(t,e)},_data:function(t,e,n){return Mt.access(t,e,n)},_removeData:function(t,e){Mt.remove(t,e)}}),pt.fn.extend({data:function(t,e){var n,r,i,o=this[0],a=o&&o.attributes;if(void 0===t){if(this.length&&(i=Pt.get(o),1===o.nodeType&&!Mt.get(o,"hasDataAttrs"))){for(n=a.length;n--;)a[n]&&(r=a[n].name,0===r.indexOf("data-")&&(r=pt.camelCase(r.slice(5)),d(o,r,i[r])));Mt.set(o,"hasDataAttrs",!0)}return i}return"object"==typeof t?this.each(function(){Pt.set(this,t)}):Dt(this,function(e){var n;if(o&&void 0===e){if(n=Pt.get(o,t),void 0!==n)return n;if(n=d(o,t),void 0!==n)return n}else this.each(function(){Pt.set(this,t,e)})},null,e,arguments.length>1,null,!0)},removeData:function(t){return this.each(function(){Pt.remove(this,t)})}}),pt.extend({queue:function(t,e,n){var r;if(t)return e=(e||"fx")+"queue",r=Mt.get(t,e),n&&(!r||pt.isArray(n)?r=Mt.access(t,e,pt.makeArray(n)):r.push(n)),r||[]},dequeue:function(t,e){e=e||"fx";var n=pt.queue(t,e),r=n.length,i=n.shift(),o=pt._queueHooks(t,e),a=function(){pt.dequeue(t,e)};"inprogress"===i&&(i=n.shift(),r--),i&&("fx"===e&&n.unshift("inprogress"),delete o.stop,i.call(t,a,o)),!r&&o&&o.empty.fire()},_queueHooks:function(t,e){var n=e+"queueHooks";return Mt.get(t,n)||Mt.access(t,n,{empty:pt.Callbacks("once memory").add(function(){Mt.remove(t,[e+"queue",n])})})}}),pt.fn.extend({queue:function(t,e){var n=2;return"string"!=typeof t&&(e=t,t="fx",n--),arguments.length<n?pt.queue(this[0],t):void 0===e?this:this.each(function(){var n=pt.queue(this,t,e);pt._queueHooks(this,t),"fx"===t&&"inprogress"!==n[0]&&pt.dequeue(this,t)})},dequeue:function(t){return this.each(function(){pt.dequeue(this,t)})},clearQueue:function(t){return this.queue(t||"fx",[])},promise:function(t,e){var n,r=1,i=pt.Deferred(),o=this,a=this.length,s=function(){--r||i.resolveWith(o,[o])};for("string"!=typeof t&&(e=t,t=void 0),t=t||"fx";a--;)n=Mt.get(o[a],t+"queueHooks"),n&&n.empty&&(r++,n.empty.add(s));return s(),i.promise(e)}});var Lt=/[+-]?(?:\d*\.|)\d+(?:[eE][+-]?\d+|)/.source,Ut=new RegExp("^(?:([+-])=|)("+Lt+")([a-z%]*)$","i"),qt=["Top","Right","Bottom","Left"],zt=function(t,e){return t=e||t,"none"===t.style.display||""===t.style.display&&pt.contains(t.ownerDocument,t)&&"none"===pt.css(t,"display")},Ht=function(t,e,n,r){var i,o,a={};for(o in e)a[o]=t.style[o],t.style[o]=e[o];i=n.apply(t,r||[]);for(o in e)t.style[o]=a[o];return i},Vt={};pt.fn.extend({show:function(){return v(this,!0)},hide:function(){return v(this)},toggle:function(t){return"boolean"==typeof t?t?this.show():this.hide():this.each(function(){zt(this)?pt(this).show():pt(this).hide()})}});var Wt=/^(?:checkbox|radio)$/i,Bt=/<([a-z][^\/\0>\x20\t\r\n\f]+)/i,Yt=/^$|\/(?:java|ecma)script/i,Gt={option:[1,"<select multiple='multiple'>","</select>"],thead:[1,"<table>","</table>"],col:[2,"<table><colgroup>","</colgroup></table>"],tr:[2,"<table><tbody>","</tbody></table>"],td:[3,"<table><tbody><tr>","</tr></tbody></table>"],_default:[0,"",""]};Gt.optgroup=Gt.option,Gt.tbody=Gt.tfoot=Gt.colgroup=Gt.caption=Gt.thead,Gt.th=Gt.td;var Zt=/<|&#?\w+;/;!function(){var t=et.createDocumentFragment(),e=t.appendChild(et.createElement("div")),n=et.createElement("input");n.setAttribute("type","radio"),n.setAttribute("checked","checked"),n.setAttribute("name","t"),e.appendChild(n),ht.checkClone=e.cloneNode(!0).cloneNode(!0).lastChild.checked,e.innerHTML="<textarea>x</textarea>",ht.noCloneChecked=!!e.cloneNode(!0).lastChild.defaultValue}();var Qt=et.documentElement,Jt=/^key/,Kt=/^(?:mouse|pointer|contextmenu|drag|drop)|click/,Xt=/^([^.]*)(?:\.(.+)|)/;pt.event={global:{},add:function(t,e,n,r,i){var o,a,s,u,c,l,f,h,d,p,m,v=Mt.get(t);if(v)for(n.handler&&(o=n,n=o.handler,i=o.selector),i&&pt.find.matchesSelector(Qt,i),n.guid||(n.guid=pt.guid++),(u=v.events)||(u=v.events={}),(a=v.handle)||(a=v.handle=function(e){return"undefined"!=typeof pt&&pt.event.triggered!==e.type?pt.event.dispatch.apply(t,arguments):void 0}),e=(e||"").match(Ot)||[""],c=e.length;c--;)s=Xt.exec(e[c])||[],d=m=s[1],p=(s[2]||"").split(".").sort(),d&&(f=pt.event.special[d]||{},d=(i?f.delegateType:f.bindType)||d,f=pt.event.special[d]||{},l=pt.extend({type:d,origType:m,data:r,handler:n,guid:n.guid,selector:i,needsContext:i&&pt.expr.match.needsContext.test(i),namespace:p.join(".")},o),(h=u[d])||(h=u[d]=[],h.delegateCount=0,f.setup&&f.setup.call(t,r,p,a)!==!1||t.addEventListener&&t.addEventListener(d,a)),f.add&&(f.add.call(t,l),l.handler.guid||(l.handler.guid=n.guid)),i?h.splice(h.delegateCount++,0,l):h.push(l),pt.event.global[d]=!0)},remove:function(t,e,n,r,i){var o,a,s,u,c,l,f,h,d,p,m,v=Mt.hasData(t)&&Mt.get(t);if(v&&(u=v.events)){for(e=(e||"").match(Ot)||[""],c=e.length;c--;)if(s=Xt.exec(e[c])||[],d=m=s[1],p=(s[2]||"").split(".").sort(),d){for(f=pt.event.special[d]||{},d=(r?f.delegateType:f.bindType)||d,h=u[d]||[],s=s[2]&&new RegExp("(^|\\.)"+p.join("\\.(?:.*\\.|)")+"(\\.|$)"),a=o=h.length;o--;)l=h[o],!i&&m!==l.origType||n&&n.guid!==l.guid||s&&!s.test(l.namespace)||r&&r!==l.selector&&("**"!==r||!l.selector)||(h.splice(o,1),l.selector&&h.delegateCount--,f.remove&&f.remove.call(t,l));a&&!h.length&&(f.teardown&&f.teardown.call(t,p,v.handle)!==!1||pt.removeEvent(t,d,v.handle),delete u[d])}else for(d in u)pt.event.remove(t,d+e[c],n,r,!0);pt.isEmptyObject(u)&&Mt.remove(t,"handle events")}},dispatch:function(t){var e,n,r,i,o,a,s=pt.event.fix(t),u=new Array(arguments.length),c=(Mt.get(this,"events")||{})[s.type]||[],l=pt.event.special[s.type]||{};for(u[0]=s,e=1;e<arguments.length;e++)u[e]=arguments[e];if(s.delegateTarget=this,!l.preDispatch||l.preDispatch.call(this,s)!==!1){for(a=pt.event.handlers.call(this,s,c),e=0;(i=a[e++])&&!s.isPropagationStopped();)for(s.currentTarget=i.elem,n=0;(o=i.handlers[n++])&&!s.isImmediatePropagationStopped();)s.rnamespace&&!s.rnamespace.test(o.namespace)||(s.handleObj=o,s.data=o.data,r=((pt.event.special[o.origType]||{}).handle||o.handler).apply(i.elem,u),void 0!==r&&(s.result=r)===!1&&(s.preventDefault(),s.stopPropagation()));return l.postDispatch&&l.postDispatch.call(this,s),s.result}},handlers:function(t,e){var n,r,i,o,a,s=[],u=e.delegateCount,c=t.target;if(u&&c.nodeType&&!("click"===t.type&&t.button>=1))for(;c!==this;c=c.parentNode||this)if(1===c.nodeType&&("click"!==t.type||c.disabled!==!0)){for(o=[],a={},n=0;n<u;n++)r=e[n],i=r.selector+" ",void 0===a[i]&&(a[i]=r.needsContext?pt(i,this).index(c)>-1:pt.find(i,this,null,[c]).length),a[i]&&o.push(r);o.length&&s.push({elem:c,handlers:o})}return c=this,u<e.length&&s.push({elem:c,handlers:e.slice(u)}),s},addProp:function(t,e){Object.defineProperty(pt.Event.prototype,t,{enumerable:!0,configurable:!0,get:pt.isFunction(e)?function(){if(this.originalEvent)return e(this.originalEvent)}:function(){if(this.originalEvent)return this.originalEvent[t]},set:function(e){Object.defineProperty(this,t,{enumerable:!0,configurable:!0,writable:!0,value:e})}})},fix:function(t){return t[pt.expando]?t:new pt.Event(t)},special:{load:{noBubble:!0},focus:{trigger:function(){if(this!==_()&&this.focus)return this.focus(),!1},delegateType:"focusin"},blur:{trigger:function(){if(this===_()&&this.blur)return this.blur(),!1},delegateType:"focusout"},click:{trigger:function(){if("checkbox"===this.type&&this.click&&pt.nodeName(this,"input"))return this.click(),!1},_default:function(t){return pt.nodeName(t.target,"a")}},beforeunload:{postDispatch:function(t){void 0!==t.result&&t.originalEvent&&(t.originalEvent.returnValue=t.result)}}}},pt.removeEvent=function(t,e,n){t.removeEventListener&&t.removeEventListener(e,n)},pt.Event=function(t,e){return this instanceof pt.Event?(t&&t.type?(this.originalEvent=t,this.type=t.type,this.isDefaultPrevented=t.defaultPrevented||void 0===t.defaultPrevented&&t.returnValue===!1?b:w,this.target=t.target&&3===t.target.nodeType?t.target.parentNode:t.target,this.currentTarget=t.currentTarget,this.relatedTarget=t.relatedTarget):this.type=t,e&&pt.extend(this,e),this.timeStamp=t&&t.timeStamp||pt.now(),void(this[pt.expando]=!0)):new pt.Event(t,e)},pt.Event.prototype={constructor:pt.Event,isDefaultPrevented:w,isPropagationStopped:w,isImmediatePropagationStopped:w,isSimulated:!1,preventDefault:function(){var t=this.originalEvent;this.isDefaultPrevented=b,t&&!this.isSimulated&&t.preventDefault()},stopPropagation:function(){var t=this.originalEvent;this.isPropagationStopped=b,t&&!this.isSimulated&&t.stopPropagation()},stopImmediatePropagation:function(){var t=this.originalEvent;this.isImmediatePropagationStopped=b,t&&!this.isSimulated&&t.stopImmediatePropagation(),this.stopPropagation()}},pt.each({altKey:!0,bubbles:!0,cancelable:!0,changedTouches:!0,ctrlKey:!0,detail:!0,eventPhase:!0,metaKey:!0,pageX:!0,pageY:!0,shiftKey:!0,view:!0,"char":!0,charCode:!0,key:!0,keyCode:!0,button:!0,buttons:!0,clientX:!0,clientY:!0,offsetX:!0,offsetY:!0,pointerId:!0,pointerType:!0,screenX:!0,screenY:!0,targetTouches:!0,toElement:!0,touches:!0,which:function(t){var e=t.button;return null==t.which&&Jt.test(t.type)?null!=t.charCode?t.charCode:t.keyCode:!t.which&&void 0!==e&&Kt.test(t.type)?1&e?1:2&e?3:4&e?2:0:t.which}},pt.event.addProp),pt.each({mouseenter:"mouseover",mouseleave:"mouseout",pointerenter:"pointerover",pointerleave:"pointerout"},function(t,e){pt.event.special[t]={delegateType:e,bindType:e,handle:function(t){var n,r=this,i=t.relatedTarget,o=t.handleObj;return i&&(i===r||pt.contains(r,i))||(t.type=o.origType,n=o.handler.apply(this,arguments),t.type=e),n}}}),pt.fn.extend({on:function(t,e,n,r){return x(this,t,e,n,r)},one:function(t,e,n,r){return x(this,t,e,n,r,1)},off:function(t,e,n){var r,i;if(t&&t.preventDefault&&t.handleObj)return r=t.handleObj,pt(t.delegateTarget).off(r.namespace?r.origType+"."+r.namespace:r.origType,r.selector,r.handler),this;if("object"==typeof t){for(i in t)this.off(i,e,t[i]);return this}return e!==!1&&"function"!=typeof e||(n=e,e=void 0),n===!1&&(n=w),this.each(function(){pt.event.remove(this,t,n,e)})}});var te=/<(?!area|br|col|embed|hr|img|input|link|meta|param)(([a-z][^\/\0>\x20\t\r\n\f]*)[^>]*)\/>/gi,ee=/<script|<style|<link/i,ne=/checked\s*(?:[^=]|=\s*.checked.)/i,re=/^true\/(.*)/,ie=/^\s*<!(?:\[CDATA\[|--)|(?:\]\]|--)>\s*$/g;pt.extend({htmlPrefilter:function(t){return t.replace(te,"<$1></$2>")},clone:function(t,e,n){var r,i,o,a,s=t.cloneNode(!0),u=pt.contains(t.ownerDocument,t);if(!(ht.noCloneChecked||1!==t.nodeType&&11!==t.nodeType||pt.isXMLDoc(t)))for(a=g(s),o=g(t),r=0,i=o.length;r<i;r++)T(o[r],a[r]);if(e)if(n)for(o=o||g(t),a=a||g(s),r=0,i=o.length;r<i;r++)E(o[r],a[r]);else E(t,s);return a=g(s,"script"),a.length>0&&y(a,!u&&g(t,"script")),s},cleanData:function(t){for(var e,n,r,i=pt.event.special,o=0;void 0!==(n=t[o]);o++)if(jt(n)){if(e=n[Mt.expando]){if(e.events)for(r in e.events)i[r]?pt.event.remove(n,r):pt.removeEvent(n,r,e.handle);n[Mt.expando]=void 0}n[Pt.expando]&&(n[Pt.expando]=void 0)}}}),pt.fn.extend({detach:function(t){return O(this,t,!0)},remove:function(t){return O(this,t)},text:function(t){return Dt(this,function(t){return void 0===t?pt.text(this):this.empty().each(function(){1!==this.nodeType&&11!==this.nodeType&&9!==this.nodeType||(this.textContent=t)})},null,t,arguments.length)},append:function(){return I(this,arguments,function(t){if(1===this.nodeType||11===this.nodeType||9===this.nodeType){var e=S(this,t);e.appendChild(t)}})},prepend:function(){return I(this,arguments,function(t){if(1===this.nodeType||11===this.nodeType||9===this.nodeType){var e=S(this,t);e.insertBefore(t,e.firstChild)}})},before:function(){return I(this,arguments,function(t){this.parentNode&&this.parentNode.insertBefore(t,this)})},after:function(){return I(this,arguments,function(t){this.parentNode&&this.parentNode.insertBefore(t,this.nextSibling)})},empty:function(){for(var t,e=0;null!=(t=this[e]);e++)1===t.nodeType&&(pt.cleanData(g(t,!1)),t.textContent="");return this},clone:function(t,e){return t=null!=t&&t,e=null==e?t:e,this.map(function(){return pt.clone(this,t,e)})},html:function(t){return Dt(this,function(t){var e=this[0]||{},n=0,r=this.length;if(void 0===t&&1===e.nodeType)return e.innerHTML;if("string"==typeof t&&!ee.test(t)&&!Gt[(Bt.exec(t)||["",""])[1].toLowerCase()]){t=pt.htmlPrefilter(t);try{for(;n<r;n++)e=this[n]||{},1===e.nodeType&&(pt.cleanData(g(e,!1)),e.innerHTML=t);e=0}catch(i){}}e&&this.empty().append(t)},null,t,arguments.length)},replaceWith:function(){var t=[];return I(this,arguments,function(e){var n=this.parentNode;pt.inArray(this,t)<0&&(pt.cleanData(g(this)),n&&n.replaceChild(e,this))},t)}}),pt.each({appendTo:"append",prependTo:"prepend",insertBefore:"before",insertAfter:"after",replaceAll:"replaceWith"},function(t,e){pt.fn[t]=function(t){for(var n,r=[],i=pt(t),o=i.length-1,a=0;a<=o;a++)n=a===o?this:this.clone(!0),pt(i[a])[e](n),ot.apply(r,n.get());return this.pushStack(r)}});var oe=/^margin/,ae=new RegExp("^("+Lt+")(?!px)[a-z%]+$","i"),se=function(e){var n=e.ownerDocument.defaultView;return n&&n.opener||(n=t),n.getComputedStyle(e)};!function(){function e(){if(s){s.style.cssText="box-sizing:border-box;position:relative;display:block;margin:auto;border:1px;padding:1px;top:1%;width:50%",s.innerHTML="",Qt.appendChild(a);var e=t.getComputedStyle(s);n="1%"!==e.top,o="2px"===e.marginLeft,r="4px"===e.width,s.style.marginRight="50%",i="4px"===e.marginRight,Qt.removeChild(a),s=null}}var n,r,i,o,a=et.createElement("div"),s=et.createElement("div");s.style&&(s.style.backgroundClip="content-box",s.cloneNode(!0).style.backgroundClip="",ht.clearCloneStyle="content-box"===s.style.backgroundClip,a.style.cssText="border:0;width:8px;height:0;top:0;left:-9999px;padding:0;margin-top:1px;position:absolute",a.appendChild(s),pt.extend(ht,{pixelPosition:function(){return e(),n},boxSizingReliable:function(){return e(),r},pixelMarginRight:function(){return e(),i},reliableMarginLeft:function(){return e(),o}}))}();var ue=/^(none|table(?!-c[ea]).+)/,ce={position:"absolute",visibility:"hidden",display:"block"},le={letterSpacing:"0",fontWeight:"400"},fe=["Webkit","Moz","ms"],he=et.createElement("div").style;pt.extend({cssHooks:{opacity:{get:function(t,e){if(e){var n=A(t,"opacity");return""===n?"1":n}}}},cssNumber:{animationIterationCount:!0,columnCount:!0,fillOpacity:!0,flexGrow:!0,flexShrink:!0,fontWeight:!0,lineHeight:!0,opacity:!0,order:!0,orphans:!0,widows:!0,zIndex:!0,zoom:!0},cssProps:{"float":"cssFloat"},style:function(t,e,n,r){if(t&&3!==t.nodeType&&8!==t.nodeType&&t.style){var i,o,a,s=pt.camelCase(e),u=t.style;return e=pt.cssProps[s]||(pt.cssProps[s]=D(s)||s),a=pt.cssHooks[e]||pt.cssHooks[s],void 0===n?a&&"get"in a&&void 0!==(i=a.get(t,!1,r))?i:u[e]:(o=typeof n,"string"===o&&(i=Ut.exec(n))&&i[1]&&(n=p(t,e,i),o="number"),null!=n&&n===n&&("number"===o&&(n+=i&&i[3]||(pt.cssNumber[s]?"":"px")),ht.clearCloneStyle||""!==n||0!==e.indexOf("background")||(u[e]="inherit"),a&&"set"in a&&void 0===(n=a.set(t,n,r))||(u[e]=n)),void 0)}},css:function(t,e,n,r){var i,o,a,s=pt.camelCase(e);return e=pt.cssProps[s]||(pt.cssProps[s]=D(s)||s),a=pt.cssHooks[e]||pt.cssHooks[s],a&&"get"in a&&(i=a.get(t,!0,n)),void 0===i&&(i=A(t,e,r)),"normal"===i&&e in le&&(i=le[e]),""===n||n?(o=parseFloat(i),n===!0||isFinite(o)?o||0:i):i}}),pt.each(["height","width"],function(t,e){pt.cssHooks[e]={get:function(t,n,r){if(n)return!ue.test(pt.css(t,"display"))||t.getClientRects().length&&t.getBoundingClientRect().width?P(t,e,r):Ht(t,ce,function(){return P(t,e,r)})},set:function(t,n,r){var i,o=r&&se(t),a=r&&M(t,e,r,"border-box"===pt.css(t,"boxSizing",!1,o),o);return a&&(i=Ut.exec(n))&&"px"!==(i[3]||"px")&&(t.style[e]=n,n=pt.css(t,e)),j(t,n,a)}}}),pt.cssHooks.marginLeft=R(ht.reliableMarginLeft,function(t,e){if(e)return(parseFloat(A(t,"marginLeft"))||t.getBoundingClientRect().left-Ht(t,{marginLeft:0},function(){return t.getBoundingClientRect().left}))+"px"}),pt.each({margin:"",padding:"",border:"Width"},function(t,e){pt.cssHooks[t+e]={expand:function(n){for(var r=0,i={},o="string"==typeof n?n.split(" "):[n];r<4;r++)i[t+qt[r]+e]=o[r]||o[r-2]||o[0];return i}},oe.test(t)||(pt.cssHooks[t+e].set=j)}),pt.fn.extend({css:function(t,e){return Dt(this,function(t,e,n){var r,i,o={},a=0;if(pt.isArray(e)){for(r=se(t),i=e.length;a<i;a++)o[e[a]]=pt.css(t,e[a],!1,r);return o}return void 0!==n?pt.style(t,e,n):pt.css(t,e)},t,e,arguments.length>1)}}),pt.Tween=F,F.prototype={constructor:F,init:function(t,e,n,r,i,o){this.elem=t,this.prop=n,this.easing=i||pt.easing._default,this.options=e,this.start=this.now=this.cur(),this.end=r,this.unit=o||(pt.cssNumber[n]?"":"px")},cur:function(){var t=F.propHooks[this.prop];return t&&t.get?t.get(this):F.propHooks._default.get(this)},run:function(t){var e,n=F.propHooks[this.prop];return this.options.duration?this.pos=e=pt.easing[this.easing](t,this.options.duration*t,0,1,this.options.duration):this.pos=e=t,this.now=(this.end-this.start)*e+this.start,this.options.step&&this.options.step.call(this.elem,this.now,this),n&&n.set?n.set(this):F.propHooks._default.set(this),this}},F.prototype.init.prototype=F.prototype,F.propHooks={_default:{get:function(t){var e;return 1!==t.elem.nodeType||null!=t.elem[t.prop]&&null==t.elem.style[t.prop]?t.elem[t.prop]:(e=pt.css(t.elem,t.prop,""),e&&"auto"!==e?e:0)},set:function(t){pt.fx.step[t.prop]?pt.fx.step[t.prop](t):1!==t.elem.nodeType||null==t.elem.style[pt.cssProps[t.prop]]&&!pt.cssHooks[t.prop]?t.elem[t.prop]=t.now:pt.style(t.elem,t.prop,t.now+t.unit)}}},F.propHooks.scrollTop=F.propHooks.scrollLeft={set:function(t){t.elem.nodeType&&t.elem.parentNode&&(t.elem[t.prop]=t.now)}},pt.easing={linear:function(t){return t},swing:function(t){return.5-Math.cos(t*Math.PI)/2},_default:"swing"},pt.fx=F.prototype.init,pt.fx.step={};var de,pe,me=/^(?:toggle|show|hide)$/,ve=/queueHooks$/;pt.Animation=pt.extend(V,{tweeners:{"*":[function(t,e){var n=this.createTween(t,e);return p(n.elem,t,Ut.exec(e),n),n}]},tweener:function(t,e){pt.isFunction(t)?(e=t,t=["*"]):t=t.match(Ot);for(var n,r=0,i=t.length;r<i;r++)n=t[r],V.tweeners[n]=V.tweeners[n]||[],V.tweeners[n].unshift(e)},prefilters:[z],prefilter:function(t,e){e?V.prefilters.unshift(t):V.prefilters.push(t)}}),pt.speed=function(t,e,n){var r=t&&"object"==typeof t?pt.extend({},t):{complete:n||!n&&e||pt.isFunction(t)&&t,duration:t,easing:n&&e||e&&!pt.isFunction(e)&&e};return pt.fx.off||et.hidden?r.duration=0:"number"!=typeof r.duration&&(r.duration in pt.fx.speeds?r.duration=pt.fx.speeds[r.duration]:r.duration=pt.fx.speeds._default),null!=r.queue&&r.queue!==!0||(r.queue="fx"),r.old=r.complete,r.complete=function(){pt.isFunction(r.old)&&r.old.call(this),r.queue&&pt.dequeue(this,r.queue)},r},pt.fn.extend({fadeTo:function(t,e,n,r){return this.filter(zt).css("opacity",0).show().end().animate({opacity:e},t,n,r)},animate:function(t,e,n,r){var i=pt.isEmptyObject(t),o=pt.speed(e,n,r),a=function(){var e=V(this,pt.extend({},t),o);(i||Mt.get(this,"finish"))&&e.stop(!0)};return a.finish=a,i||o.queue===!1?this.each(a):this.queue(o.queue,a)},stop:function(t,e,n){var r=function(t){var e=t.stop;delete t.stop,e(n)};return"string"!=typeof t&&(n=e,e=t,t=void 0),e&&t!==!1&&this.queue(t||"fx",[]),this.each(function(){var e=!0,i=null!=t&&t+"queueHooks",o=pt.timers,a=Mt.get(this);if(i)a[i]&&a[i].stop&&r(a[i]);else for(i in a)a[i]&&a[i].stop&&ve.test(i)&&r(a[i]);for(i=o.length;i--;)o[i].elem!==this||null!=t&&o[i].queue!==t||(o[i].anim.stop(n),e=!1,o.splice(i,1));!e&&n||pt.dequeue(this,t)})},finish:function(t){return t!==!1&&(t=t||"fx"),this.each(function(){var e,n=Mt.get(this),r=n[t+"queue"],i=n[t+"queueHooks"],o=pt.timers,a=r?r.length:0;for(n.finish=!0,pt.queue(this,t,[]),i&&i.stop&&i.stop.call(this,!0),e=o.length;e--;)o[e].elem===this&&o[e].queue===t&&(o[e].anim.stop(!0),o.splice(e,1));for(e=0;e<a;e++)r[e]&&r[e].finish&&r[e].finish.call(this);delete n.finish})}}),pt.each(["toggle","show","hide"],function(t,e){var n=pt.fn[e];pt.fn[e]=function(t,r,i){return null==t||"boolean"==typeof t?n.apply(this,arguments):this.animate(U(e,!0),t,r,i)}}),pt.each({slideDown:U("show"),slideUp:U("hide"),slideToggle:U("toggle"),fadeIn:{opacity:"show"},fadeOut:{opacity:"hide"},fadeToggle:{opacity:"toggle"}},function(t,e){pt.fn[t]=function(t,n,r){return this.animate(e,t,n,r)}}),pt.timers=[],pt.fx.tick=function(){var t,e=0,n=pt.timers;for(de=pt.now();e<n.length;e++)t=n[e],t()||n[e]!==t||n.splice(e--,1);n.length||pt.fx.stop(),de=void 0},pt.fx.timer=function(t){pt.timers.push(t),t()?pt.fx.start():pt.timers.pop()},pt.fx.interval=13,pt.fx.start=function(){pe||(pe=t.requestAnimationFrame?t.requestAnimationFrame(N):t.setInterval(pt.fx.tick,pt.fx.interval))},pt.fx.stop=function(){t.cancelAnimationFrame?t.cancelAnimationFrame(pe):t.clearInterval(pe),pe=null},pt.fx.speeds={slow:600,fast:200,_default:400},pt.fn.delay=function(e,n){return e=pt.fx?pt.fx.speeds[e]||e:e,n=n||"fx",this.queue(n,function(n,r){var i=t.setTimeout(n,e);r.stop=function(){t.clearTimeout(i)}})},function(){var t=et.createElement("input"),e=et.createElement("select"),n=e.appendChild(et.createElement("option"));t.type="checkbox",ht.checkOn=""!==t.value,ht.optSelected=n.selected,t=et.createElement("input"),t.value="t",t.type="radio",ht.radioValue="t"===t.value}();var ge,ye=pt.expr.attrHandle;pt.fn.extend({attr:function(t,e){return Dt(this,pt.attr,t,e,arguments.length>1)},removeAttr:function(t){return this.each(function(){pt.removeAttr(this,t)})}}),pt.extend({attr:function(t,e,n){var r,i,o=t.nodeType;if(3!==o&&8!==o&&2!==o)return"undefined"==typeof t.getAttribute?pt.prop(t,e,n):(1===o&&pt.isXMLDoc(t)||(i=pt.attrHooks[e.toLowerCase()]||(pt.expr.match.bool.test(e)?ge:void 0)),void 0!==n?null===n?void pt.removeAttr(t,e):i&&"set"in i&&void 0!==(r=i.set(t,n,e))?r:(t.setAttribute(e,n+""),n):i&&"get"in i&&null!==(r=i.get(t,e))?r:(r=pt.find.attr(t,e),null==r?void 0:r))},attrHooks:{type:{set:function(t,e){if(!ht.radioValue&&"radio"===e&&pt.nodeName(t,"input")){var n=t.value;return t.setAttribute("type",e),n&&(t.value=n),e}}}},removeAttr:function(t,e){var n,r=0,i=e&&e.match(Ot);if(i&&1===t.nodeType)for(;n=i[r++];)t.removeAttribute(n)}}),ge={set:function(t,e,n){return e===!1?pt.removeAttr(t,n):t.setAttribute(n,n),n}},pt.each(pt.expr.match.bool.source.match(/\w+/g),function(t,e){var n=ye[e]||pt.find.attr;ye[e]=function(t,e,r){var i,o,a=e.toLowerCase();return r||(o=ye[a],ye[a]=i,i=null!=n(t,e,r)?a:null,ye[a]=o),i}});var $e=/^(?:input|select|textarea|button)$/i,be=/^(?:a|area)$/i;pt.fn.extend({prop:function(t,e){return Dt(this,pt.prop,t,e,arguments.length>1)},removeProp:function(t){return this.each(function(){delete this[pt.propFix[t]||t]})}}),pt.extend({prop:function(t,e,n){var r,i,o=t.nodeType;if(3!==o&&8!==o&&2!==o)return 1===o&&pt.isXMLDoc(t)||(e=pt.propFix[e]||e,i=pt.propHooks[e]),void 0!==n?i&&"set"in i&&void 0!==(r=i.set(t,n,e))?r:t[e]=n:i&&"get"in i&&null!==(r=i.get(t,e))?r:t[e]},propHooks:{tabIndex:{get:function(t){var e=pt.find.attr(t,"tabindex");return e?parseInt(e,10):$e.test(t.nodeName)||be.test(t.nodeName)&&t.href?0:-1}}},propFix:{"for":"htmlFor","class":"className"}}),ht.optSelected||(pt.propHooks.selected={get:function(t){var e=t.parentNode;return e&&e.parentNode&&e.parentNode.selectedIndex,null},set:function(t){var e=t.parentNode;e&&(e.selectedIndex,e.parentNode&&e.parentNode.selectedIndex)}}),pt.each(["tabIndex","readOnly","maxLength","cellSpacing","cellPadding","rowSpan","colSpan","useMap","frameBorder","contentEditable"],function(){pt.propFix[this.toLowerCase()]=this}),pt.fn.extend({addClass:function(t){var e,n,r,i,o,a,s,u=0;if(pt.isFunction(t))return this.each(function(e){pt(this).addClass(t.call(this,e,B(this)))});if("string"==typeof t&&t)for(e=t.match(Ot)||[];n=this[u++];)if(i=B(n),r=1===n.nodeType&&" "+W(i)+" "){for(a=0;o=e[a++];)r.indexOf(" "+o+" ")<0&&(r+=o+" ");s=W(r),i!==s&&n.setAttribute("class",s)}return this},removeClass:function(t){var e,n,r,i,o,a,s,u=0;if(pt.isFunction(t))return this.each(function(e){pt(this).removeClass(t.call(this,e,B(this)))});if(!arguments.length)return this.attr("class","");if("string"==typeof t&&t)for(e=t.match(Ot)||[];n=this[u++];)if(i=B(n),r=1===n.nodeType&&" "+W(i)+" "){for(a=0;o=e[a++];)for(;r.indexOf(" "+o+" ")>-1;)r=r.replace(" "+o+" "," ");s=W(r),i!==s&&n.setAttribute("class",s)}return this},toggleClass:function(t,e){var n=typeof t;return"boolean"==typeof e&&"string"===n?e?this.addClass(t):this.removeClass(t):pt.isFunction(t)?this.each(function(n){pt(this).toggleClass(t.call(this,n,B(this),e),e)}):this.each(function(){var e,r,i,o;if("string"===n)for(r=0,i=pt(this),o=t.match(Ot)||[];e=o[r++];)i.hasClass(e)?i.removeClass(e):i.addClass(e);else void 0!==t&&"boolean"!==n||(e=B(this),e&&Mt.set(this,"__className__",e),this.setAttribute&&this.setAttribute("class",e||t===!1?"":Mt.get(this,"__className__")||""))})},hasClass:function(t){var e,n,r=0;for(e=" "+t+" ";n=this[r++];)if(1===n.nodeType&&(" "+W(B(n))+" ").indexOf(e)>-1)return!0;return!1}});var we=/\r/g;pt.fn.extend({val:function(t){var e,n,r,i=this[0];{if(arguments.length)return r=pt.isFunction(t),this.each(function(n){var i;1===this.nodeType&&(i=r?t.call(this,n,pt(this).val()):t,null==i?i="":"number"==typeof i?i+="":pt.isArray(i)&&(i=pt.map(i,function(t){return null==t?"":t+""})),e=pt.valHooks[this.type]||pt.valHooks[this.nodeName.toLowerCase()],e&&"set"in e&&void 0!==e.set(this,i,"value")||(this.value=i))});if(i)return e=pt.valHooks[i.type]||pt.valHooks[i.nodeName.toLowerCase()],e&&"get"in e&&void 0!==(n=e.get(i,"value"))?n:(n=i.value,"string"==typeof n?n.replace(we,""):null==n?"":n)}}}),pt.extend({valHooks:{option:{get:function(t){var e=pt.find.attr(t,"value");return null!=e?e:W(pt.text(t))}},select:{get:function(t){var e,n,r,i=t.options,o=t.selectedIndex,a="select-one"===t.type,s=a?null:[],u=a?o+1:i.length;for(r=o<0?u:a?o:0;r<u;r++)if(n=i[r],(n.selected||r===o)&&!n.disabled&&(!n.parentNode.disabled||!pt.nodeName(n.parentNode,"optgroup"))){if(e=pt(n).val(),a)return e;s.push(e)}return s},set:function(t,e){for(var n,r,i=t.options,o=pt.makeArray(e),a=i.length;a--;)r=i[a],(r.selected=pt.inArray(pt.valHooks.option.get(r),o)>-1)&&(n=!0);return n||(t.selectedIndex=-1),o}}}}),pt.each(["radio","checkbox"],function(){pt.valHooks[this]={set:function(t,e){if(pt.isArray(e))return t.checked=pt.inArray(pt(t).val(),e)>-1}},ht.checkOn||(pt.valHooks[this].get=function(t){return null===t.getAttribute("value")?"on":t.value})});var _e=/^(?:focusinfocus|focusoutblur)$/;pt.extend(pt.event,{trigger:function(e,n,r,i){var o,a,s,u,c,l,f,h=[r||et],d=ct.call(e,"type")?e.type:e,p=ct.call(e,"namespace")?e.namespace.split("."):[];if(a=s=r=r||et,3!==r.nodeType&&8!==r.nodeType&&!_e.test(d+pt.event.triggered)&&(d.indexOf(".")>-1&&(p=d.split("."),d=p.shift(),p.sort()),c=d.indexOf(":")<0&&"on"+d,e=e[pt.expando]?e:new pt.Event(d,"object"==typeof e&&e),e.isTrigger=i?2:3,e.namespace=p.join("."),e.rnamespace=e.namespace?new RegExp("(^|\\.)"+p.join("\\.(?:.*\\.|)")+"(\\.|$)"):null,e.result=void 0,e.target||(e.target=r),n=null==n?[e]:pt.makeArray(n,[e]),f=pt.event.special[d]||{},i||!f.trigger||f.trigger.apply(r,n)!==!1)){if(!i&&!f.noBubble&&!pt.isWindow(r)){for(u=f.delegateType||d,_e.test(u+d)||(a=a.parentNode);a;a=a.parentNode)h.push(a),s=a;s===(r.ownerDocument||et)&&h.push(s.defaultView||s.parentWindow||t)}for(o=0;(a=h[o++])&&!e.isPropagationStopped();)e.type=o>1?u:f.bindType||d,l=(Mt.get(a,"events")||{})[e.type]&&Mt.get(a,"handle"),l&&l.apply(a,n),l=c&&a[c],l&&l.apply&&jt(a)&&(e.result=l.apply(a,n),e.result===!1&&e.preventDefault());return e.type=d,i||e.isDefaultPrevented()||f._default&&f._default.apply(h.pop(),n)!==!1||!jt(r)||c&&pt.isFunction(r[d])&&!pt.isWindow(r)&&(s=r[c],s&&(r[c]=null),pt.event.triggered=d,r[d](),pt.event.triggered=void 0,s&&(r[c]=s)),e.result}},simulate:function(t,e,n){var r=pt.extend(new pt.Event,n,{type:t,isSimulated:!0});pt.event.trigger(r,null,e)}}),pt.fn.extend({trigger:function(t,e){return this.each(function(){pt.event.trigger(t,e,this)})},triggerHandler:function(t,e){var n=this[0];if(n)return pt.event.trigger(t,e,n,!0)}}),pt.each("blur focus focusin focusout resize scroll click dblclick mousedown mouseup mousemove mouseover mouseout mouseenter mouseleave change select submit keydown keypress keyup contextmenu".split(" "),function(t,e){pt.fn[e]=function(t,n){return arguments.length>0?this.on(e,null,t,n):this.trigger(e)}}),pt.fn.extend({hover:function(t,e){
 return this.mouseenter(t).mouseleave(e||t)}}),ht.focusin="onfocusin"in t,ht.focusin||pt.each({focus:"focusin",blur:"focusout"},function(t,e){var n=function(t){pt.event.simulate(e,t.target,pt.event.fix(t))};pt.event.special[e]={setup:function(){var r=this.ownerDocument||this,i=Mt.access(r,e);i||r.addEventListener(t,n,!0),Mt.access(r,e,(i||0)+1)},teardown:function(){var r=this.ownerDocument||this,i=Mt.access(r,e)-1;i?Mt.access(r,e,i):(r.removeEventListener(t,n,!0),Mt.remove(r,e))}}});var xe=t.location,Se=pt.now(),Ce=/\?/;pt.parseXML=function(e){var n;if(!e||"string"!=typeof e)return null;try{n=(new t.DOMParser).parseFromString(e,"text/xml")}catch(r){n=void 0}return n&&!n.getElementsByTagName("parsererror").length||pt.error("Invalid XML: "+e),n};var ke=/\[\]$/,Ee=/\r?\n/g,Te=/^(?:submit|button|image|reset|file)$/i,Ie=/^(?:input|select|textarea|keygen)/i;pt.param=function(t,e){var n,r=[],i=function(t,e){var n=pt.isFunction(e)?e():e;r[r.length]=encodeURIComponent(t)+"="+encodeURIComponent(null==n?"":n)};if(pt.isArray(t)||t.jquery&&!pt.isPlainObject(t))pt.each(t,function(){i(this.name,this.value)});else for(n in t)Y(n,t[n],e,i);return r.join("&")},pt.fn.extend({serialize:function(){return pt.param(this.serializeArray())},serializeArray:function(){return this.map(function(){var t=pt.prop(this,"elements");return t?pt.makeArray(t):this}).filter(function(){var t=this.type;return this.name&&!pt(this).is(":disabled")&&Ie.test(this.nodeName)&&!Te.test(t)&&(this.checked||!Wt.test(t))}).map(function(t,e){var n=pt(this).val();return null==n?null:pt.isArray(n)?pt.map(n,function(t){return{name:e.name,value:t.replace(Ee,"\r\n")}}):{name:e.name,value:n.replace(Ee,"\r\n")}}).get()}});var Oe=/%20/g,Ae=/#.*$/,Re=/([?&])_=[^&]*/,De=/^(.*?):[ \t]*([^\r\n]*)$/gm,je=/^(?:about|app|app-storage|.+-extension|file|res|widget):$/,Me=/^(?:GET|HEAD)$/,Pe=/^\/\//,Fe={},Ne={},Le="*/".concat("*"),Ue=et.createElement("a");Ue.href=xe.href,pt.extend({active:0,lastModified:{},etag:{},ajaxSettings:{url:xe.href,type:"GET",isLocal:je.test(xe.protocol),global:!0,processData:!0,async:!0,contentType:"application/x-www-form-urlencoded; charset=UTF-8",accepts:{"*":Le,text:"text/plain",html:"text/html",xml:"application/xml, text/xml",json:"application/json, text/javascript"},contents:{xml:/\bxml\b/,html:/\bhtml/,json:/\bjson\b/},responseFields:{xml:"responseXML",text:"responseText",json:"responseJSON"},converters:{"* text":String,"text html":!0,"text json":JSON.parse,"text xml":pt.parseXML},flatOptions:{url:!0,context:!0}},ajaxSetup:function(t,e){return e?Q(Q(t,pt.ajaxSettings),e):Q(pt.ajaxSettings,t)},ajaxPrefilter:G(Fe),ajaxTransport:G(Ne),ajax:function(e,n){function r(e,n,r,s){var c,h,d,b,w,_=n;l||(l=!0,u&&t.clearTimeout(u),i=void 0,a=s||"",x.readyState=e>0?4:0,c=e>=200&&e<300||304===e,r&&(b=J(p,x,r)),b=K(p,b,x,c),c?(p.ifModified&&(w=x.getResponseHeader("Last-Modified"),w&&(pt.lastModified[o]=w),w=x.getResponseHeader("etag"),w&&(pt.etag[o]=w)),204===e||"HEAD"===p.type?_="nocontent":304===e?_="notmodified":(_=b.state,h=b.data,d=b.error,c=!d)):(d=_,!e&&_||(_="error",e<0&&(e=0))),x.status=e,x.statusText=(n||_)+"",c?g.resolveWith(m,[h,_,x]):g.rejectWith(m,[x,_,d]),x.statusCode($),$=void 0,f&&v.trigger(c?"ajaxSuccess":"ajaxError",[x,p,c?h:d]),y.fireWith(m,[x,_]),f&&(v.trigger("ajaxComplete",[x,p]),--pt.active||pt.event.trigger("ajaxStop")))}"object"==typeof e&&(n=e,e=void 0),n=n||{};var i,o,a,s,u,c,l,f,h,d,p=pt.ajaxSetup({},n),m=p.context||p,v=p.context&&(m.nodeType||m.jquery)?pt(m):pt.event,g=pt.Deferred(),y=pt.Callbacks("once memory"),$=p.statusCode||{},b={},w={},_="canceled",x={readyState:0,getResponseHeader:function(t){var e;if(l){if(!s)for(s={};e=De.exec(a);)s[e[1].toLowerCase()]=e[2];e=s[t.toLowerCase()]}return null==e?null:e},getAllResponseHeaders:function(){return l?a:null},setRequestHeader:function(t,e){return null==l&&(t=w[t.toLowerCase()]=w[t.toLowerCase()]||t,b[t]=e),this},overrideMimeType:function(t){return null==l&&(p.mimeType=t),this},statusCode:function(t){var e;if(t)if(l)x.always(t[x.status]);else for(e in t)$[e]=[$[e],t[e]];return this},abort:function(t){var e=t||_;return i&&i.abort(e),r(0,e),this}};if(g.promise(x),p.url=((e||p.url||xe.href)+"").replace(Pe,xe.protocol+"//"),p.type=n.method||n.type||p.method||p.type,p.dataTypes=(p.dataType||"*").toLowerCase().match(Ot)||[""],null==p.crossDomain){c=et.createElement("a");try{c.href=p.url,c.href=c.href,p.crossDomain=Ue.protocol+"//"+Ue.host!=c.protocol+"//"+c.host}catch(S){p.crossDomain=!0}}if(p.data&&p.processData&&"string"!=typeof p.data&&(p.data=pt.param(p.data,p.traditional)),Z(Fe,p,n,x),l)return x;f=pt.event&&p.global,f&&0===pt.active++&&pt.event.trigger("ajaxStart"),p.type=p.type.toUpperCase(),p.hasContent=!Me.test(p.type),o=p.url.replace(Ae,""),p.hasContent?p.data&&p.processData&&0===(p.contentType||"").indexOf("application/x-www-form-urlencoded")&&(p.data=p.data.replace(Oe,"+")):(d=p.url.slice(o.length),p.data&&(o+=(Ce.test(o)?"&":"?")+p.data,delete p.data),p.cache===!1&&(o=o.replace(Re,"$1"),d=(Ce.test(o)?"&":"?")+"_="+Se++ +d),p.url=o+d),p.ifModified&&(pt.lastModified[o]&&x.setRequestHeader("If-Modified-Since",pt.lastModified[o]),pt.etag[o]&&x.setRequestHeader("If-None-Match",pt.etag[o])),(p.data&&p.hasContent&&p.contentType!==!1||n.contentType)&&x.setRequestHeader("Content-Type",p.contentType),x.setRequestHeader("Accept",p.dataTypes[0]&&p.accepts[p.dataTypes[0]]?p.accepts[p.dataTypes[0]]+("*"!==p.dataTypes[0]?", "+Le+"; q=0.01":""):p.accepts["*"]);for(h in p.headers)x.setRequestHeader(h,p.headers[h]);if(p.beforeSend&&(p.beforeSend.call(m,x,p)===!1||l))return x.abort();if(_="abort",y.add(p.complete),x.done(p.success),x.fail(p.error),i=Z(Ne,p,n,x)){if(x.readyState=1,f&&v.trigger("ajaxSend",[x,p]),l)return x;p.async&&p.timeout>0&&(u=t.setTimeout(function(){x.abort("timeout")},p.timeout));try{l=!1,i.send(b,r)}catch(S){if(l)throw S;r(-1,S)}}else r(-1,"No Transport");return x},getJSON:function(t,e,n){return pt.get(t,e,n,"json")},getScript:function(t,e){return pt.get(t,void 0,e,"script")}}),pt.each(["get","post"],function(t,e){pt[e]=function(t,n,r,i){return pt.isFunction(n)&&(i=i||r,r=n,n=void 0),pt.ajax(pt.extend({url:t,type:e,dataType:i,data:n,success:r},pt.isPlainObject(t)&&t))}}),pt._evalUrl=function(t){return pt.ajax({url:t,type:"GET",dataType:"script",cache:!0,async:!1,global:!1,"throws":!0})},pt.fn.extend({wrapAll:function(t){var e;return this[0]&&(pt.isFunction(t)&&(t=t.call(this[0])),e=pt(t,this[0].ownerDocument).eq(0).clone(!0),this[0].parentNode&&e.insertBefore(this[0]),e.map(function(){for(var t=this;t.firstElementChild;)t=t.firstElementChild;return t}).append(this)),this},wrapInner:function(t){return pt.isFunction(t)?this.each(function(e){pt(this).wrapInner(t.call(this,e))}):this.each(function(){var e=pt(this),n=e.contents();n.length?n.wrapAll(t):e.append(t)})},wrap:function(t){var e=pt.isFunction(t);return this.each(function(n){pt(this).wrapAll(e?t.call(this,n):t)})},unwrap:function(t){return this.parent(t).not("body").each(function(){pt(this).replaceWith(this.childNodes)}),this}}),pt.expr.pseudos.hidden=function(t){return!pt.expr.pseudos.visible(t)},pt.expr.pseudos.visible=function(t){return!!(t.offsetWidth||t.offsetHeight||t.getClientRects().length)},pt.ajaxSettings.xhr=function(){try{return new t.XMLHttpRequest}catch(e){}};var qe={0:200,1223:204},ze=pt.ajaxSettings.xhr();ht.cors=!!ze&&"withCredentials"in ze,ht.ajax=ze=!!ze,pt.ajaxTransport(function(e){var n,r;if(ht.cors||ze&&!e.crossDomain)return{send:function(i,o){var a,s=e.xhr();if(s.open(e.type,e.url,e.async,e.username,e.password),e.xhrFields)for(a in e.xhrFields)s[a]=e.xhrFields[a];e.mimeType&&s.overrideMimeType&&s.overrideMimeType(e.mimeType),e.crossDomain||i["X-Requested-With"]||(i["X-Requested-With"]="XMLHttpRequest");for(a in i)s.setRequestHeader(a,i[a]);n=function(t){return function(){n&&(n=r=s.onload=s.onerror=s.onabort=s.onreadystatechange=null,"abort"===t?s.abort():"error"===t?"number"!=typeof s.status?o(0,"error"):o(s.status,s.statusText):o(qe[s.status]||s.status,s.statusText,"text"!==(s.responseType||"text")||"string"!=typeof s.responseText?{binary:s.response}:{text:s.responseText},s.getAllResponseHeaders()))}},s.onload=n(),r=s.onerror=n("error"),void 0!==s.onabort?s.onabort=r:s.onreadystatechange=function(){4===s.readyState&&t.setTimeout(function(){n&&r()})},n=n("abort");try{s.send(e.hasContent&&e.data||null)}catch(u){if(n)throw u}},abort:function(){n&&n()}}}),pt.ajaxPrefilter(function(t){t.crossDomain&&(t.contents.script=!1)}),pt.ajaxSetup({accepts:{script:"text/javascript, application/javascript, application/ecmascript, application/x-ecmascript"},contents:{script:/\b(?:java|ecma)script\b/},converters:{"text script":function(t){return pt.globalEval(t),t}}}),pt.ajaxPrefilter("script",function(t){void 0===t.cache&&(t.cache=!1),t.crossDomain&&(t.type="GET")}),pt.ajaxTransport("script",function(t){if(t.crossDomain){var e,n;return{send:function(r,i){e=pt("<script>").prop({charset:t.scriptCharset,src:t.url}).on("load error",n=function(t){e.remove(),n=null,t&&i("error"===t.type?404:200,t.type)}),et.head.appendChild(e[0])},abort:function(){n&&n()}}}});var He=[],Ve=/(=)\?(?=&|$)|\?\?/;pt.ajaxSetup({jsonp:"callback",jsonpCallback:function(){var t=He.pop()||pt.expando+"_"+Se++;return this[t]=!0,t}}),pt.ajaxPrefilter("json jsonp",function(e,n,r){var i,o,a,s=e.jsonp!==!1&&(Ve.test(e.url)?"url":"string"==typeof e.data&&0===(e.contentType||"").indexOf("application/x-www-form-urlencoded")&&Ve.test(e.data)&&"data");if(s||"jsonp"===e.dataTypes[0])return i=e.jsonpCallback=pt.isFunction(e.jsonpCallback)?e.jsonpCallback():e.jsonpCallback,s?e[s]=e[s].replace(Ve,"$1"+i):e.jsonp!==!1&&(e.url+=(Ce.test(e.url)?"&":"?")+e.jsonp+"="+i),e.converters["script json"]=function(){return a||pt.error(i+" was not called"),a[0]},e.dataTypes[0]="json",o=t[i],t[i]=function(){a=arguments},r.always(function(){void 0===o?pt(t).removeProp(i):t[i]=o,e[i]&&(e.jsonpCallback=n.jsonpCallback,He.push(i)),a&&pt.isFunction(o)&&o(a[0]),a=o=void 0}),"script"}),ht.createHTMLDocument=function(){var t=et.implementation.createHTMLDocument("").body;return t.innerHTML="<form></form><form></form>",2===t.childNodes.length}(),pt.parseHTML=function(t,e,n){if("string"!=typeof t)return[];"boolean"==typeof e&&(n=e,e=!1);var r,i,o;return e||(ht.createHTMLDocument?(e=et.implementation.createHTMLDocument(""),r=e.createElement("base"),r.href=et.location.href,e.head.appendChild(r)):e=et),i=xt.exec(t),o=!n&&[],i?[e.createElement(i[1])]:(i=$([t],e,o),o&&o.length&&pt(o).remove(),pt.merge([],i.childNodes))},pt.fn.load=function(t,e,n){var r,i,o,a=this,s=t.indexOf(" ");return s>-1&&(r=W(t.slice(s)),t=t.slice(0,s)),pt.isFunction(e)?(n=e,e=void 0):e&&"object"==typeof e&&(i="POST"),a.length>0&&pt.ajax({url:t,type:i||"GET",dataType:"html",data:e}).done(function(t){o=arguments,a.html(r?pt("<div>").append(pt.parseHTML(t)).find(r):t)}).always(n&&function(t,e){a.each(function(){n.apply(this,o||[t.responseText,e,t])})}),this},pt.each(["ajaxStart","ajaxStop","ajaxComplete","ajaxError","ajaxSuccess","ajaxSend"],function(t,e){pt.fn[e]=function(t){return this.on(e,t)}}),pt.expr.pseudos.animated=function(t){return pt.grep(pt.timers,function(e){return t===e.elem}).length},pt.offset={setOffset:function(t,e,n){var r,i,o,a,s,u,c,l=pt.css(t,"position"),f=pt(t),h={};"static"===l&&(t.style.position="relative"),s=f.offset(),o=pt.css(t,"top"),u=pt.css(t,"left"),c=("absolute"===l||"fixed"===l)&&(o+u).indexOf("auto")>-1,c?(r=f.position(),a=r.top,i=r.left):(a=parseFloat(o)||0,i=parseFloat(u)||0),pt.isFunction(e)&&(e=e.call(t,n,pt.extend({},s))),null!=e.top&&(h.top=e.top-s.top+a),null!=e.left&&(h.left=e.left-s.left+i),"using"in e?e.using.call(t,h):f.css(h)}},pt.fn.extend({offset:function(t){if(arguments.length)return void 0===t?this:this.each(function(e){pt.offset.setOffset(this,t,e)});var e,n,r,i,o=this[0];if(o)return o.getClientRects().length?(r=o.getBoundingClientRect(),r.width||r.height?(i=o.ownerDocument,n=X(i),e=i.documentElement,{top:r.top+n.pageYOffset-e.clientTop,left:r.left+n.pageXOffset-e.clientLeft}):r):{top:0,left:0}},position:function(){if(this[0]){var t,e,n=this[0],r={top:0,left:0};return"fixed"===pt.css(n,"position")?e=n.getBoundingClientRect():(t=this.offsetParent(),e=this.offset(),pt.nodeName(t[0],"html")||(r=t.offset()),r={top:r.top+pt.css(t[0],"borderTopWidth",!0),left:r.left+pt.css(t[0],"borderLeftWidth",!0)}),{top:e.top-r.top-pt.css(n,"marginTop",!0),left:e.left-r.left-pt.css(n,"marginLeft",!0)}}},offsetParent:function(){return this.map(function(){for(var t=this.offsetParent;t&&"static"===pt.css(t,"position");)t=t.offsetParent;return t||Qt})}}),pt.each({scrollLeft:"pageXOffset",scrollTop:"pageYOffset"},function(t,e){var n="pageYOffset"===e;pt.fn[t]=function(r){return Dt(this,function(t,r,i){var o=X(t);return void 0===i?o?o[e]:t[r]:void(o?o.scrollTo(n?o.pageXOffset:i,n?i:o.pageYOffset):t[r]=i)},t,r,arguments.length)}}),pt.each(["top","left"],function(t,e){pt.cssHooks[e]=R(ht.pixelPosition,function(t,n){if(n)return n=A(t,e),ae.test(n)?pt(t).position()[e]+"px":n})}),pt.each({Height:"height",Width:"width"},function(t,e){pt.each({padding:"inner"+t,content:e,"":"outer"+t},function(n,r){pt.fn[r]=function(i,o){var a=arguments.length&&(n||"boolean"!=typeof i),s=n||(i===!0||o===!0?"margin":"border");return Dt(this,function(e,n,i){var o;return pt.isWindow(e)?0===r.indexOf("outer")?e["inner"+t]:e.document.documentElement["client"+t]:9===e.nodeType?(o=e.documentElement,Math.max(e.body["scroll"+t],o["scroll"+t],e.body["offset"+t],o["offset"+t],o["client"+t])):void 0===i?pt.css(e,n,s):pt.style(e,n,i,s)},e,a?i:void 0,a)}})}),pt.fn.extend({bind:function(t,e,n){return this.on(t,null,e,n)},unbind:function(t,e){return this.off(t,null,e)},delegate:function(t,e,n,r){return this.on(e,t,n,r)},undelegate:function(t,e,n){return 1===arguments.length?this.off(t,"**"):this.off(e,t||"**",n)}}),pt.parseJSON=JSON.parse,"function"==typeof define&&define.amd&&define("jquery",[],function(){return pt});var We=t.jQuery,Be=t.$;return pt.noConflict=function(e){return t.$===pt&&(t.$=Be),e&&t.jQuery===pt&&(t.jQuery=We),pt},e||(t.jQuery=t.$=pt),pt}),function(){var t=angular.module("restangular",[]);t.provider("Restangular",function(){var t={};t.init=function(t,e){function n(t,e,n,r){var i={};return _.each(_.keys(r),function(o){var a=r[o];a.params=_.extend({},a.params,t.defaultRequestParams[a.method.toLowerCase()]),_.isEmpty(a.params)&&delete a.params,t.isSafe(a.method)?i[o]=function(){return e(_.extend(a,{url:n}))}:i[o]=function(t){return e(_.extend(a,{url:n,data:t}))}}),i}t.configuration=e;var r=["get","head","options","trace","getlist"];e.isSafe=function(t){return _.includes(r,t.toLowerCase())};var i=/^https?:\/\//i;e.isAbsoluteUrl=function(t){return _.isUndefined(e.absoluteUrl)||_.isNull(e.absoluteUrl)?t&&i.test(t):e.absoluteUrl},e.absoluteUrl=!!_.isUndefined(e.absoluteUrl)||e.absoluteUrl,t.setSelfLinkAbsoluteUrl=function(t){e.absoluteUrl=t},e.baseUrl=_.isUndefined(e.baseUrl)?"":e.baseUrl,t.setBaseUrl=function(t){return e.baseUrl=/\/$/.test(t)?t.substring(0,t.length-1):t,this},e.extraFields=e.extraFields||[],t.setExtraFields=function(t){return e.extraFields=t,this},e.defaultHttpFields=e.defaultHttpFields||{},t.setDefaultHttpFields=function(t){return e.defaultHttpFields=t,this},e.withHttpValues=function(t,n){return _.defaults(n,t,e.defaultHttpFields)},e.encodeIds=!!_.isUndefined(e.encodeIds)||e.encodeIds,t.setEncodeIds=function(t){e.encodeIds=t},e.defaultRequestParams=e.defaultRequestParams||{get:{},post:{},put:{},remove:{},common:{}},t.setDefaultRequestParams=function(t,n){var r=[],i=n||t;return _.isUndefined(n)?r.push("common"):_.isArray(t)?r=t:r.push(t),_.each(r,function(t){e.defaultRequestParams[t]=i}),this},t.requestParams=e.defaultRequestParams,e.defaultHeaders=e.defaultHeaders||{},t.setDefaultHeaders=function(n){return e.defaultHeaders=n,t.defaultHeaders=e.defaultHeaders,this},t.defaultHeaders=e.defaultHeaders,e.methodOverriders=e.methodOverriders||[],t.setMethodOverriders=function(t){var n=_.extend([],t);return e.isOverridenMethod("delete",n)&&n.push("remove"),e.methodOverriders=n,this},e.jsonp=!_.isUndefined(e.jsonp)&&e.jsonp,t.setJsonp=function(t){e.jsonp=t},e.isOverridenMethod=function(t,n){var r=n||e.methodOverriders;return!_.isUndefined(_.find(r,function(e){return e.toLowerCase()===t.toLowerCase()}))},e.urlCreator=e.urlCreator||"path",t.setUrlCreator=function(t){if(!_.has(e.urlCreatorFactory,t))throw new Error("URL Path selected isn't valid");return e.urlCreator=t,this},e.restangularFields=e.restangularFields||{id:"id",route:"route",parentResource:"parentResource",restangularCollection:"restangularCollection",cannonicalId:"__cannonicalId",etag:"restangularEtag",selfLink:"href",get:"get",getList:"getList",put:"put",post:"post",remove:"remove",head:"head",trace:"trace",options:"options",patch:"patch",getRestangularUrl:"getRestangularUrl",getRequestedUrl:"getRequestedUrl",putElement:"putElement",addRestangularMethod:"addRestangularMethod",getParentList:"getParentList",clone:"clone",ids:"ids",httpConfig:"_$httpConfig",reqParams:"reqParams",one:"one",all:"all",several:"several",oneUrl:"oneUrl",allUrl:"allUrl",customPUT:"customPUT",customPOST:"customPOST",customDELETE:"customDELETE",customGET:"customGET",customGETLIST:"customGETLIST",customOperation:"customOperation",doPUT:"doPUT",doPOST:"doPOST",doDELETE:"doDELETE",doGET:"doGET",doGETLIST:"doGETLIST",fromServer:"fromServer",withConfig:"withConfig",withHttpConfig:"withHttpConfig",singleOne:"singleOne",plain:"plain",save:"save",restangularized:"restangularized"},t.setRestangularFields=function(t){return e.restangularFields=_.extend(e.restangularFields,t),this},e.isRestangularized=function(t){return!!t[e.restangularFields.restangularized]},e.setFieldToElem=function(t,e,n){var r=t.split("."),i=e;return _.each(_.initial(r),function(t){i[t]={},i=i[t]}),i[_.last(r)]=n,this},e.getFieldFromElem=function(t,e){var n=t.split("."),r=e;return _.each(n,function(t){r&&(r=r[t])}),angular.copy(r)},e.setIdToElem=function(t,n){return e.setFieldToElem(e.restangularFields.id,t,n),this},e.getIdFromElem=function(t){return e.getFieldFromElem(e.restangularFields.id,t)},e.isValidId=function(t){return""!==t&&!_.isUndefined(t)&&!_.isNull(t)},e.setUrlToElem=function(t,n){return e.setFieldToElem(e.restangularFields.selfLink,t,n),this},e.getUrlFromElem=function(t){return e.getFieldFromElem(e.restangularFields.selfLink,t)},e.useCannonicalId=!_.isUndefined(e.useCannonicalId)&&e.useCannonicalId,t.setUseCannonicalId=function(t){return e.useCannonicalId=t,this},e.getCannonicalIdFromElem=function(t){var n=t[e.restangularFields.cannonicalId],r=e.isValidId(n)?n:e.getIdFromElem(t);return r},e.responseInterceptors=e.responseInterceptors||[],e.defaultResponseInterceptor=function(t){return t},e.responseExtractor=function(t,n,r,i,o,a){var s=angular.copy(e.responseInterceptors);s.push(e.defaultResponseInterceptor);var u=t;return _.each(s,function(t){u=t(u,n,r,i,o,a)}),u},t.addResponseInterceptor=function(t){return e.responseInterceptors.push(t),this},e.errorInterceptors=e.errorInterceptors||[],t.addErrorInterceptor=function(t){return e.errorInterceptors.push(t),this},t.setResponseInterceptor=t.addResponseInterceptor,t.setResponseExtractor=t.addResponseInterceptor,t.setErrorInterceptor=t.addErrorInterceptor,e.requestInterceptors=e.requestInterceptors||[],e.defaultInterceptor=function(t,e,n,r,i,o,a){return{element:t,headers:i,params:o,httpConfig:a}},e.fullRequestInterceptor=function(t,n,r,i,o,a,s){var u=angular.copy(e.requestInterceptors),c=e.defaultInterceptor(t,n,r,i,o,a,s);return _.reduce(u,function(t,e){return _.extend(t,e(t.element,n,r,i,t.headers,t.params,t.httpConfig))},c)},t.addRequestInterceptor=function(t){return e.requestInterceptors.push(function(e,n,r,i,o,a,s){return{headers:o,params:a,element:t(e,n,r,i),httpConfig:s}}),this},t.setRequestInterceptor=t.addRequestInterceptor,t.addFullRequestInterceptor=function(t){return e.requestInterceptors.push(t),this},t.setFullRequestInterceptor=t.addFullRequestInterceptor,e.onBeforeElemRestangularized=e.onBeforeElemRestangularized||function(t){return t},t.setOnBeforeElemRestangularized=function(t){return e.onBeforeElemRestangularized=t,this},t.setRestangularizePromiseInterceptor=function(t){return e.restangularizePromiseInterceptor=t,this},e.onElemRestangularized=e.onElemRestangularized||function(t){return t},t.setOnElemRestangularized=function(t){return e.onElemRestangularized=t,this},e.shouldSaveParent=e.shouldSaveParent||function(){return!0},t.setParentless=function(t){return _.isArray(t)?e.shouldSaveParent=function(e){return!_.includes(t,e)}:_.isBoolean(t)&&(e.shouldSaveParent=function(){return!t}),this},e.suffix=_.isUndefined(e.suffix)?null:e.suffix,t.setRequestSuffix=function(t){return e.suffix=t,this},e.transformers=e.transformers||{},t.addElementTransformer=function(n,r,i){var o=null,a=null;2===arguments.length?a=r:(a=i,o=r);var s=e.transformers[n];return s||(s=e.transformers[n]=[]),s.push(function(t,e){return _.isNull(o)||t===o?a(e):e}),t},t.extendCollection=function(e,n){return t.addElementTransformer(e,!0,n)},t.extendModel=function(e,n){return t.addElementTransformer(e,!1,n)},e.transformElem=function(t,n,r,i,o){if(!o&&!e.transformLocalElements&&!t[e.restangularFields.fromServer])return t;var a=e.transformers[r],s=t;return a&&_.each(a,function(t){s=t(n,s)}),e.onElemRestangularized(s,n,r,i)},e.transformLocalElements=!_.isUndefined(e.transformLocalElements)&&e.transformLocalElements,t.setTransformOnlyServerElements=function(t){e.transformLocalElements=!t},e.fullResponse=!_.isUndefined(e.fullResponse)&&e.fullResponse,t.setFullResponse=function(t){return e.fullResponse=t,this},e.urlCreatorFactory={};var o=function(){};o.prototype.setConfig=function(t){return this.config=t,this},o.prototype.parentsArray=function(t){for(var e=[];t;)e.push(t),t=t[this.config.restangularFields.parentResource];return e.reverse()},o.prototype.resource=function(t,r,i,o,a,s,u,c){var l=_.defaults(a||{},this.config.defaultRequestParams.common),f=_.defaults(o||{},this.config.defaultHeaders);u&&(e.isSafe(c)?f["If-None-Match"]=u:f["If-Match"]=u);var h=this.base(t);if(s){var d="";/\/$/.test(h)||(d+="/"),d+=s,h+=d}return this.config.suffix&&h.indexOf(this.config.suffix,h.length-this.config.suffix.length)===-1&&!this.config.getUrlFromElem(t)&&(h+=this.config.suffix),t[this.config.restangularFields.httpConfig]=void 0,n(this.config,r,h,{getList:this.config.withHttpValues(i,{method:"GET",params:l,headers:f}),get:this.config.withHttpValues(i,{method:"GET",params:l,headers:f}),jsonp:this.config.withHttpValues(i,{method:"jsonp",params:l,headers:f}),put:this.config.withHttpValues(i,{method:"PUT",params:l,headers:f}),post:this.config.withHttpValues(i,{method:"POST",params:l,headers:f}),remove:this.config.withHttpValues(i,{method:"DELETE",params:l,headers:f}),head:this.config.withHttpValues(i,{method:"HEAD",params:l,headers:f}),trace:this.config.withHttpValues(i,{method:"TRACE",params:l,headers:f}),options:this.config.withHttpValues(i,{method:"OPTIONS",params:l,headers:f}),patch:this.config.withHttpValues(i,{method:"PATCH",params:l,headers:f})})};var a=function(){};a.prototype=new o,a.prototype.normalizeUrl=function(t){var e=/(http[s]?:\/\/)?(.*)?/.exec(t);return e[2]=e[2].replace(/[\\\/]+/g,"/"),"undefined"!=typeof e[1]?e[1]+e[2]:e[2]},a.prototype.base=function(t){var n=this;return _.reduce(this.parentsArray(t),function(t,r){var i,o=n.config.getUrlFromElem(r);if(o){if(n.config.isAbsoluteUrl(o))return o;i=o}else if(i=r[n.config.restangularFields.route],r[n.config.restangularFields.restangularCollection]){var a=r[n.config.restangularFields.ids];a&&(i+="/"+a.join(","))}else{var s;s=n.config.useCannonicalId?n.config.getCannonicalIdFromElem(r):n.config.getIdFromElem(r),e.isValidId(s)&&!r.singleOne&&(i+="/"+(n.config.encodeIds?encodeURIComponent(s):s))}return t=t.replace(/\/$/,"")+"/"+i,n.normalizeUrl(t)},this.config.baseUrl)},a.prototype.fetchUrl=function(t,e){var n=this.base(t);return e&&(n+="/"+e),n},a.prototype.fetchRequestedUrl=function(t,n){function r(t){var e=[];for(var n in t)t.hasOwnProperty(n)&&e.push(n);return e.sort()}function i(t,e,n){for(var i=r(t),o=0;o<i.length;o++)e.call(n,t[i[o]],i[o]);return i}function o(t,e){return encodeURIComponent(t).replace(/%40/gi,"@").replace(/%3A/gi,":").replace(/%24/g,"$").replace(/%2C/gi,",").replace(/%20/g,e?"%20":"+")}var a=this.fetchUrl(t,n),s=t[e.restangularFields.reqParams];if(!s)return a+(this.config.suffix||"");var u=[];return i(s,function(t,e){null!==t&&void 0!==t&&(angular.isArray(t)||(t=[t]),angular.forEach(t,function(t){angular.isObject(t)&&(t=angular.toJson(t)),u.push(o(e)+"="+o(t))}))}),a+(this.config.suffix||"")+(a.indexOf("?")===-1?"?":"&")+u.join("&")},e.urlCreatorFactory.path=a};var e={};t.init(this,e),this.$get=["$http","$q",function(n,r){function i(e){function o(t,n,r,i,o){if(n[e.restangularFields.route]=r,n[e.restangularFields.getRestangularUrl]=_.bind(z.fetchUrl,z,n),n[e.restangularFields.getRequestedUrl]=_.bind(z.fetchRequestedUrl,z,n),n[e.restangularFields.addRestangularMethod]=_.bind(N,n),n[e.restangularFields.clone]=_.bind(g,n,n),n[e.restangularFields.reqParams]=_.isEmpty(i)?null:i,n[e.restangularFields.withHttpConfig]=_.bind(k,n),n[e.restangularFields.plain]=_.bind(m,n,n),n[e.restangularFields.restangularized]=!0,n[e.restangularFields.one]=_.bind(a,n,n),n[e.restangularFields.all]=_.bind(s,n,n),n[e.restangularFields.several]=_.bind(u,n,n),n[e.restangularFields.oneUrl]=_.bind(c,n,n),n[e.restangularFields.allUrl]=_.bind(l,n,n),n[e.restangularFields.fromServer]=!!o,t&&e.shouldSaveParent(r)){var f=e.getIdFromElem(t),h=e.getUrlFromElem(t),d=_.union(_.values(_.pick(e.restangularFields,["route","singleOne","parentResource"])),e.extraFields),p=_.pick(t,d);e.isValidId(f)&&e.setIdToElem(p,f,r),e.isValidId(h)&&e.setUrlToElem(p,h,r),n[e.restangularFields.parentResource]=p}else n[e.restangularFields.parentResource]=null;return n}function a(t,n,r,i){var o;if(_.isNumber(n)||_.isNumber(t))throw o="You're creating a Restangular entity with the number ",o+="instead of the route or the parent. For example, you can't call .one(12).",new Error(o);if(_.isUndefined(n))throw o="You're creating a Restangular entity either without the path. ",o+="For example you can't call .one(). Please check if your arguments are valid.",new Error(o);var a={};return e.setIdToElem(a,r,n),e.setFieldToElem(e.restangularFields.singleOne,a,i),y(t,a,n,!1)}function s(t,e){return $(t,[],e,!1)}function u(t,n){var r=[];return r[e.restangularFields.ids]=Array.prototype.splice.call(arguments,2),$(t,r,n,!1)}function c(t,n,r){if(!n)throw new Error("Route is mandatory when creating new Restangular objects.");var i={};return e.setUrlToElem(i,r,n),y(t,i,n,!1)}function l(t,n,r){if(!n)throw new Error("Route is mandatory when creating new Restangular objects.");var i={};return e.setUrlToElem(i,r,n),$(t,i,n,!1)}function f(t,n,r){return t.call=_.bind(h,t),t.get=_.bind(d,t),t[e.restangularFields.restangularCollection]=n,n&&(t.push=_.bind(h,t,"push")),t.$object=r,e.restangularizePromiseInterceptor&&e.restangularizePromiseInterceptor(t),t}function h(t){var n=r.defer(),i=arguments,o={};return this.then(function(e){var r=Array.prototype.slice.call(i,1),a=e[t];a.apply(e,r),o=e,n.resolve(e)}),f(n.promise,this[e.restangularFields.restangularCollection],o)}function d(t){var n=r.defer(),i={};return this.then(function(e){i=e[t],n.resolve(i)}),f(n.promise,this[e.restangularFields.restangularCollection],i)}function p(t,n,r,i){return _.extend(i,r),e.fullResponse?t.resolve(_.extend(n,{data:r})):void t.resolve(r)}function m(t){if(_.isArray(t)){var n=[];return _.each(t,function(t){n.push(e.isRestangularized(t)?m(t):t)}),n}return _.omit(t,_.values(_.omit(e.restangularFields,"id")))}function v(t){t[e.restangularFields.customOperation]=_.bind(F,t),_.each(["put","post","get","delete"],function(e){_.each(["do","custom"],function(n){var r,i="delete"===e?"remove":e,o=n+e.toUpperCase();r="put"!==i&&"post"!==i?F:function(t,e,n,r,i){return _.bind(F,this)(t,n,r,i,e)},t[o]=_.bind(r,t,i)})}),t[e.restangularFields.customGETLIST]=_.bind(C,t),t[e.restangularFields.doGETLIST]=t[e.restangularFields.customGETLIST]}function g(t,n){var r=angular.copy(t,n);return y(r[e.restangularFields.parentResource],r,r[e.restangularFields.route],!0)}function y(t,n,r,i,a,s){var u=e.onBeforeElemRestangularized(n,!1,r),c=o(t,u,r,s,i);return e.useCannonicalId&&(c[e.restangularFields.cannonicalId]=e.getIdFromElem(c)),a&&(c[e.restangularFields.getParentList]=function(){return a}),c[e.restangularFields.restangularCollection]=!1,c[e.restangularFields.get]=_.bind(I,c),c[e.restangularFields.getList]=_.bind(C,c),c[e.restangularFields.put]=_.bind(A,c),c[e.restangularFields.post]=_.bind(R,c),c[e.restangularFields.remove]=_.bind(O,c),c[e.restangularFields.head]=_.bind(D,c),c[e.restangularFields.trace]=_.bind(j,c),c[e.restangularFields.options]=_.bind(M,c),c[e.restangularFields.patch]=_.bind(P,c),c[e.restangularFields.save]=_.bind(E,c),v(c),e.transformElem(c,!1,r,q,!0)}function $(t,n,r,i,a){var s=e.onBeforeElemRestangularized(n,!0,r),u=o(t,s,r,a,i);return u[e.restangularFields.restangularCollection]=!0,u[e.restangularFields.post]=_.bind(R,u,null),u[e.restangularFields.remove]=_.bind(O,u),u[e.restangularFields.head]=_.bind(D,u),u[e.restangularFields.trace]=_.bind(j,u),u[e.restangularFields.putElement]=_.bind(x,u),u[e.restangularFields.options]=_.bind(M,u),u[e.restangularFields.patch]=_.bind(P,u),u[e.restangularFields.get]=_.bind(w,u),u[e.restangularFields.getList]=_.bind(C,u,null),v(u),e.transformElem(u,!0,r,q,!0)}function b(t,e,n){var r=$(t,e,n,!1);return _.each(r,function(e){y(t,e,n,!1)}),r}function w(t,e,n){return this.customGET(t.toString(),e,n)}function x(t,n,i){var o=this,a=this[t],s=r.defer(),u=[];return u=e.transformElem(u,!0,a[e.restangularFields.route],q),a.put(n,i).then(function(e){var n=g(o);n[t]=e,u=n,s.resolve(n)},function(t){s.reject(t)}),f(s.promise,!0,u)}function S(t,n,r,i,o,a){var s=e.responseExtractor(t,n,r,i,o,a),u=o.headers("ETag");return s&&u&&(s[e.restangularFields.etag]=u),s}function C(t,i,o){var a=this,s=r.defer(),u="getList",c=z.fetchUrl(this,t),l=t||a[e.restangularFields.route],h=e.fullRequestInterceptor(null,u,l,c,o||{},i||{},this[e.restangularFields.httpConfig]||{}),d=[];d=e.transformElem(d,!0,l,q);var m="getList";e.jsonp&&(m="jsonp");var v=function(n){var r=n.data,i=n.config.params,o=S(r,u,l,c,n,s);if((_.isUndefined(o)||""===o)&&(o=[]),!_.isArray(o))throw new Error("Response for getList SHOULD be an array and not an object or something else");var f=_.map(o,function(n){return a[e.restangularFields.restangularCollection]?y(a[e.restangularFields.parentResource],n,a[e.restangularFields.route],!0,o):y(a,n,t,!0,o)});f=_.extend(o,f),a[e.restangularFields.restangularCollection]?p(s,n,$(a[e.restangularFields.parentResource],f,a[e.restangularFields.route],!0,i),d):p(s,n,$(a,f,t,!0,i),d)};return z.resource(this,n,h.httpConfig,h.headers,h.params,t,this[e.restangularFields.etag],u)[m]().then(v,function(t){304===t.status&&a[e.restangularFields.restangularCollection]?p(s,t,a,d):_.every(e.errorInterceptors,function(e){return e(t,s,v)!==!1})&&s.reject(t)}),f(s.promise,!0,d)}function k(t){return this[e.restangularFields.httpConfig]=t,this}function E(t,n){return this[e.restangularFields.fromServer]?this[e.restangularFields.put](t,n):_.bind(T,this)("post",void 0,t,void 0,n)}function T(t,i,o,a,s){var u=this,c=r.defer(),l=o||{},h=i||this[e.restangularFields.route],d=z.fetchUrl(this,i),v=a||this,g=v[e.restangularFields.etag]||("post"!==t?this[e.restangularFields.etag]:null);_.isObject(v)&&e.isRestangularized(v)&&(v=m(v));var $=e.fullRequestInterceptor(v,t,h,d,s||{},l||{},this[e.restangularFields.httpConfig]||{}),b={};b=e.transformElem(b,!1,h,q);var w=function(n){var r=n.data,i=n.config.params,o=S(r,t,h,d,n,c);if(o){var a;"post"!==t||u[e.restangularFields.restangularCollection]?(a=y(u[e.restangularFields.parentResource],o,u[e.restangularFields.route],!0,null,i),a[e.restangularFields.singleOne]=u[e.restangularFields.singleOne],p(c,n,a,b)):(a=y(u[e.restangularFields.parentResource],o,h,!0,null,i),
 p(c,n,a,b))}else p(c,n,void 0,b)},x=function(n){304===n.status&&e.isSafe(t)?p(c,n,u,b):_.every(e.errorInterceptors,function(t){return t(n,c,w)!==!1})&&c.reject(n)},C=t,k=_.extend({},$.headers),E=e.isOverridenMethod(t);return E?(C="post",k=_.extend(k,{"X-HTTP-Method-Override":"remove"===t?"DELETE":t.toUpperCase()})):e.jsonp&&"get"===C&&(C="jsonp"),e.isSafe(t)?E?z.resource(this,n,$.httpConfig,k,$.params,i,g,C)[C]({}).then(w,x):z.resource(this,n,$.httpConfig,k,$.params,i,g,C)[C]().then(w,x):z.resource(this,n,$.httpConfig,k,$.params,i,g,C)[C]($.element).then(w,x),f(c.promise,!1,b)}function I(t,e){return _.bind(T,this)("get",void 0,t,void 0,e)}function O(t,e){return _.bind(T,this)("remove",void 0,t,void 0,e)}function A(t,e){return _.bind(T,this)("put",void 0,t,void 0,e)}function R(t,e,n,r){return _.bind(T,this)("post",t,n,e,r)}function D(t,e){return _.bind(T,this)("head",void 0,t,void 0,e)}function j(t,e){return _.bind(T,this)("trace",void 0,t,void 0,e)}function M(t,e){return _.bind(T,this)("options",void 0,t,void 0,e)}function P(t,e,n){return _.bind(T,this)("patch",void 0,e,t,n)}function F(t,e,n,r,i){return _.bind(T,this)(t,e,n,i,r)}function N(t,n,r,i,o,a){var s;s="getList"===n?_.bind(C,this,r):_.bind(F,this,n,r);var u=function(t,e,n){var r=_.defaults({params:t,headers:e,elem:n},{params:i,headers:o,elem:a});return s(r.params,r.headers,r.elem)};e.isSafe(n)?this[t]=u:this[t]=function(t,e,n){return u(e,n,t)}}function L(n){var r=angular.copy(_.omit(e,"configuration"));return t.init(r,r),n(r),i(r)}function U(t,n){var r=_.values(e.restangularFields),i={},o=(n||q).all(t);i.one=_.bind(a,n||q,n,t),i.post=_.bind(o.post,o),i.getList=_.bind(o.getList,o);for(var s in o)o.hasOwnProperty(s)&&_.isFunction(o[s])&&!_.includes(r,s)&&(i[s]=_.bind(o[s],o));return i}var q={},z=new e.urlCreatorFactory[e.urlCreator];return z.setConfig(e),t.init(q,e),q.copy=_.bind(g,q),q.service=_.bind(U,q),q.withConfig=_.bind(L,q),q.one=_.bind(a,q,null),q.all=_.bind(s,q,null),q.several=_.bind(u,q,null),q.oneUrl=_.bind(c,q,null),q.allUrl=_.bind(l,q,null),q.stripRestangular=_.bind(m,q),q.restangularizeElement=_.bind(y,q),q.restangularizeCollection=_.bind(b,q),q}return i(e)}]})}();var timerModule=angular.module("timer",[]).directive("timer",["$compile",function(t){return{restrict:"EA",replace:!1,scope:{interval:"=interval",startTimeAttr:"=startTime",endTimeAttr:"=endTime",countdownattr:"=countdown",finishCallback:"&finishCallback",autoStart:"&autoStart",language:"@?",fallback:"@?",maxTimeUnit:"=",seconds:"=?",minutes:"=?",hours:"=?",days:"=?",months:"=?",years:"=?",secondsS:"=?",minutesS:"=?",hoursS:"=?",daysS:"=?",monthsS:"=?",yearsS:"=?"},controller:["$scope","$element","$attrs","$timeout","I18nService","$interpolate","progressBarService",function(e,n,r,i,o,a,s){function u(){e.timeoutId&&clearTimeout(e.timeoutId)}function c(){var t={};void 0!==r.startTime&&(e.millis=moment().diff(moment(e.startTimeAttr))),t=l.getTimeUnits(e.millis),e.maxTimeUnit&&"day"!==e.maxTimeUnit?"second"===e.maxTimeUnit?(e.seconds=Math.floor(e.millis/1e3),e.minutes=0,e.hours=0,e.days=0,e.months=0,e.years=0):"minute"===e.maxTimeUnit?(e.seconds=Math.floor(e.millis/1e3%60),e.minutes=Math.floor(e.millis/6e4),e.hours=0,e.days=0,e.months=0,e.years=0):"hour"===e.maxTimeUnit?(e.seconds=Math.floor(e.millis/1e3%60),e.minutes=Math.floor(e.millis/6e4%60),e.hours=Math.floor(e.millis/36e5),e.days=0,e.months=0,e.years=0):"month"===e.maxTimeUnit?(e.seconds=Math.floor(e.millis/1e3%60),e.minutes=Math.floor(e.millis/6e4%60),e.hours=Math.floor(e.millis/36e5%24),e.days=Math.floor(e.millis/36e5/24%30),e.months=Math.floor(e.millis/36e5/24/30),e.years=0):"year"===e.maxTimeUnit&&(e.seconds=Math.floor(e.millis/1e3%60),e.minutes=Math.floor(e.millis/6e4%60),e.hours=Math.floor(e.millis/36e5%24),e.days=Math.floor(e.millis/36e5/24%30),e.months=Math.floor(e.millis/36e5/24/30%12),e.years=Math.floor(e.millis/36e5/24/365)):(e.seconds=Math.floor(e.millis/1e3%60),e.minutes=Math.floor(e.millis/6e4%60),e.hours=Math.floor(e.millis/36e5%24),e.days=Math.floor(e.millis/36e5/24),e.months=0,e.years=0),e.secondsS=1===e.seconds?"":"s",e.minutesS=1===e.minutes?"":"s",e.hoursS=1===e.hours?"":"s",e.daysS=1===e.days?"":"s",e.monthsS=1===e.months?"":"s",e.yearsS=1===e.years?"":"s",e.secondUnit=t.seconds,e.minuteUnit=t.minutes,e.hourUnit=t.hours,e.dayUnit=t.days,e.monthUnit=t.months,e.yearUnit=t.years,e.sseconds=e.seconds<10?"0"+e.seconds:e.seconds,e.mminutes=e.minutes<10?"0"+e.minutes:e.minutes,e.hhours=e.hours<10?"0"+e.hours:e.hours,e.ddays=e.days<10?"0"+e.days:e.days,e.mmonths=e.months<10?"0"+e.months:e.months,e.yyears=e.years<10?"0"+e.years:e.years}"function"!=typeof String.prototype.trim&&(String.prototype.trim=function(){return this.replace(/^\s+|\s+$/g,"")}),e.autoStart=r.autoStart||r.autostart,e.language=e.language||"en",e.fallback=e.fallback||"en",e.$watch("language",function(t,n){void 0!==t&&l.init(t,e.fallback)});var l=new o;l.init(e.language,e.fallback),e.displayProgressBar=0,e.displayProgressActive="active",0===n.html().trim().length?n.append(t("<span>"+a.startSymbol()+"millis"+a.endSymbol()+"</span>")(e)):n.append(t(n.contents())(e)),e.startTime=null,e.endTime=null,e.timeoutId=null,e.countdown=angular.isNumber(e.countdownattr)&&parseInt(e.countdownattr,10)>=0?parseInt(e.countdownattr,10):void 0,e.isRunning=!1,e.$on("timer-start",function(){e.start()}),e.$on("timer-resume",function(){e.resume()}),e.$on("timer-stop",function(){e.stop()}),e.$on("timer-clear",function(){e.clear()}),e.$on("timer-reset",function(){e.reset()}),e.$on("timer-set-countdown",function(t,n){e.countdown=n}),e.$watch("startTimeAttr",function(t,n){t!==n&&e.isRunning&&e.start()}),e.$watch("endTimeAttr",function(t,n){t!==n&&e.isRunning&&e.start()}),e.start=n[0].start=function(){e.startTime=e.startTimeAttr?moment(e.startTimeAttr):moment(),e.endTime=e.endTimeAttr?moment(e.endTimeAttr):null,angular.isNumber(e.countdown)||(e.countdown=angular.isNumber(e.countdownattr)&&parseInt(e.countdownattr,10)>0?parseInt(e.countdownattr,10):void 0),u(),f(),e.isRunning=!0},e.resume=n[0].resume=function(){u(),e.countdownattr&&(e.countdown+=1),e.startTime=moment().diff(moment(e.stoppedTime).diff(moment(e.startTime))),f(),e.isRunning=!0},e.stop=e.pause=n[0].stop=n[0].pause=function(){var t=e.timeoutId;e.clear(),e.$emit("timer-stopped",{timeoutId:t,millis:e.millis,seconds:e.seconds,minutes:e.minutes,hours:e.hours,days:e.days})},e.clear=n[0].clear=function(){e.stoppedTime=moment(),u(),e.timeoutId=null,e.isRunning=!1},e.reset=n[0].reset=function(){e.startTime=e.startTimeAttr?moment(e.startTimeAttr):moment(),e.endTime=e.endTimeAttr?moment(e.endTimeAttr):null,e.countdown=angular.isNumber(e.countdownattr)&&parseInt(e.countdownattr,10)>0?parseInt(e.countdownattr,10):void 0,u(),f(),e.isRunning=!1,e.clear()},n.bind("$destroy",function(){u(),e.isRunning=!1}),e.countdownattr?(e.millis=1e3*e.countdownattr,e.addCDSeconds=n[0].addCDSeconds=function(t){e.countdown+=t,e.$digest(),e.isRunning||e.start()},e.$on("timer-add-cd-seconds",function(t,n){i(function(){e.addCDSeconds(n)})}),e.$on("timer-set-countdown-seconds",function(t,n){e.isRunning||e.clear(),e.countdown=n,e.millis=1e3*n,c()})):e.millis=0,c();var f=function h(){var t=null;e.millis=moment().diff(e.startTime);var r=e.millis%1e3;return e.endTimeAttr&&(t=e.endTimeAttr,e.millis=moment(e.endTime).diff(moment()),r=e.interval-e.millis%1e3),e.countdownattr&&(t=e.countdownattr,e.millis=1e3*e.countdown),e.millis<0?(e.stop(),e.millis=0,c(),void(e.finishCallback&&e.$eval(e.finishCallback))):(c(),e.timeoutId=setTimeout(function(){h(),e.$digest()},e.interval-r),e.$emit("timer-tick",{timeoutId:e.timeoutId,millis:e.millis,timerElement:n[0]}),e.countdown>0?e.countdown--:e.countdown<=0&&(e.stop(),e.finishCallback&&e.$eval(e.finishCallback)),void(null!==t&&(e.progressBar=s.calculateProgressBar(e.startTime,e.millis,e.endTime,e.countdownattr),100===e.progressBar&&(e.displayProgressActive=""))))};void 0!==e.autoStart&&e.autoStart!==!0||e.start()}]}}]);"undefined"!=typeof module&&"undefined"!=typeof exports&&module.exports===exports&&(module.exports=timerModule);var app=angular.module("timer");app.factory("I18nService",function(){var t=function(){};return t.prototype.language="en",t.prototype.fallback="en",t.prototype.timeHumanizer={},t.prototype.init=function(t,e){var n=humanizeDuration.getSupportedLanguages();this.fallback=void 0!==e?e:"en",n.indexOf(e)===-1&&(this.fallback="en"),this.language=t,n.indexOf(t)===-1&&(this.language=this.fallback),moment.locale(this.language),this.timeHumanizer=humanizeDuration.humanizer({language:this.language,halfUnit:!1})},t.prototype.getTimeUnits=function(t){var e=1e3*Math.round(t/1e3),n={};return"undefined"!=typeof this.timeHumanizer?n={millis:this.timeHumanizer(e,{units:["milliseconds"]}),seconds:this.timeHumanizer(e,{units:["seconds"]}),minutes:this.timeHumanizer(e,{units:["minutes","seconds"]}),hours:this.timeHumanizer(e,{units:["hours","minutes","seconds"]}),days:this.timeHumanizer(e,{units:["days","hours","minutes","seconds"]}),months:this.timeHumanizer(e,{units:["months","days","hours","minutes","seconds"]}),years:this.timeHumanizer(e,{units:["years","months","days","hours","minutes","seconds"]})}:console.error('i18nService has not been initialized. You must call i18nService.init("en") for example'),n},t});var app=angular.module("timer");app.factory("progressBarService",function(){var t=function(){};return t.prototype.calculateProgressBar=function(t,e,n,r){var i,o,a=0;return e/=1e3,null!==n?(i=moment(n),o=i.diff(t,"seconds"),a=100*e/o):a=100*e/r,a=100-a,a=Math.round(10*a)/10,a>100&&(a=100),a},new t}),angular.module("simpleAngularTicker",[]).directive("ticker",function(t,e){return{restrict:"A",scope:!0,compile:function(){return function(n,r,i){var o,a,s,u,c=4,l=!1;i.timing?(o=i.timing,a=o/c):(o=5e3,a=o/c/c*2),n.$watch(r,function(){var n,i=r,c=r.find("li");c.length?(i.addClass("active"),u=t(function(){return l?void e.cancel(s):(c=i.children("li"),n=angular.element(c[0]),n.addClass("fade-out minus-margin-top"),void e(function(){n.removeClass("minus-margin-top"),i.append(n),s=e(function(){c.removeClass("fade-out")},a)},a))},o)):console.warn("no items assigned to ticker! Ensure you have correctly assigned items to your ng-repeat.")}),r.on("$destroy",function(){t.cancel(u,0)}),r.on("mouseenter",function(){l=!0}),r.on("mouseleave",function(){l=!1})}}}}),function(t){"function"==typeof define&&define.amd?define(["jquery"],t):t("object"==typeof exports?require("jquery"):window.jQuery||window.Zepto)}(function(t){var e,n,r,i,o,a,s="Close",u="BeforeClose",c="AfterClose",l="BeforeAppend",f="MarkupParse",h="Open",d="Change",p="mfp",m="."+p,v="mfp-ready",g="mfp-removing",y="mfp-prevent-close",$=function(){},b=!!window.jQuery,w=t(window),_=function(t,n){e.ev.on(p+t+m,n)},x=function(e,n,r,i){var o=document.createElement("div");return o.className="mfp-"+e,r&&(o.innerHTML=r),i?n&&n.appendChild(o):(o=t(o),n&&o.appendTo(n)),o},S=function(n,r){e.ev.triggerHandler(p+n,r),e.st.callbacks&&(n=n.charAt(0).toLowerCase()+n.slice(1),e.st.callbacks[n]&&e.st.callbacks[n].apply(e,t.isArray(r)?r:[r]))},C=function(n){return n===a&&e.currTemplate.closeBtn||(e.currTemplate.closeBtn=t(e.st.closeMarkup.replace("%title%",e.st.tClose)),a=n),e.currTemplate.closeBtn},k=function(){t.magnificPopup.instance||(e=new $,e.init(),t.magnificPopup.instance=e)},E=function(){var t=document.createElement("p").style,e=["ms","O","Moz","Webkit"];if(void 0!==t.transition)return!0;for(;e.length;)if(e.pop()+"Transition"in t)return!0;return!1};$.prototype={constructor:$,init:function(){var n=navigator.appVersion;e.isLowIE=e.isIE8=document.all&&!document.addEventListener,e.isAndroid=/android/gi.test(n),e.isIOS=/iphone|ipad|ipod/gi.test(n),e.supportsTransition=E(),e.probablyMobile=e.isAndroid||e.isIOS||/(Opera Mini)|Kindle|webOS|BlackBerry|(Opera Mobi)|(Windows Phone)|IEMobile/i.test(navigator.userAgent),r=t(document),e.popupsCache={}},open:function(n){var i;if(n.isObj===!1){e.items=n.items.toArray(),e.index=0;var a,s=n.items;for(i=0;i<s.length;i++)if(a=s[i],a.parsed&&(a=a.el[0]),a===n.el[0]){e.index=i;break}}else e.items=t.isArray(n.items)?n.items:[n.items],e.index=n.index||0;if(e.isOpen)return void e.updateItemHTML();e.types=[],o="",n.mainEl&&n.mainEl.length?e.ev=n.mainEl.eq(0):e.ev=r,n.key?(e.popupsCache[n.key]||(e.popupsCache[n.key]={}),e.currTemplate=e.popupsCache[n.key]):e.currTemplate={},e.st=t.extend(!0,{},t.magnificPopup.defaults,n),e.fixedContentPos="auto"===e.st.fixedContentPos?!e.probablyMobile:e.st.fixedContentPos,e.st.modal&&(e.st.closeOnContentClick=!1,e.st.closeOnBgClick=!1,e.st.showCloseBtn=!1,e.st.enableEscapeKey=!1),e.bgOverlay||(e.bgOverlay=x("bg").on("click"+m,function(){e.close()}),e.wrap=x("wrap").attr("tabindex",-1).on("click"+m,function(t){e._checkIfClose(t.target)&&e.close()}),e.container=x("container",e.wrap)),e.contentContainer=x("content"),e.st.preloader&&(e.preloader=x("preloader",e.container,e.st.tLoading));var u=t.magnificPopup.modules;for(i=0;i<u.length;i++){var c=u[i];c=c.charAt(0).toUpperCase()+c.slice(1),e["init"+c].call(e)}S("BeforeOpen"),e.st.showCloseBtn&&(e.st.closeBtnInside?(_(f,function(t,e,n,r){n.close_replaceWith=C(r.type)}),o+=" mfp-close-btn-in"):e.wrap.append(C())),e.st.alignTop&&(o+=" mfp-align-top"),e.fixedContentPos?e.wrap.css({overflow:e.st.overflowY,overflowX:"hidden",overflowY:e.st.overflowY}):e.wrap.css({top:w.scrollTop(),position:"absolute"}),(e.st.fixedBgPos===!1||"auto"===e.st.fixedBgPos&&!e.fixedContentPos)&&e.bgOverlay.css({height:r.height(),position:"absolute"}),e.st.enableEscapeKey&&r.on("keyup"+m,function(t){27===t.keyCode&&e.close()}),w.on("resize"+m,function(){e.updateSize()}),e.st.closeOnContentClick||(o+=" mfp-auto-cursor"),o&&e.wrap.addClass(o);var l=e.wH=w.height(),d={};if(e.fixedContentPos&&e._hasScrollBar(l)){var p=e._getScrollbarSize();p&&(d.marginRight=p)}e.fixedContentPos&&(e.isIE7?t("body, html").css("overflow","hidden"):d.overflow="hidden");var g=e.st.mainClass;return e.isIE7&&(g+=" mfp-ie7"),g&&e._addClassToMFP(g),e.updateItemHTML(),S("BuildControls"),t("html").css(d),e.bgOverlay.add(e.wrap).prependTo(e.st.prependTo||t(document.body)),e._lastFocusedEl=document.activeElement,setTimeout(function(){e.content?(e._addClassToMFP(v),e._setFocus()):e.bgOverlay.addClass(v),r.on("focusin"+m,e._onFocusIn)},16),e.isOpen=!0,e.updateSize(l),S(h),n},close:function(){e.isOpen&&(S(u),e.isOpen=!1,e.st.removalDelay&&!e.isLowIE&&e.supportsTransition?(e._addClassToMFP(g),setTimeout(function(){e._close()},e.st.removalDelay)):e._close())},_close:function(){S(s);var n=g+" "+v+" ";if(e.bgOverlay.detach(),e.wrap.detach(),e.container.empty(),e.st.mainClass&&(n+=e.st.mainClass+" "),e._removeClassFromMFP(n),e.fixedContentPos){var i={marginRight:""};e.isIE7?t("body, html").css("overflow",""):i.overflow="",t("html").css(i)}r.off("keyup"+m+" focusin"+m),e.ev.off(m),e.wrap.attr("class","mfp-wrap").removeAttr("style"),e.bgOverlay.attr("class","mfp-bg"),e.container.attr("class","mfp-container"),!e.st.showCloseBtn||e.st.closeBtnInside&&e.currTemplate[e.currItem.type]!==!0||e.currTemplate.closeBtn&&e.currTemplate.closeBtn.detach(),e.st.autoFocusLast&&e._lastFocusedEl&&t(e._lastFocusedEl).focus(),e.currItem=null,e.content=null,e.currTemplate=null,e.prevHeight=0,S(c)},updateSize:function(t){if(e.isIOS){var n=document.documentElement.clientWidth/window.innerWidth,r=window.innerHeight*n;e.wrap.css("height",r),e.wH=r}else e.wH=t||w.height();e.fixedContentPos||e.wrap.css("height",e.wH),S("Resize")},updateItemHTML:function(){var n=e.items[e.index];e.contentContainer.detach(),e.content&&e.content.detach(),n.parsed||(n=e.parseEl(e.index));var r=n.type;if(S("BeforeChange",[e.currItem?e.currItem.type:"",r]),e.currItem=n,!e.currTemplate[r]){var o=!!e.st[r]&&e.st[r].markup;S("FirstMarkupParse",o),o?e.currTemplate[r]=t(o):e.currTemplate[r]=!0}i&&i!==n.type&&e.container.removeClass("mfp-"+i+"-holder");var a=e["get"+r.charAt(0).toUpperCase()+r.slice(1)](n,e.currTemplate[r]);e.appendContent(a,r),n.preloaded=!0,S(d,n),i=n.type,e.container.prepend(e.contentContainer),S("AfterChange")},appendContent:function(t,n){e.content=t,t?e.st.showCloseBtn&&e.st.closeBtnInside&&e.currTemplate[n]===!0?e.content.find(".mfp-close").length||e.content.append(C()):e.content=t:e.content="",S(l),e.container.addClass("mfp-"+n+"-holder"),e.contentContainer.append(e.content)},parseEl:function(n){var r,i=e.items[n];if(i.tagName?i={el:t(i)}:(r=i.type,i={data:i,src:i.src}),i.el){for(var o=e.types,a=0;a<o.length;a++)if(i.el.hasClass("mfp-"+o[a])){r=o[a];break}i.src=i.el.attr("data-mfp-src"),i.src||(i.src=i.el.attr("href"))}return i.type=r||e.st.type||"inline",i.index=n,i.parsed=!0,e.items[n]=i,S("ElementParse",i),e.items[n]},addGroup:function(t,n){var r=function(r){r.mfpEl=this,e._openClick(r,t,n)};n||(n={});var i="click.magnificPopup";n.mainEl=t,n.items?(n.isObj=!0,t.off(i).on(i,r)):(n.isObj=!1,n.delegate?t.off(i).on(i,n.delegate,r):(n.items=t,t.off(i).on(i,r)))},_openClick:function(n,r,i){var o=void 0!==i.midClick?i.midClick:t.magnificPopup.defaults.midClick;if(o||!(2===n.which||n.ctrlKey||n.metaKey||n.altKey||n.shiftKey)){var a=void 0!==i.disableOn?i.disableOn:t.magnificPopup.defaults.disableOn;if(a)if(t.isFunction(a)){if(!a.call(e))return!0}else if(w.width()<a)return!0;n.type&&(n.preventDefault(),e.isOpen&&n.stopPropagation()),i.el=t(n.mfpEl),i.delegate&&(i.items=r.find(i.delegate)),e.open(i)}},updateStatus:function(t,r){if(e.preloader){n!==t&&e.container.removeClass("mfp-s-"+n),r||"loading"!==t||(r=e.st.tLoading);var i={status:t,text:r};S("UpdateStatus",i),t=i.status,r=i.text,e.preloader.html(r),e.preloader.find("a").on("click",function(t){t.stopImmediatePropagation()}),e.container.addClass("mfp-s-"+t),n=t}},_checkIfClose:function(n){if(!t(n).hasClass(y)){var r=e.st.closeOnContentClick,i=e.st.closeOnBgClick;if(r&&i)return!0;if(!e.content||t(n).hasClass("mfp-close")||e.preloader&&n===e.preloader[0])return!0;if(n===e.content[0]||t.contains(e.content[0],n)){if(r)return!0}else if(i&&t.contains(document,n))return!0;return!1}},_addClassToMFP:function(t){e.bgOverlay.addClass(t),e.wrap.addClass(t)},_removeClassFromMFP:function(t){this.bgOverlay.removeClass(t),e.wrap.removeClass(t)},_hasScrollBar:function(t){return(e.isIE7?r.height():document.body.scrollHeight)>(t||w.height())},_setFocus:function(){(e.st.focus?e.content.find(e.st.focus).eq(0):e.wrap).focus()},_onFocusIn:function(n){if(n.target!==e.wrap[0]&&!t.contains(e.wrap[0],n.target))return e._setFocus(),!1},_parseMarkup:function(e,n,r){var i;r.data&&(n=t.extend(r.data,n)),S(f,[e,n,r]),t.each(n,function(n,r){if(void 0===r||r===!1)return!0;if(i=n.split("_"),i.length>1){var o=e.find(m+"-"+i[0]);if(o.length>0){var a=i[1];"replaceWith"===a?o[0]!==r[0]&&o.replaceWith(r):"img"===a?o.is("img")?o.attr("src",r):o.replaceWith(t("<img>").attr("src",r).attr("class",o.attr("class"))):o.attr(i[1],r)}}else e.find(m+"-"+n).html(r)})},_getScrollbarSize:function(){if(void 0===e.scrollbarSize){var t=document.createElement("div");t.style.cssText="width: 99px; height: 99px; overflow: scroll; position: absolute; top: -9999px;",document.body.appendChild(t),e.scrollbarSize=t.offsetWidth-t.clientWidth,document.body.removeChild(t)}return e.scrollbarSize}},t.magnificPopup={instance:null,proto:$.prototype,modules:[],open:function(e,n){return k(),e=e?t.extend(!0,{},e):{},e.isObj=!0,e.index=n||0,this.instance.open(e)},close:function(){return t.magnificPopup.instance&&t.magnificPopup.instance.close()},registerModule:function(e,n){n.options&&(t.magnificPopup.defaults[e]=n.options),t.extend(this.proto,n.proto),this.modules.push(e)},defaults:{disableOn:0,key:null,midClick:!1,mainClass:"",preloader:!0,focus:"",closeOnContentClick:!1,closeOnBgClick:!0,closeBtnInside:!0,showCloseBtn:!0,enableEscapeKey:!0,modal:!1,alignTop:!1,removalDelay:0,prependTo:null,fixedContentPos:"auto",fixedBgPos:"auto",overflowY:"auto",closeMarkup:'<button title="%title%" type="button" class="mfp-close">&#215;</button>',tClose:"Close (Esc)",tLoading:"Loading...",autoFocusLast:!0}},t.fn.magnificPopup=function(n){k();var r=t(this);if("string"==typeof n)if("open"===n){var i,o=b?r.data("magnificPopup"):r[0].magnificPopup,a=parseInt(arguments[1],10)||0;o.items?i=o.items[a]:(i=r,o.delegate&&(i=i.find(o.delegate)),i=i.eq(a)),e._openClick({mfpEl:i},r,o)}else e.isOpen&&e[n].apply(e,Array.prototype.slice.call(arguments,1));else n=t.extend(!0,{},n),b?r.data("magnificPopup",n):r[0].magnificPopup=n,e.addGroup(r,n);return r};var T,I,O,A="inline",R=function(){O&&(I.after(O.addClass(T)).detach(),O=null)};t.magnificPopup.registerModule(A,{options:{hiddenClass:"hide",markup:"",tNotFound:"Content not found"},proto:{initInline:function(){e.types.push(A),_(s+"."+A,function(){R()})},getInline:function(n,r){if(R(),n.src){var i=e.st.inline,o=t(n.src);if(o.length){var a=o[0].parentNode;a&&a.tagName&&(I||(T=i.hiddenClass,I=x(T),T="mfp-"+T),O=o.after(I).detach().removeClass(T)),e.updateStatus("ready")}else e.updateStatus("error",i.tNotFound),o=t("<div>");return n.inlineElement=o,o}return e.updateStatus("ready"),e._parseMarkup(r,{},n),r}}});var D,j="ajax",M=function(){D&&t(document.body).removeClass(D)},P=function(){M(),e.req&&e.req.abort()};t.magnificPopup.registerModule(j,{options:{settings:null,cursor:"mfp-ajax-cur",tError:'<a href="%url%">The content</a> could not be loaded.'},proto:{initAjax:function(){e.types.push(j),D=e.st.ajax.cursor,_(s+"."+j,P),_("BeforeChange."+j,P)},getAjax:function(n){D&&t(document.body).addClass(D),e.updateStatus("loading");var r=t.extend({url:n.src,success:function(r,i,o){var a={data:r,xhr:o};S("ParseAjax",a),e.appendContent(t(a.data),j),n.finished=!0,M(),e._setFocus(),setTimeout(function(){e.wrap.addClass(v)},16),e.updateStatus("ready"),S("AjaxContentAdded")},error:function(){M(),n.finished=n.loadError=!0,e.updateStatus("error",e.st.ajax.tError.replace("%url%",n.src))}},e.st.ajax.settings);return e.req=t.ajax(r),""}}});var F,N=function(n){if(n.data&&void 0!==n.data.title)return n.data.title;var r=e.st.image.titleSrc;if(r){if(t.isFunction(r))return r.call(e,n);if(n.el)return n.el.attr(r)||""}return""};t.magnificPopup.registerModule("image",{options:{markup:'<div class="mfp-figure"><div class="mfp-close"></div><figure><div class="mfp-img"></div><figcaption><div class="mfp-bottom-bar"><div class="mfp-title"></div><div class="mfp-counter"></div></div></figcaption></figure></div>',cursor:"mfp-zoom-out-cur",titleSrc:"title",verticalFit:!0,tError:'<a href="%url%">The image</a> could not be loaded.'},proto:{initImage:function(){var n=e.st.image,r=".image";e.types.push("image"),_(h+r,function(){"image"===e.currItem.type&&n.cursor&&t(document.body).addClass(n.cursor)}),_(s+r,function(){n.cursor&&t(document.body).removeClass(n.cursor),w.off("resize"+m)}),_("Resize"+r,e.resizeImage),e.isLowIE&&_("AfterChange",e.resizeImage)},resizeImage:function(){var t=e.currItem;if(t&&t.img&&e.st.image.verticalFit){var n=0;e.isLowIE&&(n=parseInt(t.img.css("padding-top"),10)+parseInt(t.img.css("padding-bottom"),10)),t.img.css("max-height",e.wH-n)}},_onImageHasSize:function(t){t.img&&(t.hasSize=!0,F&&clearInterval(F),t.isCheckingImgSize=!1,S("ImageHasSize",t),t.imgHidden&&(e.content&&e.content.removeClass("mfp-loading"),t.imgHidden=!1))},findImageSize:function(t){var n=0,r=t.img[0],i=function(o){F&&clearInterval(F),F=setInterval(function(){return r.naturalWidth>0?void e._onImageHasSize(t):(n>200&&clearInterval(F),n++,void(3===n?i(10):40===n?i(50):100===n&&i(500)))},o)};i(1)},getImage:function(n,r){var i=0,o=function(){n&&(n.img[0].complete?(n.img.off(".mfploader"),n===e.currItem&&(e._onImageHasSize(n),e.updateStatus("ready")),n.hasSize=!0,n.loaded=!0,S("ImageLoadComplete")):(i++,i<200?setTimeout(o,100):a()))},a=function(){n&&(n.img.off(".mfploader"),n===e.currItem&&(e._onImageHasSize(n),e.updateStatus("error",s.tError.replace("%url%",n.src))),n.hasSize=!0,n.loaded=!0,n.loadError=!0)},s=e.st.image,u=r.find(".mfp-img");if(u.length){var c=document.createElement("img");c.className="mfp-img",n.el&&n.el.find("img").length&&(c.alt=n.el.find("img").attr("alt")),n.img=t(c).on("load.mfploader",o).on("error.mfploader",a),c.src=n.src,u.is("img")&&(n.img=n.img.clone()),c=n.img[0],c.naturalWidth>0?n.hasSize=!0:c.width||(n.hasSize=!1)}return e._parseMarkup(r,{title:N(n),img_replaceWith:n.img},n),e.resizeImage(),n.hasSize?(F&&clearInterval(F),n.loadError?(r.addClass("mfp-loading"),e.updateStatus("error",s.tError.replace("%url%",n.src))):(r.removeClass("mfp-loading"),e.updateStatus("ready")),r):(e.updateStatus("loading"),n.loading=!0,n.hasSize||(n.imgHidden=!0,r.addClass("mfp-loading"),e.findImageSize(n)),r)}}});var L,U=function(){return void 0===L&&(L=void 0!==document.createElement("p").style.MozTransform),L};t.magnificPopup.registerModule("zoom",{options:{enabled:!1,easing:"ease-in-out",duration:300,opener:function(t){return t.is("img")?t:t.find("img")}},proto:{initZoom:function(){var t,n=e.st.zoom,r=".zoom";if(n.enabled&&e.supportsTransition){var i,o,a=n.duration,c=function(t){var e=t.clone().removeAttr("style").removeAttr("class").addClass("mfp-animated-image"),r="all "+n.duration/1e3+"s "+n.easing,i={position:"fixed",zIndex:9999,left:0,top:0,"-webkit-backface-visibility":"hidden"},o="transition";return i["-webkit-"+o]=i["-moz-"+o]=i["-o-"+o]=i[o]=r,e.css(i),e},l=function(){e.content.css("visibility","visible")};_("BuildControls"+r,function(){if(e._allowZoom()){if(clearTimeout(i),e.content.css("visibility","hidden"),t=e._getItemToZoom(),!t)return void l();o=c(t),o.css(e._getOffset()),e.wrap.append(o),i=setTimeout(function(){o.css(e._getOffset(!0)),i=setTimeout(function(){l(),setTimeout(function(){o.remove(),t=o=null,S("ZoomAnimationEnded")},16)},a)},16)}}),_(u+r,function(){if(e._allowZoom()){if(clearTimeout(i),e.st.removalDelay=a,!t){if(t=e._getItemToZoom(),!t)return;o=c(t)}o.css(e._getOffset(!0)),e.wrap.append(o),e.content.css("visibility","hidden"),setTimeout(function(){o.css(e._getOffset())},16)}}),_(s+r,function(){e._allowZoom()&&(l(),o&&o.remove(),t=null)})}},_allowZoom:function(){return"image"===e.currItem.type},_getItemToZoom:function(){return!!e.currItem.hasSize&&e.currItem.img},_getOffset:function(n){var r;r=n?e.currItem.img:e.st.zoom.opener(e.currItem.el||e.currItem);var i=r.offset(),o=parseInt(r.css("padding-top"),10),a=parseInt(r.css("padding-bottom"),10);i.top-=t(window).scrollTop()-o;var s={width:r.width(),height:(b?r.innerHeight():r[0].offsetHeight)-a-o};return U()?s["-moz-transform"]=s.transform="translate("+i.left+"px,"+i.top+"px)":(s.left=i.left,s.top=i.top),s}}});var q="iframe",z="//about:blank",H=function(t){if(e.currTemplate[q]){var n=e.currTemplate[q].find("iframe");n.length&&(t||(n[0].src=z),e.isIE8&&n.css("display",t?"block":"none"))}};t.magnificPopup.registerModule(q,{options:{markup:'<div class="mfp-iframe-scaler"><div class="mfp-close"></div><iframe class="mfp-iframe" src="//about:blank" frameborder="0" allowfullscreen></iframe></div>',srcAction:"iframe_src",patterns:{youtube:{index:"youtube.com",id:"v=",src:"//www.youtube.com/embed/%id%?autoplay=1"},vimeo:{index:"vimeo.com/",id:"/",src:"//player.vimeo.com/video/%id%?autoplay=1"},gmaps:{index:"//maps.google.",src:"%id%&output=embed"}}},proto:{initIframe:function(){e.types.push(q),_("BeforeChange",function(t,e,n){e!==n&&(e===q?H():n===q&&H(!0))}),_(s+"."+q,function(){H()})},getIframe:function(n,r){var i=n.src,o=e.st.iframe;t.each(o.patterns,function(){if(i.indexOf(this.index)>-1)return this.id&&(i="string"==typeof this.id?i.substr(i.lastIndexOf(this.id)+this.id.length,i.length):this.id.call(this,i)),i=this.src.replace("%id%",i),!1});var a={};return o.srcAction&&(a[o.srcAction]=i),e._parseMarkup(r,a,n),e.updateStatus("ready"),r}}});var V=function(t){var n=e.items.length;return t>n-1?t-n:t<0?n+t:t},W=function(t,e,n){return t.replace(/%curr%/gi,e+1).replace(/%total%/gi,n)};t.magnificPopup.registerModule("gallery",{options:{enabled:!1,arrowMarkup:'<button title="%title%" type="button" class="mfp-arrow mfp-arrow-%dir%"></button>',preload:[0,2],navigateByImgClick:!0,arrows:!0,tPrev:"Previous (Left arrow key)",tNext:"Next (Right arrow key)",tCounter:"%curr% of %total%"},proto:{initGallery:function(){var n=e.st.gallery,i=".mfp-gallery";return e.direction=!0,!(!n||!n.enabled)&&(o+=" mfp-gallery",_(h+i,function(){n.navigateByImgClick&&e.wrap.on("click"+i,".mfp-img",function(){if(e.items.length>1)return e.next(),!1}),r.on("keydown"+i,function(t){37===t.keyCode?e.prev():39===t.keyCode&&e.next()})}),_("UpdateStatus"+i,function(t,n){n.text&&(n.text=W(n.text,e.currItem.index,e.items.length))}),_(f+i,function(t,r,i,o){var a=e.items.length;i.counter=a>1?W(n.tCounter,o.index,a):""}),_("BuildControls"+i,function(){if(e.items.length>1&&n.arrows&&!e.arrowLeft){var r=n.arrowMarkup,i=e.arrowLeft=t(r.replace(/%title%/gi,n.tPrev).replace(/%dir%/gi,"left")).addClass(y),o=e.arrowRight=t(r.replace(/%title%/gi,n.tNext).replace(/%dir%/gi,"right")).addClass(y);i.click(function(){e.prev()}),o.click(function(){e.next()}),e.container.append(i.add(o))}}),_(d+i,function(){e._preloadTimeout&&clearTimeout(e._preloadTimeout),e._preloadTimeout=setTimeout(function(){e.preloadNearbyImages(),e._preloadTimeout=null},16)}),void _(s+i,function(){r.off(i),e.wrap.off("click"+i),e.arrowRight=e.arrowLeft=null}))},next:function(){e.direction=!0,e.index=V(e.index+1),e.updateItemHTML()},prev:function(){e.direction=!1,e.index=V(e.index-1),e.updateItemHTML()},goTo:function(t){e.direction=t>=e.index,e.index=t,e.updateItemHTML()},preloadNearbyImages:function(){var t,n=e.st.gallery.preload,r=Math.min(n[0],e.items.length),i=Math.min(n[1],e.items.length);for(t=1;t<=(e.direction?i:r);t++)e._preloadItem(e.index+t);for(t=1;t<=(e.direction?r:i);t++)e._preloadItem(e.index-t)},_preloadItem:function(n){if(n=V(n),!e.items[n].preloaded){var r=e.items[n];r.parsed||(r=e.parseEl(n)),S("LazyLoad",r),"image"===r.type&&(r.img=t('<img class="mfp-img" />').on("load.mfploader",function(){r.hasSize=!0}).on("error.mfploader",function(){r.hasSize=!0,r.loadError=!0,S("LazyLoadError",r)}).attr("src",r.src)),r.preloaded=!0}}}});var B="retina";t.magnificPopup.registerModule(B,{options:{replaceSrc:function(t){return t.src.replace(/\.\w+$/,function(t){return"@2x"+t})},ratio:1},proto:{initRetina:function(){if(window.devicePixelRatio>1){var t=e.st.retina,n=t.ratio;n=isNaN(n)?n():n,n>1&&(_("ImageHasSize."+B,function(t,e){e.img.css({"max-width":e.img[0].naturalWidth/n,width:"100%"})}),_("ElementParse."+B,function(e,r){r.src=t.replaceSrc(r,n)}))}}}}),k()});
-!function(a){try{a=angular.module("app.partials")}catch(n){a=angular.module("app.partials",[])}a.run(["$templateCache",function(a){a.put("./views/app/components/contact/contact.component.html",'\n<!-- ############################# contact ############################# -->\n<section id="contact" class="section">\n\n\n    <!-- ############ section container ############ -->\n    <div class="section-container container clearfix">\n\n        <hr class="divider">\n        <div class="row clearfix">\n            <h2 class="heading-m text-center">Send me a message</h2>\n            <span class="sub-heading text-center">Please fill in your contact details</span>\n        </div>\n\n        <!-- contact form -->\n        <form action="http://themes.rascals.eu/spectra_html/plugins/contact-form.php" method="post" class="form contact-form">\n            <div class="row clearfix">\n                <div class="col-1-3">\n                    <label for="contact-name"><strong>Name</strong> (required)</label>\n                    <input type="text" name="name" value="" id="contact-name" required>\n                </div>\n                <div class="col-1-3">\n                    <label for="contact-email"><strong>Email</strong> (required)</label>\n                    <input type="email" name="email" value="" id="contact-email" required>\n                </div>\n                <div class="col-1-3 last">\n                    <label for="contact-subject"><strong>Subject</strong></label>\n                    <input type="text" name="subject" value="" id="contact-subject">\n                </div>\n            </div>\n            <div class="row clearfix">\n                <div class="col-1-1">\n                    <label for="contact-message"><strong>Your Message</strong> (required)</label>\n                    <textarea name="message" id="contact-message" cols="88" rows="6" required></textarea>\n                </div>\n            </div>\n            <div class="hidden">\n                <label for="contact-spam-check">Do not fill out this field this is spam check.</label>\n                <input name="anty_spam" type="text" value="" id="contact-spam-check">\n            </div>\n            <input type="submit" value="Submit Message" class="large">\n            <div class="clear"></div>\n        </form>\n        <!-- /contact form -->\n\n    </div>\n    <!-- /section container -->\n\n</section>\n<!-- /contact -->')}])}(),function(a){try{a=angular.module("app.partials")}catch(n){a=angular.module("app.partials",[])}a.run(["$templateCache",function(a){a.put("./views/app/components/countdown/countdown.component.html",'<!-- ############################# upcoming event ############################# -->\n<section id="upcoming-event" class="event-countdown">\n    <!-- container -->\n    <div class="container clearfix">\n        <!-- ############ content header ############ -->\n        <header class="content-header">\n            <h6 class="upcoming-event">Coming soon</h6>\n            <h2 class="content-title">Technosearch</h2>\n            <span class="sub-heading">Manit Bhopal India</span>\n        </header>\n        <!-- /content header -->\n        <!-- countdown -->\n        <div class="countdown">\n            <timer countdown="vm.countTime" interval="1000">\n                <div class="days" data-label="Days">{{ddays}}</div>\n                <div class="hours" data-label="Hours">{{hhours}}</div>\n                <div class="minutes" data-label="Minutes">{{mminutes}}</div>\n                <div class="seconds" data-label="Seconds">{{sseconds}}</div>\n            </timer>\n        </div>\n        <!-- /countdown -->\n    </div>\n    <!-- /container -->\n</section>\n<!-- /upcoming event -->\n\n')}])}(),function(a){try{a=angular.module("app.partials")}catch(n){a=angular.module("app.partials",[])}a.run(["$templateCache",function(a){a.put("./views/app/components/event/event.component.html",'\n<div class="container clearfix">\n\n    <!-- row -->\n    <div id="event-single" class="row clearfix">\n        <!-- column -->\n        <div class="col-1-2">\n            <h2>Event Details</h2>\n            <p>\n                Sed luctus neque ac sem aliquam imperdiet. In quis porttitor tortor. Pellentesque scelerisque quam et quam pretium imperdiet. Aenean scelerisque tincidunt dolor et consectetur.\n            </p>\n            <p>\n                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu felis tellus, sit amet elementum est. Proin posuere turpis lectus, eget vulputate erat. Nunc eget metus in magna vulputate elementum sed ut leo. Mauris at mauris purus, ut laoreet eros.</p>\n            <p>\n                Sed luctus neque ac sem aliquam imperdiet. In quis porttitor tortor. Pellentesque scelerisque quam et quam pretium imperdiet. Aenean scelerisque tincidunt dolor et consectetur.\n            </p>\n            <blockquote>\n                <p>\n                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu felis tellus, sit amet elementum est. Proin posuere turpis lectus, eget vulputate erat. Nunc eget metus in magna vulputate elementum sed ut leo. Mauris at mauris purus, ut laoreet eros.\n                </p>\n            </blockquote>\n            <!-- large button -->\n            <a class="btn large alignleft"><span class="button-icon icon-cart-3"></span> Buy Tickets</a>\n        </div>\n        <!-- /column -->\n        <!-- column -->\n        <div class="col-1-2 last">\n            <h2>Promotion</h2>\n            <!-- image poster -->\n            <img src="placeholders/event-poster-01-520x700.jpg" alt="event poster">\n        </div>\n        <!-- /column -->\n    </div>\n    <!-- /row -->\n</div>')}])}(),function(a){try{a=angular.module("app.partials")}catch(n){a=angular.module("app.partials",[])}a.run(["$templateCache",function(a){a.put("./views/app/components/event-list/event-list.component.html",'<!-- ############################# events ############################# -->\n<section id="events" class="section">\n\n\n    <!-- ############ event container loaded via ajax ############ -->\n    <div id="event" class="ajax-holder"></div>\n    <!-- /event container -->\n\n    <!-- ############ events list ############ -->\n    <!-- todo: add the events list in another page -->\n    <ul id="events-list">\n        <!-- event -->\n        <li style="background-image: url(img/workshops.jpg)">\n            <div class="inner">\n                <!--<span class="event-date">21-23</span>-->\n                <h2><a ui-sref="app.workshops" class="event-by-ajax" data-ajax-options=\'{"target" :"#event"}\'>Workshops</a></h2>\n                <span class="event-location">Come, Learn and Ideate</span>\n            </div>\n        </li>\n        <!-- /event -->\n        <!-- event -->\n        <li style="background-image: url(img/guest-lectures.jpg)">\n            <div class="inner">\n                <!--<span class="event-date">09/02</span>-->\n                <h2><a ui-sref="app.guestlectures" class="event-by-ajax" data-ajax-options=\'{"target" :"#event"}\'>Guest Lectures</a></h2>\n                <span class="event-location">Seek, Inspire and Innovate</span>\n            </div>\n        </li>\n        <!-- /event -->\n        <!-- event -->\n        <li style="background-image: url(img/pro-nites.jpg)">\n            <div class="inner">\n                <!--<span class="event-date">09/18</span>-->\n                <h2><a ui-sref="app.pronites" class="event-by-ajax" data-ajax-options=\'{"target" :"#event"}\'>Pro Nites</a></h2>\n                <span class="event-location">Enjoy, Relish and Relive</span>\n            </div>\n        </li>\n        <!-- /event -->\n        <!-- event -->\n        <!--<li style="background-image: url(placeholders/event-04-1920x573.jpg);">-->\n            <!--<div class="inner">-->\n                <!--<span class="event-date">10/30</span>-->\n                <!--<h2><a href="event04.html" class="event-by-ajax" data-ajax-options=\'{"target" :"#event"}\'>Papagayo Beach Club</a></h2>-->\n                <!--<span class="event-location">Santa Cruz De Tenerife, Spain</span>-->\n            <!--</div>-->\n        <!--</li>-->\n        <!-- /event -->\n    </ul>\n    <!-- /events list -->\n\n</section>\n<!-- /events -->\n')}])}(),function(a){try{a=angular.module("app.partials")}catch(n){a=angular.module("app.partials",[])}a.run(["$templateCache",function(a){a.put("./views/app/components/event-table/event-table.component.html",'<div class="container clearfix">\n\n    <h2>Tour dates</h2>\n\n    <!-- ############ events table ############ -->\n    <!-- tabs -->\n    <div class="tabs-wrap">\n        <!-- tabs navigation -->\n        <ul class="tabs">\n            <li><a href="#" class="active-tab">Feature Events</a></li>\n            <li><a href="#">Previous Dates</a></li>\n        </ul>\n        <!-- /tabs navigation -->\n        <!-- tab content -->\n        <div class="tab-content" style="display: block">\n            <!-- future events table -->\n            <table class="layout display responsive-table">\n                <thead>\n                <tr>\n                    <th>Date</th>\n                    <th colspan="2">Event</th>\n                </tr>\n                </thead>\n                <tbody>\n                <tr>\n                    <td class="table-date">08/15</td>\n                    <td class="table-name">Luxorlive<a href="#" class="event-location">Arnhem, Netherlands</a></td>\n                    <td class="actions">\n                        <a href="#" class="buy-tickets" title="Buy Tickets">Buy Tickets</a>\n                    </td>\n                </tr>\n\n                <tr>\n                    <td class="table-date">08/17</td>\n                    <td class="table-name">Space<a href="#" class="event-location">Ibiza, Spain</a></td>\n                    <td class="actions">\n                        <a href="#" class="buy-tickets" title="Buy Tickets">Buy Tickets</a>\n                    </td>\n                </tr>\n\n                <tr>\n                    <td class="table-date">08/19</td>\n                    <td class="table-name">Bacardi Original Bar<a href="#" class="event-location">Budapest (budapest), Hungary</a></td>\n                    <td class="actions">\n                        <a class="buy-tickets sold" title="Buy Tickets">Sold Out</a>\n                    </td>\n                </tr>\n\n                <tr>\n                    <td class="table-date">09/20</td>\n                    <td class="table-name">Escape<a href="#" class="event-location">Amsterdam, Netherlands</a></td>\n                    <td class="actions">\n                        <a href="#" class="buy-tickets" title="Buy Tickets">Buy Tickets</a>\n                    </td>\n                </tr>\n\n                <tr>\n                    <td class="table-date">10/07</td>\n                    <td class="table-name">\n                        Papagayo Beach Club<a href="#" class="event-location">Santa Cruz De Tenerife, Spain</a>\n                    </td>\n                    <td class="actions">\n                        <a href="#" class="buy-tickets" title="Buy Tickets">Buy Tickets</a>\n                    </td>\n                </tr>\n\n                <tr>\n                    <td class="table-date">10/15</td>\n                    <td class="table-name">Luxorlive<a href="#" class="event-location">Arnhem, Netherlands</a></td>\n                    <td class="actions">\n                        <a href="#" class="buy-tickets" title="Buy Tickets">Buy Tickets</a>\n                    </td>\n                </tr>\n\n                <tr>\n                    <td class="table-date">10/23</td>\n                    <td class="table-name">Space<a href="#" class="event-location">Ibiza, Spain</a></td>\n                    <td class="actions">\n                        <a href="#" class="buy-tickets" title="Buy Tickets">Buy Tickets</a>\n                    </td>\n                </tr>\n\n                <tr>\n                    <td class="table-date">11/13</td>\n                    <td class="table-name">Bacardi Original Bar<a href="#" class="event-location">Budapest (budapest), Hungary</a></td>\n                    <td class="actions">\n                        <a class="buy-tickets sold" title="Buy Tickets">Sold Out</a>\n                    </td>\n                </tr>\n\n                <tr>\n                    <td class="table-date">11/23</td>\n                    <td class="table-name">Escape<a href="#" class="event-location">Amsterdam, Netherlands</a></td>\n                    <td class="actions">\n                        <a href="#" class="buy-tickets" title="Buy Tickets">Buy Tickets</a>\n                    </td>\n                </tr>\n\n                <tr>\n                    <td class="table-date">12/02</td>\n                    <td class="table-name">\n                        Papagayo Beach Club<a href="#" class="event-location">Santa Cruz De Tenerife, Spain</a>\n                    </td>\n                    <td class="actions">\n                        <a href="#" class="buy-tickets" title="Buy Tickets">Buy Tickets</a>\n                    </td>\n                </tr>\n                </tbody>\n            </table>\n            <!-- /end future events table -->\n        </div>\n        <!-- /tab content -->\n\n        <!-- tab content -->\n        <div class="tab-content">\n            <!-- past events table-->\n            <table class="layout display responsive-table">\n                <thead>\n                <tr>\n                    <th>Date</th>\n                    <th colspan="2">Event</th>\n                </tr>\n                </thead>\n                <tbody>\n                <tr>\n                    <td class="table-date">01/21</td>\n                    <td class="table-name">Luxorlive<a href="#" class="event-location">Arnhem, Netherlands</a></td>\n                    <td class="actions">\n                        <a href="#" class="buy-tickets invisible" title="Buy Tickets">Buy Tickets</a>\n                    </td>\n                </tr>\n\n                <tr>\n                    <td class="table-date">02/18</td>\n                    <td class="table-name">Space<a href="#" class="event-location">Ibiza, Spain</a></td>\n                    <td class="actions">\n\n                    </td>\n                </tr>\n\n                <tr>\n                    <td class="table-date">03/12</td>\n                    <td class="table-name">Bacardi Original Bar<a href="#" class="event-location">Budapest (budapest), Hungary</a></td>\n                    <td class="actions">\n\n                    </td>\n                </tr>\n\n                <tr>\n                    <td class="table-date">06/22</td>\n                    <td class="table-name">Escape<a href="#" class="event-location">Amsterdam, Netherlands</a></td>\n                    <td class="actions">\n\n                    </td>\n                </tr>\n\n                <tr>\n                    <td class="table-date">06/30</td>\n                    <td class="table-name">\n                        Papagayo Beach Club<a href="#" class="event-location">Santa Cruz De Tenerife, Spain</a>\n                    </td>\n                    <td class="actions">\n\n                    </td>\n                </tr>\n\n                <tr>\n                    <td class="table-date">07/02</td>\n                    <td class="table-name">Luxorlive<a href="#" class="event-location">Arnhem, Netherlands</a></td>\n                    <td class="actions">\n\n                    </td>\n                </tr>\n\n                <tr>\n                    <td class="table-date">07/22</td>\n                    <td class="table-name">Space<a href="#" class="event-location">Ibiza, Spain</a></td>\n                    <td class="actions">\n\n                    </td>\n                </tr>\n\n                <tr>\n                    <td class="table-date">08/11</td>\n                    <td class="table-name">Bacardi Original Bar<a href="#" class="event-location">Budapest (budapest), Hungary</a></td>\n                    <td class="actions">\n\n                    </td>\n                </tr>\n\n                <tr>\n                    <td class="table-date">08/13</td>\n                    <td class="table-name">Escape<a href="#" class="event-location">Amsterdam, Netherlands</a></td>\n                    <td class="actions">\n\n                    </td>\n                </tr>\n                </tbody>\n            </table>\n            <!-- /past events table -->\n        </div>\n        <!-- /tab content -->\n    </div></div>')}])}(),function(a){try{a=angular.module("app.partials")}catch(n){a=angular.module("app.partials",[])}a.run(["$templateCache",function(a){a.put("./views/app/components/events/events.component.html",'<section id="portfolio" class="section">\n    <div id="portfolio-header" class="section-header parallax clearfix" style="background-image: url(placeholders/release-header-1920x1000.jpg)" data-interia="0.1">\n        <div class="overlay"></div>\n        <div class="container clearfix">\n            <h6 class="section-sub-heading">MORE THAN 30+ EVENTS</h6>\n            <h2 class="section-heading">AMAZING EVENTS</h2>\n        </div>\n    </div>\n    <div id="portfolio-main-filter" class="filter">\n        <ul class="filter-list item-filter active-filter clearfix">\n            <li class="filter-label"><span class="label">Events</span></li>\n            <li><a data-filter="*">All</a></li>\n            <li><a data-filter=".robitics">Robotics</a></li>\n            <li><a data-filter=".coding">Coding</a></li>\n            <li><a data-filter=".departmental">Departmental</a></li>\n            <li><a data-filter=".aerodrome">Aerodrome</a></li>\n            <li><a data-filter=".literary">Literary</a></li>\n            <li><a data-filter=".strategical">Strategical</a></li>\n            <li><a data-filter=".fun">Fun</a></li>\n            <li><a data-filter=".photobooth">Photobooth</a></li>\n        </ul>\n    </div>\n    <div id="portfolio-items" class="fullwidth items clearfix grid">\n\n        <!--<div class="event" ng-repeat="event in vm.items">-->\n            <div class="item {{event.category}}" ng-repeat="event in vm.items" data-filter="{{event.category}}">\n                <a ui-sref="app.event({slug: event.slug})" class="thumb project-thumb">\n                    <!-- title and opacity mask -->\n                    <div class="inner">\n                        <h6>{{event.name | capitalize}}</h6>\n                    </div>\n                    <!-- /title and opacity mask -->\n                    <!-- image -->\n                    <img class="lazy" ng-src="https://placeholdit.imgix.net/~text?txtsize=50&txt={{event.name | capitalize}}&w=360&h=360" alt="TechnoSearch Event">\n                </a>\n            </div>\n        <!--</div>-->\n\n\n    </div>\n\n</section>')}])}(),function(a){try{a=angular.module("app.partials")}catch(n){a=angular.module("app.partials",[])}a.run(["$templateCache",function(a){a.put("./views/app/components/footer/footer.component.html",'<div id="footer">\n    <div class="container">\n        <div id="copyrights">\n            <img ng-src="img/logo.png" class="aligncenter" alt="footer-logo">\n            &copy; 2016 TechnoSearch. MANIT-Bhopal\n        </div>\n    </div>\n</div>\n')}])}(),function(a){try{a=angular.module("app.partials")}catch(n){a=angular.module("app.partials",[])}a.run(["$templateCache",function(a){a.put("./views/app/components/gallery/gallery.component.html",'<section id="gallery">\n\n    <div id="ajax-content" class="page-container">\n\n        <div class="container clearfix">\n\n            <header class="content-header">\n                <h1 class="content-title">Gallery</h1>\n                <span class="sub-heading">Previous Techno Pictures</span>\n                <hr class="content-line">\n            </header>\n            <div class="row clearfix">\n\n                <div class="masonry clearfix">\n                    <!-- brick -->\n                    <div class="brick width-1-2 height-1-2">\n                        <a href="placeholders/gallery-01-544x544.jpg" class="thumb imagebox" data-group="amsterdam-2013-10-12" title="Gallery image title">\n\n                            <div class="inner">\n                                <h6>Amsterdam Festival <span>23 Photos</span></h6>\n                            </div>\n                            <img src="placeholders/gallery-01-544x544.jpg" alt="Gallery image title">\n                            <!--<span class="badge new">NEW</span>-->\n                        </a>\n                    </div>\n                    <div class="brick width-1-2 height-1-2">\n                        <a href="placeholders/gallery-02-544x544.jpg" class="thumb imagebox" data-group="bacardi-2013-10-12" title="Gallery image title">\n                            <!-- title and opacity mask -->\n                            <div class="inner">\n                                <h6>Bacardi Original Bar <span>12 Photos</span></h6>\n                            </div>\n                            <!-- image -->\n                            <img src="placeholders/gallery-02-544x544.jpg" alt="Gallery image title">\n                            <!-- badge -->\n                            <span class="badge new">NEW</span>\n                        </a>\n                        <!-- Gallery photos -->\n                      </div>\n                    <!-- /brick -->\n                    <!-- brick -->\n                    <div class="brick width-1-2 height-1-2">\n                        <a href="placeholders/gallery-03-544x544.jpg" class="thumb imagebox" data-group="sepang-2013-10-12" title="Gallery image title">\n                            <!-- title and opacity mask -->\n                            <div class="inner">\n                                <h6>Sepang International Circuit <span>08 Photos</span></h6>\n                            </div>\n                            <!-- image -->\n                            <img src="placeholders/gallery-03-544x544.jpg" alt="Gallery image title">\n                            <!-- badge -->\n                            <span class="badge new">NEW</span>\n                        </a>\n                        <!-- Gallery photos -->\n                      </div>\n                    <!-- /brick -->\n                    <!-- brick -->\n                    <div class="brick width-1-4 height-1-4">\n                        <a href="placeholders/gallery-01-272x272.jpg" class="thumb imagebox" data-group="gal01" title="Gallery image title">\n                            <!-- title and opacity mask -->\n                            <div class="inner">\n                                <h6>Gallery Title <span>08 Photos</span></h6>\n                            </div>\n                            <!-- image -->\n                            <img src="placeholders/gallery-01-272x272.jpg" alt="Gallery image title">\n                        </a>\n                      </div>\n                    <!-- /brick -->\n                    <!-- brick -->\n                    <div class="brick width-1-4 height-1-4">\n                        <a href="placeholders/gallery-02-272x272.jpg" class="thumb imagebox" data-group="gal02" title="Gallery image title">\n                            <!-- title and opacity mask -->\n                            <div class="inner">\n                                <h6>Gallery Title <span>08 Photos</span></h6>\n                            </div>\n                            <!-- image -->\n                            <img src="placeholders/gallery-02-272x272.jpg" alt="Gallery image title">\n                        </a>\n                        </div>\n                    <!-- /brick -->\n                    <!-- brick -->\n                    <div class="brick width-1-4 height-1-4">\n                        <a href="placeholders/gallery-03-272x272.jpg" class="thumb imagebox" data-group="gal03" title="Gallery image title">\n                            <!-- title and opacity mask -->\n                            <div class="inner">\n                                <h6>Gallery Title <span>08 Photos</span></h6>\n                            </div>\n                            <!-- image -->\n                            <img src="placeholders/gallery-03-272x272.jpg" alt="Gallery image title">\n                        </a>\n                      </div>\n                    <!-- /brick -->\n                    <!-- brick -->\n                    <div class="brick width-1-4 height-1-4">\n                        <a href="placeholders/gallery-04-272x272.jpg" class="thumb imagebox" data-group="gal04" title="Gallery image title">\n                            <!-- title and opacity mask -->\n                            <div class="inner">\n                                <h6>Gallery Title <span>08 Photos</span></h6>\n                            </div>\n                            <!-- image -->\n                            <img src="placeholders/gallery-04-272x272.jpg" alt="Gallery image title">\n                        </a>\n                    </div>\n                    <!-- /brick -->\n                    <!-- brick -->\n                    <div class="brick width-1-4 height-1-4">\n                        <a href="placeholders/gallery-03-272x272.jpg" class="thumb imagebox" data-group="gal05" title="Gallery image title">\n                            <!-- title and opacity mask -->\n                            <div class="inner">\n                                <h6>Gallery Title <span>08 Photos</span></h6>\n                            </div>\n                            <!-- image -->\n                            <img src="placeholders/gallery-03-272x272.jpg" alt="Gallery image title">\n                        </a>\n                     </div>\n                    <!-- /brick -->\n                    <!-- brick -->\n                    <div class="brick width-1-4 height-1-4">\n                        <a href="placeholders/gallery-04-272x272.jpg" class="thumb imagebox" data-group="gal06" title="Gallery image title">\n                            <!-- title and opacity mask -->\n                            <div class="inner">\n                                <h6>Gallery Title <span>08 Photos</span></h6>\n                            </div>\n                            <!-- image -->\n                            <img src="placeholders/gallery-04-272x272.jpg" alt="Gallery image title">\n                        </a>\n                        <!-- Gallery photos -->\n                     </div>\n                    <!-- /brick -->\n                    <!-- brick -->\n                    <div class="brick width-1-4 height-1-4">\n                        <a href="placeholders/gallery-01-272x272.jpg" class="thumb imagebox" data-group="gal07" title="Gallery image title">\n                            <!-- title and opacity mask -->\n                            <div class="inner">\n                                <h6>Gallery Title <span>08 Photos</span></h6>\n                            </div>\n                            <!-- image -->\n                            <img src="placeholders/gallery-01-272x272.jpg" alt="Gallery image title">\n                        </a>\n                     </div>\n                    <!-- /brick -->\n                    <!-- brick -->\n                    <div class="brick width-1-4 height-1-4">\n                        <a href="placeholders/gallery-02-272x272.jpg" class="thumb imagebox" data-group="gal08" title="Gallery image title">\n                            <!-- title and opacity mask -->\n                            <div class="inner">\n                                <h6>Gallery Title <span>08 Photos</span></h6>\n                            </div>\n                            <!-- image -->\n                            <img src="placeholders/gallery-02-272x272.jpg" alt="Gallery image title">\n                        </a>\n                     </div>\n                    <!-- /brick -->\n                </div>\n                <!-- /masonry -->\n            </div>\n            <!-- /row -->\n\n            <div class="clear"></div>\n\n\n        </div>\n        <!-- /container -->\n    </div>\n    <!-- /ajax contant -->\n</section>\n<!-- /404 section -->')}])}(),function(a){try{a=angular.module("app.partials")}catch(n){a=angular.module("app.partials",[])}a.run(["$templateCache",function(a){a.put("./views/app/components/map/map.component.html",'<!-- ############ GMap ############ -->\n<div id="contact-map" class="gmap clearfix" data-address="Level 13, 2 Elizabeth St, Melbourne Victoria 3000 Australia" data-zoom="16" data-zoom_control="true" data-scrollwheel="false"></div>\n<!-- /gmap -->')}])}(),function(a){try{a=angular.module("app.partials")}catch(n){a=angular.module("app.partials",[])}a.run(["$templateCache",function(a){a.put("./views/app/components/navbar/navbar.component.html",'<!-- ############################# navigation section ############################# -->\n\n<section id="main-nav-wrapper">\n    <!-- main navigation -->\n    <div id="main-nav">\n\n        <!-- navigation container -->\n        <div class="nav-container">\n\n            <!-- ############ logo ############ -->\n            <a ui-sref="app.home" id="logo" class="smooth-scroll">\n                <img src="img/logo.png" alt="Logo">\n            </a>\n            <!-- /logo -->\n\n            <!-- ############ icon navigation ############ -->\n            <nav id="icon-nav">\n                <ul>\n                    <!-- todo show the up arrow button only on the home page -->\n                    <li><a href="#" scroll-to="top" id="nav-up" class="smooth-scroll"><span class="icon-arrow-up-2"></span></a></li>\n                </ul>\n            </nav>\n            <!-- /icon navigation -->\n\n            <!-- ############ navigation ############ -->\n            <nav id="nav" class="one-page-nav">\n                <ul>\n                    <li ui-sref-active="current" ng-class="{ active: vm.submenu }" ng-mouseenter="vm.submenu = true" ng-mouseleave="vm.submenu = false">\n                        <a ui-sref="app.events">Events</a>\n                        <ul ng-class="{ \'hide\' : !vm.submenu }">\n                            <li>\n                                <a ui-sref="app.competitions">Competitions</a>\n                            </li>\n                            <li>\n                                <a ui-sref="app.workshops">Workshops</a>\n                            </li>\n                            <li>\n                                <a ui-sref="app.guestlectures">Guest Lectures</a>\n                            </li>\n                            <li>\n                                <a ui-sref="app.pronites">Pro-Nites</a>\n                            </li>\n\n                        </ul>\n                    </li>\n                    <li ui-sref-active="current">\n                        <a ui-sref="app.account">Account</a>\n                    </li>\n                    <li ui-sref-active="current">\n                        <a ui-sref="app.gallery">Gallery</a>\n                    </li>\n                    <li ui-sref-active="current">\n                        <a ui-sref="app.team">Team</a>\n                    </li>\n                    <li ui-sref-active="current">\n                        <a ui-sref="app.sponsors">Sponsors</a>\n                    </li>\n                    <li ui-sref-active="current">\n                        <a ui-sref="app.contact">Contact</a>\n                    </li>\n                </ul>\n            </nav>\n            <!-- /navigation -->\n\n            <!-- responsive navigation -->\n            <div id="dl-menu" class="dl-menuwrapper one-page-nav">\n                <button class="dl-trigger" ng-click="vm.openmenu = !vm.openmenu">Open Menu</button>\n                <ul class="dl-menu" ng-class="{\'dl-menuopen\' : vm.openmenu}">\n                    <li ui-sref-active="current">\n                        <a ui-sref="app.events">Events</a>\n                        <ul style="margin-left: 30px">\n                            <li>\n                                <a ui-sref="app.competitions">Competitions</a>\n                            </li>\n                            <li>\n                                <a ui-sref="app.workshops">Workshops</a>\n                            </li>\n                            <li>\n                                <a ui-sref="app.guestlectures">Guest Lectures</a>\n                            </li>\n                            <li>\n                                <a ui-sref="app.pronites">Pro-Nites</a>\n                            </li>\n\n                        </ul>\n                    </li>\n                    <li ui-sref-active="current">\n                        <a ui-sref="app.account">Account</a>\n                    </li>\n                    <li ui-sref-active="current">\n                        <a ui-sref="app.gallery">Gallery</a>\n                    </li>\n                    <li ui-sref-active="current">\n                        <a ui-sref="app.team">Team</a>\n                    </li>\n                    <li ui-sref-active="current">\n                        <a ui-sref="app.sponsors">Sponsors</a>\n                    </li>\n                    <li ui-sref-active="current">\n                        <a ui-sref="app.contact">Contact</a>\n                    </li>\n                </ul>\n            </div>\n            <!-- /responsive navigation -->\n        </div>\n        <!-- /navigation container -->\n    </div>\n    <!-- /main navigation -->\n</section>\n<!-- /navigation section -->');
-}])}(),function(a){try{a=angular.module("app.partials")}catch(n){a=angular.module("app.partials",[])}a.run(["$templateCache",function(a){a.put("./views/app/components/social/social.component.html",'\n<!-- ############################# social ############################# -->\n<section id="social">\n    <div class="flex-col-1-4"><a href="{{social.twitter}}" target="__blank" class="social-twitter"><span class="icon-twitter"></span>Twitter</a></div>\n    <div class="flex-col-1-4"><a href="{{social.fb}}" target="__blank" class="social-facebook"><span class="icon-facebook"></span>Facebook</a></div>\n    <div class="flex-col-1-4"><a href="{{social.youtube}}" target="__blank" class="social-youtube"><span class="icon-youtube"></span>Youtube</a></div>\n    <div class="flex-col-1-4"><a href="{{social.g}}" target="__blank" class="social-google-plus"><span class="icon-google-plus"></span>Google Plus</a></div>\n</section>\n<!-- /social -->\n')}])}(),function(a){try{a=angular.module("app.partials")}catch(n){a=angular.module("app.partials",[])}a.run(["$templateCache",function(a){a.put("./views/app/components/sponsors/sponsors.component.html","")}])}(),function(a){try{a=angular.module("app.partials")}catch(n){a=angular.module("app.partials",[])}a.run(["$templateCache",function(a){a.put("./views/app/components/team/team.component.html",'\n<div class="container">\n    <div class="at-section">\n        <div class="at-section__title">Team</div>\n    </div>\n    <!--{{vm.items | json}}-->\n    <div data-column="3" class="at-grid">\n        <div class="at-column" ng-repeat="member in vm.items">\n            <div class="at-user">\n                <div class="at-user__avatar"><img src="https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg"></div>\n                <div class="at-user__name">{{member.member_name}}</div>\n                <div class="at-user__title">{{member.member_title}}</div>\n                <ul class="at-social">\n                    <li class="at-social__item"><a href="{{member.fb_link}}">\n                        <svg viewBox="0 0 24 24" width="18" height="18" xmlns="http://www.w3.org/2000/svg">\n                            <path d="M14 9h3l-.375 3H14v9h-3.89v-9H8V9h2.11V6.984c0-1.312.327-2.304.984-2.976C11.75 3.336 12.844 3 14.375 3H17v3h-1.594c-.594 0-.976.094-1.148.281-.172.188-.258.5-.258.938V9z" fill-rule="evenodd"></path>\n                        </svg></a></li>\n                </ul>\n            </div>\n        </div>\n\n\n\n        <!--<div class="at-column">-->\n            <!--<div class="at-user">-->\n                <!--<div class="at-user__avatar"><img src="https://s3.amazonaws.com/uifaces/faces/twitter/rem/128.jpg"/></div>-->\n                <!--<div class="at-user__name">Marco Gomez</div>-->\n                <!--<div class="at-user__title">Co-Founder, Creative Director</div>-->\n                <!--<ul class="at-social">-->\n                    <!--<li class="at-social__item"><a href="">-->\n                        <!--<svg viewBox="0 0 24 24" width="18" height="18" xmlns="http://www.w3.org/2000/svg">-->\n                            <!--<path d="M14 9h3l-.375 3H14v9h-3.89v-9H8V9h2.11V6.984c0-1.312.327-2.304.984-2.976C11.75 3.336 12.844 3 14.375 3H17v3h-1.594c-.594 0-.976.094-1.148.281-.172.188-.258.5-.258.938V9z" fill-rule="evenodd"></path>-->\n                        <!--</svg></a></li>-->\n                <!--</ul>-->\n            <!--</div>-->\n        <!--</div>-->\n        <!--<div class="at-column">-->\n            <!--<div class="at-user">-->\n                <!--<div class="at-user__avatar"><img src="https://s3.amazonaws.com/uifaces/faces/twitter/boheme/128.jpg"/></div>-->\n                <!--<div class="at-user__name">Brad Joe</div>-->\n                <!--<div class="at-user__title">Office Manager</div>-->\n                <!--<ul class="at-social">-->\n                    <!--<li class="at-social__item"><a href="">-->\n                        <!--<svg viewBox="0 0 24 24" width="18" height="18" xmlns="http://www.w3.org/2000/svg">-->\n                            <!--<path d="M14 9h3l-.375 3H14v9h-3.89v-9H8V9h2.11V6.984c0-1.312.327-2.304.984-2.976C11.75 3.336 12.844 3 14.375 3H17v3h-1.594c-.594 0-.976.094-1.148.281-.172.188-.258.5-.258.938V9z" fill-rule="evenodd"></path>-->\n                        <!--</svg></a></li>-->\n                <!--</ul>-->\n            <!--</div>-->\n        <!--</div>-->\n        <!--<div class="at-column">-->\n            <!--<div class="at-user">-->\n                <!--<div class="at-user__avatar"><img src="https://s3.amazonaws.com/uifaces/faces/twitter/ok/128.jpg"/></div>-->\n                <!--<div class="at-user__name">Mitch Petty</div>-->\n                <!--<div class="at-user__title">Lead Developer</div>-->\n                <!--<ul class="at-social">-->\n                    <!--<li class="at-social__item"><a href="">-->\n                        <!--<svg viewBox="0 0 24 24" width="18" height="18" xmlns="http://www.w3.org/2000/svg">-->\n                            <!--<path d="M14 9h3l-.375 3H14v9h-3.89v-9H8V9h2.11V6.984c0-1.312.327-2.304.984-2.976C11.75 3.336 12.844 3 14.375 3H17v3h-1.594c-.594 0-.976.094-1.148.281-.172.188-.258.5-.258.938V9z" fill-rule="evenodd"></path>-->\n                        <!--</svg></a></li>-->\n                <!--</ul>-->\n            <!--</div>-->\n        <!--</div>-->\n        <!--<div class="at-column">-->\n            <!--<div class="at-user">-->\n                <!--<div class="at-user__avatar"><img src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/128.jpg"/></div>-->\n                <!--<div class="at-user__name">Philip Satemburgo</div>-->\n                <!--<div class="at-user__title">Community Manager</div>-->\n                <!--<ul class="at-social">-->\n                    <!--<li class="at-social__item"><a href="">-->\n                        <!--<svg viewBox="0 0 24 24" width="18" height="18" xmlns="http://www.w3.org/2000/svg">-->\n                            <!--<path d="M14 9h3l-.375 3H14v9h-3.89v-9H8V9h2.11V6.984c0-1.312.327-2.304.984-2.976C11.75 3.336 12.844 3 14.375 3H17v3h-1.594c-.594 0-.976.094-1.148.281-.172.188-.258.5-.258.938V9z" fill-rule="evenodd"></path>-->\n                        <!--</svg></a></li>-->\n                <!--</ul>-->\n            <!--</div>-->\n        <!--</div>-->\n        <!--<div class="at-column">-->\n            <!--<div class="at-user">-->\n                <!--<div class="at-user__avatar"><img src="https://s3.amazonaws.com/uifaces/faces/twitter/marcogomes/128.jpg"/></div>-->\n                <!--<div class="at-user__name">George Petty</div>-->\n                <!--<div class="at-user__title">Lead Designer</div>-->\n                <!--<ul class="at-social">-->\n                    <!--<li class="at-social__item"><a href="">-->\n                        <!--<svg viewBox="0 0 24 24" width="18" height="18" xmlns="http://www.w3.org/2000/svg">-->\n                            <!--<path d="M14 9h3l-.375 3H14v9h-3.89v-9H8V9h2.11V6.984c0-1.312.327-2.304.984-2.976C11.75 3.336 12.844 3 14.375 3H17v3h-1.594c-.594 0-.976.094-1.148.281-.172.188-.258.5-.258.938V9z" fill-rule="evenodd"></path>-->\n                        <!--</svg></a></li>-->\n                <!--</ul>-->\n            <!--</div>-->\n        <!--</div>-->\n        <!--<div class="at-column">-->\n            <!--<div class="at-user">-->\n                <!--<div class="at-user__avatar"><img src="https://s3.amazonaws.com/uifaces/faces/twitter/dancounsell/128.jpg"/></div>-->\n                <!--<div class="at-user__name">Petty Rossi</div>-->\n                <!--<div class="at-user__title">Brand Designer</div>-->\n                <!--<ul class="at-social">-->\n                    <!--<li class="at-social__item"><a href="">-->\n                        <!--<svg viewBox="0 0 24 24" width="18" height="18" xmlns="http://www.w3.org/2000/svg">-->\n                            <!--<path d="M14 9h3l-.375 3H14v9h-3.89v-9H8V9h2.11V6.984c0-1.312.327-2.304.984-2.976C11.75 3.336 12.844 3 14.375 3H17v3h-1.594c-.594 0-.976.094-1.148.281-.172.188-.258.5-.258.938V9z" fill-rule="evenodd"></path>-->\n                        <!--</svg></a></li>-->\n                <!--</ul>-->\n            <!--</div>-->\n        <!--</div>-->\n        <!--<div class="at-column">-->\n            <!--<div class="at-user">-->\n                <!--<div class="at-user__avatar"><img src="https://s3.amazonaws.com/uifaces/faces/twitter/kolage/128.jpg"/></div>-->\n                <!--<div class="at-user__name">Mitch Rossi</div>-->\n                <!--<div class="at-user__title">New Business</div>-->\n                <!--<ul class="at-social">-->\n                    <!--<li class="at-social__item"><a href="">-->\n                        <!--<svg viewBox="0 0 24 24" width="18" height="18" xmlns="http://www.w3.org/2000/svg">-->\n                            <!--<path d="M14 9h3l-.375 3H14v9h-3.89v-9H8V9h2.11V6.984c0-1.312.327-2.304.984-2.976C11.75 3.336 12.844 3 14.375 3H17v3h-1.594c-.594 0-.976.094-1.148.281-.172.188-.258.5-.258.938V9z" fill-rule="evenodd"></path>-->\n                        <!--</svg></a></li>-->\n                    <!--<li class="at-social__item"><a href="">-->\n                        <!--<svg viewBox="0 0 24 24" width="18" height="18" xmlns="http://www.w3.org/2000/svg">-->\n                            <!--<path d="M20.875 7.5v.563c0 3.28-1.18 6.257-3.54 8.93C14.978 19.663 11.845 21 7.938 21c-2.5 0-4.812-.687-6.937-2.063.5.063.86.094 1.078.094 2.094 0 3.969-.656 5.625-1.968a4.563 4.563 0 0 1-2.625-.915 4.294 4.294 0 0 1-1.594-2.226c.375.062.657.094.844.094.313 0 .719-.063 1.219-.188-1.031-.219-1.899-.742-2.602-1.57a4.32 4.32 0 0 1-1.054-2.883c.687.328 1.375.516 2.062.516C2.61 9.016 1.938 7.75 1.938 6.094c0-.782.203-1.531.609-2.25 2.406 2.969 5.515 4.547 9.328 4.734-.063-.219-.094-.562-.094-1.031 0-1.281.438-2.36 1.313-3.234C13.969 3.437 15.047 3 16.328 3s2.375.484 3.281 1.453c.938-.156 1.907-.531 2.907-1.125-.313 1.094-.985 1.938-2.016 2.531.969-.093 1.844-.328 2.625-.703-.563.875-1.312 1.656-2.25 2.344z" fill-rule="evenodd"></path>-->\n                        <!--</svg></a></li>-->\n                    <!--<li class="at-social__item"><a href="">-->\n                        <!--<svg viewBox="0 0 24 24" width="18" height="18" xmlns="http://www.w3.org/2000/svg">-->\n                            <!--<path d="M19.547 3c.406 0 .75.133 1.031.398.281.266.422.602.422 1.008v15.047c0 .406-.14.766-.422 1.078a1.335 1.335 0 0 1-1.031.469h-15c-.406 0-.766-.156-1.078-.469C3.156 20.22 3 19.86 3 19.453V4.406c0-.406.148-.742.445-1.008C3.742 3.133 4.11 3 4.547 3h15zM8.578 18V9.984H6V18h2.578zM7.36 8.766c.407 0 .743-.133 1.008-.399a1.31 1.31 0 0 0 .399-.96c0-.407-.125-.743-.375-1.009C8.14 6.133 7.813 6 7.406 6c-.406 0-.742.133-1.008.398C6.133 6.664 6 7 6 7.406c0 .375.125.696.375.961.25.266.578.399.984.399zM18 18v-4.688c0-1.156-.273-2.03-.82-2.624-.547-.594-1.258-.891-2.133-.891-.938 0-1.719.437-2.344 1.312V9.984h-2.578V18h2.578v-4.547c0-.312.031-.531.094-.656.25-.625.687-.938 1.312-.938.875 0 1.313.578 1.313 1.735V18H18z" fill-rule="evenodd"></path>-->\n                        <!--</svg></a></li>-->\n                <!--</ul>-->\n            <!--</div>-->\n        <!--</div>-->\n        <!--<div class="at-column">-->\n            <!--<div class="at-user">-->\n                <!--<div class="at-user__avatar"><img src="https://s3.amazonaws.com/uifaces/faces/twitter/tonychester/128.jpg"/></div>-->\n                <!--<div class="at-user__name">George Mitch</div>-->\n                <!--<div class="at-user__title">UX Designer</div>-->\n                <!--<ul class="at-social">-->\n                    <!--<li class="at-social__item"><a href="">-->\n                        <!--<svg viewBox="0 0 24 24" width="18" height="18" xmlns="http://www.w3.org/2000/svg">-->\n                            <!--<path d="M14 9h3l-.375 3H14v9h-3.89v-9H8V9h2.11V6.984c0-1.312.327-2.304.984-2.976C11.75 3.336 12.844 3 14.375 3H17v3h-1.594c-.594 0-.976.094-1.148.281-.172.188-.258.5-.258.938V9z" fill-rule="evenodd"></path>-->\n                        <!--</svg></a></li>-->\n                    <!--<li class="at-social__item"><a href="">-->\n                        <!--<svg viewBox="0 0 24 24" width="18" height="18" xmlns="http://www.w3.org/2000/svg">-->\n                            <!--<path d="M20.875 7.5v.563c0 3.28-1.18 6.257-3.54 8.93C14.978 19.663 11.845 21 7.938 21c-2.5 0-4.812-.687-6.937-2.063.5.063.86.094 1.078.094 2.094 0 3.969-.656 5.625-1.968a4.563 4.563 0 0 1-2.625-.915 4.294 4.294 0 0 1-1.594-2.226c.375.062.657.094.844.094.313 0 .719-.063 1.219-.188-1.031-.219-1.899-.742-2.602-1.57a4.32 4.32 0 0 1-1.054-2.883c.687.328 1.375.516 2.062.516C2.61 9.016 1.938 7.75 1.938 6.094c0-.782.203-1.531.609-2.25 2.406 2.969 5.515 4.547 9.328 4.734-.063-.219-.094-.562-.094-1.031 0-1.281.438-2.36 1.313-3.234C13.969 3.437 15.047 3 16.328 3s2.375.484 3.281 1.453c.938-.156 1.907-.531 2.907-1.125-.313 1.094-.985 1.938-2.016 2.531.969-.093 1.844-.328 2.625-.703-.563.875-1.312 1.656-2.25 2.344z" fill-rule="evenodd"></path>-->\n                        <!--</svg></a></li>-->\n                    <!--<li class="at-social__item"><a href="">-->\n                        <!--<svg viewBox="0 0 24 24" width="18" height="18" xmlns="http://www.w3.org/2000/svg">-->\n                            <!--<path d="M19.547 3c.406 0 .75.133 1.031.398.281.266.422.602.422 1.008v15.047c0 .406-.14.766-.422 1.078a1.335 1.335 0 0 1-1.031.469h-15c-.406 0-.766-.156-1.078-.469C3.156 20.22 3 19.86 3 19.453V4.406c0-.406.148-.742.445-1.008C3.742 3.133 4.11 3 4.547 3h15zM8.578 18V9.984H6V18h2.578zM7.36 8.766c.407 0 .743-.133 1.008-.399a1.31 1.31 0 0 0 .399-.96c0-.407-.125-.743-.375-1.009C8.14 6.133 7.813 6 7.406 6c-.406 0-.742.133-1.008.398C6.133 6.664 6 7 6 7.406c0 .375.125.696.375.961.25.266.578.399.984.399zM18 18v-4.688c0-1.156-.273-2.03-.82-2.624-.547-.594-1.258-.891-2.133-.891-.938 0-1.719.437-2.344 1.312V9.984h-2.578V18h2.578v-4.547c0-.312.031-.531.094-.656.25-.625.687-.938 1.312-.938.875 0 1.313.578 1.313 1.735V18H18z" fill-rule="evenodd"></path>-->\n                        <!--</svg></a></li>-->\n                <!--</ul>-->\n            <!--</div>-->\n        <!--</div>-->\n    </div>\n</div>')}])}(),function(a){try{a=angular.module("app.partials")}catch(n){a=angular.module("app.partials",[])}a.run(["$templateCache",function(a){a.put("./views/app/components/welcome/welcome.component.html",'\n<section id="intro" class="intro-resize parallax clearfix" style="background-image: url(img/intro.jpg)">\n    <!-- animated bg -->\n    <div class="intro-bg"></div>\n    <!-- container -->\n    <div class="container" id="welcome">\n        <img id="manit-logo" class="alignleft" src="img/manit.png" alt="Logo">\n        <img id="intro-logo" class="alignright" src="img/logo.png" alt="Logo">\n\n        <div class="distribute">\n            <h1 class="content-title">Maulana Azad National Institute of Technology</h1>\n\n            <div class="technostyle"><img ng-src="img/tsfont.png" alt="TechnoSearch"></div>\n\n            <div id="ticker-wrap">\n                <ul ticker id="ticker" timing="3000">\n                    <li ng-repeat="item in vm.tickerItems" class="item-{{$index}}">\n                        {{item.title}}\n                    </li>\n                </ul>\n            </div>\n\n\n            <a id="scroll-arrows" class="smooth-scroll" href="#" scroll-to="upcoming-event"><img src="img/scroll-arrows.png" alt="scroll down"></a>\n\n        </div>\n\n\n\n    </div>\n    <!-- /container -->\n\n</section>\n<!--/intro-->\n')}])}(),function(a){try{a=angular.module("app.partials")}catch(n){a=angular.module("app.partials",[])}a.run(["$templateCache",function(a){a.put("./views/app/pages/account/account.page.html","")}])}(),function(a){try{a=angular.module("app.partials")}catch(n){a=angular.module("app.partials",[])}a.run(["$templateCache",function(a){a.put("./views/app/pages/contact/contact.page.html",'\n<navbar></navbar>\n<!-- ############ section container ############ -->\n<div class="section-container container clearfix">\n\n    <!-- ############ content header ############ -->\n    <header class="content-header">\n        <h1 class="content-title">Get in Touch</h1>\n        <span class="sub-heading">Do not hesitate to booking me!</span>\n        <hr class="content-line">\n    </header>\n    <!-- /content header -->\n\n    <div class="row clearfix">\n        <p>Cras venenatis justo mi, non posuere enim aliquet malesuada. Nullam orci sem, adipiscing id rutrum et, blandit quis lorem. Phasellus lacus orci, cursus vitae mi eget, sagittis congue elit. Donec ac tincidunt tortor. Duis vel neque eleifend odio hendrerit consequat sed vel massa. Praesent tempor libero quis tincidunt fringilla. Aliquam congue, neque et aliquam eleifend, lacus diam aliquet urna, in sollicitudin neque nisl facilisis urna.</p>\n        <br>\n        <!-- column icon -->\n        <div class="col-1-4 column-icon">\n            <span class="icon-home icon"></span>\n            <span class="txt"><strong>Level 13, 2 Elizabeth St, Melbourne Victoria </strong><br>3000 Australia</span>\n        </div>\n        <!-- /column icon -->\n        <!-- column icon -->\n        <div class="col-1-4 column-icon">\n            <span class="icon-phone icon"></span>\n            <span class="txt"><strong>(123) 563-9899-234</strong><br>(123) 123-9899-234 (FAX)</span>\n        </div>\n        <!-- /column icon -->\n        <!-- column icon -->\n        <div class="col-1-4 column-icon">\n            <span class="icon-pencil-2 icon"></span>\n            <span class="txt"><strong><a href="mailto:djspectra@djspectra.com">djspectra@djspectra.com</a></strong><br><a href="mailto:booking@djspectra.com">booking@djspectra.com</a> </span>\n        </div>\n        <!-- /column icon -->\n        <!-- column icon -->\n        <div class="col-1-4 last column-icon">\n            <span class="icon-share icon"></span>\n            <span class="txt"><strong><a href="http://facebook.com/">facebook</a></strong><br><a href="http://twitter.com/">twitter</a><br><a href="http://soundcloud.com/">soundcloud</a></span>\n        </div>\n        <!-- /column icon -->\n    </div>\n</div>\n\n<contact></contact>\n<footer></footer>')}])}(),function(a){try{a=angular.module("app.partials")}catch(n){a=angular.module("app.partials",[])}a.run(["$templateCache",function(a){a.put("./views/app/pages/event/event.page.html","<navbar></navbar>\n<event></event>\n<footer></footer>")}])}(),function(a){try{a=angular.module("app.partials")}catch(n){a=angular.module("app.partials",[])}a.run(["$templateCache",function(a){a.put("./views/app/pages/events/events.page.html","<navbar></navbar>\n<event></event>\n<event-table></event-table>\n<social></social>\n<footer></footer>\n")}])}(),function(a){try{a=angular.module("app.partials")}catch(n){a=angular.module("app.partials",[])}a.run(["$templateCache",function(a){a.put("./views/app/pages/footer/footer.page.html","<footer></footer>")}])}(),function(a){try{a=angular.module("app.partials")}catch(n){a=angular.module("app.partials",[])}a.run(["$templateCache",function(a){a.put("./views/app/pages/gallery/gallery.page.html","    <navbar></navbar>\n    <gallery></gallery>\n    <social></social>\n    <footer></footer>\n")}])}(),function(a){try{a=angular.module("app.partials")}catch(n){a=angular.module("app.partials",[])}a.run(["$templateCache",function(a){a.put("./views/app/pages/header/header.page.html","")}])}(),function(a){try{a=angular.module("app.partials")}catch(n){a=angular.module("app.partials",[])}a.run(["$templateCache",function(a){a.put("./views/app/pages/home/home.page.html","<welcome></welcome>\n<navbar></navbar>\n<countdown></countdown>\n<events></events>\n<event-list></event-list>\n<map></map>\n<contact></contact>\n<social></social>\n<sponsors></sponsors>\n<footer></footer>\n")}])}(),function(a){try{a=angular.module("app.partials")}catch(n){a=angular.module("app.partials",[])}a.run(["$templateCache",function(a){a.put("./views/app/pages/team/team.page.html","    <navbar></navbar>\n    <team></team>\n    <footer></footer>\n\n")}])}();
+(function(module) {
+try {
+  module = angular.module('app.partials');
+} catch (e) {
+  module = angular.module('app.partials', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('./views/app/components/contact/contact.component.html',
+    '\n' +
+    '<!-- ############################# contact ############################# -->\n' +
+    '<section id="contact" class="section">\n' +
+    '\n' +
+    '\n' +
+    '    <!-- ############ section container ############ -->\n' +
+    '    <div class="section-container container clearfix">\n' +
+    '\n' +
+    '        <hr class="divider">\n' +
+    '        <div class="row clearfix">\n' +
+    '            <h2 class="heading-m text-center">Send me a message</h2>\n' +
+    '            <span class="sub-heading text-center">Please fill in your contact details</span>\n' +
+    '        </div>\n' +
+    '\n' +
+    '        <!-- contact form -->\n' +
+    '        <form action="http://themes.rascals.eu/spectra_html/plugins/contact-form.php" method="post" class="form contact-form">\n' +
+    '            <div class="row clearfix">\n' +
+    '                <div class="col-1-3">\n' +
+    '                    <label for="contact-name"><strong>Name</strong> (required)</label>\n' +
+    '                    <input type="text" name="name" value="" id="contact-name" required>\n' +
+    '                </div>\n' +
+    '                <div class="col-1-3">\n' +
+    '                    <label for="contact-email"><strong>Email</strong> (required)</label>\n' +
+    '                    <input type="email" name="email" value="" id="contact-email" required>\n' +
+    '                </div>\n' +
+    '                <div class="col-1-3 last">\n' +
+    '                    <label for="contact-subject"><strong>Subject</strong></label>\n' +
+    '                    <input type="text" name="subject" value="" id="contact-subject">\n' +
+    '                </div>\n' +
+    '            </div>\n' +
+    '            <div class="row clearfix">\n' +
+    '                <div class="col-1-1">\n' +
+    '                    <label for="contact-message"><strong>Your Message</strong> (required)</label>\n' +
+    '                    <textarea name="message" id="contact-message" cols="88" rows="6" required></textarea>\n' +
+    '                </div>\n' +
+    '            </div>\n' +
+    '            <div class="hidden">\n' +
+    '                <label for="contact-spam-check">Do not fill out this field this is spam check.</label>\n' +
+    '                <input name="anty_spam" type="text" value="" id="contact-spam-check" />\n' +
+    '            </div>\n' +
+    '            <input type="submit" value="Submit Message" class="large">\n' +
+    '            <div class="clear"></div>\n' +
+    '        </form>\n' +
+    '        <!-- /contact form -->\n' +
+    '\n' +
+    '    </div>\n' +
+    '    <!-- /section container -->\n' +
+    '\n' +
+    '</section>\n' +
+    '<!-- /contact -->');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('app.partials');
+} catch (e) {
+  module = angular.module('app.partials', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('./views/app/components/countdown/countdown.component.html',
+    '<!-- ############################# upcoming event ############################# -->\n' +
+    '<section id="upcoming-event" class="event-countdown">\n' +
+    '    <!-- container -->\n' +
+    '    <div class="container clearfix">\n' +
+    '        <!-- ############ content header ############ -->\n' +
+    '        <header class="content-header">\n' +
+    '            <h6 class="upcoming-event">Coming soon</h6>\n' +
+    '            <h2 class="content-title">Technosearch</h2>\n' +
+    '            <span class="sub-heading">Manit Bhopal India</span>\n' +
+    '        </header>\n' +
+    '        <!-- /content header -->\n' +
+    '        <!-- countdown -->\n' +
+    '        <div class="countdown" >\n' +
+    '            <timer countdown="vm.countTime" interval="1000">\n' +
+    '                <div class="days" data-label="Days">{{ddays}}</div>\n' +
+    '                <div class="hours" data-label="Hours">{{hhours}}</div>\n' +
+    '                <div class="minutes" data-label="Minutes">{{mminutes}}</div>\n' +
+    '                <div class="seconds" data-label="Seconds">{{sseconds}}</div>\n' +
+    '            </timer>\n' +
+    '        </div>\n' +
+    '        <!-- /countdown -->\n' +
+    '    </div>\n' +
+    '    <!-- /container -->\n' +
+    '</section>\n' +
+    '<!-- /upcoming event -->\n' +
+    '\n' +
+    '');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('app.partials');
+} catch (e) {
+  module = angular.module('app.partials', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('./views/app/components/event/event.component.html',
+    '\n' +
+    '<div class="container clearfix">\n' +
+    '\n' +
+    '    <!-- row -->\n' +
+    '    <div id="event-single" class="row clearfix">\n' +
+    '        <!-- column -->\n' +
+    '        <div class="col-1-2">\n' +
+    '            <h2>Event Details</h2>\n' +
+    '            <p>\n' +
+    '                Sed luctus neque ac sem aliquam imperdiet. In quis porttitor tortor. Pellentesque scelerisque quam et quam pretium imperdiet. Aenean scelerisque tincidunt dolor et consectetur.\n' +
+    '            </p>\n' +
+    '            <p>\n' +
+    '                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu felis tellus, sit amet elementum est. Proin posuere turpis lectus, eget vulputate erat. Nunc eget metus in magna vulputate elementum sed ut leo. Mauris at mauris purus, ut laoreet eros.</p>\n' +
+    '            <p>\n' +
+    '                Sed luctus neque ac sem aliquam imperdiet. In quis porttitor tortor. Pellentesque scelerisque quam et quam pretium imperdiet. Aenean scelerisque tincidunt dolor et consectetur.\n' +
+    '            </p>\n' +
+    '            <blockquote>\n' +
+    '                <p>\n' +
+    '                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu felis tellus, sit amet elementum est. Proin posuere turpis lectus, eget vulputate erat. Nunc eget metus in magna vulputate elementum sed ut leo. Mauris at mauris purus, ut laoreet eros.\n' +
+    '                </p>\n' +
+    '            </blockquote>\n' +
+    '            <!-- large button -->\n' +
+    '            <a class="btn large alignleft"><span class="button-icon icon-cart-3"></span> Buy Tickets</a>\n' +
+    '        </div>\n' +
+    '        <!-- /column -->\n' +
+    '        <!-- column -->\n' +
+    '        <div class="col-1-2 last">\n' +
+    '            <h2>Promotion</h2>\n' +
+    '            <!-- image poster -->\n' +
+    '            <img src="placeholders/event-poster-01-520x700.jpg" alt="event poster">\n' +
+    '        </div>\n' +
+    '        <!-- /column -->\n' +
+    '    </div>\n' +
+    '    <!-- /row -->\n' +
+    '</div>');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('app.partials');
+} catch (e) {
+  module = angular.module('app.partials', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('./views/app/components/event-list/event-list.component.html',
+    '<!-- ############################# events ############################# -->\n' +
+    '<section id="events" class="section">\n' +
+    '    <ul id="events-list">\n' +
+    '        <!-- event -->\n' +
+    '        <li style="background-image: url(img/workshops.jpg);">\n' +
+    '            <div class="inner">\n' +
+    '                <!--<span class="event-date">21-23</span>-->\n' +
+    '                <h2><a ui-sref="app.workshops" class="event-by-ajax" data-ajax-options=\'{"target" :"#event"}\'>Workshops</a></h2>\n' +
+    '                <span class="event-location">Come, Learn and Ideate</span>\n' +
+    '            </div>\n' +
+    '        </li>\n' +
+    '        <!-- /event -->\n' +
+    '        <!-- event -->\n' +
+    '        <li style="background-image: url(img/guest-lectures.jpg);">\n' +
+    '            <div class="inner">\n' +
+    '                <!--<span class="event-date">09/02</span>-->\n' +
+    '                <h2><a ui-sref="app.guestlectures" class="event-by-ajax" data-ajax-options=\'{"target" :"#event"}\'>Guest Lectures</a></h2>\n' +
+    '                <span class="event-location">Seek, Inspire and Innovate</span>\n' +
+    '            </div>\n' +
+    '        </li>\n' +
+    '        <!-- /event -->\n' +
+    '        <!-- event -->\n' +
+    '        <li style="background-image: url(img/pro-nites.jpg);">\n' +
+    '            <div class="inner">\n' +
+    '                <!--<span class="event-date">09/18</span>-->\n' +
+    '                <h2><a ui-sref="app.pronites" class="event-by-ajax" data-ajax-options=\'{"target" :"#event"}\'>Pro Nites</a></h2>\n' +
+    '                <span class="event-location">Enjoy, Relish and Relive</span>\n' +
+    '            </div>\n' +
+    '        </li>\n' +
+    '    </ul>\n' +
+    '    <!-- /events list -->\n' +
+    '</section>\n' +
+    '<!-- /events -->\n' +
+    '');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('app.partials');
+} catch (e) {
+  module = angular.module('app.partials', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('./views/app/components/event-table/event-table.component.html',
+    '<div class="container clearfix">\n' +
+    '\n' +
+    '    <h2>Tour dates</h2>\n' +
+    '\n' +
+    '    <!-- ############ events table ############ -->\n' +
+    '    <!-- tabs -->\n' +
+    '    <div class="tabs-wrap">\n' +
+    '        <!-- tabs navigation -->\n' +
+    '        <ul class="tabs">\n' +
+    '            <li><a href="#" class="active-tab">Feature Events</a></li>\n' +
+    '            <li><a href="#">Previous Dates</a></li>\n' +
+    '        </ul>\n' +
+    '        <!-- /tabs navigation -->\n' +
+    '        <!-- tab content -->\n' +
+    '        <div class="tab-content" style="display: block;">\n' +
+    '            <!-- future events table -->\n' +
+    '            <table class="layout display responsive-table">\n' +
+    '                <thead>\n' +
+    '                <tr>\n' +
+    '                    <th>Date</th>\n' +
+    '                    <th colspan="2">Event</th>\n' +
+    '                </tr>\n' +
+    '                </thead>\n' +
+    '                <tbody>\n' +
+    '                <tr>\n' +
+    '                    <td class="table-date">08/15</td>\n' +
+    '                    <td class="table-name">Luxorlive<a href="#" class="event-location">Arnhem, Netherlands</a></td>\n' +
+    '                    <td class="actions">\n' +
+    '                        <a href="#" class="buy-tickets" title="Buy Tickets">Buy Tickets</a>\n' +
+    '                    </td>\n' +
+    '                </tr>\n' +
+    '\n' +
+    '                <tr>\n' +
+    '                    <td class="table-date">08/17</td>\n' +
+    '                    <td class="table-name">Space<a href="#" class="event-location">Ibiza, Spain</a></td>\n' +
+    '                    <td class="actions">\n' +
+    '                        <a href="#" class="buy-tickets" title="Buy Tickets">Buy Tickets</a>\n' +
+    '                    </td>\n' +
+    '                </tr>\n' +
+    '\n' +
+    '                <tr>\n' +
+    '                    <td class="table-date">08/19</td>\n' +
+    '                    <td class="table-name">Bacardi Original Bar<a href="#" class="event-location">Budapest (budapest), Hungary</a></td>\n' +
+    '                    <td class="actions">\n' +
+    '                        <a class="buy-tickets sold" title="Buy Tickets">Sold Out</a>\n' +
+    '                    </td>\n' +
+    '                </tr>\n' +
+    '\n' +
+    '                <tr>\n' +
+    '                    <td class="table-date">09/20</td>\n' +
+    '                    <td class="table-name">Escape<a href="#" class="event-location">Amsterdam, Netherlands</a></td>\n' +
+    '                    <td class="actions">\n' +
+    '                        <a href="#" class="buy-tickets" title="Buy Tickets">Buy Tickets</a>\n' +
+    '                    </td>\n' +
+    '                </tr>\n' +
+    '\n' +
+    '                <tr>\n' +
+    '                    <td class="table-date">10/07</td>\n' +
+    '                    <td class="table-name">\n' +
+    '                        Papagayo Beach Club<a href="#" class="event-location">Santa Cruz De Tenerife, Spain</a>\n' +
+    '                    </td>\n' +
+    '                    <td class="actions">\n' +
+    '                        <a href="#" class="buy-tickets" title="Buy Tickets">Buy Tickets</a>\n' +
+    '                    </td>\n' +
+    '                </tr>\n' +
+    '\n' +
+    '                <tr>\n' +
+    '                    <td class="table-date">10/15</td>\n' +
+    '                    <td class="table-name">Luxorlive<a href="#" class="event-location">Arnhem, Netherlands</a></td>\n' +
+    '                    <td class="actions">\n' +
+    '                        <a href="#" class="buy-tickets" title="Buy Tickets">Buy Tickets</a>\n' +
+    '                    </td>\n' +
+    '                </tr>\n' +
+    '\n' +
+    '                <tr>\n' +
+    '                    <td class="table-date">10/23</td>\n' +
+    '                    <td class="table-name">Space<a href="#" class="event-location">Ibiza, Spain</a></td>\n' +
+    '                    <td class="actions">\n' +
+    '                        <a href="#" class="buy-tickets" title="Buy Tickets">Buy Tickets</a>\n' +
+    '                    </td>\n' +
+    '                </tr>\n' +
+    '\n' +
+    '                <tr>\n' +
+    '                    <td class="table-date">11/13</td>\n' +
+    '                    <td class="table-name">Bacardi Original Bar<a href="#" class="event-location">Budapest (budapest), Hungary</a></td>\n' +
+    '                    <td class="actions">\n' +
+    '                        <a class="buy-tickets sold" title="Buy Tickets">Sold Out</a>\n' +
+    '                    </td>\n' +
+    '                </tr>\n' +
+    '\n' +
+    '                <tr>\n' +
+    '                    <td class="table-date">11/23</td>\n' +
+    '                    <td class="table-name">Escape<a href="#" class="event-location">Amsterdam, Netherlands</a></td>\n' +
+    '                    <td class="actions">\n' +
+    '                        <a href="#" class="buy-tickets" title="Buy Tickets">Buy Tickets</a>\n' +
+    '                    </td>\n' +
+    '                </tr>\n' +
+    '\n' +
+    '                <tr>\n' +
+    '                    <td class="table-date">12/02</td>\n' +
+    '                    <td class="table-name">\n' +
+    '                        Papagayo Beach Club<a href="#" class="event-location">Santa Cruz De Tenerife, Spain</a>\n' +
+    '                    </td>\n' +
+    '                    <td class="actions">\n' +
+    '                        <a href="#" class="buy-tickets" title="Buy Tickets">Buy Tickets</a>\n' +
+    '                    </td>\n' +
+    '                </tr>\n' +
+    '                </tbody>\n' +
+    '            </table>\n' +
+    '            <!-- /end future events table -->\n' +
+    '        </div>\n' +
+    '        <!-- /tab content -->\n' +
+    '\n' +
+    '        <!-- tab content -->\n' +
+    '        <div class="tab-content">\n' +
+    '            <!-- past events table-->\n' +
+    '            <table class="layout display responsive-table">\n' +
+    '                <thead>\n' +
+    '                <tr>\n' +
+    '                    <th>Date</th>\n' +
+    '                    <th colspan="2">Event</th>\n' +
+    '                </tr>\n' +
+    '                </thead>\n' +
+    '                <tbody>\n' +
+    '                <tr>\n' +
+    '                    <td class="table-date">01/21</td>\n' +
+    '                    <td class="table-name">Luxorlive<a href="#" class="event-location">Arnhem, Netherlands</a></td>\n' +
+    '                    <td class="actions">\n' +
+    '                        <a href="#" class="buy-tickets invisible" title="Buy Tickets">Buy Tickets</a>\n' +
+    '                    </td>\n' +
+    '                </tr>\n' +
+    '\n' +
+    '                <tr>\n' +
+    '                    <td class="table-date">02/18</td>\n' +
+    '                    <td class="table-name">Space<a href="#" class="event-location">Ibiza, Spain</a></td>\n' +
+    '                    <td class="actions">\n' +
+    '\n' +
+    '                    </td>\n' +
+    '                </tr>\n' +
+    '\n' +
+    '                <tr>\n' +
+    '                    <td class="table-date">03/12</td>\n' +
+    '                    <td class="table-name">Bacardi Original Bar<a href="#" class="event-location">Budapest (budapest), Hungary</a></td>\n' +
+    '                    <td class="actions">\n' +
+    '\n' +
+    '                    </td>\n' +
+    '                </tr>\n' +
+    '\n' +
+    '                <tr>\n' +
+    '                    <td class="table-date">06/22</td>\n' +
+    '                    <td class="table-name">Escape<a href="#" class="event-location">Amsterdam, Netherlands</a></td>\n' +
+    '                    <td class="actions">\n' +
+    '\n' +
+    '                    </td>\n' +
+    '                </tr>\n' +
+    '\n' +
+    '                <tr>\n' +
+    '                    <td class="table-date">06/30</td>\n' +
+    '                    <td class="table-name">\n' +
+    '                        Papagayo Beach Club<a href="#" class="event-location">Santa Cruz De Tenerife, Spain</a>\n' +
+    '                    </td>\n' +
+    '                    <td class="actions">\n' +
+    '\n' +
+    '                    </td>\n' +
+    '                </tr>\n' +
+    '\n' +
+    '                <tr>\n' +
+    '                    <td class="table-date">07/02</td>\n' +
+    '                    <td class="table-name">Luxorlive<a href="#" class="event-location">Arnhem, Netherlands</a></td>\n' +
+    '                    <td class="actions">\n' +
+    '\n' +
+    '                    </td>\n' +
+    '                </tr>\n' +
+    '\n' +
+    '                <tr>\n' +
+    '                    <td class="table-date">07/22</td>\n' +
+    '                    <td class="table-name">Space<a href="#" class="event-location">Ibiza, Spain</a></td>\n' +
+    '                    <td class="actions">\n' +
+    '\n' +
+    '                    </td>\n' +
+    '                </tr>\n' +
+    '\n' +
+    '                <tr>\n' +
+    '                    <td class="table-date">08/11</td>\n' +
+    '                    <td class="table-name">Bacardi Original Bar<a href="#" class="event-location">Budapest (budapest), Hungary</a></td>\n' +
+    '                    <td class="actions">\n' +
+    '\n' +
+    '                    </td>\n' +
+    '                </tr>\n' +
+    '\n' +
+    '                <tr>\n' +
+    '                    <td class="table-date">08/13</td>\n' +
+    '                    <td class="table-name">Escape<a href="#" class="event-location">Amsterdam, Netherlands</a></td>\n' +
+    '                    <td class="actions">\n' +
+    '\n' +
+    '                    </td>\n' +
+    '                </tr>\n' +
+    '                </tbody>\n' +
+    '            </table>\n' +
+    '            <!-- /past events table -->\n' +
+    '        </div>\n' +
+    '        <!-- /tab content -->\n' +
+    '    </div>');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('app.partials');
+} catch (e) {
+  module = angular.module('app.partials', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('./views/app/components/events/events.component.html',
+    '<section id="portfolio" class="section">\n' +
+    '    <div id="portfolio-header" class="section-header parallax clearfix" style="background-image: url(placeholders/release-header-1920x1000.jpg)" data-interia="0.1">\n' +
+    '        <div class="overlay"></div>\n' +
+    '        <div class="container clearfix">\n' +
+    '            <h6 class="section-sub-heading">MORE THAN 30+ EVENTS</h6>\n' +
+    '            <h2 class="section-heading">AMAZING EVENTS</h2>\n' +
+    '        </div>\n' +
+    '    </div>\n' +
+    '    <div id="portfolio-main-filter" class="filter">\n' +
+    '        <ul class="filter-list item-filter active-filter clearfix">\n' +
+    '            <li class="filter-label"><span class="label">Events</span></li>\n' +
+    '            <li><a data-filter="*">All</a></li>\n' +
+    '            <li><a data-filter=".robitics">Robotics</a></li>\n' +
+    '            <li><a data-filter=".coding">Coding</a></li>\n' +
+    '            <li><a data-filter=".departmental">Departmental</a></li>\n' +
+    '            <li><a data-filter=".aerodrome">Aerodrome</a></li>\n' +
+    '            <li><a data-filter=".literary">Literary</a></li>\n' +
+    '            <li><a data-filter=".strategical">Strategical</a></li>\n' +
+    '            <li><a data-filter=".fun">Fun</a></li>\n' +
+    '            <li><a data-filter=".photobooth">Photobooth</a></li>\n' +
+    '        </ul>\n' +
+    '    </div>\n' +
+    '    <div id="portfolio-items" class="fullwidth items clearfix grid">\n' +
+    '\n' +
+    '        <!--<div class="event" ng-repeat="event in vm.items">-->\n' +
+    '            <div class="item {{event.category}}" ng-repeat="event in vm.items" data-filter="{{event.category}}">\n' +
+    '                <a ui-sref="app.event({slug: event.slug})" class="thumb project-thumb" >\n' +
+    '                    <!-- title and opacity mask -->\n' +
+    '                    <div class="inner">\n' +
+    '                        <h6>{{event.name | capitalize}}</h6>\n' +
+    '                    </div>\n' +
+    '                    <!-- /title and opacity mask -->\n' +
+    '                    <!-- image -->\n' +
+    '                    <img class="lazy" ng-src="https://placeholdit.imgix.net/~text?txtsize=50&txt={{event.name | capitalize}}&w=360&h=360" alt="TechnoSearch Event" >\n' +
+    '                </a>\n' +
+    '            </div>\n' +
+    '        <!--</div>-->\n' +
+    '\n' +
+    '\n' +
+    '    </div>\n' +
+    '\n' +
+    '</section>');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('app.partials');
+} catch (e) {
+  module = angular.module('app.partials', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('./views/app/components/footer/footer.component.html',
+    '<div id="footer">\n' +
+    '    <div class="container">\n' +
+    '        <div id="copyrights">\n' +
+    '            <img ng-src="img/logo.png" class="aligncenter" alt="footer-logo">\n' +
+    '            &copy; 2016 TechnoSearch. MANIT-Bhopal\n' +
+    '        </div>\n' +
+    '    </div>\n' +
+    '</div>\n' +
+    '');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('app.partials');
+} catch (e) {
+  module = angular.module('app.partials', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('./views/app/components/gallery/gallery.component.html',
+    '<section id="gallery">\n' +
+    '\n' +
+    '    <div id="ajax-content" class="page-container">\n' +
+    '\n' +
+    '        <div class="container clearfix">\n' +
+    '\n' +
+    '            <header class="content-header">\n' +
+    '                <h1 class="content-title">Gallery</h1>\n' +
+    '                <span class="sub-heading">Previous Techno Pictures</span>\n' +
+    '                <hr class="content-line">\n' +
+    '            </header>\n' +
+    '\n' +
+    '            <div class="row clearfix">\n' +
+    '\n' +
+    '                <div class="masonry clearfix">\n' +
+    '                    <!-- brick -->\n' +
+    '                    <!--<div class="brick width-1-2 height-1-2">-->\n' +
+    '                        <!--<a href="placeholders/gallery-01-544x544.jpg" class="thumb imagebox" data-group="amsterdam-2013-10-12" title="Gallery image title">-->\n' +
+    '\n' +
+    '                            <!--<div class="inner">-->\n' +
+    '                                <!--<h6>Amsterdam Festival <span>23 Photos</span></h6>-->\n' +
+    '                            <!--</div>-->\n' +
+    '                            <!--<img src="placeholders/gallery-01-544x544.jpg" alt="Gallery image title">-->\n' +
+    '                            <!--&lt;!&ndash;<span class="badge new">NEW</span>&ndash;&gt;-->\n' +
+    '                        <!--</a>-->\n' +
+    '                    <!--</div>-->\n' +
+    '\n' +
+    '                    <div class="brick width-1-4 height-1-4" ng-repeat="i in [1,2,3,4,5,6,7,8,9]" style="background-image: url(img/gallery/thumb_{{i}}.jpg)">\n' +
+    '                        <a href="img/gallery/{{i}}.jpg" class="thumb imagebox" title="Technosearch gallery">\n' +
+    '\n' +
+    '                            <div class="inner">\n' +
+    '                                <h6>Techno</h6>\n' +
+    '                            </div>\n' +
+    '                            <!--<img ng-src="img/gallery/thumb_{{i}}.jpg" alt="Technosearch gallery">-->\n' +
+    '                        </a>\n' +
+    '                    </div>\n' +
+    '\n' +
+    '                    <!---->\n' +
+    '                    <!--<div class="brick width-1-2 height-1-2">-->\n' +
+    '                        <!--<a href="placeholders/gallery-02-544x544.jpg" class="thumb imagebox" data-group="bacardi-2013-10-12" title="Gallery image title">-->\n' +
+    '                            <!--&lt;!&ndash; title and opacity mask &ndash;&gt;-->\n' +
+    '                            <!--<div class="inner">-->\n' +
+    '                                <!--<h6>Bacardi Original Bar <span>12 Photos</span></h6>-->\n' +
+    '                            <!--</div>-->\n' +
+    '                            <!--&lt;!&ndash; image &ndash;&gt;-->\n' +
+    '                            <!--<img src="placeholders/gallery-02-544x544.jpg" alt="Gallery image title">-->\n' +
+    '                            <!--&lt;!&ndash; badge &ndash;&gt;-->\n' +
+    '                            <!--<span class="badge new">NEW</span>-->\n' +
+    '                        <!--</a>-->\n' +
+    '                        <!--&lt;!&ndash; Gallery photos &ndash;&gt;-->\n' +
+    '                      <!--</div>-->\n' +
+    '                    <!--&lt;!&ndash; /brick &ndash;&gt;-->\n' +
+    '                    <!--&lt;!&ndash; brick &ndash;&gt;-->\n' +
+    '                    <!--<div class="brick width-1-2 height-1-2">-->\n' +
+    '                        <!--<a href="placeholders/gallery-03-544x544.jpg" class="thumb imagebox" data-group="sepang-2013-10-12" title="Gallery image title">-->\n' +
+    '                            <!--&lt;!&ndash; title and opacity mask &ndash;&gt;-->\n' +
+    '                            <!--<div class="inner">-->\n' +
+    '                                <!--<h6>Sepang International Circuit <span>08 Photos</span></h6>-->\n' +
+    '                            <!--</div>-->\n' +
+    '                            <!--&lt;!&ndash; image &ndash;&gt;-->\n' +
+    '                            <!--<img src="placeholders/gallery-03-544x544.jpg" alt="Gallery image title">-->\n' +
+    '                            <!--&lt;!&ndash; badge &ndash;&gt;-->\n' +
+    '                            <!--<span class="badge new">NEW</span>-->\n' +
+    '                        <!--</a>-->\n' +
+    '                        <!--&lt;!&ndash; Gallery photos &ndash;&gt;-->\n' +
+    '                      <!--</div>-->\n' +
+    '                    <!--&lt;!&ndash; /brick &ndash;&gt;-->\n' +
+    '                    <!--&lt;!&ndash; brick &ndash;&gt;-->\n' +
+    '                    <!--<div class="brick width-1-4 height-1-4">-->\n' +
+    '                        <!--<a href="placeholders/gallery-01-272x272.jpg" class="thumb imagebox" data-group="gal01" title="Gallery image title">-->\n' +
+    '                            <!--&lt;!&ndash; title and opacity mask &ndash;&gt;-->\n' +
+    '                            <!--<div class="inner">-->\n' +
+    '                                <!--<h6>Gallery Title <span>08 Photos</span></h6>-->\n' +
+    '                            <!--</div>-->\n' +
+    '                            <!--&lt;!&ndash; image &ndash;&gt;-->\n' +
+    '                            <!--<img src="placeholders/gallery-01-272x272.jpg" alt="Gallery image title">-->\n' +
+    '                        <!--</a>-->\n' +
+    '                      <!--</div>-->\n' +
+    '                    <!--&lt;!&ndash; /brick &ndash;&gt;-->\n' +
+    '                    <!--&lt;!&ndash; brick &ndash;&gt;-->\n' +
+    '                    <!--<div class="brick width-1-4 height-1-4">-->\n' +
+    '                        <!--<a href="placeholders/gallery-02-272x272.jpg" class="thumb imagebox" data-group="gal02" title="Gallery image title">-->\n' +
+    '                            <!--&lt;!&ndash; title and opacity mask &ndash;&gt;-->\n' +
+    '                            <!--<div class="inner">-->\n' +
+    '                                <!--<h6>Gallery Title <span>08 Photos</span></h6>-->\n' +
+    '                            <!--</div>-->\n' +
+    '                            <!--&lt;!&ndash; image &ndash;&gt;-->\n' +
+    '                            <!--<img src="placeholders/gallery-02-272x272.jpg" alt="Gallery image title">-->\n' +
+    '                        <!--</a>-->\n' +
+    '                        <!--</div>-->\n' +
+    '                    <!--&lt;!&ndash; /brick &ndash;&gt;-->\n' +
+    '                    <!--&lt;!&ndash; brick &ndash;&gt;-->\n' +
+    '                    <!--<div class="brick width-1-4 height-1-4">-->\n' +
+    '                        <!--<a href="placeholders/gallery-03-272x272.jpg" class="thumb imagebox" data-group="gal03" title="Gallery image title">-->\n' +
+    '                            <!--&lt;!&ndash; title and opacity mask &ndash;&gt;-->\n' +
+    '                            <!--<div class="inner">-->\n' +
+    '                                <!--<h6>Gallery Title <span>08 Photos</span></h6>-->\n' +
+    '                            <!--</div>-->\n' +
+    '                            <!--&lt;!&ndash; image &ndash;&gt;-->\n' +
+    '                            <!--<img src="placeholders/gallery-03-272x272.jpg" alt="Gallery image title">-->\n' +
+    '                        <!--</a>-->\n' +
+    '                      <!--</div>-->\n' +
+    '                    <!--&lt;!&ndash; /brick &ndash;&gt;-->\n' +
+    '                    <!--&lt;!&ndash; brick &ndash;&gt;-->\n' +
+    '                    <!--<div class="brick width-1-4 height-1-4">-->\n' +
+    '                        <!--<a href="placeholders/gallery-04-272x272.jpg" class="thumb imagebox" data-group="gal04" title="Gallery image title">-->\n' +
+    '                            <!--&lt;!&ndash; title and opacity mask &ndash;&gt;-->\n' +
+    '                            <!--<div class="inner">-->\n' +
+    '                                <!--<h6>Gallery Title <span>08 Photos</span></h6>-->\n' +
+    '                            <!--</div>-->\n' +
+    '                            <!--&lt;!&ndash; image &ndash;&gt;-->\n' +
+    '                            <!--<img src="placeholders/gallery-04-272x272.jpg" alt="Gallery image title">-->\n' +
+    '                        <!--</a>-->\n' +
+    '                    <!--</div>-->\n' +
+    '                    <!--&lt;!&ndash; /brick &ndash;&gt;-->\n' +
+    '                    <!--&lt;!&ndash; brick &ndash;&gt;-->\n' +
+    '                    <!--<div class="brick width-1-4 height-1-4">-->\n' +
+    '                        <!--<a href="placeholders/gallery-03-272x272.jpg" class="thumb imagebox" data-group="gal05" title="Gallery image title">-->\n' +
+    '                            <!--&lt;!&ndash; title and opacity mask &ndash;&gt;-->\n' +
+    '                            <!--<div class="inner">-->\n' +
+    '                                <!--<h6>Gallery Title <span>08 Photos</span></h6>-->\n' +
+    '                            <!--</div>-->\n' +
+    '                            <!--&lt;!&ndash; image &ndash;&gt;-->\n' +
+    '                            <!--<img src="placeholders/gallery-03-272x272.jpg" alt="Gallery image title">-->\n' +
+    '                        <!--</a>-->\n' +
+    '                     <!--</div>-->\n' +
+    '                    <!--&lt;!&ndash; /brick &ndash;&gt;-->\n' +
+    '                    <!--&lt;!&ndash; brick &ndash;&gt;-->\n' +
+    '                    <!--<div class="brick width-1-4 height-1-4">-->\n' +
+    '                        <!--<a href="placeholders/gallery-04-272x272.jpg" class="thumb imagebox" data-group="gal06" title="Gallery image title">-->\n' +
+    '                            <!--&lt;!&ndash; title and opacity mask &ndash;&gt;-->\n' +
+    '                            <!--<div class="inner">-->\n' +
+    '                                <!--<h6>Gallery Title <span>08 Photos</span></h6>-->\n' +
+    '                            <!--</div>-->\n' +
+    '                            <!--&lt;!&ndash; image &ndash;&gt;-->\n' +
+    '                            <!--<img src="placeholders/gallery-04-272x272.jpg" alt="Gallery image title">-->\n' +
+    '                        <!--</a>-->\n' +
+    '                        <!--&lt;!&ndash; Gallery photos &ndash;&gt;-->\n' +
+    '                     <!--</div>-->\n' +
+    '                    <!--&lt;!&ndash; /brick &ndash;&gt;-->\n' +
+    '                    <!--&lt;!&ndash; brick &ndash;&gt;-->\n' +
+    '                    <!--<div class="brick width-1-4 height-1-4">-->\n' +
+    '                        <!--<a href="placeholders/gallery-01-272x272.jpg" class="thumb imagebox" data-group="gal07" title="Gallery image title">-->\n' +
+    '                            <!--&lt;!&ndash; title and opacity mask &ndash;&gt;-->\n' +
+    '                            <!--<div class="inner">-->\n' +
+    '                                <!--<h6>Gallery Title <span>08 Photos</span></h6>-->\n' +
+    '                            <!--</div>-->\n' +
+    '                            <!--&lt;!&ndash; image &ndash;&gt;-->\n' +
+    '                            <!--<img src="placeholders/gallery-01-272x272.jpg" alt="Gallery image title">-->\n' +
+    '                        <!--</a>-->\n' +
+    '                     <!--</div>-->\n' +
+    '                    <!--&lt;!&ndash; /brick &ndash;&gt;-->\n' +
+    '                    <!--&lt;!&ndash; brick &ndash;&gt;-->\n' +
+    '                    <!--<div class="brick width-1-4 height-1-4">-->\n' +
+    '                        <!--<a href="placeholders/gallery-02-272x272.jpg" class="thumb imagebox" data-group="gal08" title="Gallery image title">-->\n' +
+    '                            <!--&lt;!&ndash; title and opacity mask &ndash;&gt;-->\n' +
+    '                            <!--<div class="inner">-->\n' +
+    '                                <!--<h6>Gallery Title <span>08 Photos</span></h6>-->\n' +
+    '                            <!--</div>-->\n' +
+    '                            <!--&lt;!&ndash; image &ndash;&gt;-->\n' +
+    '                            <!--<img src="placeholders/gallery-02-272x272.jpg" alt="Gallery image title">-->\n' +
+    '                        <!--</a>-->\n' +
+    '                     <!--</div>-->\n' +
+    '                    <!-- /brick -->\n' +
+    '                </div>\n' +
+    '                <!-- /masonry -->\n' +
+    '            </div>\n' +
+    '            <!-- /row -->\n' +
+    '\n' +
+    '            <div class="clear"></div>\n' +
+    '\n' +
+    '\n' +
+    '        </div>\n' +
+    '        <!-- /container -->\n' +
+    '    </div>\n' +
+    '    <!-- /ajax contant -->\n' +
+    '</section>\n' +
+    '<!-- /404 section -->');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('app.partials');
+} catch (e) {
+  module = angular.module('app.partials', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('./views/app/components/map/map.component.html',
+    '<!-- ############ GMap ############ -->\n' +
+    '<div id="contact-map" class="gmap clearfix" data-address="Level 13, 2 Elizabeth St, Melbourne Victoria 3000 Australia" data-zoom="16" data-zoom_control="true" data-scrollwheel="false"></div>\n' +
+    '<!-- /gmap -->');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('app.partials');
+} catch (e) {
+  module = angular.module('app.partials', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('./views/app/components/navbar/navbar.component.html',
+    '<!-- ############################# navigation section ############################# -->\n' +
+    '\n' +
+    '<section id="main-nav-wrapper">\n' +
+    '    <!-- main navigation -->\n' +
+    '    <div id="main-nav">\n' +
+    '\n' +
+    '        <!-- navigation container -->\n' +
+    '        <div class="nav-container">\n' +
+    '\n' +
+    '            <!-- ############ logo ############ -->\n' +
+    '            <a ui-sref="app.home" id="logo" class="smooth-scroll">\n' +
+    '                <img src="img/logo.png" alt="Logo">\n' +
+    '            </a>\n' +
+    '            <!-- /logo -->\n' +
+    '\n' +
+    '            <!-- ############ icon navigation ############ -->\n' +
+    '            <nav id="icon-nav">\n' +
+    '                <ul>\n' +
+    '                    <!-- todo show the up arrow button only on the home page -->\n' +
+    '                    <li><a href="#" scroll-to="top" id="nav-up" class="smooth-scroll"><span class="icon-arrow-up-2"></span></a></li>\n' +
+    '                </ul>\n' +
+    '            </nav>\n' +
+    '            <!-- /icon navigation -->\n' +
+    '\n' +
+    '            <!-- ############ navigation ############ -->\n' +
+    '            <nav id="nav" class="one-page-nav">\n' +
+    '                <ul>\n' +
+    '                    <li ui-sref-active="current" ng-class="{ active: vm.submenu }" ng-mouseenter="vm.submenu = true"  ng-mouseleave="vm.submenu = false">\n' +
+    '                        <a ui-sref="app.events">Events</a>\n' +
+    '                        <ul ng-class="{ \'hide\' : !vm.submenu }">\n' +
+    '                            <li>\n' +
+    '                                <a ui-sref="app.competitions">Competitions</a>\n' +
+    '                            </li>\n' +
+    '                            <li>\n' +
+    '                                <a ui-sref="app.workshops">Workshops</a>\n' +
+    '                            </li>\n' +
+    '                            <li>\n' +
+    '                                <a ui-sref="app.guestlectures">Guest Lectures</a>\n' +
+    '                            </li>\n' +
+    '                            <li>\n' +
+    '                                <a ui-sref="app.pronites">Pro-Nites</a>\n' +
+    '                            </li>\n' +
+    '\n' +
+    '                        </ul>\n' +
+    '                    </li>\n' +
+    '                    <li ui-sref-active="current">\n' +
+    '                        <a ui-sref="app.account">Account</a>\n' +
+    '                    </li>\n' +
+    '                    <li ui-sref-active="current">\n' +
+    '                        <a ui-sref="app.gallery">Gallery</a>\n' +
+    '                    </li>\n' +
+    '                    <li ui-sref-active="current">\n' +
+    '                        <a ui-sref="app.team">Team</a>\n' +
+    '                    </li>\n' +
+    '                    <li ui-sref-active="current">\n' +
+    '                        <a ui-sref="app.sponsors">Sponsors</a>\n' +
+    '                    </li>\n' +
+    '                    <li ui-sref-active="current">\n' +
+    '                        <a ui-sref="app.contact">Contact</a>\n' +
+    '                    </li>\n' +
+    '                </ul>\n' +
+    '            </nav>\n' +
+    '            <!-- /navigation -->\n' +
+    '\n' +
+    '            <!-- responsive navigation -->\n' +
+    '            <div id="dl-menu" class="dl-menuwrapper one-page-nav">\n' +
+    '                <button class="dl-trigger" ng-click="vm.openmenu = !vm.openmenu">Open Menu</button>\n' +
+    '                <ul class="dl-menu" ng-class="{\'dl-menuopen\' : vm.openmenu}">\n' +
+    '                    <li ui-sref-active="current">\n' +
+    '                        <a ui-sref="app.events">Events</a>\n' +
+    '                        <ul style="margin-left: 30px;">\n' +
+    '                            <li>\n' +
+    '                                <a ui-sref="app.competitions">Competitions</a>\n' +
+    '                            </li>\n' +
+    '                            <li>\n' +
+    '                                <a ui-sref="app.workshops">Workshops</a>\n' +
+    '                            </li>\n' +
+    '                            <li>\n' +
+    '                                <a ui-sref="app.guestlectures">Guest Lectures</a>\n' +
+    '                            </li>\n' +
+    '                            <li>\n' +
+    '                                <a ui-sref="app.pronites">Pro-Nites</a>\n' +
+    '                            </li>\n' +
+    '\n' +
+    '                        </ul>\n' +
+    '                    </li>\n' +
+    '                    <li ui-sref-active="current">\n' +
+    '                        <a ui-sref="app.account">Account</a>\n' +
+    '                    </li>\n' +
+    '                    <li ui-sref-active="current">\n' +
+    '                        <a ui-sref="app.gallery">Gallery</a>\n' +
+    '                    </li>\n' +
+    '                    <li ui-sref-active="current">\n' +
+    '                        <a ui-sref="app.team">Team</a>\n' +
+    '                    </li>\n' +
+    '                    <li ui-sref-active="current">\n' +
+    '                        <a ui-sref="app.sponsors">Sponsors</a>\n' +
+    '                    </li>\n' +
+    '                    <li ui-sref-active="current">\n' +
+    '                        <a ui-sref="app.contact">Contact</a>\n' +
+    '                    </li>\n' +
+    '                </ul>\n' +
+    '            </div>\n' +
+    '            <!-- /responsive navigation -->\n' +
+    '        </div>\n' +
+    '        <!-- /navigation container -->\n' +
+    '    </div>\n' +
+    '    <!-- /main navigation -->\n' +
+    '</section>\n' +
+    '<!-- /navigation section -->');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('app.partials');
+} catch (e) {
+  module = angular.module('app.partials', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('./views/app/components/social/social.component.html',
+    '\n' +
+    '<!-- ############################# social ############################# -->\n' +
+    '<section id="social">\n' +
+    '    <div class="flex-col-1-4"><a href="{{social.twitter}}" target="__blank" class="social-twitter"><span class="icon-twitter"></span>Twitter</a></div>\n' +
+    '    <div class="flex-col-1-4"><a href="{{social.fb}}" target="__blank" class="social-facebook"><span class="icon-facebook"></span>Facebook</a></div>\n' +
+    '    <div class="flex-col-1-4"><a href="{{social.youtube}}" target="__blank" class="social-youtube"><span class="icon-youtube"></span>Youtube</a></div>\n' +
+    '    <div class="flex-col-1-4"><a href="{{social.g}}" target="__blank" class="social-google-plus"><span class="icon-google-plus"></span>Google Plus</a></div>\n' +
+    '</section>\n' +
+    '<!-- /social -->\n' +
+    '');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('app.partials');
+} catch (e) {
+  module = angular.module('app.partials', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('./views/app/components/sponsors/sponsors.component.html',
+    '');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('app.partials');
+} catch (e) {
+  module = angular.module('app.partials', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('./views/app/components/team/team.component.html',
+    '\n' +
+    '<div class="container">\n' +
+    '    <div class="at-section">\n' +
+    '        <div class="at-section__title">Team</div>\n' +
+    '    </div>\n' +
+    '    <!--{{vm.items | json}}-->\n' +
+    '    <div data-column=\'3\' class="at-grid">\n' +
+    '        <div class="at-column" ng-repeat="member in vm.items">\n' +
+    '            <div class="at-user">\n' +
+    '                <div class="at-user__avatar"><img src="https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg"/></div>\n' +
+    '                <div class="at-user__name">{{member.member_name}}</div>\n' +
+    '                <div class="at-user__title">{{member.member_title}}</div>\n' +
+    '                <ul class="at-social">\n' +
+    '                    <li class="at-social__item"><a href="{{member.fb_link}}">\n' +
+    '                        <svg viewBox="0 0 24 24" width="18" height="18" xmlns="http://www.w3.org/2000/svg">\n' +
+    '                            <path d="M14 9h3l-.375 3H14v9h-3.89v-9H8V9h2.11V6.984c0-1.312.327-2.304.984-2.976C11.75 3.336 12.844 3 14.375 3H17v3h-1.594c-.594 0-.976.094-1.148.281-.172.188-.258.5-.258.938V9z" fill-rule="evenodd"></path>\n' +
+    '                        </svg></a></li>\n' +
+    '                </ul>\n' +
+    '            </div>\n' +
+    '        </div>\n' +
+    '\n' +
+    '\n' +
+    '\n' +
+    '        <!--<div class="at-column">-->\n' +
+    '            <!--<div class="at-user">-->\n' +
+    '                <!--<div class="at-user__avatar"><img src="https://s3.amazonaws.com/uifaces/faces/twitter/rem/128.jpg"/></div>-->\n' +
+    '                <!--<div class="at-user__name">Marco Gomez</div>-->\n' +
+    '                <!--<div class="at-user__title">Co-Founder, Creative Director</div>-->\n' +
+    '                <!--<ul class="at-social">-->\n' +
+    '                    <!--<li class="at-social__item"><a href="">-->\n' +
+    '                        <!--<svg viewBox="0 0 24 24" width="18" height="18" xmlns="http://www.w3.org/2000/svg">-->\n' +
+    '                            <!--<path d="M14 9h3l-.375 3H14v9h-3.89v-9H8V9h2.11V6.984c0-1.312.327-2.304.984-2.976C11.75 3.336 12.844 3 14.375 3H17v3h-1.594c-.594 0-.976.094-1.148.281-.172.188-.258.5-.258.938V9z" fill-rule="evenodd"></path>-->\n' +
+    '                        <!--</svg></a></li>-->\n' +
+    '                <!--</ul>-->\n' +
+    '            <!--</div>-->\n' +
+    '        <!--</div>-->\n' +
+    '        <!--<div class="at-column">-->\n' +
+    '            <!--<div class="at-user">-->\n' +
+    '                <!--<div class="at-user__avatar"><img src="https://s3.amazonaws.com/uifaces/faces/twitter/boheme/128.jpg"/></div>-->\n' +
+    '                <!--<div class="at-user__name">Brad Joe</div>-->\n' +
+    '                <!--<div class="at-user__title">Office Manager</div>-->\n' +
+    '                <!--<ul class="at-social">-->\n' +
+    '                    <!--<li class="at-social__item"><a href="">-->\n' +
+    '                        <!--<svg viewBox="0 0 24 24" width="18" height="18" xmlns="http://www.w3.org/2000/svg">-->\n' +
+    '                            <!--<path d="M14 9h3l-.375 3H14v9h-3.89v-9H8V9h2.11V6.984c0-1.312.327-2.304.984-2.976C11.75 3.336 12.844 3 14.375 3H17v3h-1.594c-.594 0-.976.094-1.148.281-.172.188-.258.5-.258.938V9z" fill-rule="evenodd"></path>-->\n' +
+    '                        <!--</svg></a></li>-->\n' +
+    '                <!--</ul>-->\n' +
+    '            <!--</div>-->\n' +
+    '        <!--</div>-->\n' +
+    '        <!--<div class="at-column">-->\n' +
+    '            <!--<div class="at-user">-->\n' +
+    '                <!--<div class="at-user__avatar"><img src="https://s3.amazonaws.com/uifaces/faces/twitter/ok/128.jpg"/></div>-->\n' +
+    '                <!--<div class="at-user__name">Mitch Petty</div>-->\n' +
+    '                <!--<div class="at-user__title">Lead Developer</div>-->\n' +
+    '                <!--<ul class="at-social">-->\n' +
+    '                    <!--<li class="at-social__item"><a href="">-->\n' +
+    '                        <!--<svg viewBox="0 0 24 24" width="18" height="18" xmlns="http://www.w3.org/2000/svg">-->\n' +
+    '                            <!--<path d="M14 9h3l-.375 3H14v9h-3.89v-9H8V9h2.11V6.984c0-1.312.327-2.304.984-2.976C11.75 3.336 12.844 3 14.375 3H17v3h-1.594c-.594 0-.976.094-1.148.281-.172.188-.258.5-.258.938V9z" fill-rule="evenodd"></path>-->\n' +
+    '                        <!--</svg></a></li>-->\n' +
+    '                <!--</ul>-->\n' +
+    '            <!--</div>-->\n' +
+    '        <!--</div>-->\n' +
+    '        <!--<div class="at-column">-->\n' +
+    '            <!--<div class="at-user">-->\n' +
+    '                <!--<div class="at-user__avatar"><img src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/128.jpg"/></div>-->\n' +
+    '                <!--<div class="at-user__name">Philip Satemburgo</div>-->\n' +
+    '                <!--<div class="at-user__title">Community Manager</div>-->\n' +
+    '                <!--<ul class="at-social">-->\n' +
+    '                    <!--<li class="at-social__item"><a href="">-->\n' +
+    '                        <!--<svg viewBox="0 0 24 24" width="18" height="18" xmlns="http://www.w3.org/2000/svg">-->\n' +
+    '                            <!--<path d="M14 9h3l-.375 3H14v9h-3.89v-9H8V9h2.11V6.984c0-1.312.327-2.304.984-2.976C11.75 3.336 12.844 3 14.375 3H17v3h-1.594c-.594 0-.976.094-1.148.281-.172.188-.258.5-.258.938V9z" fill-rule="evenodd"></path>-->\n' +
+    '                        <!--</svg></a></li>-->\n' +
+    '                <!--</ul>-->\n' +
+    '            <!--</div>-->\n' +
+    '        <!--</div>-->\n' +
+    '        <!--<div class="at-column">-->\n' +
+    '            <!--<div class="at-user">-->\n' +
+    '                <!--<div class="at-user__avatar"><img src="https://s3.amazonaws.com/uifaces/faces/twitter/marcogomes/128.jpg"/></div>-->\n' +
+    '                <!--<div class="at-user__name">George Petty</div>-->\n' +
+    '                <!--<div class="at-user__title">Lead Designer</div>-->\n' +
+    '                <!--<ul class="at-social">-->\n' +
+    '                    <!--<li class="at-social__item"><a href="">-->\n' +
+    '                        <!--<svg viewBox="0 0 24 24" width="18" height="18" xmlns="http://www.w3.org/2000/svg">-->\n' +
+    '                            <!--<path d="M14 9h3l-.375 3H14v9h-3.89v-9H8V9h2.11V6.984c0-1.312.327-2.304.984-2.976C11.75 3.336 12.844 3 14.375 3H17v3h-1.594c-.594 0-.976.094-1.148.281-.172.188-.258.5-.258.938V9z" fill-rule="evenodd"></path>-->\n' +
+    '                        <!--</svg></a></li>-->\n' +
+    '                <!--</ul>-->\n' +
+    '            <!--</div>-->\n' +
+    '        <!--</div>-->\n' +
+    '        <!--<div class="at-column">-->\n' +
+    '            <!--<div class="at-user">-->\n' +
+    '                <!--<div class="at-user__avatar"><img src="https://s3.amazonaws.com/uifaces/faces/twitter/dancounsell/128.jpg"/></div>-->\n' +
+    '                <!--<div class="at-user__name">Petty Rossi</div>-->\n' +
+    '                <!--<div class="at-user__title">Brand Designer</div>-->\n' +
+    '                <!--<ul class="at-social">-->\n' +
+    '                    <!--<li class="at-social__item"><a href="">-->\n' +
+    '                        <!--<svg viewBox="0 0 24 24" width="18" height="18" xmlns="http://www.w3.org/2000/svg">-->\n' +
+    '                            <!--<path d="M14 9h3l-.375 3H14v9h-3.89v-9H8V9h2.11V6.984c0-1.312.327-2.304.984-2.976C11.75 3.336 12.844 3 14.375 3H17v3h-1.594c-.594 0-.976.094-1.148.281-.172.188-.258.5-.258.938V9z" fill-rule="evenodd"></path>-->\n' +
+    '                        <!--</svg></a></li>-->\n' +
+    '                <!--</ul>-->\n' +
+    '            <!--</div>-->\n' +
+    '        <!--</div>-->\n' +
+    '        <!--<div class="at-column">-->\n' +
+    '            <!--<div class="at-user">-->\n' +
+    '                <!--<div class="at-user__avatar"><img src="https://s3.amazonaws.com/uifaces/faces/twitter/kolage/128.jpg"/></div>-->\n' +
+    '                <!--<div class="at-user__name">Mitch Rossi</div>-->\n' +
+    '                <!--<div class="at-user__title">New Business</div>-->\n' +
+    '                <!--<ul class="at-social">-->\n' +
+    '                    <!--<li class="at-social__item"><a href="">-->\n' +
+    '                        <!--<svg viewBox="0 0 24 24" width="18" height="18" xmlns="http://www.w3.org/2000/svg">-->\n' +
+    '                            <!--<path d="M14 9h3l-.375 3H14v9h-3.89v-9H8V9h2.11V6.984c0-1.312.327-2.304.984-2.976C11.75 3.336 12.844 3 14.375 3H17v3h-1.594c-.594 0-.976.094-1.148.281-.172.188-.258.5-.258.938V9z" fill-rule="evenodd"></path>-->\n' +
+    '                        <!--</svg></a></li>-->\n' +
+    '                    <!--<li class="at-social__item"><a href="">-->\n' +
+    '                        <!--<svg viewBox="0 0 24 24" width="18" height="18" xmlns="http://www.w3.org/2000/svg">-->\n' +
+    '                            <!--<path d="M20.875 7.5v.563c0 3.28-1.18 6.257-3.54 8.93C14.978 19.663 11.845 21 7.938 21c-2.5 0-4.812-.687-6.937-2.063.5.063.86.094 1.078.094 2.094 0 3.969-.656 5.625-1.968a4.563 4.563 0 0 1-2.625-.915 4.294 4.294 0 0 1-1.594-2.226c.375.062.657.094.844.094.313 0 .719-.063 1.219-.188-1.031-.219-1.899-.742-2.602-1.57a4.32 4.32 0 0 1-1.054-2.883c.687.328 1.375.516 2.062.516C2.61 9.016 1.938 7.75 1.938 6.094c0-.782.203-1.531.609-2.25 2.406 2.969 5.515 4.547 9.328 4.734-.063-.219-.094-.562-.094-1.031 0-1.281.438-2.36 1.313-3.234C13.969 3.437 15.047 3 16.328 3s2.375.484 3.281 1.453c.938-.156 1.907-.531 2.907-1.125-.313 1.094-.985 1.938-2.016 2.531.969-.093 1.844-.328 2.625-.703-.563.875-1.312 1.656-2.25 2.344z" fill-rule="evenodd"></path>-->\n' +
+    '                        <!--</svg></a></li>-->\n' +
+    '                    <!--<li class="at-social__item"><a href="">-->\n' +
+    '                        <!--<svg viewBox="0 0 24 24" width="18" height="18" xmlns="http://www.w3.org/2000/svg">-->\n' +
+    '                            <!--<path d="M19.547 3c.406 0 .75.133 1.031.398.281.266.422.602.422 1.008v15.047c0 .406-.14.766-.422 1.078a1.335 1.335 0 0 1-1.031.469h-15c-.406 0-.766-.156-1.078-.469C3.156 20.22 3 19.86 3 19.453V4.406c0-.406.148-.742.445-1.008C3.742 3.133 4.11 3 4.547 3h15zM8.578 18V9.984H6V18h2.578zM7.36 8.766c.407 0 .743-.133 1.008-.399a1.31 1.31 0 0 0 .399-.96c0-.407-.125-.743-.375-1.009C8.14 6.133 7.813 6 7.406 6c-.406 0-.742.133-1.008.398C6.133 6.664 6 7 6 7.406c0 .375.125.696.375.961.25.266.578.399.984.399zM18 18v-4.688c0-1.156-.273-2.03-.82-2.624-.547-.594-1.258-.891-2.133-.891-.938 0-1.719.437-2.344 1.312V9.984h-2.578V18h2.578v-4.547c0-.312.031-.531.094-.656.25-.625.687-.938 1.312-.938.875 0 1.313.578 1.313 1.735V18H18z" fill-rule="evenodd"></path>-->\n' +
+    '                        <!--</svg></a></li>-->\n' +
+    '                <!--</ul>-->\n' +
+    '            <!--</div>-->\n' +
+    '        <!--</div>-->\n' +
+    '        <!--<div class="at-column">-->\n' +
+    '            <!--<div class="at-user">-->\n' +
+    '                <!--<div class="at-user__avatar"><img src="https://s3.amazonaws.com/uifaces/faces/twitter/tonychester/128.jpg"/></div>-->\n' +
+    '                <!--<div class="at-user__name">George Mitch</div>-->\n' +
+    '                <!--<div class="at-user__title">UX Designer</div>-->\n' +
+    '                <!--<ul class="at-social">-->\n' +
+    '                    <!--<li class="at-social__item"><a href="">-->\n' +
+    '                        <!--<svg viewBox="0 0 24 24" width="18" height="18" xmlns="http://www.w3.org/2000/svg">-->\n' +
+    '                            <!--<path d="M14 9h3l-.375 3H14v9h-3.89v-9H8V9h2.11V6.984c0-1.312.327-2.304.984-2.976C11.75 3.336 12.844 3 14.375 3H17v3h-1.594c-.594 0-.976.094-1.148.281-.172.188-.258.5-.258.938V9z" fill-rule="evenodd"></path>-->\n' +
+    '                        <!--</svg></a></li>-->\n' +
+    '                    <!--<li class="at-social__item"><a href="">-->\n' +
+    '                        <!--<svg viewBox="0 0 24 24" width="18" height="18" xmlns="http://www.w3.org/2000/svg">-->\n' +
+    '                            <!--<path d="M20.875 7.5v.563c0 3.28-1.18 6.257-3.54 8.93C14.978 19.663 11.845 21 7.938 21c-2.5 0-4.812-.687-6.937-2.063.5.063.86.094 1.078.094 2.094 0 3.969-.656 5.625-1.968a4.563 4.563 0 0 1-2.625-.915 4.294 4.294 0 0 1-1.594-2.226c.375.062.657.094.844.094.313 0 .719-.063 1.219-.188-1.031-.219-1.899-.742-2.602-1.57a4.32 4.32 0 0 1-1.054-2.883c.687.328 1.375.516 2.062.516C2.61 9.016 1.938 7.75 1.938 6.094c0-.782.203-1.531.609-2.25 2.406 2.969 5.515 4.547 9.328 4.734-.063-.219-.094-.562-.094-1.031 0-1.281.438-2.36 1.313-3.234C13.969 3.437 15.047 3 16.328 3s2.375.484 3.281 1.453c.938-.156 1.907-.531 2.907-1.125-.313 1.094-.985 1.938-2.016 2.531.969-.093 1.844-.328 2.625-.703-.563.875-1.312 1.656-2.25 2.344z" fill-rule="evenodd"></path>-->\n' +
+    '                        <!--</svg></a></li>-->\n' +
+    '                    <!--<li class="at-social__item"><a href="">-->\n' +
+    '                        <!--<svg viewBox="0 0 24 24" width="18" height="18" xmlns="http://www.w3.org/2000/svg">-->\n' +
+    '                            <!--<path d="M19.547 3c.406 0 .75.133 1.031.398.281.266.422.602.422 1.008v15.047c0 .406-.14.766-.422 1.078a1.335 1.335 0 0 1-1.031.469h-15c-.406 0-.766-.156-1.078-.469C3.156 20.22 3 19.86 3 19.453V4.406c0-.406.148-.742.445-1.008C3.742 3.133 4.11 3 4.547 3h15zM8.578 18V9.984H6V18h2.578zM7.36 8.766c.407 0 .743-.133 1.008-.399a1.31 1.31 0 0 0 .399-.96c0-.407-.125-.743-.375-1.009C8.14 6.133 7.813 6 7.406 6c-.406 0-.742.133-1.008.398C6.133 6.664 6 7 6 7.406c0 .375.125.696.375.961.25.266.578.399.984.399zM18 18v-4.688c0-1.156-.273-2.03-.82-2.624-.547-.594-1.258-.891-2.133-.891-.938 0-1.719.437-2.344 1.312V9.984h-2.578V18h2.578v-4.547c0-.312.031-.531.094-.656.25-.625.687-.938 1.312-.938.875 0 1.313.578 1.313 1.735V18H18z" fill-rule="evenodd"></path>-->\n' +
+    '                        <!--</svg></a></li>-->\n' +
+    '                <!--</ul>-->\n' +
+    '            <!--</div>-->\n' +
+    '        <!--</div>-->\n' +
+    '    </div>\n' +
+    '</div>');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('app.partials');
+} catch (e) {
+  module = angular.module('app.partials', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('./views/app/components/welcome/welcome.component.html',
+    '\n' +
+    '<section id="intro" class="intro-resize parallax clearfix" style="background-image: url(img/intro.jpg)">\n' +
+    '    <!-- animated bg -->\n' +
+    '    <div class="intro-bg"></div>\n' +
+    '    <!-- container -->\n' +
+    '    <div class="container" id="welcome">\n' +
+    '        <img id="manit-logo" class="alignleft" src="img/manit.png" alt="Logo">\n' +
+    '        <img id="intro-logo" class="alignright" src="img/logo.png" alt="Logo">\n' +
+    '\n' +
+    '        <div class="distribute">\n' +
+    '            <h1 class="content-title">Maulana Azad National Institute of Technology</h1>\n' +
+    '\n' +
+    '            <div class="technostyle"><img ng-src="img/tsfont.png" alt="TechnoSearch"></div>\n' +
+    '\n' +
+    '            <div id="ticker-wrap">\n' +
+    '                <ul ticker id="ticker" timing="3000">\n' +
+    '                    <li ng-repeat="item in vm.tickerItems" class="item-{{$index}}">\n' +
+    '                        {{item.title}}\n' +
+    '                    </li>\n' +
+    '                </ul>\n' +
+    '            </div>\n' +
+    '\n' +
+    '\n' +
+    '            <a id="scroll-arrows" class="smooth-scroll" href="#" scroll-to="upcoming-event"><img src="img/scroll-arrows.png" alt="scroll down"></a>\n' +
+    '\n' +
+    '        </div>\n' +
+    '\n' +
+    '\n' +
+    '\n' +
+    '    </div>\n' +
+    '    <!-- /container -->\n' +
+    '\n' +
+    '</section>\n' +
+    '<!--/intro-->\n' +
+    '');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('app.partials');
+} catch (e) {
+  module = angular.module('app.partials', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('./views/app/pages/account/account.page.html',
+    '');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('app.partials');
+} catch (e) {
+  module = angular.module('app.partials', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('./views/app/pages/contact/contact.page.html',
+    '\n' +
+    '<navbar></navbar>\n' +
+    '<!-- ############ section container ############ -->\n' +
+    '<div class="section-container container clearfix">\n' +
+    '\n' +
+    '    <!-- ############ content header ############ -->\n' +
+    '    <header class="content-header">\n' +
+    '        <h1 class="content-title">Get in Touch</h1>\n' +
+    '        <span class="sub-heading">Do not hesitate to booking me!</span>\n' +
+    '        <hr class="content-line">\n' +
+    '    </header>\n' +
+    '    <!-- /content header -->\n' +
+    '\n' +
+    '    <div class="row clearfix">\n' +
+    '        <p>Cras venenatis justo mi, non posuere enim aliquet malesuada. Nullam orci sem, adipiscing id rutrum et, blandit quis lorem. Phasellus lacus orci, cursus vitae mi eget, sagittis congue elit. Donec ac tincidunt tortor. Duis vel neque eleifend odio hendrerit consequat sed vel massa. Praesent tempor libero quis tincidunt fringilla. Aliquam congue, neque et aliquam eleifend, lacus diam aliquet urna, in sollicitudin neque nisl facilisis urna.</p>\n' +
+    '        <br>\n' +
+    '        <!-- column icon -->\n' +
+    '        <div class="col-1-4 column-icon">\n' +
+    '            <span class="icon-home icon"></span>\n' +
+    '            <span class="txt"><strong>Level 13, 2 Elizabeth St, Melbourne Victoria </strong><br>3000 Australia</span>\n' +
+    '        </div>\n' +
+    '        <!-- /column icon -->\n' +
+    '        <!-- column icon -->\n' +
+    '        <div class="col-1-4 column-icon">\n' +
+    '            <span class="icon-phone icon"></span>\n' +
+    '            <span class="txt"><strong>(123) 563-9899-234</strong><br>(123) 123-9899-234 (FAX)</span>\n' +
+    '        </div>\n' +
+    '        <!-- /column icon -->\n' +
+    '        <!-- column icon -->\n' +
+    '        <div class="col-1-4 column-icon">\n' +
+    '            <span class="icon-pencil-2 icon"></span>\n' +
+    '            <span class="txt"><strong><a href="mailto:djspectra@djspectra.com">djspectra@djspectra.com</a></strong><br><a href="mailto:booking@djspectra.com">booking@djspectra.com</a> </span>\n' +
+    '        </div>\n' +
+    '        <!-- /column icon -->\n' +
+    '        <!-- column icon -->\n' +
+    '        <div class="col-1-4 last column-icon">\n' +
+    '            <span class="icon-share icon"></span>\n' +
+    '            <span class="txt"><strong><a href="http://facebook.com/">facebook</a></strong><br><a href="http://twitter.com/">twitter</a><br><a href="http://soundcloud.com/">soundcloud</a></span>\n' +
+    '        </div>\n' +
+    '        <!-- /column icon -->\n' +
+    '    </div>\n' +
+    '</div>\n' +
+    '\n' +
+    '<contact></contact>\n' +
+    '<footer></footer>');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('app.partials');
+} catch (e) {
+  module = angular.module('app.partials', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('./views/app/pages/event/event.page.html',
+    '<navbar></navbar>\n' +
+    '<event></event>\n' +
+    '<footer></footer>');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('app.partials');
+} catch (e) {
+  module = angular.module('app.partials', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('./views/app/pages/events/events.page.html',
+    '<navbar></navbar>\n' +
+    '<event></event>\n' +
+    '<event-table></event-table>\n' +
+    '<social></social>\n' +
+    '<footer></footer>\n' +
+    '');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('app.partials');
+} catch (e) {
+  module = angular.module('app.partials', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('./views/app/pages/footer/footer.page.html',
+    '<footer></footer>');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('app.partials');
+} catch (e) {
+  module = angular.module('app.partials', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('./views/app/pages/gallery/gallery.page.html',
+    '    <navbar></navbar>\n' +
+    '    <gallery></gallery>\n' +
+    '    <social></social>\n' +
+    '    <footer></footer>\n' +
+    '');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('app.partials');
+} catch (e) {
+  module = angular.module('app.partials', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('./views/app/pages/header/header.page.html',
+    '');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('app.partials');
+} catch (e) {
+  module = angular.module('app.partials', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('./views/app/pages/home/home.page.html',
+    '<welcome></welcome>\n' +
+    '<navbar></navbar>\n' +
+    '<countdown></countdown>\n' +
+    '<events></events>\n' +
+    '<event-list></event-list>\n' +
+    '<map></map>\n' +
+    '<contact></contact>\n' +
+    '<social></social>\n' +
+    '<sponsors></sponsors>\n' +
+    '<footer></footer>\n' +
+    '');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('app.partials');
+} catch (e) {
+  module = angular.module('app.partials', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('./views/app/pages/team/team.page.html',
+    '    <navbar></navbar>\n' +
+    '    <team></team>\n' +
+    '    <footer></footer>\n' +
+    '\n' +
+    '');
+}]);
+})();
+
 !function(e){function t(o){if(n[o])return n[o].exports;var r=n[o]={exports:{},id:o,loaded:!1};return e[o].call(r.exports,r,r.exports,t),r.loaded=!0,r.exports}var n={};return t.m=e,t.c=n,t.p="",t(0)}([function(e,t,n){"use strict";n(1),n(2),n(4),n(8),n(15),n(30),n(31)},function(e,t){"use strict";angular.module("app",["app.run","app.filters","app.services","app.components","app.directives","app.routes","app.config","app.partials"]),angular.module("app.run",[]),angular.module("app.routes",[]),angular.module("app.filters",[]),angular.module("app.services",[]),angular.module("app.config",[]),angular.module("app.directives",[]),angular.module("app.components",["ui.router","angular-loading-bar","restangular","ngStorage","satellizer","smoothScroll","timer","simpleAngularTicker"])},function(e,t,n){"use strict";var o=n(3);angular.module("app.run").run(o.RoutesRun)},function(e,t){"use strict";function n(e,t){"ngInject";var n={to:function(e){return e.data&&e.data.auth}},o=function(t){if(!t.isAuthenticated())return e.target("app.login",void 0,{location:!1})};o.$inject=["$auth"],t.onBefore(n,o,{priority:10})}n.$inject=["$state","$transitions"],Object.defineProperty(t,"__esModule",{value:!0}),t.RoutesRun=n},function(e,t,n){"use strict";var o=n(5),r=n(6),i=n(7);angular.module("app.config").config(o.RoutesConfig).config(r.LoadingBarConfig).config(i.SatellizerConfig)},function(e,t){"use strict";function n(e,t,n){"ngInject";var o=function(e){return"./views/app/pages/"+e+"/"+e+".page.html"};t.otherwise("/"),e.state("app",{cache:!1,"abstract":!0,data:{},views:{header:{templateUrl:o("header")},footer:{templateUrl:o("footer")},main:{}}}).state("app.home",{cache:!1,url:"/",views:{"main@":{templateUrl:o("home")}}}).state("app.events",{cache:!1,url:"/events",views:{"main@":{templateUrl:o("events")}}}).state("app.competitions",{cache:!1,url:"/competitions",views:{"main@":{templateUrl:o("competitions")}}}).state("app.workshops",{url:"/workshops",views:{"main@":{templateUrl:o("workshops")}}}).state("app.guestlectures",{url:"/guestlectures",views:{"main@":{templateUrl:o("guestlectures")}}}).state("app.pronites",{url:"/pronites",views:{"main@":{templateUrl:o("pronites")}}}).state("app.account",{url:"/account",views:{"main@":{templateUrl:o("account")}}}).state("app.gallery",{cache:!1,url:"/gallery",views:{"main@":{templateUrl:o("gallery")}}}).state("app.team",{url:"/team",views:{"main@":{templateUrl:o("team")}}}).state("app.sponsors",{url:"/sponsors",views:{"main@":{templateUrl:o("sponsors")}}}).state("app.contact",{url:"/contact",views:{"main@":{templateUrl:o("contact")}}}).state("app.event",{url:"/event/:slug",views:{"main@":{templateUrl:o("event")}}}),n.html5Mode(!0)}n.$inject=["$stateProvider","$urlRouterProvider","$locationProvider"],Object.defineProperty(t,"__esModule",{value:!0}),t.RoutesConfig=n},function(e,t){"use strict";function n(e){"ngInject";e.includeSpinner=!1}n.$inject=["cfpLoadingBarProvider"],Object.defineProperty(t,"__esModule",{value:!0}),t.LoadingBarConfig=n},function(e,t){"use strict";function n(e){"ngInject";e.httpInterceptor=function(){return!0},e.loginUrl="/api/auth/login",e.signupUrl="/api/auth/register",e.tokenRoot="data"}n.$inject=["$authProvider"],Object.defineProperty(t,"__esModule",{value:!0}),t.SatellizerConfig=n},function(e,t,n){"use strict";var o=n(9),r=n(10),i=n(11),a=n(12),c=n(13),u=n(14);angular.module("app.filters").filter("capitalize",o.CapitalizeFilter).filter("humanReadable",r.HumanReadableFilter).filter("truncateCharacters",i.TruncatCharactersFilter).filter("truncateWords",a.TruncateWordsFilter).filter("trustHtml",c.TrustHtmlFilter).filter("ucfirst",u.UcFirstFilter)},function(e,t){"use strict";function n(){return function(e){return e?e.replace(/([^\W_]+[^\s-]*) */g,function(e){return e.charAt(0).toUpperCase()+e.substr(1).toLowerCase()}):""}}Object.defineProperty(t,"__esModule",{value:!0}),t.CapitalizeFilter=n},function(e,t){"use strict";function n(){return function(e){if(!e)return"";for(var t=e.split("_"),n=0;n<t.length;n++)t[n]=t[n].charAt(0).toUpperCase()+t[n].slice(1);return t.join(" ")}}Object.defineProperty(t,"__esModule",{value:!0}),t.HumanReadableFilter=n},function(e,t){"use strict";function n(){return function(e,t,n){if(isNaN(t))return e;if(t<=0)return"";if(e&&e.length>t){if(e=e.substring(0,t),n)for(;" "===e.charAt(e.length-1);)e=e.substr(0,e.length-1);else{var o=e.lastIndexOf(" ");o!==-1&&(e=e.substr(0,o))}return e+"..."}return e}}Object.defineProperty(t,"__esModule",{value:!0}),t.TruncatCharactersFilter=n},function(e,t){"use strict";function n(){return function(e,t){if(isNaN(t))return e;if(t<=0)return"";if(e){var n=e.split(/\s+/);n.length>t&&(e=n.slice(0,t).join(" ")+"...")}return e}}Object.defineProperty(t,"__esModule",{value:!0}),t.TruncateWordsFilter=n},function(e,t){"use strict";function n(e){return function(t){return e.trustAsHtml(t)}}Object.defineProperty(t,"__esModule",{value:!0}),t.TrustHtmlFilter=n},function(e,t){"use strict";function n(){return function(e){return e?e.substring(0,1).toUpperCase()+e.substring(1):null}}Object.defineProperty(t,"__esModule",{value:!0}),t.UcFirstFilter=n},function(e,t,n){"use strict";var o=n(16),r=n(17),i=n(18),a=n(19),c=n(20),u=n(21),l=n(22),s=n(23),p=n(24),f=n(25),m=n(26),v=n(27),d=n(28),g=n(29);angular.module("app.components").component("team",o.TeamComponent).component("gallery",r.GalleryComponent).component("map",i.MapComponent).component("eventTable",a.EventTableComponent).component("sponsors",c.SponsorsComponent).component("welcome",u.WelcomeComponent).component("footer",l.FooterComponent).component("social",s.SocialComponent).component("contact",p.ContactComponent).component("eventList",f.EventListComponent).component("events",m.EventsComponent).component("event",v.EventComponent).component("countdown",d.CountdownComponent).component("navbar",g.NavbarComponent)},function(e,t){"use strict";function n(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(t,"__esModule",{value:!0});var o=function(){function e(e,t){for(var n=0;n<t.length;n++){var o=t[n];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}}return function(t,n,o){return n&&e(t.prototype,n),o&&e(t,o),t}}(),r=function(){function e(t){"ngInject";n(this,e),this.API=t,this.items={}}return e.$inject=["API"],o(e,[{key:"$onInit",value:function(){var e=this;this.API.one("team").get().then(function(t){e.items=t.data})}}]),e}();t.TeamComponent={templateUrl:"./views/app/components/team/team.component.html",controller:r,controllerAs:"vm",bindings:{}}},function(e,t){"use strict";function n(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(t,"__esModule",{value:!0});var o=function(){function e(e,t){for(var n=0;n<t.length;n++){var o=t[n];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}}return function(t,n,o){return n&&e(t.prototype,n),o&&e(t,o),t}}(),r=function(){function e(){"ngInject";n(this,e)}return o(e,[{key:"$onInit",value:function(){$(".masonry").magnificPopup({delegate:"a",type:"image"})}}]),e}();t.GalleryComponent={templateUrl:"./views/app/components/gallery/gallery.component.html",controller:r,controllerAs:"vm",bindings:{}}},function(e,t){"use strict";function n(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(t,"__esModule",{value:!0});var o=function(){function e(e,t){for(var n=0;n<t.length;n++){var o=t[n];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}}return function(t,n,o){return n&&e(t.prototype,n),o&&e(t,o),t}}(),r=function(){function e(){"ngInject";n(this,e)}return o(e,[{key:"$onInit",value:function(){}}]),e}();t.MapComponent={templateUrl:"./views/app/components/map/map.component.html",controller:r,controllerAs:"vm",bindings:{}}},function(e,t){"use strict";function n(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(t,"__esModule",{value:!0});var o=function(){function e(e,t){for(var n=0;n<t.length;n++){var o=t[n];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}}return function(t,n,o){return n&&e(t.prototype,n),o&&e(t,o),t}}(),r=function(){function e(){"ngInject";n(this,e)}return o(e,[{key:"$onInit",value:function(){}}]),e}();t.EventTableComponent={templateUrl:"./views/app/components/event-table/event-table.component.html",controller:r,controllerAs:"vm",bindings:{}}},function(e,t){"use strict";function n(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(t,"__esModule",{value:!0});var o=function(){function e(e,t){for(var n=0;n<t.length;n++){var o=t[n];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}}return function(t,n,o){return n&&e(t.prototype,n),o&&e(t,o),t}}(),r=function(){function e(){"ngInject";n(this,e)}return o(e,[{key:"$onInit",value:function(){}}]),e}();t.SponsorsComponent={templateUrl:"./views/app/components/sponsors/sponsors.component.html",controller:r,controllerAs:"vm",bindings:{}}},function(e,t){"use strict";function n(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(t,"__esModule",{value:!0});var o=function(){function e(e,t){for(var n=0;n<t.length;n++){var o=t[n];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}}return function(t,n,o){return n&&e(t.prototype,n),o&&e(t,o),t}}(),r=function(){function e(){"ngInject";n(this,e),this.tickerItems=[{title:"Central India's Largest TechFest"},{title:"21-23 October"}]}return o(e,[{key:"$onInit",value:function(){}}]),e}();t.WelcomeComponent={templateUrl:"./views/app/components/welcome/welcome.component.html",controller:r,controllerAs:"vm",bindings:{}}},function(e,t){"use strict";function n(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(t,"__esModule",{value:!0});var o=function(){function e(e,t){for(var n=0;n<t.length;n++){var o=t[n];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}}return function(t,n,o){return n&&e(t.prototype,n),o&&e(t,o),t}}(),r=function(){function e(){"ngInject";n(this,e)}return o(e,[{key:"$onInit",value:function(){}}]),e}();t.FooterComponent={templateUrl:"./views/app/components/footer/footer.component.html",controller:r,controllerAs:"vm",bindings:{}}},function(e,t){"use strict";function n(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(t,"__esModule",{value:!0});var o=function(){function e(e,t){for(var n=0;n<t.length;n++){var o=t[n];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}}return function(t,n,o){return n&&e(t.prototype,n),o&&e(t,o),t}}(),r=function(){function e(){"ngInject";n(this,e),this.fb="http://www.facebook.com",this.twitter="http://www.twitter.com",this.youtube="http://www.youtube.com",this.g="http://www.google.com/plus"}return o(e,[{key:"$onInit",value:function(){}}]),e}();t.SocialComponent={templateUrl:"./views/app/components/social/social.component.html",controller:r,controllerAs:"social",bindings:{}}},function(e,t){"use strict";function n(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(t,"__esModule",{value:!0});var o=function(){function e(e,t){for(var n=0;n<t.length;n++){var o=t[n];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}}return function(t,n,o){return n&&e(t.prototype,n),o&&e(t,o),t}}(),r=function(){function e(){"ngInject";n(this,e)}return o(e,[{key:"$onInit",value:function(){}}]),e}();t.ContactComponent={templateUrl:"./views/app/components/contact/contact.component.html",controller:r,controllerAs:"vm",bindings:{}}},function(e,t){"use strict";function n(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(t,"__esModule",{value:!0});var o=function(){function e(e,t){for(var n=0;n<t.length;n++){var o=t[n];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}}return function(t,n,o){return n&&e(t.prototype,n),o&&e(t,o),t}}(),r=function(){function e(){"ngInject";n(this,e)}return o(e,[{key:"$onInit",value:function(){}}]),e}();t.EventListComponent={templateUrl:"./views/app/components/event-list/event-list.component.html",controller:r,controllerAs:"vm",bindings:{}}},function(e,t){"use strict";function n(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(t,"__esModule",{value:!0});var o=function(){function e(e,t){for(var n=0;n<t.length;n++){var o=t[n];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}}return function(t,n,o){return n&&e(t.prototype,n),o&&e(t,o),t}}(),r=function(){function e(t){"ngInject";n(this,e),this.API=t,this.items={}}return e.$inject=["API"],o(e,[{key:"$onInit",value:function(){var e=this;this.API.one("events").get().then(function(t){e.items=t.data,setTimeout(function(){var e=new Isotope(".items",{itemSelector:".item",layoutMode:"fitRows"});angular.element(document).ready(function(){e.arrange({filter:"*"})});var t=document.querySelector(".filter-list");t.addEventListener("click",function(t){var n=t.target.getAttribute("data-filter");e.arrange({filter:n})})},1500)})}}]),e}();t.EventsComponent={templateUrl:"./views/app/components/events/events.component.html",controller:r,controllerAs:"vm",bindings:{}}},function(e,t){"use strict";function n(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(t,"__esModule",{value:!0});var o=function(){function e(e,t){for(var n=0;n<t.length;n++){var o=t[n];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}}return function(t,n,o){return n&&e(t.prototype,n),o&&e(t,o),t}}(),r=function(){function e(t){"ngInject";n(this,e),this.state=t}return e.$inject=["$state"],o(e,[{key:"$onInit",value:function(){console.log(this.state.params.slug)}}]),e}();t.EventComponent={templateUrl:"./views/app/components/event/event.component.html",controller:r,controllerAs:"vm",bindings:{}}},function(e,t){"use strict";function n(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(t,"__esModule",{value:!0});var o=function(){function e(e,t){for(var n=0;n<t.length;n++){var o=t[n];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}}return function(t,n,o){return n&&e(t.prototype,n),o&&e(t,o),t}}(),r=function(){function e(){"ngInject";n(this,e),this.countTime=1476988200-Math.round(+new Date/1e3)}return o(e,[{key:"$onInit",value:function(){}}]),e}();t.CountdownComponent={templateUrl:"./views/app/components/countdown/countdown.component.html",controller:r,controllerAs:"vm",bindings:{}}},function(e,t){"use strict";function n(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(t,"__esModule",{value:!0});var o=function(){function e(e,t){for(var n=0;n<t.length;n++){var o=t[n];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}}return function(t,n,o){return n&&e(t.prototype,n),o&&e(t,o),t}}(),r=function(){function e(t,o){"ngInject";n(this,e),this.window=o,this.scope=t,this.openmenu=!1,this.submenu=!1}return e.$inject=["$scope","$window"],o(e,[{key:"$onInit",value:function(){this.window.onscroll=function(){var e=document.getElementById("intro");if(e){var t=document.getElementById("main-nav"),e=document.getElementById("intro"),n=document.getElementById("upcoming-event");e.getBoundingClientRect().bottom<0?t.getBoundingClientRect().top>0?(n.style.marginTop="0px",t.classList.remove("sticky")):(n.style.marginTop="92px",t.classList.add("sticky")):(n.style.marginTop="0px",t.classList.remove("sticky"))}}}}]),e}();t.NavbarComponent={templateUrl:"./views/app/components/navbar/navbar.component.html",controller:r,controllerAs:"vm",bindings:{}}},function(e,t){"use strict";angular.module("app.directives")},function(e,t,n){"use strict";var o=n(32);angular.module("app.services").service("API",o.APIService)},function(e,t){"use strict";function n(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(t,"__esModule",{value:!0});t.APIService=["Restangular","$window",function o(e,t){"ngInject";n(this,o);var r={"Content-Type":"application/json",Accept:"application/x.laravel.v1+json"};return e.withConfig(function(e){e.setBaseUrl("/api/").setDefaultHeaders(r).addFullRequestInterceptor(function(e,n,o,r,i){var a=t.localStorage.satellizer_token;a&&(i.Authorization="Bearer "+a)})})}]}]);

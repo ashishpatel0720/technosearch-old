@@ -37,7 +37,7 @@ export function RoutesConfig($stateProvider, $urlRouterProvider, $locationProvid
             url: '/events',
             views: {
                 'main@': {
-                    templateUrl: getView('events')
+                    templateUrl: getView('events-all')
                 }
             }
         })
@@ -71,14 +71,6 @@ export function RoutesConfig($stateProvider, $urlRouterProvider, $locationProvid
             views: {
                 'main@': {
                     templateUrl: getView('pronites')
-                }
-            }
-        })
-		.state('app.account', {
-            url: '/account',
-            views: {
-                'main@': {
-                    templateUrl: getView('account')
                 }
             }
         })

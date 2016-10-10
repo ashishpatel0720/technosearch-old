@@ -1,3 +1,6 @@
+import {WorkshopsListComponent} from './app/components/workshops-list/workshops-list.component';
+import {PronitesListComponent} from './app/components/pronites-list/pronites-list.component';
+import {EventsListComponent} from './app/components/events-list/events-list.component';
 import {TeamComponent} from './app/components/team/team.component';
 import {GalleryComponent} from './app/components/gallery/gallery.component';
 import {EventTableComponent} from './app/components/event-table/event-table.component';
@@ -13,6 +16,9 @@ import {CountdownComponent} from './app/components/countdown/countdown.component
 import {NavbarComponent} from './app/components/navbar/navbar.component';
 
 angular.module('app.components')
+	.component('workshopsList', WorkshopsListComponent)
+	.component('pronitesList', PronitesListComponent)
+	.component('eventsList', EventsListComponent)
 	.component('team', TeamComponent)
 	.component('gallery', GalleryComponent)
 	.component('eventTable', EventTableComponent)

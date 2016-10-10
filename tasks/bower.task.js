@@ -1,13 +1,9 @@
-/*Elixir Task for bower
-* Upgraded from https://github.com/ansata-biz/laravel-elixir-bower
-*/
 var gulp = require('gulp');
 var mainBowerFiles = require('main-bower-files');
 var filter = require('gulp-filter');
 var notify = require('gulp-notify');
 var cssnano = require('gulp-cssnano');
 var uglify = require('gulp-uglify');
-var concat_sm = require('gulp-concat-sourcemap');
 var concat = require('gulp-concat');
 var gulpIf = require('gulp-if');
 
@@ -20,17 +16,7 @@ Elixir.extend('bower', function(jsOutputFile, jsOutputFolder, cssOutputFile, css
 	var cssFile = cssOutputFile || 'vendor.css';
 	var jsFile = jsOutputFile || 'vendor.js';
 
-	if (!Elixir.config.production){
-		concat = concat_sm;
-	}
-
 	var onError = function (err) {
-		// notify.onError({
-		// 	title: "Laravel Elixir",
-		// 	subtitle: "Bower Files Compilation Failed!",
-		// 	message: "Error: <%= error.message %>",
-		// 	icon: __dirname + '/../node_modules/laravel-elixir/icons/fail.png'
-		// })(err);
 		this.emit('end');
 	};
 
@@ -39,15 +25,9 @@ Elixir.extend('bower', function(jsOutputFile, jsOutputFolder, cssOutputFile, css
 		return gulp.src(mainBowerFiles())
 			.on('error', onError)
 			.pipe(filter('**/*.js'))
-			.pipe(concat(jsFile, {sourcesContent: true}))
-			.pipe(gulpIf(Elixir.config.production, uglify({preserveComments: false})))
+			.pipe(concat(jsFile))
+			.pipe(uglify({preserveComments: false, mangle: false}))
 			.pipe(gulp.dest(jsOutputFolder || Elixir.config.js.outputFolder));
-			// .pipe(notify({
-			// 	title: 'Laravel Elixir',
-			// 	subtitle: 'Javascript Bower Files Imported!',
-			// 	icon: __dirname + '/../node_modules/laravel-elixir/icons/laravel.png',
-			// 	message: ' '
-			// }));
 	}).watch('bower.json');
 
 
@@ -56,14 +36,14 @@ Elixir.extend('bower', function(jsOutputFile, jsOutputFolder, cssOutputFile, css
 			.on('error', onError)
 			.pipe(filter('**/*.css'))
 			.pipe(concat(cssFile))
-			.pipe(gulpIf(config.production, cssnano({safe: true})))
+			.pipe(cssnano({
+				safe: true,
+				discardComments: {
+					removeAll: true
+				},
+				colormin: true
+			}))
 			.pipe(gulp.dest(cssOutputFolder || config.css.outputFolder));
-			// .pipe(notify({
-			// 	title: 'Laravel Elixir',
-			// 	subtitle: 'CSS Bower Files Imported!',
-			// 	icon: __dirname + '/../node_modules/laravel-elixir/icons/laravel.png',
-			// 	message: ' '
-			// }));
 	}).watch('bower.json');
 
 });

@@ -1,11 +1,7 @@
-/*Elixir Task
-*copyrights to https://github.com/martinssipenko/laravel-elixir-ngHtml2Js
-*/
 var gulp = require('gulp'),
     ngHtml2Js = require('gulp-ng-html2js'),
     minifyHtml = require('gulp-htmlmin'),
     uglify = require('gulp-uglify'),
-    gulpIf = require('gulp-if'),
     concat = require('gulp-concat'),
     elixir = require('laravel-elixir'),
     config = elixir.config,
@@ -28,14 +24,14 @@ elixir.extend('ngHtml2Js', function(src, output, options) {
     new elixir.Task('ng-html-js', function() {
 
         return gulp.src(paths.src.path)
-            .pipe(gulpIf(elixir.config.production, minifyHtml({
+            .pipe(minifyHtml({
                 empty: true,
                 spare: true,
                 quotes: true
-            })))
+            }))
             .pipe(ngHtml2Js(options))
             .pipe(concat(paths.output.name))
-            .pipe(gulpIf(elixir.config.production, uglify()))
+            .pipe(uglify({preserveComments: false}))
             .pipe(gulp.dest(paths.output.baseDir));
     })
     .watch(paths.src.path);

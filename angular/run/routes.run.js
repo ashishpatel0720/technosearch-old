@@ -1,5 +1,10 @@
-export function RoutesRun($state, $transitions) {
+export function RoutesRun($state, $transitions, $rootScope) {
     'ngInject';
+
+
+    $rootScope.$on('$routeChangeSuccess', function () {
+        window.scrollTo(0, 0);
+    });
 
     let requiresAuthCriteria = {
         to: ($state) => $state.data && $state.data.auth

@@ -9,7 +9,7 @@
     <div id="portfolio-main-filter" class="filter">
         <ul class="filter-list item-filter active-filter clearfix">
             <li class="filter-label"><span class="label">Events</span></li>
-            <li><a data-filter="*">All</a></li>
+            <li><a data-filter="*" class="active">All</a></li>
             <li><a data-filter=".robitics">Robotics</a></li>
             <li><a data-filter=".coding">Coding</a></li>
             <li><a data-filter=".departmental">Departmental</a></li>
@@ -22,19 +22,14 @@
     </div>
     <div id="portfolio-items" class="fullwidth items clearfix grid">
 
-        <!--<div class="event" ng-repeat="event in vm.items">-->
             <div class="item {{event.category}}" ng-repeat="event in vm.items" data-filter="{{event.category}}">
                 <a ui-sref="app.event({slug: event.slug})" class="thumb project-thumb" >
-                    <!-- title and opacity mask -->
                     <div class="inner">
                         <h6>{{event.name | capitalize}}</h6>
                     </div>
-                    <!-- /title and opacity mask -->
-                    <!-- image -->
                     <img class="lazy" ng-src="https://placeholdit.imgix.net/~text?txtsize=50&txt={{event.name | capitalize}}&w=360&h=360" alt="TechnoSearch Event" >
                 </a>
             </div>
-        <!--</div>-->
 
 
     </div>

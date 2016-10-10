@@ -15,41 +15,21 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="description" content="TechnoSearch ">
     <meta name="keywords" content=""/>
-    <meta name="author" content="Site Author">
-    <!-- Fav icon -->
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
-    <!-- <meta name="robots" content="index,follow"> -->
-
-    <!-- ############################# Stylesheets ############################# -->
+    <meta name="author" content="Hariom, Manohar">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="css/menu.css" media="screen" />
     <link rel="stylesheet" href="css/style.css" media="screen" />
     <link rel="stylesheet" href="css/media-queries.css" media="screen" />
-    <!-- Fancybox styles -->
-    <link rel="stylesheet" href="css/fancybox.custom.css" media="screen" />
-    <!-- Flexslider styles -->
-    <link rel="stylesheet" href="css/flexslider.css" media="screen" />
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
-    <!-- ############################# Javascripts ############################# -->
-    <!-- jQuery -->
-    {{--<script src="js/jquery.min.js" type="text/javascript"></script>--}}
-    <!-- Add HTML5 support for older IE browsers -->
-    {{--<!--[if lt IE 9]>--}}
-    {{--<script src="js/html5.min.js"></script>--}}
-    <!--<script src="js/selectivizr-and-extra-selectors.min.js"></script>-->
-    {{--<![endif]-->--}}
-    <!-- Modernizr -->
-    {{--<script src="js/modernizr.custom.js"></script>--}}
-    
 </head>
 <body>
 
-    <!-- ############################# Update Message for older browsers ############################# -->
     {{--<!--[if lte IE 7]>--}}
     {{--<div id="ie-message"><p>You are using Internet Explorer 7.0 or older to view this site. Your browser is an eight year old browser which does not display modern web sites properly. Please upgrade to a newer browser to fully enjoy the web. <a href="http://www.microsoft.com/windows/internet-explorer/default.aspx">Upgrade your browser</a></p></div>--}}
     {{--<![endif]-->--}}
 
     <div id="top" style="position: absolute"></div>
-    <div ui-view="main">
+    <div ui-view="main" autoscroll="true">
         <div style="width:100%;height:100vh;top:0;left:0;position:fixed;display:flex;align-items:center;justify-content:center;background:#000;">
             <img src="/img/loader.gif">
         </div>
@@ -67,28 +47,6 @@
     </script>
 
     <script src="js/final.js" async defer></script>
-
-
-
-    <!-- ############################# javascripts ############################# -->
-    {{--<script src="js/jquery.easing-1.3.min.js"></script>--}}
-    {{--<script src="js/jquery.dlmenu.js"></script>--}}
-    {{--<script src="js/smoothscroll.js"></script>--}}
-    {{--<script src="js/jquery.scrollTo.min.js"></script>--}}
-    {{--<script src="js/jquery.parallax-1.1.3.js"></script>--}}
-    {{--<script src="js/jquery.isotope.min.js"></script>--}}
-    {{--<script src="js/jquery.jail.js"></script>--}}
-    {{--<script src="js/jquery.flexslider-min.js"></script>--}}
-    {{--<script src="js/jquery.countdown.js"></script>--}}
-    <!-- fancybox -->
-    {{--<script src="js/jquery.fancybox-1.3.4.pack.js"></script>--}}
-    <!-- google scripts -->
-    {{--<script src="https://maps.google.com/maps/api/js?sensor=false"></script>--}}
-    {{--<script src="js/jquery.gmap.min.js"></script>--}}
-    <!-- fullwidth player -->
-    {{--<script src="js/jquery-ui.js" type="text/javascript"></script>--}}
-    <!-- custom scripts -->
-    {{--<script src="js/custom.js"></script>--}}
 
 </body>
 </html>

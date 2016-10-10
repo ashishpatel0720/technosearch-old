@@ -1,8 +1,7 @@
 class NavbarController{
-    constructor($scope,$window){
+    constructor($window){
         'ngInject';
         this.window = $window;
-        this.scope = $scope;
         this.openmenu = false;
         this.submenu = false;
     }
@@ -14,7 +13,6 @@ class NavbarController{
                 var intro = document.getElementById('intro');
                 if(intro) {
                     var el = document.getElementById('main-nav');
-                    var intro = document.getElementById('intro');
                     var upcom = document.getElementById('upcoming-event');
                     if (intro.getBoundingClientRect().bottom < 0){
                         if(el.getBoundingClientRect().top > 0) {

@@ -5,7 +5,7 @@ class EventController{
     }
 
     $onInit(){
-        console.log(this.state.params.slug);
+
     }
 }
 

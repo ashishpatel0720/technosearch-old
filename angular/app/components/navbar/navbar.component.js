@@ -1,13 +1,19 @@
 class NavbarController{
-    constructor($window){
+    constructor($window,$state){
         'ngInject';
         this.window = $window;
         this.openmenu = false;
         this.submenu = false;
+        this.state = $state;
     }
 
     $onInit(){
-        // this.stickyNav = true;
+        var that = this;
+
+        angular.element(document).ready(function () {
+            that.state.current.name == 'app.home' ? document.getElementById('main-nav').classList.remove('sticky') : document.getElementById('main-nav').classList.add('sticky');
+            window.scrollTo(0, 0);
+        });
 
             this.window.onscroll = function () {
                 var intro = document.getElementById('intro');
@@ -19,7 +25,7 @@ class NavbarController{
                             upcom.style.marginTop = '0px';
                             el.classList.remove('sticky')
                         } else {
-                            upcom.style.marginTop = '92px';
+                            upcom.style.marginTop = '80px';
                             el.classList.add('sticky');
 
                         }

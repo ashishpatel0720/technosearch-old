@@ -69,8 +69,11 @@
                 url: '/api/addevent',
                 data: $(this).serialize(),
                 type: 'POST',
-                success: function(data){
-                    console.log(data)
+                success: function(){
+                    $(this).trigger('reset')
+                },
+                error: function(){
+                    alert('Error submitting form!')
                 }
             });
             return false;

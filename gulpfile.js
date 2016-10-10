@@ -29,7 +29,7 @@ elixir(function(mix) {
             './public/css/vendor.css', './public/css/app.css'
         ],
         images = [
-            './public/img/*'
+            './public/img/*','./public/img/**/*'
         ];
 
     mix

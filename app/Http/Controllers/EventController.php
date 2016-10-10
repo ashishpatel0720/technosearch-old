@@ -25,7 +25,7 @@ class EventController extends Controller
     public function addEvent(Request $request){
         $data = $request->all();
 
-        $data['problem_statement'] = $data['problem_statement'] ? 1 : 0;
+        $data['problem_statement'] = isset($data['problem_statement']) ? 1 : 0;
 
         $event = new Event;
 

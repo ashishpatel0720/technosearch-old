@@ -7,11 +7,6 @@ export function RoutesConfig($stateProvider, $urlRouterProvider, $locationProvid
 
 	$urlRouterProvider.otherwise('/');
 
-    /*
-        data: {auth: true} would require JWT auth
-        However you can't apply it to the abstract state
-        or landing state because you'll enter a redirect loop
-    */
 
 	$stateProvider
 		.state('app', {
@@ -127,7 +122,7 @@ export function RoutesConfig($stateProvider, $urlRouterProvider, $locationProvid
                     templateUrl: getView('event')
                 }
             }
-        })
+        });
 
 
     $locationProvider.html5Mode(true);

@@ -21,8 +21,6 @@
     "isotope": "^3.0.1",
     "magnific-popup": "^1.1.0",
     "ngmap": "^1.17.6",
-    "angular-recaptcha": "^3.0.4",
-    "angular-toastr": "^2.1.1",
-    "angular-animate": "^1.5.8"
+    "angular-recaptcha": "^3.0.4"
   }
 }

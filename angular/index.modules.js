@@ -16,6 +16,6 @@ angular.module('app.services', []);
 angular.module('app.config', []);
 angular.module('app.directives', []);
 angular.module('app.components', [
-	'ui.router', 'angular-loading-bar', 'ngStorage', 'smoothScroll', 'timer', 'simpleAngularTicker', 'ngMap', 'vcRecaptcha', 'ngAnimate', 'toastr'
+	'ui.router', 'angular-loading-bar', 'ngStorage', 'smoothScroll', 'timer', 'simpleAngularTicker', 'ngMap', 'vcRecaptcha'
 ]);
 

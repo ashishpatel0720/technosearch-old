@@ -7,7 +7,7 @@
         <div class="col-1-2">
             <h2>{{vm.item.name}}</h2>
             <p>{{vm.item.description}} </p>
-            <a class="btn large alignleft"><span class="button-icon icon-cart-3"></span>Download Problem Statement</a>
+            <a ng-if="vm.item.problem_statement" class="btn large alignleft"><span class="button-icon icon-cart-3"></span>Download Problem Statement</a>
         </div>
         <!-- /column -->
         <!-- column -->

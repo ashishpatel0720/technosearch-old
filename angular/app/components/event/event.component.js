@@ -3,12 +3,15 @@ class EventController{
         'ngInject';
         this.state = $state;
         this.http = $http;
-        this.item = {};
+        this.item = [];
     }
 
     $onInit(){
-        this.http.get('/api/team').then((response) => {
+        var slug = this.state.params.slug;
+        this.http.get('/api/event/'+slug).then((response) => {
             this.item = response.data.data;
+            console.log(response);
+            console.log(this.item);
         });
     }
 }

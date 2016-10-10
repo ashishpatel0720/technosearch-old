@@ -18,7 +18,9 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::get('/unsupported-browser', 'AngularController@unsupported');
 
-    Route::get('/{all}', 'AngularController@serveApp');
+    Route::get('/{a}', 'AngularController@serveApp');
+    Route::get('/{a}/{b}', 'AngularController@serveApp');
+    Route::get('/{a}/{b}/{c}', 'AngularController@serveApp');
 });
 
 //public API routes

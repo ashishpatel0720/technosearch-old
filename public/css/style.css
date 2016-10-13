@@ -2435,3 +2435,176 @@ table .buy-tickets.sold, table .buy-tickets.sold:hover {
     0%   { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+
+
+.btn_container {
+    display: inline
+}
+
+
+.immoral-modal {
+    position: relative;
+    margin-top: 2em;
+    z-index: 10000001;
+    -moz-box-shadow: 0 0 7px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0 0 7px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.5);
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    font-family: "Open Sans", "Lucida Grande", "Lucida Sans", Tahoma, sans-serif;
+    text-align: left
+}
+
+.immoral-modal .modal--ui-close {
+    position: absolute;
+    top: 0px;
+    right: -55px;
+    font-size: 60px;
+    text-decoration: none;
+    line-height: 1em;
+    padding: 4px;
+    color: #fff
+}
+
+.immoral-modal iframe {
+    height: 90%;
+    width: 100%
+}
+
+.immoral-modal .immoral-modal-content {
+    background: url("https://d3t997oftexkkq.cloudfront.net/assets/images/loader.gif") center center no-repeat
+}
+
+.immoral-modal-new-buy-flow {
+    overflow-y: auto
+}
+
+.immoral-modal-new-buy-flow iframe {
+    height: 100%;
+    width: 100%
+}
+
+@-webkit-keyframes pace-spinner {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg)
+    }
+}
+
+@-moz-keyframes pace-spinner {
+    0% {
+        -moz-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+    100% {
+        -moz-transform: rotate(360deg);
+        transform: rotate(360deg)
+    }
+}
+
+@-o-keyframes pace-spinner {
+    0% {
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+    100% {
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg)
+    }
+}
+
+@-ms-keyframes pace-spinner {
+    0% {
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+    100% {
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes pace-spinner {
+    0% {
+        transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+    100% {
+        transform: rotate(360deg);
+        transform: rotate(360deg)
+    }
+}
+
+.iframe-container {
+    height: 100%
+}
+
+.iframe-container .iframe-loader-wrapper {
+    display: none
+}
+
+.iframe-container .iframe {
+    transition: all 0.2s;
+    visibility: visible;
+    opacity: 1;
+    height: 100%;
+    position: relative;
+    background: none;
+    display: block;
+    border: 0px none transparent;
+    margin: 0px;
+    padding: 0px
+}
+
+.iframe-container.loader .iframe-loader-wrapper {
+    display: block;
+    position: relative;
+    height: 100%
+}
+
+.iframe-container.loader .iframe-loader-wrapper .iframe-loader {
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: -20px;
+    margin-top: -20px;
+    width: 40px;
+    height: 40px;
+    border: solid 2px transparent;
+    border-top-color: #46DF89;
+    border-left-color: #46DF89;
+    border-radius: 40px;
+    -webkit-animation: pace-spinner 800ms linear infinite;
+    -moz-animation: pace-spinner 800ms linear infinite;
+    -ms-animation: pace-spinner 800ms linear infinite;
+    -o-animation: pace-spinner 800ms linear infinite;
+    animation: pace-spinner 800ms linear infinite
+}
+
+.iframe-container.loader .iframe {
+    visibility: hidden;
+    opacity: 0
+}
+
+.im-embed-overlay {
+    min-height: 100%;
+    transition: 0.3s ease-out;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85098)
+}
+
+
+
+iframe {
+    border: none !important
+}

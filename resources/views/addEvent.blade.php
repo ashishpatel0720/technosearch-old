@@ -27,6 +27,10 @@
                         <input type="checkbox" name="problem_statement">
                         <span class="checkable">Problem Statement</span>
                     </label>
+                    <label style="width: 100%;display: inline-flex;">
+                        <input type="checkbox" name="departmental">
+                        <span class="checkable">Departmental</span>
+                    </label>
                     <select name="category" required>
                         <option value="" style="display:none;" disabled selected>Choose a category</option>
                         <option value="robotics">Robotics</option>

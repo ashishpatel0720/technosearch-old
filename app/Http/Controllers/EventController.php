@@ -26,6 +26,7 @@ class EventController extends Controller
         $data = $request->all();
 
         $data['problem_statement'] = isset($data['problem_statement']) ? 1 : 0;
+        $data['departmental'] = isset($data['departmental']) ? 1 : 0;
 
         $event = new Event;
 
@@ -34,6 +35,7 @@ class EventController extends Controller
         $event->category = $data['category'];
         $event->description = $data['description'];
         $event->problem_statement = $data['problem_statement'];
+        $event->departmental = $data['departmental'];
         $event->name1 = $data['name1'];
         $event->email1 = $data['email1'];
         $event->contact1 = $data['contact1'];

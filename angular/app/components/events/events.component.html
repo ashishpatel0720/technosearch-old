@@ -38,6 +38,7 @@
                 <a ui-sref="app.event({slug: event.slug})" class="thumb project-thumb" >
                     <div class="inner">
                         <h6>{{event.name | capitalize}}</h6>
+                        <h5>{{event.category | human_readable}}</h5>
                     </div>
                     <img class="lazy event-item" ng-src="/img/events/{{event.slug}}.jpg" alt="{{event.name | capitalize}}" >
                 </a>

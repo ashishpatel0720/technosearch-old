@@ -34,9 +34,14 @@ $api->group(['middleware' => ['api']], function ($api) {
     $api->post('addevent','EventController@addEvent');
     $api->post('contact','MainController@saveMessage');
 
+
+    
+
+    
+
 });
 
 //protected API routes with JWT (must be logged in)
-$api->group(['middleware' => ['api', 'api.auth']], function ($api) {
-
+$api->group(['middleware' => ['api', 'cors']], function ($api) {
+    $api->any('payment','AdminController@saveData');
 });

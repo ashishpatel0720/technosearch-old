@@ -16,15 +16,6 @@
                         techno cultural nights will be adding charm to the fest.</p>
                 </div>
             </div>
-
-            <!--<h3 class="section-content">-->
-                <!--TECHNOSEARCH'16 will be adding another milestone in the history of MANIT.-->
-                <!--Our technical festival boasts the status of Largest Technical event in Central India, and this-->
-                <!--year we'll be showcasing ourselves beyond the expectations of attendees. From extravagant events-->
-                <!--to lecture series from distinguished personalities, from highly learning workshops to various-->
-                <!--fun events, there will be no stone unturned. Along with these, exhibitions, gaming zone and-->
-                <!--techno cultural nights will be adding charm to the fest.-->
-            <!--</h3>-->
         </div>
     </div>
     <div id="portfolio-main-filter" class="filter">
@@ -43,7 +34,7 @@
     </div>
     <div id="portfolio-items" class="fullwidth items clearfix grid">
 
-            <div class="item {{event.category}}" ng-repeat="event in vm.items" data-filter="{{event.category}}">
+            <div class="item {{event.category}}" ng-repeat="event in vm.items" data-filter="{{event.category}}" ng-class="{ departmental : event.departmental }">
                 <a ui-sref="app.event({slug: event.slug})" class="thumb project-thumb" >
                     <div class="inner">
                         <h6>{{event.name | capitalize}}</h6>
@@ -51,7 +42,6 @@
                     <img class="lazy event-item" ng-src="/img/events/{{event.slug}}.jpg" alt="{{event.name | capitalize}}" >
                 </a>
             </div>
-
 
     </div>
 

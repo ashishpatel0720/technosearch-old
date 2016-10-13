@@ -17,7 +17,7 @@ class EventController extends Controller
     }
     public function getEvents()
     {
-        $events = Event::all();
+        $events = Event::orderBy('name', 'asc')->get();
         return response()->success($events);
     }
 

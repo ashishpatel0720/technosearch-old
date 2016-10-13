@@ -3,7 +3,6 @@ import {PronitesListComponent} from './app/components/pronites-list/pronites-lis
 import {EventsListComponent} from './app/components/events-list/events-list.component';
 import {TeamComponent} from './app/components/team/team.component';
 import {GalleryComponent} from './app/components/gallery/gallery.component';
-import {EventTableComponent} from './app/components/event-table/event-table.component';
 import {SponsorsComponent} from './app/components/sponsors/sponsors.component';
 import {WelcomeComponent} from './app/components/welcome/welcome.component';
 import {FooterComponent} from './app/components/footer/footer.component';
@@ -21,7 +20,6 @@ angular.module('app.components')
 	.component('eventsList', EventsListComponent)
 	.component('team', TeamComponent)
 	.component('gallery', GalleryComponent)
-	.component('eventTable', EventTableComponent)
 	.component('sponsors', SponsorsComponent)
 	.component('welcome', WelcomeComponent)
 	.component('footer', FooterComponent)

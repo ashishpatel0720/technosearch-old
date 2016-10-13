@@ -1,22 +1,40 @@
 
-<div class="container clearfix">
+<div class="container clearfix at-section">
 
-    <!-- row -->
     <div id="event-single" class="row clearfix">
         <!-- column -->
-        <div class="col-1-2">
-            <h2>{{vm.item.name}}</h2>
-            <p>{{vm.item.description}} </p>
-            <a ng-if="vm.item.problem_statement" class="btn large alignleft"><span class="button-icon icon-cart-3"></span>Download Problem Statement</a>
-        </div>
+        
         <!-- /column -->
         <!-- column -->
-        <div class="col-1-2 last">
+        <div class="col-1-2 ">
             <!--<h2>Promotion</h2>-->
             <!-- image poster -->
-            <img src="img/events/{{vm.item.slug}}.jpg" alt="TechnoSearch">
+            <img ng-src="/img/events/{{vm.item.slug}}.jpg" alt="{{vm.item.name | capitalize}}" class="event-item">
+        </div>
+        <div class="col-1-2 last">
+            <h1>{{vm.item.name | capitalize}}</h1>
+            <p>{{vm.item.description}} </p>
+            <a ng-if="vm.item.problem_statement" class="btn large alignleft">Download Problem Statement</a>
         </div>
         <!-- /column -->
+    </div>
+    <div class="row clearfix coordinator">
+        <div class="col-1-3">
+            <h3>Coordinator</h3>
+            <h5>{{vm.item.name1 | capitalize}}</h5>
+            <p>{{vm.item.email1 | lowercase}} </p>
+            <p>{{vm.item.contact1}} </p>
+        </div>
+        <div class="col-1-3">
+            <h3>Faculty Coordinator</h3>
+            <h5>{{vm.item.faculty | capitalize}}</h5>
+        </div>
+        <div class="col-1-3 last">
+            <h3>Coordinator</h3>
+            <h5>{{vm.item.name2 | capitalize}}</h5>
+            <p>{{vm.item.email2 | lowercase}} </p>
+            <p>{{vm.item.contact2}} </p>
+        </div>
     </div>
     <!-- /row -->
 </div>

@@ -1673,6 +1673,7 @@ a#scroll-arrows {
     font-size: 170px;
     line-height: normal;
     font-weight: bold;
+    padding: 15px;
 }
 .countdown .days {
     color: #444;

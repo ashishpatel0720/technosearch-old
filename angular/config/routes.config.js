@@ -14,12 +14,6 @@ export function RoutesConfig($stateProvider, $urlRouterProvider, $locationProvid
 			abstract: true,
             data: {},
 			views: {
-                header: {
-                  templateUrl: getView('header')
-                },
-                footer: {
-                    templateUrl: getView('footer')
-                },
 				main: {}
 			}
 		})
@@ -43,10 +37,10 @@ export function RoutesConfig($stateProvider, $urlRouterProvider, $locationProvid
         })
 		.state('app.competitions', {
             cache:false,
-            url: '/competitions',
+            url: '/events',
             views: {
                 'main@': {
-                    templateUrl: getView('competitions')
+                    templateUrl: getView('events-all')
                 }
             }
         })

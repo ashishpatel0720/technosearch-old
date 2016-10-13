@@ -70,7 +70,7 @@
                 data: $(this).serialize(),
                 type: 'POST',
                 success: function(){
-                    $(this).trigger('reset')
+                    $('form')[0].reset()
                 },
                 error: function(){
                     alert('Error submitting form!')

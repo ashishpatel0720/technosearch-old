@@ -10,8 +10,6 @@ class EventController{
         var slug = this.state.params.slug;
         this.http.get('/api/event/'+slug).then((response) => {
             this.item = response.data.data;
-            console.log(response);
-            console.log(this.item);
         });
     }
 }

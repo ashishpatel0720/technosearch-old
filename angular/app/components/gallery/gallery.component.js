@@ -1,12 +1,10 @@
 class GalleryController{
     constructor(){
         'ngInject';
-
-        //
     }
 
     $onInit(){
-        $('.masonry').magnificPopup({
+        jQuery('.masonry').magnificPopup({
             delegate: 'a',
             type: 'image'
         });

@@ -15,8 +15,8 @@ class AdminController extends Controller
 
     public function saveData(Request $request){
     	$data = $request->all();
-    	DB::table('payment')->create($data);
-    	return response()->success(true);
+    	// DB::table('payment')->create($data);
+    	return response()->success($data);
     }
 
 }

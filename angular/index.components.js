@@ -1,3 +1,4 @@
+import {WorkshopComponent} from './app/components/workshop/workshop.component';
 import {WorkshopsListComponent} from './app/components/workshops-list/workshops-list.component';
 import {PronitesListComponent} from './app/components/pronites-list/pronites-list.component';
 import {EventsListComponent} from './app/components/events-list/events-list.component';
@@ -15,6 +16,7 @@ import {CountdownComponent} from './app/components/countdown/countdown.component
 import {NavbarComponent} from './app/components/navbar/navbar.component';
 
 angular.module('app.components')
+	.component('workshop', WorkshopComponent)
 	.component('workshopsList', WorkshopsListComponent)
 	.component('pronitesList', PronitesListComponent)
 	.component('eventsList', EventsListComponent)

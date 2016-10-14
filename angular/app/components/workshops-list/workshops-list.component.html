@@ -2,19 +2,42 @@
     <div id="portfolio-header" class="section-header parallax clearfix" style="background-image: url(placeholders/release-header-1920x1000.jpg)" data-interia="0.1">
         <div class="overlay"></div>
         <div class="container clearfix">
-            <h6 class="section-sub-heading">MORE THAN 30+ EVENTS</h6>
-            <h2 class="section-heading">AMAZING EVENTS</h2>
+            <h6 class="section-sub-heading">WORKSHOPS/h6>
         </div>
     </div>
 
     <div id="portfolio-items" class="fullwidth items clearfix grid">
 
-        <div class="item {{event.category}}" ng-repeat="event in vm.items" data-filter="{{event.category}}">
-            <a ui-sref="app.event({slug: event.slug})" class="thumb project-thumb" >
+        <div class="item" >
+            <a ui-sref="app.workshop/android-app-development" class="thumb project-thumb" >
                 <div class="inner">
-                    <h6>{{event.name | capitalize}}</h6>
+                    <h6>ANDROID APP DEVELOPMENT</h6>
                 </div>
-                <img class="lazy" ng-src="img/events/{{event.slug}}.jpg" alt="{{event.name | capitalize}}" >
+                <img class="lazy" ng-src="img/workshops/android-app-development.jpg" alt="ANDROID APP DEVELOPMENT" >
+            </a>
+        </div>
+        <div class="item" >
+            <a ui-sref="app.workshop/morphogenesis" class="thumb project-thumb" >
+                <div class="inner">
+                    <h6>MORPHOGENESIS</h6>
+                </div>
+                <img class="lazy" ng-src="img/workshops/morphogenesis.jpg" alt="morphogenesis" >
+            </a>
+        </div>
+        <div class="item" >
+            <a ui-sref="app.workshop/multibotics" class="thumb project-thumb" >
+                <div class="inner">
+                    <h6>MULTIBOTICS</h6>
+                </div>
+                <img class="lazy" ng-src="img/workshops/multibotics.jpg" alt="multibotics" >
+            </a>
+        </div>
+        <div class="item" >
+            <a ui-sref="app.workshop/waterbotix" class="thumb project-thumb" >
+                <div class="inner">
+                    <h6>WATERBOTIX</h6>
+                </div>
+                <img class="lazy" ng-src="img/workshops/waterbotix.jpg" alt="waterbotix" >
             </a>
         </div>
 

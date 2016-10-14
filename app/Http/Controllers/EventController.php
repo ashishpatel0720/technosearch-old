@@ -21,7 +21,6 @@ class EventController extends Controller
         return response()->success($events);
     }
 
-
     public function addEvent(Request $request){
         $data = $request->all();
 

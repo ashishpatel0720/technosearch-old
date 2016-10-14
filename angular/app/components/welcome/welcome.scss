@@ -62,3 +62,16 @@ a#scroll-arrows {
     font-size: 20px;
   }
 }
+@media only screen and (max-width: 768px) {
+  .content-title {
+    font-size: 20px;
+    letter-spacing: 0;
+  }
+  .technostyle img {
+    height: 120px;
+  }
+  #ticker {
+    height: 80px;
+    font-size: 33px;
+  }
+}

@@ -116,6 +116,14 @@ export function RoutesConfig($stateProvider, $urlRouterProvider, $locationProvid
                     templateUrl: getView('event')
                 }
             }
+        })
+        .state('app.workshop', {
+            url: '/workshop/:slug',
+            views: {
+                'main@': {
+                    templateUrl: getView('workshop')
+                }
+            }
         });
 
 

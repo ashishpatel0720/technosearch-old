@@ -1,0 +1,23 @@
+<section id="portfolio" class="section">
+    <div id="portfolio-header" class="section-header parallax clearfix" style="background-image: url(placeholders/release-header-1920x1000.jpg)" data-interia="0.1">
+        <div class="overlay"></div>
+        <div class="container clearfix">
+            <h6 class="section-sub-heading">MORE THAN 30+ EVENTS</h6>
+            <h2 class="section-heading">AMAZING EVENTS</h2>
+        </div>
+    </div>
+
+    <div id="portfolio-items" class="fullwidth items clearfix grid">
+
+        <div class="item {{event.category}}" ng-repeat="event in vm.items" data-filter="{{event.category}}">
+            <a ui-sref="app.event({slug: event.slug})" class="thumb project-thumb" >
+                <div class="inner">
+                    <h6>{{event.name | capitalize}}</h6>
+                </div>
+                <img class="lazy" ng-src="img/events/{{event.slug}}.jpg" alt="{{event.name | capitalize}}" >
+            </a>
+        </div>
+
+    </div>
+
+</section>

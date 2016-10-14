@@ -1,9 +1,9 @@
 class SocialController{
     constructor(){
         'ngInject';
-        this.fb = 'http://www.facebook.com';
+        this.fb = 'https://www.facebook.com/technosearchnitbhopal';
         this.twitter = 'http://www.twitter.com';
-        this.youtube = 'http://www.youtube.com';
+        this.youtube = 'https://www.youtube.com/channel/UCGWw1YBc_jprhpdiVVzJyGw';
         this.g = 'http://www.google.com/plus';
 
 

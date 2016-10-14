@@ -60,6 +60,14 @@ export function RoutesConfig($stateProvider, $urlRouterProvider, $locationProvid
                 }
             }
         })
+        .state('app.exhibitions', {
+            url: '/exhibitions',
+            views: {
+                'main@': {
+                    templateUrl: getView('exhibitions')
+                }
+            }
+        })
 		.state('app.pronites', {
             url: '/pronites',
             views: {

@@ -6,6 +6,7 @@ class PronitesListController{
     }
 
     $onInit(){
+
     }
 }
 

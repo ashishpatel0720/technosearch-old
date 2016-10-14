@@ -24,7 +24,8 @@ class TeamController extends Controller
             ['img'=>'atul', 'member_name'=>'Atul Goyal', 'member_title'=>'Hindi Literary Secretary', 'fb_link'=>'https://www.facebook.com/profile.php?id=100007683469394'],
             ['img'=>'darsh', 'member_name'=>'Darsh Tiwari', 'member_title'=>'General Secretary', 'fb_link'=>'https://www.facebook.com/manit.darsh'],
             ['img'=>'harshini', 'member_name'=>'Harshini', 'member_title'=>'English Literary Secretary', 'fb_link'=>'https://www.facebook.com/sriharshini.harshu'],
-            ['img'=>'mayur', 'member_name'=>'Mayur Meshram', 'member_title'=>'Cultural Secretary', 'fb_link'=>'https://www.facebook.com/mayur.meshram.754']
+            ['img'=>'mayur', 'member_name'=>'Mayur Meshram', 'member_title'=>'Cultural Secretary', 'fb_link'=>'https://www.facebook.com/mayur.meshram.754'],
+            ['img'=>'nauneet', 'member_name'=>'Nauneet Kumar', 'member_title'=>'Joint Secretary', 'fb_link'=>'https://www.facebook.com/navneet.kumar.50999']
         ]);
     }
 }

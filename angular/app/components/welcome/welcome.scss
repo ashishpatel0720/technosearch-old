@@ -5,7 +5,7 @@
 
 .technostyle {
   img {
-    height: 225px;
+    width: 70%;
   }
 }
 
@@ -55,7 +55,7 @@ a#scroll-arrows {
     letter-spacing: 0;
   }
   .technostyle img {
-    height: 90px;
+    width: 90%;
   }
   #ticker {
     height: 63px;
@@ -68,10 +68,10 @@ a#scroll-arrows {
     letter-spacing: 0;
   }
   .technostyle img {
-    height: 120px;
+    width: 90%;
   }
-  #ticker {
-    height: 80px;
-    font-size: 33px;
+  .ticker-items {
+    font-size: 18px !important;
   }
+
 }

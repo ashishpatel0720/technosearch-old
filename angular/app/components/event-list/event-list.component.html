@@ -1,25 +1,20 @@
 <section id="events" class="section">
     <ul id="events-list">
-        <li style="background-image: url(img/workshops.jpg);">
+        <li style="background-image: url('/img/workshops.jpg');">
+        <a ui-sref="app.workshops">
             <div class="inner">
-                <!--<span class="event-date">21-23</span>-->
-                <h2><a ui-sref="app.workshops" class="event-by-ajax">Workshops</a></h2>
+                <h2>Workshops</h2>
                 <span class="event-location">Come, Learn and Ideate</span>
             </div>
+            </a>
         </li>
-        <li style="background-image: url(img/guest-lectures.jpg);">
+        <li style="background-image: url('/img/pro-nites.jpg');">
+        <a ui-sref="app.pronites">
             <div class="inner">
-                <!--<span class="event-date">09/02</span>-->
-                <h2><a ui-sref="app.exhibitions" class="event-by-ajax" data-ajax-options='{"target" :"#event"}'>Exhibitions</a></h2>
-                <span class="event-location">Seek, Inspire and Innovate</span>
-            </div>
-        </li>
-        <li style="background-image: url(img/pro-nites.jpg);">
-            <div class="inner">
-                <!--<span class="event-date">09/18</span>-->
-                <h2><a ui-sref="app.pronites" class="event-by-ajax" data-ajax-options='{"target" :"#event"}'>Pro Nites</a></h2>
+                <h2>Pro Nites</h2>
                 <span class="event-location">Enjoy, Relish and Relive</span>
             </div>
+            </a>
         </li>
     </ul>
 </section>

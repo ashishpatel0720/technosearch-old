@@ -19,3 +19,9 @@
     background: none;
   }
 }
+
+@media only screen and (max-width: 480px) {
+.countdown .days, .countdown .hours, .countdown .minutes, .countdown .seconds {
+    padding: 6px !important;
+}
+}
